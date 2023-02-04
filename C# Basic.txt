@@ -1,0 +1,201 @@
+Dot Net Framework:-
+----------------------------------
+>> .Net is a framework by which you can develop different kind of application.
+C#:-
+---------------
+>> C# is a high level,object oriented and type safe programming language.
+In C -> int a="hello"; (At a time it will not show an error). -> Type Unsafe.
+In C# -> int a="hello";(at a time it will show an error). -> Type Safe.
+>> C# was developed by Anders Heljsberg in 2000 by Microsoft.
+----------------------------------------------------------------------------------------------------------------------------------------
+Dot Net Framework -
+------------------------------------
+>> Dot net is not a programming language , It is a framework for building a various kind of application.
+Types of Applications:-
+------------------------------------
+1. CUI. (Command User Interface) -> Command Prompt. -> User should know each and every command. -> Console Based Application.
+2. GUI. (Graphical User Interface) :-
+	a) Desktop App. (Windows Based App.)
+>> An application that runs with the help of O.S. -> word,excel,powerpoint etc. -> It must be installed on O.S.
+	b) Web App.
+>> An Application that runs with the help of WebBrowser.
+>> it follows client-server architecture.
+--------------------------------------------------------------------------------------------
+	c) Mobile App. -> Xamarin.
+	d) Game Developement -> Unity
+	e) AI -> ML.net
+	f) ML -> ML.net
+	g) Data Science -> ML.Net
+--------------------------------------------------------------------------------------------
+Asp.net -
+---------------
+>> asp stands for active server pages.
+>> asp.net is a programming language i.e. used to build web application only.
+>> asp.net is the subset of dot net framework.
+-------------------------------------------------------------------------------------------
+Types of application-
+1. Console App.
+2. Desktop App.
+3. Web App.
+4. Web Services.
+5. Mobile App.
+6. Web Api.
+-----------------------------------------------------------------
+
+Component of Dot Net Framework:-
+------------------------------------------------------------------------
+There are two main components in dot which are as follows:-
+1. CLR. 
+>> It stands for Common Language Runtime.
+>> CLR is responsible to execute all your dot net applications.
+>> CLR is the heart of dot net framework.
+CLR has some sub-component:-
+	a) CTS (Common Type System) 
+>> All primitive data types (int,char,float,bool,double) are defined into CTS.
+	b) CLS (Common Language Specification)
+>> After compilation of your code you didn't get any difference. (MSIL).
+	c) GC (Garbage Collector)
+>> GC automatically destroy you allocated objects after use it.
+	d) Native Code.
+>> It is a Byte code that execute in any O.S.(win,mac,linux)
+-----------------------------------------------------------------------------------------------------
+C# Compilation Process:-
+-------------------------------------------------------
+>> It is a two-way compilation process.
+---------------------------------------------------------------------------------------------------------------------
+2. BCL/FCL
+>> It stands for Base Class Library/Framework class Library.
+>> All predefine methods,classess or interfaces are defined into BCL.
+In C -> #include<stdio.h>  // BCL 
+printf()
+scanf()
+---------------------------------------------------------------------
+In C#
+using System;  //BCL/FCL
+Console.readLine() -> to take input from the user.
+Console.WriteLine() -> to display the result.
+-------------------------------------------------------------------
+Variable:- ?????
+--------------------
+>> It is a memory location, that is used to store a value.
+---------------------------------------------------------------------------------
+Some Rules -
+1. int ab34=45; (right)
+2. int 23df=434; (wrong)
+3. int a b=45;(wrong)
+4. int a-b=456; (wrong)
+5. ab_cd=34; (right)
+6. while =34; (Wrong).
+7. age=34;
+    Age=12;
+   AGE=45; (Three different variable names)
+-------------------------------------------------------------------
+Variable Initialization:-
+>> To assign a value into a variable.
+int a=35;  // 35 assign to a variable.
+Variable Declaration:-
+>> don't provide any value to a variable.
+int a,b,c;
+---------------------------------------------------------
+Constant
+>> It is a fixed value i.e. never going to be changed through out the whole program.
+There are three types-
+1. Numeric 
+>> it hold numeric value. 1,2,3,.......
+a) Octal  -> 0 to 7.
+b) Decimal -> 0 to 9.
+c) Hexadecimal -> 0 to 15.
+d) Real or Floating Point -> 23,  45.67 etc.
+------------------------------------------------------------------------------------------------------------
+2. Character. 
+>> It is represented by single quotes.
+>> it contains only single value.
+'a'    '3'   '$' etc.
+----------------------------------------------------------------------------------
+3. String
+>> it is represented by double quotes.
+>> it contains more than one character.
+For ex- 
+"lfjdlskf" , "43434"  , "dfsdd3434&^%^&%&" etc.
+----------------------------------------------------------------------------
+Data type-
+--------------------
+>> It identifies that which type of value a variable can hold.
+---------------------------------------------------------------------------------
+int a=45;
+-----------------------------------------------------------------------------------
+1. Primitive -> which hold only single value. 
+bool,int,float,char,double etc.
+bool -> 1 Byte.
+int -> 4 Byte.
+void -> 0 byte
+char -> 2 byte
+float -> 4 byte
+double -> 8 byte.
+---------------------------------------------------------------------------------------------
+2. Non-Primitive or Reference Data type.
+>> which holds more than one value.
+string,array,delegate,list,interface,enum,struct 
+-------------------------------------------------------------------------------------------
+Type Conversion-
+---------------------------------------------------
+>> To convert one data type value into another data type.
+There are three types of type conversion -
+1. Implicit
+2. Explicit.
+3. Conversion Between Incompatible type.
+--------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
