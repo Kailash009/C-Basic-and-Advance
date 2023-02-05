@@ -1,0 +1,317 @@
+Type Conversion-
+---------------------------------------------------
+>> To convert one data type value into another data type.
+There are three types of type conversion -
+1. Implicit
+2. Explicit.
+3. Conversion Between Incompatible type.
+---------------------------------------------------------------------------------
+1. Implicit:-
+>> To convert lower data type value into higher data type.
+>> There is no data loss.
+---------------------------------------------------------------------------------------------
+int a=34;       4 byte
+double b=a;  8  byte // Implicit
+-------------------------------------------------
+using System;
+class Demo
+{
+    static void Main()
+    {
+        int a = 45;
+        double b = a; // Implicit
+        Console.WriteLine(b);
+    }
+}
+-----------------------------------------
+2. Explicit:-
+------------------------
+>> It is also known as Type Casting.
+>> To convert higher data type value into lower data type.
+double a=34.56;
+int b=a;  // Explicit.
+-------------------------------
+using System;
+class Demo
+{
+    static void Main()
+    {
+        double a = 34.56;
+        int b = (int)a;  // Explicit
+        Console.WriteLine(b);  // .56 loss
+    }
+}
+--------------------------------------------
+3. Conversion between Incompatible Types:-
+---------------------------------------------------------
+string - int
+1. Convert Class.
+2. parse Method.
+------------------------------------------------------------------------------------------------
+using System;
+class Demo
+{
+    static void Main()
+    {
+        string a = "12345";
+        int b =Convert.ToInt32(a);
+        string c = "456";
+        int d =int.Parse(c);
+        Console.WriteLine(b); //12345
+        Console.WriteLine(d); // 456
+    }
+}
+------------------------------------------------------------------------------------------
+Boxing -> To convert value type to reference type.
+UnBoxing -> To convert reference type to value type.
+---------------------------------------------------------------------------
+For ex:-
+-----------------------------
+int a=34;
+object b=a;  // Boxing
+using System;
+class Demo
+{
+    static void Main()
+    {
+        int a = 45;  // Value Type
+        object b = a; // Boxing ->  Reference type
+        Console.WriteLine(b);
+    }
+}
+-----------------------------------------
+using System;
+class Demo
+{
+    static void Main()
+    {
+        int a = 34;
+        object b = a;  // Boxing
+        Console.WriteLine(b);// 34
+        int c = (int)b; // UnBoxing ->  Value type
+        Console.WriteLine(c); // 34
+    }
+}
+--------------------------------------------------------------------------------------
+Operator:-
+----------------------
+>> Operators are the special symbol that is used to perform some operation.
+Types of Operator:-
+1. Arithmetic Operator. -> it is used to Perform Mathmatical Operation.
++,-,*,/,%
+-----------------------------------------------------------------------
+for ex:-
+--------------
+wap to input two no. and perform add,sub,mult,div,rem.
+using System;
+class Demo
+{
+    static void Main()
+    {
+        int a, b, c,sb,mt,div,rem;
+        Console.WriteLine("Enter two Number=");
+        a = Convert.ToInt32(Console.ReadLine());
+        b =Convert.ToInt32(Console.ReadLine());
+        c = a + b;
+        sb = a - b;
+        mt = a * b;
+        div = a / b;
+        rem = a % b;
+        Console.WriteLine("Sum="+c);
+        Console.WriteLine("Sub=" + sb);
+        Console.WriteLine("Mult=" + mt);
+        Console.WriteLine("Div=" + div);
+        Console.WriteLine("Rem=" + rem);
+    }
+}
+-------------------------------------------------------------------------------------------------
+2. Relational Operator. -> it perform relation between two operands.
+>> It returns Boolean value. (True/False).
+>,>=,<,<=,==,!=
+using System;
+class Demo
+{
+    static void Main()
+    {
+        int a = 5, b = 10;
+        Console.WriteLine(a>b); // False
+        Console.WriteLine(a >=b); // False
+        Console.WriteLine(a < b); //  True
+        Console.WriteLine(a <= b); // True
+        Console.WriteLine(a == b); // False
+        Console.WriteLine(a != b); // True
+    }
+}
+--------------------------------------------------------------------------------------
+3. Logical Operator.
+and -> && -> Both condition must be true.
+or  ->   ||  -> Either one of the condition is true then result is true otherwise false.
+not ->   ! -> If input is False then result is True and vice-versa.
+--------------------------------------------------------------------------------------------------------------
+using System;
+class Demo
+{
+    static void Main()
+    {
+        int a = 5, b = 10,c=15;
+        Console.WriteLine(a>b && b<c); // False
+        Console.WriteLine(a<b && a<c); // True 
+        Console.WriteLine(b < c || c>a); // True  
+        Console.WriteLine(a <= b && c>=a); // True
+        Console.WriteLine(a == b && c==a); //  False
+        Console.WriteLine(!(a != b || b>a)); //  False
+    }
+}
+----------------------------------------------------------------------------------------------------
+4. Assignment Operator.
+>> it is used to assign a value into a variable.
+int a=45;
+Here int -> Data type , a-> variable Name , = -> assignment Operator, 45 -> Constant.
+= 
++=
+*= 
+/=
+%=
+----------------------------------------------------------------------------
+using System;
+class Demo
+{
+    static void Main()
+    {
+        int a = 25, b = 2, c = 4, d = 6, e = 7, f = 2;
+        b += a;  // b=b+a
+        c -= a;  // c=c-a;
+        d *= a;  // d=d*a;
+        e /= a;  // e=e/a;
+        f %= a;  // f=f%a;
+        Console.WriteLine(a); // 25
+        Console.WriteLine(b); // 27
+        Console.WriteLine(c);  // -21
+        Console.WriteLine(d); // 150
+        Console.WriteLine(e); // 0
+        Console.WriteLine(f); // 2
+    }
+}
+-------------------------------------------------------------------------------------------------------
+5. Ternary Operator.
+Syntax:-
+----------------
+(Condition)?True:False;
+-----------------------------------------
+For Ex:-
+-------------------
+int a=5,b=10,res;
+res=(a>b)?a:b;
+Console.writeline(res);  // 10
+-------------------------------------
+using System;
+class Demo
+{
+    static void Main()
+    {
+        int a = 5, b = 10,res;
+        res = (a > b) ? a : b;
+        Console.WriteLine(res);  // 10
+    }
+}
+-----------------------------------------------------------------------------
+Assignment Question:-
+------------------------------------------
+1. wap to input two and swap using third var.
+2. wap to input two and swap without using third var.
+3. wap to input the radius of circle and find its area and circumference.
+4. wap to input the length and breath of rectangle and find its area,perimeter and diagonal.
+5. wap to input the celuis and find farenhite and vice-versa.
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+6. Bitwise Operator.
+7. Inc/Dec Operator.
+-----------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
