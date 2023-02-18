@@ -1,0 +1,535 @@
+Operator:-
+------------------------
+Bitwise -
+---------------
+a) Shift Left (<<)
+>> shift all the bits towards its left.
+------------------------------------------------------------
+using System;
+class Demo
+{
+    static void Main()
+    {
+        int a = 5;
+        int res = a << 3;
+        Console.WriteLine(res); // 40
+    }
+}
+b) Shift right (>>)
+>> shift all the bits towards its right.
+using System;
+class Demo
+{
+    static void Main()
+    {
+        int a = 5;
+        int res = a >> 2;
+        Console.WriteLine(res); // 1
+    }
+}
+----------------------------------------------
+7. Inc/Dec
+-----------------
+1. Pre Inc/Dec. -> Operator comes before operand/variable.
+++a; or a=1+a;
+--a; or a=1-a;
+2. Post Inc/Dec.
+Operator comes after operand.
+a++ or a=a+1
+a-- or a=a-1;
+--------------------------------------------------------------------------------------
+int a=5;
+cw(a++); 5     // 5  6  
+cw(++a); 7      // 6  7 
+cw(a++); 7      // 6  7
+cw(a++); 8     // 7  8
+cw(++a);  10   // 7  8
+cw(a); 10          //  7     8
+--------------------------------------------------------------------
+int a=4;
+cw(a++); 4      4   4
+cw(a++); 5     6   5
+cw(--a);   5      8   4
+cw(a++); 5      10 5
+cw(++a); 7       6  7
+cw(a++); 7      8  8
+cw(a++); 8      8  9
+-----------------------------------------------------------------
+int a=3;
+cw(a++); 3   3
+cw(a--);  4    3
+cw(++a); 4    5
+cw(a++); 4     6
+cw(a--);  5     5
+cw(a++); 4   6
+cw(a--); 5     5
+cw(++a); 5   7
+cw(a++); 5   8
+-------------------------------------------------------------------------------------------------------------------------
+Conditional Statements:-
+---------------------------------------
+>> It is used for decision-making in a program.
+1. if
+2. if-else
+3. if-else-if ladder
+4. nested if
+5. switch.
+-------------------------------------------------
+1. if 
+>> it is used to check single condition only.
+syntax:-
+-----------------
+if(condition)
+{
+statement;
+}
+using System;
+class Demo
+{
+    static void Main()
+    {
+        int age = 18;
+        if (age >= 18)  // 18>=18  True
+        {
+            Console.WriteLine("Valid for Vote..");
+        }
+    }
+}
+---------------------
+2. if-else
+---------------
+>> This statement is used to test the condition and take one of the two possible action.
+syntax:-
+---------------
+if(condition)
+{
+statement1;
+}
+else
+{
+statement2;
+}
+----------------------------------------
+using System;
+class Demo
+{
+    static void Main()
+    {
+        int age = 19;
+        if (age > 18)  // False 
+        {
+            Console.WriteLine("Valid for Vote..");
+        }
+        else
+        {
+            Console.WriteLine("Not Valid for Vote");
+        }
+    }
+}
+-------------------------------
+3. if-else-if ladder
+>> it is used to check multiple condition in a program.
+Syntax:-
+if(condition1)
+{
+statement1;
+}
+else if(condition2)
+{
+statement2;
+}
+else if(condition3)
+{
+statement3;
+}
+else if(condition4)
+{
+statement4;
+}
+else
+{
+statement5;
+}
+------------------------------------------------------------------------------------------------------------------------------------
+wap to input three and find greatest no. among them.
+----------------------------------------------------------------------
+using System;
+class Demo
+{
+    static void Main()
+    {
+        int a = 15, b = 30, c = 10;
+        if (a > b && a > c)
+        {
+            Console.WriteLine("A is Greater");
+        }
+        else if (b > a && b > c)
+        {
+            Console.WriteLine("B is Greater");
+        }
+        else
+        {
+            Console.WriteLine("C is Greater");
+        }
+    }
+}
+----------------------------------------------------------
+4. nested if -> if within if is called nested if.
+----------------------------------------------------------
+using System;
+class Demo
+{
+    static void Main()
+    {
+        int a = 1, b = 3, c = 10;
+        if (a > b)  // 1>3
+        {
+            if (a > c)  // 15>10
+            {
+                Console.WriteLine("A is Greater");
+            }
+            else
+            {
+                Console.WriteLine("C is Greater");
+            }
+        }
+        else
+        {
+            if (b > a)  // 3>1
+            {
+                if (b > c)  // 3>10
+                {
+                    Console.WriteLine("B is Greater");
+                }
+                else
+                {
+                    Console.WriteLine("C is Greater");
+                }
+            }
+        }
+    }
+}
+------------------------------------------------------------------------------------------
+5. switch.
+>> it is used to create menu based program.
+Syntax:-
+-------------------
+switch(expression)
+{
+case 1:
+statement1;
+break;
+case 2:
+statement2;
+break;
+case 3:
+statement3;
+break;
+default: // Optional
+statement4;   
+break;
+}
+---------------------------------------------
+app -> apple
+ban -> banana
+grp -> graphes
+-----------------------
+using System;
+class Demo
+{
+    static void Main()
+    {
+        string choice = "water";
+        switch (choice)
+        {
+            case "app":
+                Console.WriteLine("APPLE");
+                break;
+            case "ban":
+                Console.WriteLine("BANANA");
+                break;
+            case "grp":
+                Console.WriteLine("GRAPHES");
+                break;
+            default:
+                Console.WriteLine("WRONG input Choice");
+                break;
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------------------
+Assignment Question:-
+------------------------------------
+1. wap to input two no. and find the smallest no. among them using if-else or ternary.
+2. wap to input three no. and find the smallest no. among them using if-else or ternary.
+3. wap to input a year and check leap year or not.
+4. wap to input a no. and find even or odd.
+5. wap to input a character and check vowel or consonant.
+6. wap to input the five subject marks and find the total marks and percentage and find the following Grade:-
+100%-90% - S
+90%-80% - A
+80%-70% - B
+70%-60% - C
+60%-50% - D
+<50%        - F
+----------------------------------------------------------------------------------------------------------
+7. wap to input a charater and check its upper case,lowercase , digit or special symbol.
+8. wap to find the days of week.
+9. wap to find the month of year.
+10. wap to input a no. and check its BUZZ no. or not.
+----------------------------------------------------------------------------------------------------------------------------
+Control Statement/Loop:-
+---------------------------------------------------
+when you want to print one statement several times then we use the concept of Loop.
+1. while
+2. do-while
+3. for 
+4. foreach
+-------------------
+1. while:-
+------------------
+Syntax:-
+---------------
+while(condition)
+{
+statement;
+inc/dec;
+}
+Note :- In while loop condition will be checked first after that statement will be printed.
+------------------------------------------------------------------------------------------------------------------
+using System;
+class Demo
+{
+    static void Main()
+    {
+        int a = 5;
+        while (a < 3)  // 
+        {
+            Console.WriteLine("Hello");
+            a--;
+        }
+        }
+    }
+------------------------------
+2. do-while:-
+------------------
+Syntax:-
+---------------
+do
+{
+statement;
+inc/dec;
+}
+while(condition);
+Note:- > statement will be printed at once whether the condition is true or false.
+using System;
+class Demo
+{
+    static void Main()
+    {
+        int a = 5;
+        do
+        {
+            Console.WriteLine("Hello");  // Hello
+            a--;  // 4
+        }
+        while (a > 3);   // 4>3  True
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------
+3. for:-
+----------------
+for(initialization;condition;inc/dec)
+{
+statement;
+}
+using System;
+class Demo
+{
+    static void Main()
+    {
+        for (int i = 1; i <= 10; i++)
+        {
+            Console.WriteLine(i);
+        }
+    }
+}
+------------------------
+4. foreach-
+---------------------
+>> it is used to perform iteration on collection of items.
+foreach(datatype var_name in  collection)
+{
+statements;
+}
+---------------------------------------------------------------------------------------------------------------
+using System;
+class Demo
+{
+    static void Main()
+    {
+        string str = "SUDARSAN";
+        foreach(char ch in str)
+        {
+            Console.WriteLine(ch);
+        }
+    }
+}
+-----------------------------------------------------------------
+or 
+using System;
+class Demo
+{
+    static void Main()
+    {
+        string str = "SUDARSAN";
+        char ch;
+        for (int i = 0; i < str.Length; i++)
+        {
+            ch = str[i];
+            Console.WriteLine(ch);
+        }
+    }
+}
+------------------------------------------------------------------------------------
+Assignment Question of Loop:-
+---------------------------------------------
+1. wap to print 1 to 50 no. using while,do-while and for.
+2. wap to print  even no. between 1 to 100 no. using while,do-while and for.
+3. wap to print  odd no between 1 to 100 no. using while,do-while and for.
+4. wap to input a no. and find the sum and avg.
+5. wap to input a no. and find the factorial.
+6. wap to input a no. and print the table.
+7. wap to input a no. and check its prime no. or not.
+8. wap to input a no. and check its armstrong or not.
+9. wap to input a no. and find the sum of its digit.
+10. wap to input a no. and check its palindrome or not.
+--------------------------------------------------------------------------------------------------------------------------
+Nested Loop:- Pending
+--------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
