@@ -1,0 +1,412 @@
+Assignment Question:-
+------------------------------------
+1. wap to input two no. and find the smallest no. among them using if-else or ternary.
+2. wap to input three no. and find the smallest no. among them using if-else or ternary.
+3. wap to input a year and check leap year or not.
+4. wap to input a no. and find even or odd.
+5. wap to input a character and check vowel or consonant.
+6. wap to input the five subject marks and find the total marks and percentage and find the following Grade:-
+100%-90% - S
+90%-80% - A
+80%-70% - B
+70%-60% - C
+60%-50% - D
+<50%        - F
+----------------------------------------------------------------------------------------------------------
+7. wap to input a charater and check its upper case,lowercase , digit or special symbol.
+8. wap to find the days of week.
+9. wap to find the month of year.
+10. wap to input a no. and check its BUZZ no. or not.
+---------------------------------------------------------------------------------------------
+Assignment Question of Loop:-
+---------------------------------------------
+1. wap to print 1 to 50 no. using while,do-while and for.
+2. wap to print  even no. between 1 to 100 no. using while,do-while and for.
+3. wap to print  odd no between 1 to 100 no. using while,do-while and for.
+4. wap to input a no. and find the sum and avg.
+5. wap to input a no. and find the factorial.
+6. wap to input a no. and print the table.
+7. wap to input a no. and check its prime no. or not.
+8. wap to input a no. and check its armstrong or not.
+9. wap to input a no. and find the sum of its digit.
+10. wap to input a no. and check its palindrome or not.
+----------------------------------------------------------------------------
+Nested Loop:-
+----------------------------
+Initialization -> it runs only first time.
+Condition ->
+Inc/dec -> Till the condition is false.
+-------------------------------------------------------------------------
+>> A loop with in loop is called Nested loop.
+for(int i=1;i<=5;i++) // Outer Loop  // Master // Owner    // Row  i=1 1<=5,i=2  2<=5  ,i=3 3<=5,i=4 4<=5 i=5 5<=5 i=6; 6<=5 -> False
+{
+for(int j=1;j<=5;j++) // Inner Loop  // Servant// Slave  // Col  j=1  1<=5 2<=5 3<=5  4<=5 5<=5  6<=5 -> False
+{
+cw(j);  1  1 1 1 1       1 2 3 4 5
+}           2 2 2 2 2       1 2 3 4 5   
+}           3 3 3 3 3       1 2 3 4 5
+}           4 4 4 4 4       1 2 3 4 5
+            5 5 5 5 5        1 2 3 4 5
+-----------------------------------
+1 1 1 1 1     (i) -> outer
+2 2 2 2 2
+3 3 3 3 3
+4 4 4 4 4
+5 5 5 5 5 
+----------------------
+12345  (j) --> inner 
+12345
+12345
+12345
+12345
+-----------------
+using System;
+class Demo
+{
+    static void Main()
+    {
+        for (int i = 1; i <= 5; i++)
+        {
+            for (int j = 1; j <= 5; j++)
+            {
+                Console.Write(j);
+            }
+            Console.WriteLine();
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------
+Assignment Question:-
+----------------------------------
+1
+12
+123
+1234
+12345
+--------------------
+1
+22
+333
+4444
+55555
+-------------------
+*
+**
+***
+****
+*****
+---------------------
+54321
+5432
+543
+54
+5
+----------------------
+12345
+1234
+123
+12
+1
+-----------------------
+5
+54
+543
+5432
+54321
+--------------------
+  *
+ ***
+*****
+---------------------
+*****
+ ***
+  *
+-----------------------
+A
+AB
+ABC
+ABCD
+ABCDE
+----------------------
+E
+ED
+EDC
+EDCB
+EDCBA
+---------------------
+C
+CC
+CCC
+CCCC
+CCCCC
+----------------------
+Function:-
+--------------------
+>> Functions are the buidling blocks of our program.
+>> It divides the work of our program.
+>> We can achieve modularity.
+>> Easy to maintain and testing.
+>> Easy to test.
+>> Easy to find bugs.
+-------------------------------------------------------
+Types of Functions:-
+1. Library Function/Built-in function. -> A function which is defined by the system library.
+sqrt(),pow() and so on.
+2. User Defined Function.
+>> A function which is defined by the user is known as user defined function.
+---------------------------------------------------------------------------------------------------------------------------------------------
+How to create User Defined Function:-
+---------------------------------------------------------------------
+In C# we need to follow two steps to create User defined function:-
+1. Function Defination.
+Syntax:-
+----------------
+access-specifier return-type/non-return_type function_name()
+{
+// Logic of Code.
+}
+-----------------------------------------
+For ex:-
+-------------------
+public void Sudarsan()  // Function Defination
+{
+// Logic of Code.
+}
+------------------------------------------
+2. Function Calling.
+Syntax:-
+---------------------
+How to create object of class for non-static function:-
+-----------------------------------------------------------------------
+classname object_name=new classname();
+--------------------------------------------------------------------------------------------------------------------------------------------
+using System;
+class Demo
+{
+    public static void Sudarsan()   // Function Defination
+    {
+        Console.WriteLine("Hello Sudarsan");
+    }
+    static void Main()  
+    {
+        Sudarsan();   // Function Calling
+        Sudarsan();
+        Sudarsan();
+    }
+}
+-----------------------------------------------------------------------------------------------------------------
+using System;
+class Demo
+{
+    public void Sudarsan()   // Function Defination
+    {
+        Console.WriteLine("Hello Sudarsan");
+    }
+    static void Main()  
+    {
+        //classname object_name = new classname();
+        Demo dmObj = new Demo();
+        dmObj.Sudarsan();
+        dmObj.Sudarsan();
+        dmObj.Sudarsan();
+        dmObj.Sudarsan();
+    }
+}
+--------------------------------------------------------------------------------------------------------------------
+There are four ways to create User Defined Function in any language:-
+------------------------------------------------------------------------------------------------------------
+1. Function with no argument and no return type.
+2. Function with argument and no return type.
+3. Function with no argument and  return type.   -->>        Pending
+4. Function with argument and return type.         --->>       Pending
+-----------------------------------------------------------------------------------------------------------------------
+1. Function with no argument and no return type.
+void -> it doesn't return any value.
+>> void is 0 byte.
+-----------------------------------------------------------------------------
+using System;
+class Demo
+{
+    //Function with no argument and no return type
+    public void Display()
+    {
+        Console.WriteLine("Hello C#");
+    }
+    static void Main()  
+    {
+        Demo dm = new Demo();
+        dm.Display();
+    }
+}
+-------------------------------------------------------------------------------
+2. Function with argument and no return type.
+Argument/Parameter -> To pass any information into a function.
+Types of Parameter :-
+There are two types of parameter -
+1. Actual Parameter -> It takes the original value in a program.
+2. Formal Parameter -> It takes the copied value of actual parameter.
+-------------------------------------------------------------------------------------------------------------------
+using System;
+class Demo
+{
+    // Function with argument and no return type.
+    public void addition(int a,int b)// Function Defination // Parameterized --Formal Parameter
+    {
+        int res = a + b;
+        Console.WriteLine("Sum="+res);
+    }
+    static void Main()  
+    {
+        Demo dm = new Demo();
+        Console.WriteLine("Enter two Number=");
+        int i =Convert.ToInt32(Console.ReadLine());
+        int j = Convert.ToInt32(Console.ReadLine());
+        dm.addition(i,j); // Actual Parameter  // Function Calling
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
