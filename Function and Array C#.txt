@@ -1,0 +1,475 @@
+There are four ways to create User Defined Function in any language:-
+------------------------------------------------------------------------------------------------------------
+1. Function with no argument and no return type.
+2. Function with argument and no return type.
+3. Function with no argument and  return type. 
+using System;
+class Demo
+{
+    //  Function with no argument and  return type. 
+    public int addition()  // Market
+    {
+        int a = 5, b = 10, c = a + b;
+        return c;  // 15
+    }
+    static void Main()  
+    {
+        Demo d = new Demo();  
+        int res=d.addition();  // Home
+        Console.WriteLine("Sum="+res);
+    }
+}
+---------------------------------------------------------------------------------------------------
+4. Function with argument and return type.
+using System;
+class Demo
+{
+    // Function with argument and return type.
+    public int addition(int a ,int b)  // Market
+    {
+        int c = a + b;
+        return c;  // 400
+    }
+    static void Main()  
+    {
+        Demo d = new Demo();  
+        int res=d.addition(100,300);  // Home
+        Console.WriteLine("Sum="+res); // 400
+    }
+}
+------------------------------------------------------------------------------------------------------------
+using System;
+class Demo
+{
+    public bool Authenticate(string username, string password)
+    {
+        if (username == "admin" && password == "admin")
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    static void Main()
+    {
+        int count = 0;
+        char ch;
+        do
+        {
+            if (count < 3)  // 0<3 1<3 2<3 3<3 -> False
+            {
+                Demo d = new Demo();
+                Console.WriteLine("Enter UserName and Password=");
+                string u_name = Console.ReadLine();
+                string u_passwd = Console.ReadLine();
+                bool b = d.Authenticate(u_name, u_passwd);
+                if (b == true)
+                {
+                    Console.WriteLine("Login SuccessFully!!!!");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Login Failed!!!");
+                }
+            }
+            else
+            {
+                Console.WriteLine("you Attempted login 3 times, now login again after sometime");
+                break;
+            }
+            Console.WriteLine("Enter your choice (y/n)???");
+            ch = Convert.ToChar(Console.ReadLine());
+            count++;
+        }
+        while (ch == 'y' || ch == 'Y');
+        }
+    }
+--------------------------------------------------------------------------------------------------------------
+Non-Static VS Static Function:-
+---------------------------------------------------
+Non-Static Function:-
+---------------------------------------
+>> These function require object.
+>> It can be called with the help of object creation.
+>> It require more memory.
+>> Performance Slow.
+---------------------------------------------------------------------------------------
+using System;
+class Demo
+{
+    int count = 0;
+    public void check()   // Non-Static Function.
+    {
+        count++;
+        Console.WriteLine(count);  // 1  1
+    }
+    static void Main()
+    {
+        Demo d1 = new Demo(); // 1000
+        d1.check();
+        Demo d2 = new Demo();  //2000
+        d2.check();
+        Demo d3 = new Demo(); // 3000
+        d3.check();
+    }
+}
+--------------------------
+Static Function:-
+--------------------------
+>> These function doesn't require object.
+>> static function can be called with the help of ClassName.
+>> Fast.
+>> Less Memory.
+---------------------------------------------------------------------------------
+using System;
+class Demo
+{
+    static int count = 0;
+    public static void check()   // Static Function.
+    {
+        count++;
+        Console.WriteLine(count);  // 1  2 3
+    }
+    static void Main()
+    {
+        Demo.check(); // 1000
+        Demo.check(); // 1000
+        Demo.check(); // 1000
+    }
+}
+----------------------------------------------------------------------------------------------
+Assignment Question:-
+----------------------------------------------
+Conditional Statements+ Loop  all question pratice using Function.
+---------------------------------------------------------------------------------------------------------
+Array:- ???????
+---------------------
+>> An array is a similar type of data items that store value in continugous memory allocation.
+Types of Array:-
+------------------------
+1. 1- D
+2. 2-D or Multidimensional
+3. Jagged Array.
+---------------------------------------------------------------
+1. 1-D Array-
+-----------------------------
+Array Initialization:
+-----------------------------------
+int[] a = new int[5] { 12, 56, 678, 89, 200 };
+using System;
+class Demo
+{ 
+    static void Main()
+    {  
+        int[] a = new int[5] { 12, 56, 678, 89, 200 };  // Initialization
+        for (int i = 0; i < 5; i++)
+        {
+            Console.WriteLine(a[i]);
+        }
+    }
+}
+--------------------------------------------------------------------
+1. 1-D  (Declaration)
+-------------------------------
+using System;
+class Demo
+{ 
+    static void Main()
+    {
+        int[] a = new int[6];  // Declartion
+        Console.WriteLine("Enter 6 Elements");
+        for (int i = 0; i < 6; i++)
+        {
+            a[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        Console.WriteLine("Print these Elements");
+        for (int i = 0; i < 6; i++)
+        {
+            Console.Write(a[i]+",");
+        }
+    }
+}
+-------------------------------------------------------------------------
+1-D
+-----------
+using System;
+class Demo
+{ 
+    static void Main()
+    {
+        int size;
+        Console.WriteLine("Enter the size of array=");
+        size = Convert.ToInt32(Console.ReadLine());
+        int[] a = new int[size];  // Declartion
+        Console.WriteLine("Enter Elements");
+        for (int i = 0; i < size; i++)
+        {
+            a[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        Console.WriteLine("Print these Elements");
+        for (int i = 0; i < size; i++)
+        {
+            Console.Write(a[i]+",");
+        }
+    }
+}
+------------------------
+Assignment of 1-D:-
+-------------------------------
+1. wap to input 8 element and print them.
+2. wap to input 12 element and find its sum and average.
+3. wap to input 10 elements and find the even and odd no. and also count total even and odd no. in a given array.
+4. wap to input 5 element and find the highest and smallest element.
+5. wap to input 6 array element and reverse them.
+--------------------------------------------------------------------------------------------
+2-D:-
+------------------------------------
+Initialization:-
+-------------------
+int [,]a = new int[3, 3] { { 12, 34, 56 }, { 67, 89, 76 }, { 123, 567, 9 } };  // 2-D 
+using System;
+class Demo
+{ 
+    static void Main()
+    {
+        int [,]a = new int[3, 3] { { 12, 34, 56 }, { 67, 89, 76 }, { 123, 567, 9 } };
+        Console.WriteLine("Print These Elements");
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                Console.Write(a[i,j]+"\t");
+            }
+            Console.WriteLine();
+        }
+    }
+}
+----------------------------------
+2-D (Declaration)
+-------------------------------
+using System;
+class Demo
+{ 
+    static void Main()
+    {
+        int[,] a = new int[3, 3];
+        Console.WriteLine("Enter 3X3 Elements");
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                a[i, j] = Convert.ToInt32(Console.ReadLine());
+            }
+        }
+        Console.WriteLine("Print These Elements");
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                Console.Write(a[i,j]+"\t");
+            }
+            Console.WriteLine();
+        }
+    }
+}
+-------------------------------------------------------------------------------------
+using System;
+class Demo
+{ 
+    static void Main()
+    {
+        int row, col;
+        Console.WriteLine("Enter how many rows and columns you want=");
+        row =Convert.ToInt32(Console.ReadLine());
+        col = Convert.ToInt32(Console.ReadLine());
+        int[,] a = new int[row, col];
+        Console.WriteLine("Enter 3X3 Elements");
+        for (int i = 0; i < row; i++)
+        {
+            for (int j = 0; j < col; j++)
+            {
+                a[i, j] = Convert.ToInt32(Console.ReadLine());
+            }
+        }
+        Console.WriteLine("Print These Elements");
+        for (int i = 0; i < row; i++)
+        {
+            for (int j = 0; j < col; j++)
+            {
+                Console.Write(a[i,j]+"\t");
+            }
+            Console.WriteLine();
+        }
+    }
+}
+------------------------------------------------------------------------------------------
+Assignment of 2-D:-
+-------------------------------
+1. wap to input 2-D element and find sum and avg.
+2. wap to input 2-D elements and  print the diagonal elements only.
+3. wap to input 2-D elements and transpose it.
+4. wap to input two 2-D elements and find the sum,sub and multiplication
+-----------------------------------------------------------------------------------------------------------------------
+Jagged Array --- Pending
+------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
