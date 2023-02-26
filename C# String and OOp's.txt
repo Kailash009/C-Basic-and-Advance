@@ -1,0 +1,325 @@
+Jagged Array:-
+--------------------------------------------
+>> It is also known as 'Array of Arrays'.
+>> In this approach we create different size of array, merge them to get into single array.
+----------------------------------------------------------------------------------------------------------------------------
+using System;
+class Demo
+{ 
+    static void Main()
+    {
+        int [][]a= new int[3][]; // Jagged Array
+        a[0] =new int[3]{ 12,34,56};
+        a[1] = new int[4] {100,345,675,345 };
+        a[2] = new int[2] { 102,323 };
+        foreach (int []ar in a)
+        {
+            foreach (int res in ar)
+            {
+                Console.Write(res+"\t");
+            }
+            Console.WriteLine();
+            }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------
+String:-
+-------------
+>> Strings are immutable.
+>> which we can't modify.
+>> Performance of string is very slow.
+>> It takes every time new memory when we store any new value into it.
+----------------------------------------------------------------------------------------------------------------------
+using System;
+class Demo
+{ 
+    static void Main()
+    {
+        string str = "My Name is Sudarshan";
+        str = str + "I am a Software Developer";
+        str = str + "in Noida";
+        Console.WriteLine(str);
+    }
+}
+-------------------------------
+String Builder:-
+----------------------------
+>> StringBuilder is class in c#.
+>> It is Mutable.
+>> which we can Modify.
+>> It doesn't create separate memory when you are going to assign any new value into it.
+-----------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+
+class Demo
+{ 
+    static void Main()
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.Append("My Name is Sudarshan");
+        sb.Append("I am a Software Developer");
+        sb.Append("in Noida");
+        Console.WriteLine(sb);
+    }
+}
+-----------------------------------------------------------------------------------------
+Assignment Question of String:-
+----------------------------------------------------------------------------------------
+1. wap to input a string and find the length of string.
+2 wap to input two string and check both strings are equal or not.
+3. wap to input a string and reverse them.
+4. wap to input a string and count total no. of vowel and consonant.
+5. wap to input a string and check its palindrome or not.
+--------------------------------------------------------------------------------------------
+Boxing -> To convert value type to reference type.
+using System;
+class Demo
+{ 
+    static void Main()
+    {
+        int a = 34; // Value type.
+        object b = a; // value type to reference type  // Boxing
+        Console.WriteLine(b);
+    }
+}
+--------------------------------------------------------------------------------------
+UnBoxing -> To convert reference to value type.
+---------------------------------------------------------------------------------------
+using System;
+class Demo
+{ 
+    static void Main()
+    {
+        object a = 345;  // Reference type
+        int b =(int)a; // Reference to Value  // UnBoxing
+        Console.WriteLine(b);
+    }
+}
+-------------------------------------------------------------------------------------------
+Example of Value type:-
+--------------------------------------
+>> Whatever changes made to Formal Parameter doesn't reflect back to the Actual Parameter.
+------------------------------------------------------------------------------------------------------------------------------------
+using System;
+class Demo
+{
+    public static void CallValue(string name, int age)  // Formal Parameter
+    {
+        name = "Ritu Raj";
+        age = 23;
+        Console.WriteLine("Changes in Formal Parameter=");
+        Console.WriteLine("Name="+name);  // Ritu Raj
+        Console.WriteLine("Age="+age);  // 23
+    }
+    static void Main()
+    {
+        string name = "Sudarshan";
+        int age = 20;  
+        Console.WriteLine("Before Function Calling=");
+        Console.WriteLine("Name="+name);  // Sudarshan
+        Console.WriteLine("Age="+age);  // 20
+        CallValue(name,age);  // Actual Parameter
+        Console.WriteLine("After Function Calling=");
+        Console.WriteLine("Name=" + name); // Sudarshan
+        Console.WriteLine("Age=" + age);  // 20
+    }
+}
+------------------------------------------------------------------
+Example of Reference Type:-
+------------------------------------------
+>> Whatever changes made to the formal parameter does reflect back to the Actual Parameter.
+using System;
+class Employee
+{
+   public string Name;
+   public int Age;
+}
+class Demo
+{
+    public static void CallReference(Employee empObj)  // Formal Parameter
+    {
+        empObj.Name = "Ritu Raj Patel";
+        empObj.Age = 23;
+        Console.WriteLine("Changes in Formal Parameter=");
+        Console.WriteLine("Name="+empObj.Name);  // Ritu Raj Patel
+        Console.WriteLine("Age="+empObj.Age);  // 23
+    }
+    static void Main()
+    {
+        Employee emp = new Employee();
+        emp.Name = "Sudarshan";
+        emp.Age = 20;
+        Console.WriteLine("Before Function Calling=");
+        Console.WriteLine("Name="+emp.Name);  // Sudarshan
+        Console.WriteLine("Age="+emp.Age);  // 20
+        CallReference(emp);  // Actual Parameter  emp=1000
+        Console.WriteLine("After Function Calling=");
+        Console.WriteLine("Name=" + emp.Name); // Ritu Raj Patel
+        Console.WriteLine("Age=" + emp.Age);  // 23
+    }
+}
+--------------------------------------------------------------------------------------------------------------
+OOP's:-
+--------------------
+>> In object oriented programming we focus on object.
+1. Class. 
+>>  Class is nothing,it is a blue print for creating a particular kind of object.
+>> A class is a collection of similar kind of object.
+----------------------------------------------------------------------------------------------------------------
+Syntax:-
+-----------------
+class classname
+{
+Data Member;  -> Variables.
+Member Function -> Methods.
+}
+-----------------------------------------------------------------------
+2. Object.
+>> Any real world (Living+Non-Living) entity is known as Object.
+>> Object must belongs to that above class.
+-----------------------------------------------------------------
+using System;
+
+namespace Batch3PMConsoleWE
+{
+    class Customer
+    {
+        public string Name;
+        public int Age;
+        public string City;
+        public void setCustomer()
+        {
+            Console.WriteLine("Enter Customer Name,age and City");
+            Name = Console.ReadLine();
+            Age = Convert.ToInt32(Console.ReadLine());
+            City = Console.ReadLine();
+        }
+        public void displayCustomer()
+        {
+            Console.WriteLine("Name="+Name);
+            Console.WriteLine("Age=" + Age);
+            Console.WriteLine("City=" + City);
+        }
+    }
+    class Demo
+    { 
+        static void Main()
+        {
+            Customer ctObj = new Customer();
+            ctObj.setCustomer();
+            ctObj.displayCustomer();
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------------
+Pillars of OOp's:-
+------------------------------
+3. Data Abstraction.
+4. Inheritance.
+5. Encapsulation.
+6. Polymorphism.
+---------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
