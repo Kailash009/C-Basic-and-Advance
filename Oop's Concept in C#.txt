@@ -1,0 +1,315 @@
+Data Abstraction:-
+-------------------------------
+>> It refers to the act of representing essential features only,without including the background details.
+>> SHow only essential things and hide unnecessary information.
+>> In C# data abstration can be achieved by 'Abstract Class'.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+a. Abstract Class:-
+---------------------------------------------------------------
+>> abstract class can be declared using 'abstract' keyword.
+>> In abstract class we only provide method declaration.
+>> abstract class contains abstract method.
+>> we can create constructor in abstract class.
+>> we can also create properties/Data Member in abstract.
+>> we can't create an object of Abstract class.
+--------------------------------------------------------------------------------------------------------------
+In C#:-
+---------------
+Class -> ByDefault ->  Internal
+Variable/Method -> Private.
+-----------------------------------------------------------------------
+using System;
+
+namespace Batch3PMConsoleWE
+{
+    abstract class Rectangle  // abstract class
+    {
+        public abstract int addition(int a, int b);
+        public abstract int area(int l,int d);
+    }
+    class child : Rectangle
+    {
+        public override int addition(int a, int b)
+        {
+            return a + b;
+        }
+        public override int area(int l, int d)
+        {
+            return l * d;
+        }
+    }
+    class Demo
+    { 
+        static void Main()
+        {
+            child ch = new child();
+            Console.WriteLine("Sum="+ ch.addition(10, 30));
+            Console.WriteLine("Area="+ ch.area(3, 6));
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------
+b) Inheritance:-
+------------------------------------
+>> child class inherits the properties of parent class.
+>> Reusablity. (we don't need to re-write same code again and again)
+-----------------------------------------------------------------------------------------------------
+Types of Inheritance:-
+1. Single
+2. Multiple
+3. Multilevel.
+4. Hybrid.
+5. Hierarchical
+---------------------------------------------------------------------------------
+1. Single
+--------------------
+using System;
+
+namespace Batch3PMConsoleWE
+{
+    class Parent
+    {
+        public void Hello()
+        {
+            Console.WriteLine("Hello Parent");
+        }
+    }
+    class Child:Parent
+    {
+        public void Test()
+        {
+            Console.WriteLine("Hello Child");
+        }
+    }
+    class Demo
+    { 
+        static void Main()
+        {
+            Child ch = new Child();
+            ch.Hello();
+            ch.Test();
+           
+        }
+    }
+}
+------------------------------
+or
+----------------------------
+using System;
+
+namespace Batch3PMConsoleWE
+{
+    class Parent
+    {
+        public int c;
+        public int addition(int a, int b)
+        {
+            c = a + b;
+            return c;
+        }
+    }
+    class Child:Parent
+    {
+        public int multiplication(int d)
+        {
+            int res = c * d;  // 40 * 5
+            return res;
+        }
+    }
+    class Demo
+    { 
+        static void Main()
+        {
+            Child ch = new Child();
+            Console.WriteLine(ch.addition(10, 30));  // 40
+            Console.WriteLine(ch.multiplication(5));  // 200
+           
+        }
+    }
+}
+------------------------------------------------------------------
+b) Multiple Inheritance:-
+----------------------------------
+>> C# doesn't support multiple inheritance.
+>> With the help of interface we can achieve multiple inheritance in C#.
+-------------------------------------------------------------------------------------------------------------
+Interface:-
+-----------------------
+>> we can achieve multiple inheritance.
+>> Interface by default is Public.
+>> In Interface, we use Interface keyword.
+>> In Interface, we provide only method declaration.
+>> we can't create constructor inside interface.
+>> we can't create datamember inside interface.
+>> In interface all method must be implemented with their child classes.
+--------------------------------------------------------------------------------------------------------------------
+using System;
+
+namespace Batch3PMConsoleWE
+{
+    interface A
+    {
+        public int addition(int a, int b);
+        public void display();
+    }
+    interface B
+    {
+        public int multiplication(int d);
+    }
+    class C : A, B
+    {
+        public int addition(int a, int b)
+        {
+            return a+b;
+        }
+
+        public void display()
+        {
+            Console.WriteLine("Hello Parent");
+        }
+
+        public int multiplication(int d)
+        {
+            return d * d;
+        }
+        public int fact(int n)
+        {
+            int f = 1;
+            for (int i = 1; i <= n; i++)
+            {
+                f = f * i;
+            }
+            return f;
+        }
+    }
+    class Demo
+    { 
+        static void Main()
+        {
+            C obj = new C();
+            Console.WriteLine(obj.addition(10, 30));  // 40
+            Console.WriteLine(obj.multiplication(5));  // 25
+            obj.display();
+            Console.WriteLine(obj.fact(5)); // 120
+           
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------
+Assignment -
+--------------------------------
+1. MultiLevel.
+2. Hybrid.
+3. Hierarchical.
+---------------------------------
+3. Encapsulation:-
+-------------------------------------------
+>> Data Hiding / Information
+>> The wrapping up of data and function into a single unit.
+>> In C# encapsulation can be achieved by  - Access Specifier.
+a) Public -> It can be access anywhere in a program.(same namesapace and different namespace)
+b) Private  -> It can be access  within class only.
+c) Protected  -> It is same as private. Protected member access only when you provide inheritance.
+d) Internal   -> It can be accesible within the same namespace.
+e) Protected Internal.  -> IF you want to access different namespace then you provide inheritance.
+Accessiblity From Lowest to Highest :-
+-----------------------------------------------------
+Private -> Protected -> Internal -> Protected Internal -> Public.
+---------------------------------------------------------------------------------------------------------------------------------------------------- 
+d) Polymorphism:- Pending
+---------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
