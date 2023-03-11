@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Net;
+
+namespace Batch3PMConsoleWE
+{
+    public class CallingAPI
+    {
+        static void Main()
+        {
+            CallApi();
+        }
+        public static void CallApi()
+        {
+            HttpClient client = new HttpClient();
+            Console.WriteLine("Calling WebAPI......");
+            var response=client.GetAsync("https://dummyjson.com/products");
+            response.Wait();
+            if(response.IsCompleted)
+            {
+                var result = response.Result;
+                if(result.IsSuccessStatusCode)
+                {
+                    var message = result.Content.ReadAsStringAsync();
+                    message.Wait();
+                    Console.WriteLine("Message From WEbAPI:"+message.Result);
+                }
+            }
+        }
+    }  
+}
+-------------------------------------------------------------------------------------------------------------------------------------------
