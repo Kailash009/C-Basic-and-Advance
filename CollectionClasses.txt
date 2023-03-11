@@ -1,0 +1,493 @@
+Dot Net Core :-
+----------------------------
+>> Dot Net core follows N-Tier Architecuture, it is completely based on MVC pattern.
+M  -> Model -> DAL -> we write our classes and database related operation.
+V -> View  -> PLL. -> it is the UI of the project/application.
+C -> Controller.  -> BLL.  -> in it we write our code logic. like C#.
+>> It is open source and cross platform.
+>> High Performance.
+>> appsettings.json.
+>> Middleware. -> Pipeline.
+>> Kestrel WebServer -> which is fast than webforms.
+>> RYUJIT  Compiler -> Rosyln Just In time Compiler.
+-----------------------------------------------------------------------------------------------------------------------------------
+C# + Dot Net Core MVC   +  Angular(SPA)
+-----------------------------------------------------------------------------------------------------------------------------------
+Polymorphsim:-
+------------------------------
+>>  Poly + morphism  => Many + Forms  => Many Forms
+>> To Take more than one forms.
+>> To assign multiple duties of a one person.
+-----------------------------------------------------------------------------
+For Example:-
+-------------------------
++ -> 4+5  
++ -> "abc"+"def"
++ -> 3.4+5.5
+------------------------------------------------------------------------------
+Types of Polymorphism:-
+-------------------------------------------
+a. Compile Time Polymorphism./ Early Binding.
+>> Method Overloading.
+b. Run Time Polymorphism/ Late Binding.
+>> Method Overriding.
+----------------------------------------------------
+a.) Method Overloading.:-
+>> Having same method name but their parameters must be different.
+------------------------------------------------------------------------------------------------------------------------------
+using System;
+
+namespace Batch3PMConsoleWE
+{
+    class Overlaod
+    {
+        public void Rect()
+        {
+            Console.WriteLine("Having No Argument");
+        }
+        public void Rect(int a)
+        {
+            int sq = a * a;
+            Console.WriteLine("Having One Argument");
+            Console.WriteLine("Square="+sq);  // 16
+        }
+        public void Rect(int l,int b)
+        {
+            int ar = l * b;
+            Console.WriteLine("Having Two Argument");
+            Console.WriteLine("Area="+ar);  // 15
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Overlaod od = new Overlaod();
+            od.Rect();
+            od.Rect(4);
+            od.Rect(3, 5);
+        }
+    }
+}
+----------------------------------------------------------------------------------
+b) Method Overriding:-
+---------------------------------
+>> Method name should be same and their parameter should also be same.
+------------------------------------------------------------------------------------------------------------------------------
+For Ex-
+Parent -> Transportation  -> Cycle.
+Child -> Transportation -> Bike.
+------------------------------------------------------------------
+To Perform overriding in c# we use three keywords:-
+1. virtual. -> it must be used in Parent Class.
+2. override. -> It must be used in Child Class.
+3. base. (Optional) -> when you want to access parent properties or methods.
+---------------------------------------------------------------------------------------------------------------------------
+using System;
+
+namespace Batch3PMConsoleWE
+{
+    class Parent
+    {
+        public virtual void Transport()
+        {
+            Console.WriteLine("Cycle");
+        }
+    }
+    class Child : Parent
+    {
+        public override void Transport()
+        {
+            //base.Transport();
+            Console.WriteLine("Bike");
+        }
+    }
+    
+    class Demo
+    {
+        static void Main()
+        {
+            Parent pd = new Child();
+            pd.Transport();
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------------
+Collection Classes:-
+-----------------------------------
+>> In collection means set of data. this set of data may contain similar type or dissimilar type.
+Two Types of Collection Classes which are as follows-
+1. Non-Generic. -> it contains dissimilar type of data.
+using System.Collections;
+	a) Array List.
+using System;
+using System.Collections;
+
+namespace Batch3PMConsoleWE
+{
+    
+    class Demo
+    {
+        static void Main()
+        {
+            ArrayList al = new ArrayList();
+            al.Add("Java");
+            al.Add(23);
+            al.Add(34.4555);
+            al.Add(true);
+            al.Add(DateTime.Now);
+            foreach (object res in al)
+            {
+                Console.WriteLine(res);
+            }
+        }
+    }
+}
+------------------------------------------------------------------------------------------
+	b) HashTable.
+>> In this you can store the data in key/value pair. 
+using System;
+using System.Collections;
+
+namespace Batch3PMConsoleWE
+{
+    
+    class Demo
+    {
+        static void Main()
+        {
+            Hashtable ht = new Hashtable();
+            ht.Add("abc", 45);
+            ht.Add(true, "Java");
+            ht.Add(23, 45);
+            ht.Add("rohit", 34);
+            foreach (DictionaryEntry dt in ht)
+            {
+                Console.WriteLine(dt.Key+"="+dt.Value);
+            }
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------------------
+	c) Sorted List.
+>> In sorted List also containing key/value pair but in sorted order(Ascending).
+using System;
+using System.Collections;
+
+namespace Batch3PMConsoleWE
+{
+    
+    class Demo
+    {
+        static void Main()
+        {
+            SortedList sl = new SortedList();
+            sl.Add("pqr", 34);
+            sl.Add("dff", 345);
+            sl.Add("bdc", 67);
+            foreach (DictionaryEntry res in sl)
+            {
+                Console.WriteLine(res.Key+"="+res.Value);
+            }
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------------------------
+	d) Stack.
+>> LIFO (Last-in-First Out)
+Insert -> PUSH.
+Delete -> POP.
+using System;
+using System.Collections;
+
+namespace Batch3PMConsoleWE
+{
+    
+    class Demo
+    {
+        static void Main()
+        {
+            Stack st = new Stack();
+            st.Push(34);
+            st.Push("Java");
+            st.Push(454.656);
+            st.Push("PHP");
+            st.Push(true);
+            st.Pop();
+            foreach (object item in st)
+            {
+                Console.WriteLine(item);
+            }
+        }
+    }
+}
+-----------------------------------------------------------------------------
+	e) Queue.
+FIFO -> 
+>> First in First Out.
+Insert -> Enqueue.
+Delete -> Dequeue.
+------------------------------
+using System;
+using System.Collections;
+
+namespace Batch3PMConsoleWE
+{
+    
+    class Demo
+    {
+        static void Main()
+        {
+            Queue qu = new Queue();
+            qu.Enqueue(34);
+            qu.Enqueue(34.454);
+            qu.Enqueue(true);
+            qu.Enqueue("Java");
+            qu.Enqueue("Php");
+            qu.Dequeue();
+            qu.Dequeue();
+            qu.Dequeue();
+            foreach (object item in qu)
+            {
+                Console.WriteLine(item);
+            }
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------
+2. Generic. -> it contains only similar type of data.
+using System.Collections.Generic
+-------------------------------------------------------------------------------------
+	a) List.
+using System;
+using System.Collections.Generic;
+
+namespace Batch3PMConsoleWE
+{
+    
+    class Demo
+    {
+        static void Main()
+        {
+            List<int> lt = new List<int>();
+            lt.Add(34);
+            lt.Add(23);
+            lt.Add(233);
+            lt.Add(243);
+            lt.Add(253);
+            foreach (int res in lt)
+            {
+                Console.WriteLine(res);
+            }
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------------------
+	b) Dictionary.
+>> It store value in Key-Value Forms.
+using System;
+using System.Collections.Generic;
+
+namespace Batch3PMConsoleWE
+{
+    
+    class Demo
+    {
+        static void Main()
+        {
+            Dictionary<int, string> dt = new Dictionary<int, string>();
+            dt.Add(1, "Java");
+            dt.Add(2,"PHP");
+            dt.Add(3, "React");
+            dt.Add(4, "Angular");
+            dt.Add(5, "Django");
+            foreach (KeyValuePair<int,string> res in dt)
+            {
+                Console.WriteLine(res.Key+"="+res.Value);
+            }
+        }
+    }
+}
+	c) Sorted List.
+using System;
+using System.Collections.Generic;
+
+namespace Batch3PMConsoleWE
+{
+    
+    class Demo
+    {
+        static void Main()
+        {
+            SortedList<string, int> sl = new SortedList<string, int>();
+            sl.Add("pqe", 90);
+            sl.Add("qqe", 24);
+            sl.Add("gqe", 546);
+            sl.Add("dqe", 343);
+            sl.Add("tqe", 565);
+            foreach (KeyValuePair<string ,int> res in sl)
+            {
+                Console.WriteLine(res.Key+"="+res.Value);
+            }
+        }
+    }
+}
+	d) Stack.
+using System;
+using System.Collections.Generic;
+
+namespace Batch3PMConsoleWE
+{
+    
+    class Demo
+    {
+        static void Main()
+        {
+            Stack<int> st = new Stack<int>();
+            st.Push(34);
+            st.Push(54);
+            st.Push(656);
+            st.Push(2334);
+            st.Push(7656);
+            st.Pop();
+            foreach (int  res in st)
+            {
+                Console.WriteLine(res);
+            }
+        }
+    }
+}
+	e) Queue.
+using System;
+using System.Collections.Generic;
+
+namespace Batch3PMConsoleWE
+{
+    
+    class Demo
+    {
+        static void Main()
+        {
+            Queue<int> qu = new Queue<int>();
+            qu.Enqueue(34);
+            qu.Enqueue(54);
+            qu.Enqueue(656);
+            qu.Enqueue(2334);
+            qu.Enqueue(7656);
+            qu.Dequeue();
+            foreach (int  res in qu)
+            {
+                Console.WriteLine(res);
+            }
+        }
+    }
+}
+	f) HashSet.
+>> It doesn't accept Duplicate value.
+>> High Performance.
+------------------------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+
+namespace Batch3PMConsoleWE
+{
+    
+    class Demo
+    {
+        static void Main()
+        {
+            HashSet<int> hs = new HashSet<int>();
+            hs.Add(34);
+            hs.Add(344);
+            hs.Add(345);
+            hs.Add(34);
+            hs.Add(34);
+            hs.Add(899);
+            foreach (int  res in hs)
+            {
+                Console.WriteLine(res);
+            }
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
