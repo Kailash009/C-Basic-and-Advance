@@ -1,0 +1,348 @@
+How to create your own Generic Class:-
+----------------------------------------------------------------------------
+Generic Class:-
+-------------------------------
+>> It allows you can work with any data type once it must be defined.
+>> it helps to improve type safe,code-reuse and performance.
+------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+
+namespace Batch3PMConsoleWE
+{
+
+    class Test<T>   // Generic Class
+    {
+        T b;
+        public Test(T a)
+        {
+            b = a;
+        }
+        public void display()
+        {
+            Console.WriteLine(b);
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Test<int> t1 = new Test<int>(40);
+            t1.display();
+            Test<string> t2 = new Test<string>("Hello");
+            t2.display();
+            Test<double> t3 = new Test<double>(67.34);
+            t3.display();
+
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------------------------
+Generic Method:-
+-----------------------------
+using System;
+using System.Collections.Generic;
+
+namespace Batch3PMConsoleWE
+{
+    class Test
+    {
+        public static void Swap<T>(ref T a, ref T b)  // Generic Method  // 34 56
+        {
+            T temp;
+            temp = a; // temp=34 
+            a = b;     // a=56
+            b = temp;  // b=34
+            Console.WriteLine("Changes in Formal Parameter");
+            Console.WriteLine("a="+a+","+"b="+b);  // 56 // 34
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 34, b = 56;
+            char c = 'J', d = 'T';
+            double i = 3434.65, j = 123.567;
+            Console.WriteLine("Before Calling Int Values="+a+","+b);  // 34 // 56
+            Console.WriteLine("Before Calling Char Values=" + c + "," + d);  // J T
+            Console.WriteLine("Before Calling Double Values=" + i + "," + j);
+            Test.Swap<int>(ref a, ref b);  // 34 56
+            Test.Swap<char>(ref c, ref d);  // J T
+            Test.Swap<double>(ref i, ref j);
+            Console.WriteLine("After Calling Int Values=" + a + "," + b);  // 56 // 34
+            Console.WriteLine("After Calling Char Values=" + c + "," + d);  //  T  //J
+            Console.WriteLine("After Calling Double Values=" + i + "," + j); 
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------------------------
+File Handling:-
+-----------------------------------------------------
+File -> It is used for keeping a record.
+-----------------------------------------------------
+>> File stores your data in a permanent manner.
+>> In File you can store huge amount of data.
+>> In File you can also work with previous values.
+-------------------------------------------------------------------------------------------
+Types of File:-
+------------------------
+1. Text File -> Readable -> .txt  .docx, 
+2. Binary File -> Not Readable -> .mp3, mp4,bin,bat.
+-----------------------------------------------------------------------------
+File Handling:-
+-----------------------------
+>> file handling provides a tool or predefined classes to work in files.
+--------------------------------------------------------------------------------------------
+Operations Performed on File-
+-------------------------------------------------
+1. Write.  
+>> In write operation there is no need to check file is exist or not. In this write mode when file is not found it will create automatically.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2. Read.
+>> In Read Operation, File must be there.
+----------------------------------------------------------------------------------------------
+using System.IO;
+-------------------------------------
+StreamWriter
+StreamReader
+-------------------------------------------------------------------
+wap to perform write and read Operation:-
+--------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.IO;
+
+namespace Batch3PMConsoleWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            // Write a File.
+            string[] names = { "Pushpendra", "Shiva", "Ritu Raj Patel", "Sudarshan", "Chandni" };
+            using (StreamWriter sw = new StreamWriter("H://Sudarshan.txt"))
+            {
+                foreach (string res in names)
+                {
+                    sw.WriteLine(res);
+                }
+            }
+
+            // Reading a File
+            string line;
+            using (StreamReader sr = new StreamReader("H://Sudarshan.txt"))
+            {
+               while((line=sr.ReadLine())!=null)  // null!=null -> False   shiva!=null -> True
+                {
+                    Console.WriteLine(line);
+                }
+            }
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+File Handling---
+-------------------------------
+Stream-When you open a file for reading or writing, it becomes stream. Stream is a sequence of bytes traveling from a source to a destination over a communication path.A file is a collection of data stored in a disk with a specific name and a directory path. When a file is opened for reading or writing, it becomes a stream.
+1BinaryReader
+Reads primitive data from a binary stream.
+2BinaryWriter
+Writes primitive data in binary format.
+3BufferedStream
+A temporary storage for a stream of bytes.
+4Directory
+Helps in manipulating a directory structure.
+5DirectoryInfo
+Used for performing operations on directories.
+6DriveInfo
+Provides information for the drives.
+7File
+Helps in manipulating files.
+8FileInfo
+Used for performing operations on files.
+9FileStream
+Used to read from and write to any location in a file.
+10MemoryStream
+Used for random access to streamed data stored in memory.
+11Path
+Performs operations on path information.
+12StreamReader
+Used for reading characters from a byte stream.
+13StreamWriter
+Is used for writing characters to a stream.
+14StringReader
+Is used for reading from a string buffer.
+15StringWriter-Is used for writing into a string buffer.
+Methods in File-
+Close()	Closes the current StreamWriter object and stream associate with it.
+Flush()	Clears all the data from the buffer and write it in the stream associate with it.
+Write()	Write data to the stream. It has different overloads for different data types to write in stream.
+WriteLine()It is same as Write() but it adds the newline character at the end of the data.
+-----------------------------------------------------------------------------------------------------------------------------------------
+Delegates:-
+-----------------------
+>> Delegates is a reference type variable that holds methods to a reference.
+>> It doens't have any implementation.
+>> It is similar to pointer in c or c++.
+>> It defined which method is to be called when an event has occured.
+----------------------------------------------------------------------------------------------------------------------
+you need to follow three steps:-
+--------------------------------------------------
+1. Declaration.
+2. Instantiation.
+3. Calling.
+---------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.IO;
+
+namespace Batch3PMConsoleWE
+{
+    public delegate int dosomething(int a); // Declaration
+    class Demo
+    {
+        static int num = 10;
+        public static int Add(int n)
+        {
+            num = num + n;
+            return num;  // 20
+        }
+        public static int Mult(int n)
+        {
+            num = num * n;  // 20*5
+            return num;   // 100
+        }
+        public static int display()
+        {
+            return num;  // 20   //100
+        }
+
+        static void Main()
+        {
+            dosomething dc1 = new dosomething(Add); // Instantiation.
+            dosomething dc2 = new dosomething(Mult); // Instantiation.
+            dc1(10); // Calling
+            Console.WriteLine("Sum=" + display());  // 20
+            dc2(5); // Calling
+            Console.WriteLine("Multiply=" + display());  //100
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------
+Constructor:- Pending
+-----------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
