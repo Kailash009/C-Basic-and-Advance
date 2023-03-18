@@ -1,0 +1,335 @@
+Constructor:-
+----------------------------
+>> It is a special type of method, that contains the same name of class.
+>> It doesn't return any value.
+>> it calls automatically when we create an object of a class.
+>> It is used for variable initialize.
+-----------------------------------------------------------------------------------------------------------------
+Types of Constructor:-
+--------------------------------
+1. Default Constructor/Non-Parameterized.
+>> In this we can't pass any parameter.
+using System;
+
+namespace Batch3PMConsoleWE
+{
+    class Employee
+    {
+        Employee()   // Default Constructor.
+        {
+            Console.WriteLine("hello Default Constructor..");
+        }
+        static void Main()
+        {
+            Employee emp = new Employee();
+        }
+    }
+}
+--------------------------------------------------------------------------------
+2. Parameterized constructor.
+>> In it , we pass parameter is called parameterized constructor.
+using System;
+
+namespace Batch3PMConsoleWE
+{
+    // Constructor using Method.
+    class Employee
+    {
+        string n; int a;
+        Employee(string name, int age)   // Parameterized Constructor.
+        {
+            n = name;
+            a = age;
+        }
+        public void getDetails()
+        {
+            Console.WriteLine("Name="+n);
+            Console.WriteLine("Age="+a);
+        }
+        static void Main()
+        {
+            Employee emp = new Employee("Ram",23);
+            emp.getDetails();
+        }
+    }
+}
+
+-------------------------------------------------------------------------------------------
+3. copy constructor.
+>>  it is used to copy one constructor value into constructor.
+using System;
+using System.Security.Cryptography.X509Certificates;
+
+namespace Batch3PMConsoleWE
+{
+    // Copy Constructor.
+    class Employee
+    {
+        string n; int a;
+        Employee(string name, int age)   // Parameterized Constructor.
+        {
+            n = name;
+            a = age;
+            Console.WriteLine("First Constructor value=");
+            Console.WriteLine("Name="+n);  // Ram
+            Console.WriteLine("Age=" + a); //23
+        }
+        Employee(Employee empOBj)
+        {
+            n = empOBj.n;
+            a = empOBj.a;
+            Console.WriteLine("Copy Constructor");
+            Console.WriteLine("Name="+n);
+            Console.WriteLine("Age="+a);
+        }
+        static void Main()
+        {
+            Employee emp1 = new Employee("Ram",23);  // emp1 = 1000
+            Employee emp2 = new Employee(emp1);  // COpy constructor worked here.
+        }
+    }
+}
+----------------------------------------------------------------------------------
+Assignment Question:-
+----------------------------------------------
+4. Private constructor.
+5. Static constructor.
+----------------------------------------------------------
+this Keyword in c#:-
+--------------------------------
+>> this keyword is used for current calling object.
+>> when function variable and class variables/Instance variable are same then we use the concept of this keyword.
+------------------------------------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Security.Cryptography.X509Certificates;
+
+namespace Batch3PMConsoleWE
+{
+    class Employee
+    {
+        string name; // Class Variable/Instance variable
+        int age;
+        Employee(string name, int age)  // Method Variable
+        {
+            this.name = name;
+            this.age = age;
+        }
+        public void display()
+        {
+            Console.WriteLine("Name="+this.name);
+            Console.WriteLine("Age=" + this.age);
+        }
+        static void Main()
+        {
+            Employee emp1 = new Employee("Ram", 23);
+            emp1.display();
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------------------------------
+Reflection:-
+------------------------
+>> it is used to provide meta information of any type,class,method or interface.
+To get meta information reflection has some pre-defined methods or properties which are as follows:-
+Type
+MemberInfo
+ConstructorInfo
+MethodInfo
+FieldInfo
+PropertyInfo
+TypeInfo
+Assembly
+-----------------------------------------------------------------------------------------------------------
+using System;
+using System.Security.Cryptography.X509Certificates;
+
+namespace Batch3PMConsoleWE
+{
+    class Employee
+    {
+        static void Main()
+        {
+            Type t = typeof(System.String);
+            Console.WriteLine(t.Assembly);
+            Console.WriteLine(t.IsInterface);
+            Console.WriteLine(t.BaseType);
+            Console.WriteLine(t.FullName);
+            Console.WriteLine(t.IsEnum);
+        }
+    }
+}
+----------------------------------------------------------------
+using System;
+using System.Security.Cryptography.X509Certificates;
+
+namespace Batch3PMConsoleWE
+{
+    class Employee
+    {
+        static void Main()
+        { 
+            Console.WriteLine(a.Length);
+            Type t = typeof(System.String);
+            Console.WriteLine(t.Assembly);
+            Console.WriteLine(t.IsInterface);
+            Console.WriteLine(t.BaseType);
+            Console.WriteLine(t.FullName);
+            Console.WriteLine(t.IsEnum);
+            Console.WriteLine(a.Count());
+        }
+    }
+}
+--------------------------------------------------------------------------------
+Enum -> 
+>> it is a group constant.
+>> Enum indexing start from 0.
+using System;
+using System.Security.Cryptography.X509Certificates;
+
+namespace Batch3PMConsoleWE
+{
+    enum OTP
+    {
+       Verified=100,Failed,Timeout,Success    // Enum Creation.
+
+    };
+    class Employee
+    {
+        static void Main()
+        {
+            int res =(int)OTP.Failed;
+            Console.WriteLine(res);  // 1
+            string res1 =Convert.ToString(OTP.Timeout);
+            Console.WriteLine(res1); // Timeout
+        }
+    }
+}
+---------------------------------------------------------------
+Enum inside Class:-
+----------------------------------
+using System;
+using System.Security.Cryptography.X509Certificates;
+
+namespace Batch3PMConsoleWE
+{
+    class Employee
+    {
+        enum OTP
+        {
+            Verified = 100, Failed, Timeout, Success    // Enum Creation.
+
+        };
+        static void Main()
+        {
+            int res =(int)OTP.Failed;
+            Console.WriteLine(res);  // 1
+            string res1 =Convert.ToString(OTP.Timeout);
+            Console.WriteLine(res1); // Timeout
+        }
+    }
+}
+------------------
+Enum in switch case:-
+----------------------------
+using System;
+using System.Security.Cryptography.X509Certificates;
+
+namespace Batch3PMConsoleWE
+{
+    enum OTP
+    {
+        Verified = 100, Failed, Timeout, Success    // Enum Creation.
+
+    };
+    class Employee
+    {  
+        static void Main()
+        {
+            switch (OTP.Success)
+            {
+                case OTP.Verified:
+                    Console.WriteLine("Verified");
+                    break;
+                case OTP.Failed:
+                    Console.WriteLine("Failed");
+                    break;
+                case OTP.Timeout:
+                    Console.WriteLine("Timeout");
+                    break;
+                case OTP.Success:
+                    Console.WriteLine("Success");
+                    break;
+                default:
+                    Console.WriteLine("Try Again!!!");
+            }
+        }
+    }
+}
+------------------------------------------------------------------------------------------
+---------------------------------------
+REFLECTION- In C#, reflection is a process to get metadata of a type at runtime. The System.Reflection namespace contains required classes for reflection such as:
+Type
+MemberInfo
+ConstructorInfo
+MethodInfo
+FieldInfo
+PropertyInfo
+TypeInfo
+Assembly
+-------------------------------------------
+class TestReflection
+    {
+        static void Main()
+        {
+                int a = 10;
+                Type type = a.GetType();
+                Console.WriteLine(type);
+            }
+        }
+    }
+---------------------------------------------------------
+class TestReflection
+    {
+        static void Main()
+        {
+            Type t = typeof(System.String);
+            Console.WriteLine(t.Assembly);
+        }
+        }
+    }
+-----------------------------------
+class TestReflection
+    {
+        static void Main()
+        {
+            Type t = typeof(System.String);
+            Console.WriteLine(t.FullName);
+            Console.WriteLine(t.BaseType);
+            Console.WriteLine(t.IsClass);
+            Console.WriteLine(t.IsEnum);
+            Console.WriteLine(t.IsInterface);
+        }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
