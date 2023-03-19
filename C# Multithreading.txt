@@ -1,0 +1,481 @@
+Multithreading:-
+----------------------------
+Thread:-
+------------------------
+>> It is a single execution flow of program.
+>> short term process is known as thread.
+Types of Thread:-
+-----------------------------
+1. Single Threading. -> it execute single job at a time.
+2. MultiThreading. -> It executed multiple jobs at a time.
+-------------------------------------------------------------------------------------------------
+O.S -> CPU -> Central Processing Unit.  ->>>> Round Robin Scheduling.
+---------------------------------------------------------------------------------------------------
+Need of Multithreading.:-
+------------------------------------
+p1 -> 10 Min.
+p2 ->  3 Min.
+p3 ->  1 Min.     ->>> 13 Min wait. (IDEAL)
+---------------------------------------------------------------------------
+With Multithreading:-
+-------------------------------------
+p1 -> 10 Min  -> run  -> complete. 
+p2 -> 3 mIn.  -> run -> complete
+p3 -> 1 min  -> run.  -> complete
+---------------------------------------------------------------------------
+Thread Life Cycle:-
+------------------------------
+1. start.
+2. sleep.
+3. abort.
+4. terminate.
+5. suspend.
+6. resume.
+--------------------------------------------------------------------
+using System.Threading.
+--------------------------------------------------------------------
+using System;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading;
+
+namespace Batch3PMConsoleWE
+{
+    class Employee
+    {
+        static void test1()
+        {
+            for (int i = 1; i <= 20; i++)
+            {
+                Console.WriteLine("Test1="+i);  // P1 = 20 Min.
+            }
+        }
+        static void test2()
+        {
+            for (int i=1; i<=10;i++)
+            {
+                Console.WriteLine("Test2="+i);  // p2 = 10 Min.  => 20 min Ideal.... (30 Min to Complete)
+            }
+        }
+        static void Main()
+        {
+            Thread t1 = new Thread(new ThreadStart(test1));
+            t1.Start();
+            Thread t2 = new Thread(new ThreadStart(test2));
+            t2.Start();
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading;
+
+namespace Batch3PMConsoleWE
+{
+    class Employee
+    {
+        static void Main()
+        {
+            for (int i = 1; i <= 20; i++)
+            {
+                Console.WriteLine(i);
+                Thread.Sleep(5000);
+            }
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+Extension Method:-
+------------------------------------------
+>> To add something.
+>> Downward arrow key.
+------------------------------------------------
+Rules to create Extension method:-
+------------------------------------------------
+1. class must be static.
+2. method must be static.
+3. method parameter/argument it must contain 'this' keyword.
+-------------------------------------------------------------------------------------------
+you can create extension method in the following two ways:-
+---------------------------------------------------------------------------------
+First:-
+------------------
+>> wap to input the string in lower case and output is in Upper Case.(Extension Method)
+// wap to create extension method that convert each string first character in upper case.
+input -> ritu raj patel.
+output-> Ritu Raj Patel.
+--------------------------------------------------------------------
+using System;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading;
+
+namespace Batch3PMConsoleWE
+{
+    static class Test
+    {
+        internal static string getUpperCase(this string input)
+        {
+            return input.ToUpper();
+        }
+    }
+    class Employee
+    {
+        static void Main()
+        { 
+          string res= Test.getUpperCase("riturajpatel");
+          Console.WriteLine(res);
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------
+Second Way:-
+------------------------------------------
+Create Class Library.
+namespace ExtensionMethod
+{
+    public class Ram
+    {
+        public void display()
+        {
+            Console.WriteLine("Hello Ram!!");
+        }
+        public void show()
+        {
+            Console.WriteLine("Enjoy C# Extension Method!!");
+        }
+    }
+}
+-------------------------------------------------------------------------------------------
+using ExtensionMethod;
+using System;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading;
+
+namespace Batch3PMConsoleWE
+{ 
+    static class Test
+    {
+       internal static void getUser(this Ram rm)
+        {
+            Console.WriteLine("Hello Get User");
+        }
+    }
+    class Employee
+    {
+        static void Main()
+        {
+            Ram rmObj = new Ram();
+            rmObj.display();
+            rmObj.show();
+            rmObj.getUser();
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------------------
+String Interpolation:-
+-------------------------------------
+>> To perform this we use this symbol $.
+{}  -> In curly braces we pass variable name.
+---------------------------------------------------------------------------------------------------------
+using ExtensionMethod;
+using System;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading;
+
+namespace Batch3PMConsoleWE
+{
+    class Hello
+    {
+        public static int a = 34;
+        public static void test()
+        {
+            Console.WriteLine("Hello");
+        }
+    }
+    class Employee
+    { 
+        static void Main()
+        {
+            string str = "Ram";
+            string str1 = "is a Sofware Developer";
+            string str2 = "working in TCS";
+            string res = $"Hello!{str} {str1} and {str2} {Hello.a}{Hello.test}";
+            Console.WriteLine(res);
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------
+Optional Parameter:-
+--------------------------------------
+>>  Function Defination and function calling parameter must be same.
+>> with the help of optional parameter it is not necessary both must be same.
+using ExtensionMethod;
+using System;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading;
+
+namespace Batch3PMConsoleWE
+{
+    class Test
+    {
+        public static void Operation(string name="Shyam", int age=19, string address="New Ashok Nagar") // Optional Parameter
+        {
+            Console.WriteLine("Name="+name);
+            Console.WriteLine("Age="+age);
+            Console.WriteLine("Address="+address);
+        }
+    }
+   class Employee
+    { 
+        static void Main()
+        {
+            Test.Operation("Ram",30);
+            Test.Operation();
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------------
+Named Parameter:-
+----------------------------------
+using ExtensionMethod;
+using System;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading;
+
+namespace Batch3PMConsoleWE
+{
+    class Test
+    {
+        public static void Operation(string name, int age, string address) // Named Parameter
+        {
+            Console.WriteLine("Name="+name);
+            Console.WriteLine("Age="+age);
+            Console.WriteLine("Address="+address);
+        }
+    }
+   class Employee
+    { 
+        static void Main()
+        {
+            Test.Operation(age:20, address:"New ashok nagar", name:"Ram");  // Named Parameter
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------------------------
+Anonumous Type:-
+---------------------------------
+>> without  name.
+----------------------------------
+using ExtensionMethod;
+using System;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading;
+
+namespace Batch3PMConsoleWE
+{
+   class Employee
+    { 
+        static void Main()
+        {
+            var employee = new { id = 101, Name = "Ram", Age = 20, Address = "New Ashok Nagar" };  // Anonymous Type.
+            Console.WriteLine(employee.id);
+            Console.WriteLine(employee.Name);
+            Console.WriteLine(employee.Age);
+            Console.WriteLine(employee.Address);
+        }
+    }
+}
+------------------------------------------------
+Retreiving Multiple values:-
+----------------------------------------
+using ExtensionMethod;
+using System;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading;
+
+namespace Batch3PMConsoleWE
+{
+    // Anonymous Type.
+    class Customer
+    {
+        public int cid;
+        public string name;
+        public int age;
+        public string address;
+    }
+   class Employee
+    { 
+        static void Main()
+        {
+            List<Customer> custList = new List<Customer> { 
+            new Customer{cid=101,name="Rohit",age=19,address="New Ashok Nagar"},
+            new Customer{cid=102,name="Subham",age=29,address="Noida sec-24"},
+            new Customer{cid=103,name="Pushpendra",age=49,address="Kriti Nagar"},
+            new Customer{cid=104,name="arun",age=13,address="Patel Nagar"},
+            new Customer{cid=105,name="kunal",age=14,address="Ruchi khand"},
+            new Customer{cid=106,name="Ram",age=56,address="Preet Vihar"},
+            };
+            foreach (var cust in custList)
+            {
+                Console.WriteLine(cust.cid);
+                Console.WriteLine(cust.name);
+                Console.WriteLine(cust.age);
+                Console.WriteLine(cust.address);
+            }
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
