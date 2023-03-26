@@ -1,0 +1,323 @@
+Assembly -
+---------------------
+>> An assembly is an dll or exe file in dot net.
+>> It is like a namesapce.
+>> It is a building block of dot net framework.
+-------------------------------------------------------------------------------
+Types of assembly:-
+1. Public Assembly. (Shared Assembly). -> which we can shared.  (.dll) --> Dynamic Link Library.
+2. Private Assembly. -> which we can't shared. (.exe)
+--------------------------------------------------------------------------------------------------------------------------------------
+how to create public assembly (.dll):-
+------------------------------------------------------------------
+>> Create Class Library Template.
+-------------------------------------------------------------------
+Assignment:-
+-----------------------
+Create a dll of Temprature calculator F to C and vice- versa.
+-------------------------------------------------------------------------------------------
+SQL:-
+----------------
+>> Sql stands for Structured Query Language.
+>> Sql is platform dependent language. (it installed only windows O.S.)
+>> it is not a case sensitive.
+>> sql is a database language ie used to manage,manipulate and retrieve your data very efficient and effective manner.
+>> It provide both GUI and CUI based.
+-------------------------------------------------------------------------------
+Database Language:-
+------------------------------------------
+1. DDL (Data Defination Language) -> create,alter,drop,truncate,rename,comment.
+2. DML (Data Manipulation Language) -> insert,update,delete.
+3. DCL (Data Control Language) -> grant,revoke.
+4. TCL (Transaction Control Language) -> begin transaction,commit,rollback,savepoint.
+5. DQL (Data Query Language) -> select.
+-----------------------------------------------------------------------------------------------------------------------------------------------
+GUI ->  CRUD
+-----------------------------------------------------
+Primary Key:-
+-------------------------
+>> It doesn't allow Null and Duplicate Value.
+Not Null   -> You can't leave it blank.
+No Duplicate -> 1 1
+---------------------------------------------------------------------
+CUI:-
+------------
+1. Command to create database.
+create database database_name
+2. command to select your database.
+use database_name
+3. Command to create table
+create table table_name
+(
+colname1 datatype,
+colname2 datatype(size),
+.
+.
+.
+.
+colnameN datatypeN
+)
+--------------------------------------------------------------------------------------------------------------
+identity(seed,inc)
+seed -> starting value.
+inc -> how much inc you want
+identity(1,1) -> 
+identity(101,3) -> 
+----------------------------------------------------------------------------
+Insert a Record:-
+------------------------------
+1. Insert into all column.
+insert into tablename values(value1,value2,value3.........valueN)
+------------------------------------------------------------------------------------------------
+2, Insert into Particular column.
+insert into tablename(col1,col4,col7) values(value1,value4,value7)
+----------------------------------------------------------------------------------------------
+Select Record:-
+----------------------------
+a) Select all rows and all column
+select * from tbl_Employee
+b) Select specific row and all column
+select * from tbl_Employee where eid=3
+c) select all row but specific column.
+select ename,eage,salary from tbl_Employee
+d) select specific row and column.
+select ename,eage,salary from tbl_Employee where eid=2
+----------------------------------------------------------------------------------------
+Update:-
+----------------------
+a) Update one Record.
+update tablename set colname='new value' where colname='oldvalue'
+update tbl_Employee set ename='PRATAP SINGH' WHERE EID=3
+---------------------------------------------------------------------------------------------------
+b) Update multiple Record.
+update tablename set colname1='new value1',colname2='new value2',colname3='new value3' where colname='oldvalue'
+update tbl_Employee set ename='ARUN MISHRA',eage=43,eaddress='MAYUR VIHAR',salary=112233 WHERE EID=4
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Delete:-
+----------------
+a) Delete specific record.
+delete from tablename where colname='value'
+----------------------------------------------------------
+delete from tbl_Employee where eid=3
+b) Delete all records.
+delete from tablename
+delete from tbl_Employee
+---------------------------------------------------------------------------
+DROP :-
+-----------------
+drop table table_name
+drop database database_Name
+--------------------------------------------------
+create database Batch3PMWE
+use Batch3PMWE
+
+create table tbl_Employee
+(
+eid int primary key identity(1,1),
+ename nvarchar(50),
+eage int,
+eaddress nvarchar(50),
+salary money
+)
+
+select * from tbl_Employee
+
+insert into tbl_Employee(ename,eage,eaddress,salary) values('sudarshan',10,'new ashok nagar',2300)
+insert into tbl_Employee(ename,eage,eaddress,salary) values('rohit',13,'bihar nagar',3300)
+insert into tbl_Employee(ename,eage,eaddress,salary) values('pratap',14,'rishi nagar',4300)
+insert into tbl_Employee(ename,eage,eaddress,salary) values('arun',15,'mohan nagar',5300)
+insert into tbl_Employee(ename,eage,eaddress,salary) values('bablu',16,'azad nagar',6300)
+
+select * from tbl_Employee
+select * from tbl_Employee where eid=3
+select ename,eage,salary from tbl_Employee
+select ename,eage,salary from tbl_Employee where eid=2
+
+select * from tbl_Employee
+
+update tbl_Employee set ename='PRATAP SINGH' WHERE EID=3
+update tbl_Employee set ename='ARUN MISHRA',eage=43,eaddress='MAYUR VIHAR',salary=112233 WHERE EID=4
+
+
+delete from tbl_Employee where eid=3
+select * from tbl_Employee
+delete from tbl_Employee
+drop table tbl_Employee
+drop database Batch3PMWE
+--------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
