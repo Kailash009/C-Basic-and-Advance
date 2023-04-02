@@ -1,0 +1,266 @@
+Variable:-
+----------------
+>> It is also known as Identifier.
+>> Variable is a memory location that is used to store a value.
+---------------------------------------------------------------------------------------------
+Variable Initialization:-
+---------------------------------------
+>> To assign value into a variable.
+For ex- int a=100;  // 100 value assign into a variable a.
+------------------------------------------------------------------------------------------
+Variable Declaration:-
+-------------------------------------------
+>> Don't provide any value into a variable.
+For Ex:- int a,b,c;
+--------------------------------------------------------------------
+Rules for Declaring a variable:-
+-----------------------------------------------------
+1. Variable name first letter start with character only.
+int abc123=45;
+2. Variable name can't start from digit.
+int 12ad=45;  (Wrong).
+3. Variable name can't be keyword.
+int while=34; (Wrong)
+4. Spaces are not allowed between variable name.
+  int a       b=34;
+5.  Underscore is allowed between variable name
+int a_b=23;
+6. Hyphen is not allowed between variable name.
+int a-b=12; (Wrong)
+7. Both Upper and Lower case letters are treated as two different variable name.
+int age=12;
+int Age=34;
+int AGE=45;
+-------------------------------------
+Constant:-
+-------------------
+>> it is also knonw as Literals.
+>> Constant is a fixed value i.e. never going to be changed througout the whole program.
+Types of Constant:-
+----------------------------------
+1. Numeric. -> it hold numeric values. (1,2,3,4,...............) etc.
+	a) Octal Constant. -> 0 to 7.
+	b) Decimal Constant. -> 0 to 9.
+	c) Hexadecimal Constant. -> 0 to 15.
+	d) Real or Floating Point Constant. -> It hold numeric and decimal values. -> 1,2,   1.2,45.2,78.2 etc.
+2. Character.
+>> it hold only single value.
+>> it is represented by single quotes. (' ')
+For Ex:-    '1'  ,  'a'   ,    '$'  etc.
+3. String Constant.
+>> It hold multiple values.
+>> It is represented by double quotes(" ").
+For Ex:-    "123"  ,  "hello"   ,    "kjhk4334#&^&^&#"  etc.
+------------------------------------------------------------------------------------------------------------------------------------
+Data Types:-
+-------------------------
+>> It identifies that which type of value a variable can hold.
+int a=2;
+int -> Data  type
+a -> Variable Name
+= -> Assignment Operator.
+2 -> Constant Value.
+-------------------------------------------
+Types of Data type:-
+-----------------------------------
+1. Primitive Data type.    (Stack Memory) --> Slow
+>> It is used to represent only single value.
+bool => 1 byte.
+int -> 4 byte (32 bit)
+char -> 2 byte (16 bits)
+float -> 4 byte (32 bits)
+double -> 8 byte (64 bits)
+-----------------------------------------------------
+2. Non-Primitive/Reference Data type.  -> (Heap Memory)  -> Fast.
+>> it holds more than one value.
+string,array,object,class,interface,delegate etc.
+----------------------------------------------------------------------------------
+Input / Output:-
+--------------------------------
+In every two things are very important.
+	a) How to take input.
+	b) How to show output.
+To Take Input in C# :-
+Console.readLine()
+--------------------------------------
+To Display the Output in C#:-
+--------------------------------------
+Console.writeLine();
+---------------------------------------
+How to Download SQL Server:-
+----------------------------------------
+1. Install Sql Server.
+https://www.microsoft.com/en-in/sql-server/sql-server-downloads  ->>> Express.
+------------------------------------------------------------------------------------------------------------
+2. Install SSMS (Sql Server Management Studio)
+https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+How to take Console Based Application Project in Visual Studio:-
+----------------------------------------------------------------------------------------
+using System;
+
+namespace Batch12PMWESushil
+{
+    class Demo
+    {
+        static void Main()
+        {
+            Console.Write("Welcome to My First Program");
+            Console.Write("Welcome to My Second Program");
+            Console.Write("Welcome to My Third Program");
+        }
+    }
+}
+---------------------------------------------------------------------------------------------
+using System;
+
+namespace Batch12PMWESushil
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 23;  // Initialization
+            Console.WriteLine(a);
+
+        }
+    }
+}
+-------------------------------------------------------------------------
+wap to input two number and find the sum.
+------------------------------------------------------------------------
+using System;
+
+namespace Batch12PMWESushil
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a, b, c;
+            Console.WriteLine("Enter two Number=");
+            a = Convert.ToInt32(Console.ReadLine());
+            b = Convert.ToInt32(Console.ReadLine());
+            c = a + b;
+            Console.WriteLine("Sum="+c);
+
+        }
+    }
+}
+-----------------------------------------------------------------------------------------
+using System;
+using System.Security.Cryptography.X509Certificates;
+
+namespace Batch12PMWESushil
+{
+    class Demo
+    {
+        static void Main()
+        {
+           const int a = 34;  // FIXED
+            a = 123;  // Not able to assign again
+        }
+    }
+}
+-----------------------------------------------------------------------------------
+Assignment Question:-
+--------------------------------------
+1. wap to input two no. and find the swap using third variable. 
+2. wap to input two no. and find the swap without using third variable.
+3. wap to input the length and breath of rectangle and find its area, perimeter and diagonal.
+4. wap to iinput the radius of circle and find the area and circumference.
+5. wap to input the number in farenhite and convert it into celcius and vice-versa.
+------------------------------------------------------------------------------------------------------------------------------------------------- 
+Type Casting in C#  -->> Pending.
+----------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
