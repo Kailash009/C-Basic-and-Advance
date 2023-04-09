@@ -1,0 +1,220 @@
+Type Conversion in C# :-
+--------------------------------------------
+>> It is the process in which we convert one data type into another data type.
+Types of Type Conversion:-
+---------------------------------------------
+In C# there are three types of type conversion which are as follows:-
+1. Implicit 
+>> It is also known as Automatic type conversion.
+>> In implicit , we convert lower data type value into higher data type.
+>> In this, there will be no data loss.
+For Example:-
+--------------------------
+int a=34;
+double b=a;    // Implicit Type Conversion
+--------------------------------------------------------------
+using System;
+namespace Batch12PMWESushil
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 34;
+            double b = a;
+            Console.WriteLine(b);
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------
+2. Explicit.
+>> It is also known as Type Casting.
+>> In this type, we can convert higher data type value into lower data type.
+For Example:-
+-------------------------
+double b=34.567;
+int a=b; // .567 data will be loss.
+using System;
+namespace Batch12PMWESushil
+{
+    class Demo
+    {
+        static void Main()
+        {
+            double b = 45.678;  // BUS
+            int a = (int)b;  // Auto  // Type Casting
+            Console.WriteLine(a); // 45    // .678 Loss
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------
+3. Conversion between Incompatible types.
+-----------------------------------------------------------------------------------------------------
+string  -- int
+-------------------------------------
+>> To convert incompatible types we have following technique:-
+1. Convert Class.
+2. parse Method.
+-------------------------------------------------------------------------------------------------
+using System;
+namespace Batch12PMWESushil
+{
+    class Demo
+    {
+        static void Main()
+        {
+            string a = "12345";
+            //int b =Convert.ToInt32(a);
+            int b =int.Parse(a);
+            Console.WriteLine(b);  // 12345
+        }
+    }
+}
+-------------------------------------------------------------------------
+using System;
+namespace Batch12PMWESushil
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a, b, c;
+            Console.WriteLine("Enter two number=");
+            a =Convert.ToInt32(Console.ReadLine());
+            b = int.Parse(Console.ReadLine());
+            c = a + b;
+            Console.WriteLine("Sum="+c);
+        }
+    }
+}
+--------------------------------------------------------------------------------------
+Boxing and UnBoxing:-
+----------------------------------------
+Boxing  -> To convert value type (int,float,char,double,boolean,byte) to reference type. (enum,string,object,class,array,delegate)
+>> It uses Stack Memory.
+For Ex:-
+--------------
+using System;
+namespace Batch12PMWESushil
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a=334;  // Value Type.
+            object b = a; // Reference Type. // Boxing
+            Console.WriteLine(a);
+        }
+    }
+}
+-----------------------------------------------------------------------------------
+UnBoxing -> To convert reference type to value type.
+>> It is an explicit conversion process.
+>> It uses Heap Memory.
+-------------------------------------------------------------------------------------------
+Example of Value Type  :-
+------------------------------------------
+>> Whatever changes made to the formal parameter, it doesn't reflect back to the actual parameter.
+-----------------------------------------------------------------------------------------------------------------------------------------
+using System;
+namespace Batch12PMWESushil
+{
+    class Demo
+    {
+        public static void ValueType(int a, int b)  // a= 10 // b= 20 Formal Parameter  // Function Defination
+        {
+            int temp;
+            temp = a;  // temp= 10
+            a = b;     // a=20
+            b = temp;  // b=10
+            Console.WriteLine("Changes in Formal Parameter="+a+","+b);  // 20   // 10
+        }
+        static void Main()
+        {
+            int i=10, j=20;
+            Console.WriteLine("Before Calling Function");
+            Console.WriteLine("i="+i); // 10
+            Console.WriteLine("j=" + j);  // 20
+            ValueType(i,j);  //  Actual Parameter  // Function Calling
+            Console.WriteLine("After Function Calling");
+            Console.WriteLine("i=" + i);  // 10
+            Console.WriteLine("j=" + j);  // 20
+        }
+    }
+}
+-----------------------------------------------------------------
+Example of Reference type 
+------------------------------------------------------------
+>> Whatever changes made to the formal parameter, it reflect back to the actual parameter.
+using System;
+namespace Batch12PMWESushil
+{
+    class Employee
+    {
+        public string Name;
+        public int Age;
+    }
+    class Demo
+    {
+        public static void ReferenceType(Employee empObj)  // a= 10 // b= 20 Formal Parameter  // Function Defination
+        {
+            empObj.Name = "SUSHIL";
+            empObj.Age = 23;
+            Console.WriteLine("Changes in Formal Parameter="+empObj.Name+","+empObj.Age);  // SUSHIL   // 23
+        }
+        static void Main()
+        {
+            Employee emp = new Employee(); // emp=1000
+            emp.Name = "Akarsh";
+            emp.Age = 19;
+            Console.WriteLine("Before Calling Function");
+            Console.WriteLine("Name="+emp.Name); // Akarsh
+            Console.WriteLine("Age=" + emp.Age);  // 19
+            ReferenceType(emp);  //  Actual Parameter  // Function Calling
+            Console.WriteLine("After Function Calling");
+            Console.WriteLine("Name=" + emp.Name);  // SUSHIL  
+            Console.WriteLine("Age=" + emp.Age);  // 23
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
