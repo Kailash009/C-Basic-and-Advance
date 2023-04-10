@@ -1,0 +1,140 @@
+Language:-
+--------------------
+>> It is used for communication purpose.
+----------------------------------------------------------------------
+There are three types of Language:-
+1. Low Level Language / Machine Language.  ->>> it is understandable by computer. ->> 1010101010101
+2. Middle Level Language. -> C language.
+3. High Level Langauge. -> C#,python ,php,java,C++ and many more.
+----------------------------------------------------------------------------------------------------------------
+C#:-
+-----------------
+>> C# is high level,object oriented,platform independent and type safe programming language.
+Like C programming language.
+int a="Hello"; --->>> (Type Unsafe)   At a time it will not show any error.After compilation it will show an error.
+IN C#  -> Type Safe
+int a="Hello";  (Before Compilation it will show an error.)
+---------------------------------------------------------------------------------------------
+Dot Net Framework:-
+-----------------------------------------
+>> Dot Net is not a programming language, it is a framework to build various kind of application.
+>> It support multiple programming language. (62+)
+There are major two types of application in the market:-
+a) CUI. (Command User Interface).  -> Console Based Application.  ---> cmd (Command Prompt)
+>> In this type of application you should write the commands if you know the command then you can easily interact with this type of applications.
+b) GUI. (Graphical User Interface).
+ 	a) Desktop Applications --- Windows Based Application.
+>> An application that runs with the help of O.S.
+>> It must be installed on O.S.
+For Ex -> Word,Excel,Tally,Photoshop,calc etc.
+Compatibility Issue ----->>>  i3 500 GB HDD, 4 GB RAM  ->>>   i7, 1 tb hdd,8 gb ram.
+	b) Web Application:-
+>> An application that runs with the help of Web Browser.
+>> It follows client-server architecture.
+>> It can be access anywhere.
+	c) Android Application/Mobile Application  ->>> Mono/Xamarin Framework.
+	d) Web Services. -> WCF,WPF.
+	e) WebAPI.
+----------------------------------------------------------------------------------------------------------------------------
+Dot Net Components:-
+---------------------------------------
+There are two major components of Dot net Framework which are as follows:-
+a)  CLR :-
+>> It stands for Common Language Runtime.
+>> All dot net applications can executed with the help of CLR.
+>> It is the heart of dot net framework.
+	CLR has some sub Component:-
+	i)  CTS (Common Type System)
+>> All primitive data type(int,char,float,boolean,byte,double,long) are defined into CTS.
+	ii) CLS (Common Language Specification)
+>> After compilation of your code you didn't get any difference. (MSIL) -> Microsoft Intermediate Language.
+	iii) GC (Garbage Collection)
+>> GC free up / released the unsused memory or object of your program.
+>> It works like a automatic memory management.
+	iv) Native Code 
+>> It is machine code that can run / execute in your machine.
+-----------------------------------------------------------------------------------------------------------------------------------------
+b)  BCL/FCL -> 
+>> It stands for Base Class Library/Framework Class Library.
+>> All predefined methods,classes,or interfaces are defined into it.
+for Ex:-
+In C--
+#include<stdio.h>  // Preprocessor Directive.
+printf()
+scanf()
+=============================================================
+In C#:-
+------------------
+using System;  // BCL/FCL
+Console.readLine(); -> To take input from the User.
+Console.WriteLine(); -> To Display the result.
+---------------------------------------------------------------------------------------------------------
+Compilation Process of C#:-
+----------------------------------------------------------------
+>> It is a two-way compilation process.
+1. In First Compilation process, our source code converted into MSIL Code. MSIL Code is a machine dependent code you can't run this code with any machine.
+2. In Second Compilation process, CLR introduced JIT Compiler, With the help of JIT compiler our MSIL code converted into Native Code/Machine/Byte Code.  101010101010 (Machine Independent Code) mac,linux,windows.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
