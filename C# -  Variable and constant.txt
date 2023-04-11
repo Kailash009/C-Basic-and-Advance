@@ -1,0 +1,213 @@
+C#:-
+-----------------
+Language:-
+--------------------
+>> It is used for communication purpose.
+----------------------------------------------------------------------
+There are three types of Language:-
+1. Low Level Language / Machine Language.  ->>> it is understandable by computer. ->> 1010101010101
+2. Middle Level Language. -> C language.
+3. High Level Langauge. -> C#,python ,php,java,C++ and many more.
+----------------------------------------------------------------------------------------------------------------
+C#:-
+-----------------
+>> C# is high level,object oriented,platform independent and type safe programming language.
+Like C programming language.
+int a="Hello"; --->>> (Type Unsafe)   At a time it will not show any error.After compilation it will show an error.
+IN C#  -> Type Safe
+int a="Hello";  (Before Compilation it will show an error.)
+---------------------------------------------------------------------------------------------
+Dot Net Framework:-
+-----------------------------------------
+>> Dot Net is not a programming language, it is a framework to build various kind of application.
+>> It support multiple programming language. (62+)
+There are major two types of application in the market:-
+a) CUI. (Command User Interface).  -> Console Based Application.  ---> cmd (Command Prompt)
+>> In this type of application you should write the commands if you know the command then you can easily interact with this type of applications.
+b) GUI. (Graphical User Interface).
+ 	a) Desktop Applications --- Windows Based Application.
+>> An application that runs with the help of O.S.
+>> It must be installed on O.S.
+For Ex -> Word,Excel,Tally,Photoshop,calc etc.
+Compatibility Issue ----->>>  i3 500 GB HDD, 4 GB RAM  ->>>   i7, 1 tb hdd,8 gb ram.
+	b) Web Application:-
+>> An application that runs with the help of Web Browser.
+>> It follows client-server architecture.
+>> It can be access anywhere.
+	c) Android Application/Mobile Application  ->>> Mono/Xamarin Framework.
+	d) Web Services. -> WCF,WPF.
+	e) WebAPI.
+----------------------------------------------------------------------------------------------------------------------------
+Dot Net Components:-
+---------------------------------------
+There are two major components of Dot net Framework which are as follows:-
+a)  CLR :-
+>> It stands for Common Language Runtime.
+>> All dot net applications can executed with the help of CLR.
+>> It is the heart of dot net framework.
+	CLR has some sub Component:-
+	i)  CTS (Common Type System)
+>> All primitive data type(int,char,float,boolean,byte,double,long) are defined into CTS.
+	ii) CLS (Common Language Specification)
+>> After compilation of your code you didn't get any difference. (MSIL) -> Microsoft Intermediate Language.
+	iii) GC (Garbage Collection)
+>> GC free up / released the unsused memory or object of your program.
+>> It works like a automatic memory management.
+	iv) Native Code 
+>> It is machine code that can run / execute in your machine.
+-----------------------------------------------------------------------------------------------------------------------------------------
+b)  BCL/FCL -> 
+>> It stands for Base Class Library/Framework Class Library.
+>> All predefined methods,classes,or interfaces are defined into it.
+for Ex:-
+In C--
+#include<stdio.h>  // Preprocessor Directive.
+printf()
+scanf()
+=============================================================
+In C#:-
+------------------
+using System;  // BCL/FCL
+Console.readLine(); -> To take input from the User.
+Console.WriteLine(); -> To Display the result.
+---------------------------------------------------------------------------------------------------------
+Compilation Process of C#:-
+----------------------------------------------------------------
+>> It is a two-way compilation process.
+1. In First Compilation process, our source code converted into MSIL Code. MSIL Code is a machine dependent code you can't run this code with any machine.
+2. In Second Compilation process, CLR introduced JIT Compiler, With the help of JIT compiler our MSIL code converted into Native Code/Machine/Byte Code.  101010101010 (Machine Independent Code) mac,linux,windows.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Variable:- 
+---------------------------
+>> Variable provide data to our program.
+>> It is also known as 'Identifier'.
+>> Variable is a memory location,i.e. used to store a value.
+-------------------------------------------------------------------------------------------------------
+Rules for making a variable:-
+----------------------------------------------
+1. Variable name start from character only.
+int abc34=12; (Right)
+2. Variable name can't start from Digit.
+int 12abc=34; (Wrong)
+3. No spaces are allowed while declaring a variable.
+int a      b=34;
+4. Underscores are allowed while declaring a variable.
+ int ab_cd = 324;
+5. Hyphen is not allowed while declaring a variable.
+int a-b=445;
+6. Both upper case and lower case characters are treated as two different variable name. (Variables are case sensitive).
+int age = 34;
+            int Age = 12;
+            int AGE = 56;
+            int aGe = 1234;
+            int agE = 34;
+7. Keywords are not allowed as a variable name.
+int while= 34;
+int if= 12;
+int switch=123;
+--------------------------------------------------------------------------
+1. Variable Initialization.
+2. Variable Declaration.
+-----------------------------------------------------------------------
+1. Variable Initialization:-
+>> To assign a value into a variable.
+int a=4;  // here we assign 4 value into variable a.
+---------------------------------------------------------------------
+2. Variable Declaration:-
+>> Don't provide any value into a variable.
+int a,b,c;  // Declare variable.
+---------------------------------------------------------------
+// wap to initialize two variable and find sum.
+using System.ComponentModel;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a=10,b=30,c=a+b;
+            Console.WriteLine("Sum="+c);
+        }
+    }
+}
+// wap to input two numbers and find sum.
+using System.ComponentModel;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a,b,c;
+            Console.WriteLine("Enter two Number=");
+            a =Convert.ToInt32(Console.ReadLine());
+            b =Convert.ToInt32(Console.ReadLine());
+            c = a + b;
+            Console.WriteLine("Sum="+c);
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------
+Constant:-
+---------------------
+>> A constant is a fixed value i.e. never going to be changed throughout the whole program.
+>> It is also known as 'Literals'.
+Types of Constant:-
+--------------------------------
+There are three types of constant which is given below:-
+1. Numeric Constant.
+>> It holds numeric value between 1 to infinite.  like 1,2,3,4,5...........etc.
+	It can be categorized into the following :-
+	a) Octal Constant. -> it holds values between 0 to 7.
+	b) Decimal Constant. -> it holds values between 0 to 9.
+	c) Hexadecimal Constant. -> it holds values between 0 to 15.
+	d) Real or Floating-point constant. -> it holds numeric and decimal value also. 
+		For Example:-  23,34.67,1.2,5 , 5.6 etc.
+---------------------------------------------------------------------------------------------------------------------------------------
+2. Character Constant.
+>> It holds a single value only.
+>> It is represented by single quotes. (' ')
+For Ex:-
+-----------------
+             '1' , 'a' , 'P' , '$'  etc.
+----------------------------------------------------------------------------------------
+3. String Constant.
+>> It holds multiple values at a time.
+>> It is represented by double quotes. (" ")
+For Ex:-
+------------------
+"123" ,  "abc1234" ,  "vbnb434^*&^34" etc.
+------------------------------------------------------------------------------
+How to Download Visual Studio 2022:-
+---------------------------------------------------------
+https://visualstudio.microsoft.com/downloads/   -> Pick Community Version.
+--------------------------------------------------------------------------------------------------------------------------
+Install only these Files:-
+-----------------------------------------------------------
+1. asp.net and web development.
+2. .net Desktop Development.
+3. Data storage and processing.
+--------------------------------------------------------------------------------------------------------------------
+Assignment Question:-
+--------------------------------------------
+1. wap to input five numbers and find the sum and avg.
+2. wap to input two number and find the addition , subtraction,multiplication and division.
+3. wap to input two number and swap using third variable.
+4. wap to input two number and swap without using third variable.
+5. wap to input the length and breath of rectangle and find its area,perimeter and diagonal.
+6. wap to input the area of circle and find its area and circumference.
+------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
