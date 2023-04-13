@@ -1,0 +1,369 @@
+Data Type:-
+------------------------------
+>> It identifies that which type of value a variable can hold.
+>> It uses Stack Memory.
+There are two types of data type -
+1. Primitive. -> It hold only single value.
+void -> 0 byte.
+char -> 2 byte.
+boolean ->  1 byte.
+int -> 4 byte.
+float -> 4 byte.
+double 8 byte.
+long -> 4 byte.
+----------------------------------------------------------------------------------
+2. Non-Primitive or Reference Data type.
+>> It is used to hold multiple values.
+>> It uses Heap Memory.
+string,arrays,object,class,interface,delegate etc.
+------------------------------------------------------------------------------------
+Type Conversion:-
+-------------------------------------
+>> It is a process to convert one data type into another data type.
+In C# there are three types of Type conversion:-
+1. Implicit.
+2. Explicit.
+3. Conversion Between Incompatible Types.
+-----------------------------------------------------------------------------------------------------------------------
+1. Implicit/Automatic Conversion.:-
+-------------------------------------------------------------------------------------
+>> To Covert lower data type value into higher data type.
+>> There is no data loss.
+int -- double.
+int a=45;
+double b=a;  // Implicit.
+------------------------------------------------------------------------------------------------
+using System.ComponentModel;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 903;
+            double b = a;  // Implicit.
+            Console.WriteLine(b);
+        }
+    }
+}
+-------------------------------------------------------
+2. Explicit / Type Casting:-
+-------------------------------------------------
+>> To convert higher data type value into lower data type.
+>> There is a data loss.
+double - int.
+For Ex:-
+-----------------------
+using System.ComponentModel;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            double b = 34.565;
+            int a = (int)b;  // .565 Loss
+            Console.WriteLine(a); // 34
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------
+3. Conversion Between Incompatible Types:-
+-----------------------------------------------------------------
+string  -  int
+-----------------------------------------------
+Here we use two things:-
+1. Convert Class.
+2. parse Method.
+---------------------------------------------------------
+using System.ComponentModel;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            string a = "12345";
+            //int b =Convert.ToInt32(a);
+            int b =int.Parse(a);
+            Console.WriteLine(b);
+        }
+    }
+}
+-------------------------------------------------------------------------------------------
+Keywords:-
+-------------------------------
+>> It is a reserved words which have special meaning in a program.
+For Ex:-
+-----------------------
+while,for,public,switch,if,else   etc.
+---------------------------------------------------------------------
+Operators:-
+----------------------------
+>> Operators are the special symbol,that specify which operation need to be performed.
+-----------------------------------------------------------------------------------------------------------------------------
+Types of Operator:-
+-------------------------------------
+1. Arithmetic Operator.
+2. Relational Operator.
+3. Logical Operator.
+4. Ternary / Conditional Operator.
+5. Assignment Operator.
+6. Bitwise Operator.
+7. Inc/Dec Operator.
+--------------------------------------------------------------------------------------------------------
+1. Arithmetic Operator.
+>> It is used to perform mathmatical operation.
++ , - ,* ,/ , %
+------------------------------------------------------------------------------------
+wap to perform addition ,sub,mult,div and rem.
+---------------------------------------------------------------------------------
+using System.ComponentModel;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 10, b = 5,sm,sb,mt,div,rem;
+            sm = a + b;
+            sb = a - b;
+            mt = a * b;
+            div = a / b;
+            rem = a % b;
+            Console.WriteLine("Sum="+sm);
+            Console.WriteLine("Sub=" + sb);
+            Console.WriteLine("Mult=" + mt);
+            Console.WriteLine("Div=" + div);
+            Console.WriteLine("Rem=" + rem);
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------------
+2. Relational Operator- Its return type is Boolean.(True/False)
+> , >= , < , <= , == , !=
+-------------------------------------------------------------------------------------- 
+using System.ComponentModel;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 5, b = 5;
+            Console.WriteLine(a<b);// False
+            Console.WriteLine(a <= b);// False
+            Console.WriteLine(a>b); // True
+            Console.WriteLine(a >= b); // True
+            Console.WriteLine(a == b); // False
+            Console.WriteLine(a != b); // 10!=5
+        }
+    }
+}
+---------------------------------------------------------
+3. Logical Operator:-
+------------------------------------------------------------
+AND  (&&) -> Both condition must be true. 1 1
+OR     (||)    -> Either one of the condition is true then result is true otherwise false. 0 0
+NOT   (!)    -> If input is 0 then result is 1 and vice-versa.  1 -> 0  or 0 -> 1
+----------------------------------------------------------------------------------------------------------------------------
+For Example:-
+--------------------------
+using System.ComponentModel;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 3, b = 7, c = 12;
+            Console.WriteLine(a>b && c>a); //  False
+            Console.WriteLine(b<c || a>b); // True
+            Console.WriteLine(c!=a && b>c); // False
+            Console.WriteLine(c==a || a>c); // False
+            Console.WriteLine((b!=c && b>a) && (c>a || b>c)); // True
+            Console.WriteLine((b == c || b <= a) || (c <= a || a<=c)); //  True
+            Console.WriteLine((a>c || c>=b) && (a != c || b >= a)); // True
+            Console.WriteLine(!(a > c || c >= b) && (a != c || b >= a)); // False
+            Console.WriteLine(!(a!=c));  //  False
+            Console.WriteLine(!(a>b && c<a)); // True
+        } 
+    }
+}
+-------------------------------------------------------
+4. Ternary Operator / Conditional Operator:-
+---------------------------------------------------------------
+>> In ternary opertor we use ?   :  Symbol.
+>> It is one  liner expression.
+Syntax:-
+-------------------
+(Condition)?True:False;
+-----------------------------------------------------
+For Example:-
+----------------------------
+int a=5,b=10,res;
+res=(a>b)?a:b;
+CW(res); //  10
+---------------------------------------------------------------
+using System.ComponentModel;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 10, b = 100;
+            string res;
+            res = (a !=b) ? "Enjoy" : "Very GOOD";
+            Console.WriteLine(res);
+        } 
+    }
+}
+----------------------------------------------------------------------------
+using System.ComponentModel;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 10, b = 100,c=10;
+            string res;
+            res = (a != b && a >= b) ? "GOOD" : (c == a && b > a) ? "C#" : "Enjoy";
+            Console.WriteLine(res);  C#
+        } 
+    }
+}
+---------------------
+using System.ComponentModel;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 789, b = 123,c=234;
+            string res;
+            res = (a <= b || a <= c) ? "POOR" : (b != c && b > a) ? "Good" : "Excellent";
+            Console.WriteLine(res);
+        } 
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
