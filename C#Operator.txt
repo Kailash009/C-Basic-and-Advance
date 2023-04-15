@@ -1,0 +1,289 @@
+Operators:-
+-----------------------
+>> Operators is used to perform operations.
+>> It specifies which type of operation you are going to perform.
+-----------------------------------------------------------------------------------
+There are seven types of operator which are as follows:-
+------------------------------------------
+1. Arithmetic Operator.
+2. Relational Operator.
+3. Logical Operator.
+4. Assignment Operator.
+5. Ternary / Conditional Operator.
+6. Inc/Dec Operator.
+7. Bitwise Operator.
+--------------------------------------------------------------------------------------------------
+1. Arithmetic Operator -> it is used to perform mathmatical operation.
++ , - ,*,/,%
+---------------------------------------------------------------------------------------------------
+wap to input two number and find the add,sub,mult,div and rem.
+using System;
+
+namespace Batch12PMWESushil
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a, b, sm, sb, mt, div, rem;
+            Console.WriteLine("Enter two number=");
+            a =Convert.ToInt32(Console.ReadLine());
+            b = Convert.ToInt32(Console.ReadLine());
+            sm = a + b;
+            sb = a - b;
+            mt = a * b;
+            div = a / b;
+            rem = a % b;
+            Console.WriteLine("Sum="+sm);
+            Console.WriteLine("Sub=" + sb);
+            Console.WriteLine("Mult=" + mt);
+            Console.WriteLine("Divide=" + div);
+            Console.WriteLine("Remainder=" + rem);
+        }
+    }
+}
+----------------------------------------------------------------------------
+2. Relational Operator.
+-----------------------------------------------
+ > , >= , < ,  < =  ,  = =   , !=
+>> It returns Boolean Value.
+---------------------------------------------------------
+For Ex:-
+------------------
+using System;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 5, b = 10;
+            Console.WriteLine(a>b);   // F
+            Console.WriteLine(a <= b);  // T
+            Console.WriteLine(a >= b);  // F
+            Console.WriteLine(a < b);  // T
+            Console.WriteLine(a == b); // F 
+            Console.WriteLine(a != b); // T
+        }
+    }
+}
+----------------------------------------------------------
+3. Logical Operator.
+a) Logical AND.  (&&)  -> Both condition must be true then retruns (1 1 -> 1) True otherwise False. 
+b) Logical OR.  (||)      -> Either one of the condition is true then result is true otherwise False.
+c) Logical NOT (!)     ->  If conditon is True then result is False and vice-versa.
+--------------------------------------------------------------------------------------------------------------
+For Ex:-
+----------------
+using System;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 5, b = 10,c=2;
+            Console.WriteLine(a>b && a<c);   // F
+            Console.WriteLine(c>a || a<b);   // T
+            Console.WriteLine(a >= b && b<c);  //  F
+            Console.WriteLine(a < b && a!=c);   // T
+            Console.WriteLine(a == b || b>c);   // T
+            Console.WriteLine(c<=a && c==a); // F
+            Console.WriteLine(b>a || b<c); //  T
+            Console.WriteLine(!(a>b)); // T
+        }
+    }
+}
+--------------------------------------------------------------
+4. Assignment Operator.
+>> it is used to assign a value into a variable.
+For ex - int a=5;
+= 
++=  or  a+=2  or a=a+2
+-=
+*=
+/=
+%=
+-----------------------------------------------------------------------------------
+using System;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 5;
+            Console.WriteLine(a);  // 5
+            Console.WriteLine(a+=2); // 7
+            Console.WriteLine(a-=6); // 1
+            Console.WriteLine(a*=4); // 4
+            Console.WriteLine(a/=2); // 2
+            Console.WriteLine(a%=3); // 2
+        }
+    }
+}
+--------------------------------------------------------------
+5. Ternary / Conditional Operator:-
+-----------------------------------------------------------------
+Syntax:-
+-------------------
+(Condition)?True:False;
+-----------------------------------
+For ex:-
+--------------
+int a=5,b=10,res;
+res=(a>b)?a:b;
+cw(res); // 10
+using System;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 15, b = 10, res;
+            res = (a > b) ? a : b;
+            Console.WriteLine(res);
+        }
+    }
+}
+---------------------------------------
+6. Inc/Dec Operator:-
+--------------------------------
+>> This operator is used to inc/dec value of operand/ var.
+a) Pre inc/dec. -> Operator comes First before Operand.
+	++a or a=1+a;
+	--b   or    b=1-b
+b) Post inc/dec. -> Operator comes After Operand.
+	a++; or a=a+1
+	b--; or   b=b-1
+---------------------------------------------------------------------------------------------
+For Example:-
+---------------------------
+int a=5;
+cw(a++); 5          // 5    // 6  // 6
+cw(a++); 6       // 7     // 7  // 7
+cw(++a); 8       // 8    // 8  //  8
+cw(a++); 8      // 9    // 9  // 9
+cw(++a); 10     // 10   // 10 //  10
+cw(a++); 10    // 11   // 11 // 11
+-------------------------------------------------------
+using System;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 5;
+            Console.WriteLine(a++); // 5
+            Console.WriteLine(a++); // 6
+            Console.WriteLine(++a); // 8
+            Console.WriteLine(a++); // 8
+            Console.WriteLine(++a); // 10 
+            Console.WriteLine(a++); // 10
+        }
+    }
+}
+-------------------------------------------------------
+int a=7;
+cw(a++); // 7 // 
+cw(++a); // 9 //
+cw(a++); // 9 // 
+cw(a++); // 10 //
+cw(a++); // 11  //
+cw(++a); // 13 //
+cw(a++); // 13 //
+cw(a++); // 14  //
+cw(a++); // 15 //
+cw(++a); // 17 //
+---------------------------------------------------
+Assignment Question:-
+------------------------------------
+int a=6;
+cw(a++);
+cw(a--);
+cw(--a);
+cw(a++);
+cw(a++);
+cw(a--);
+cw(++a);
+cw(a++);
+cw(a--);
+cw(a++);
+cw(++a);
+cw(a--);
+cw(a++);
+cw(a++);
+--------------------------------------------
+int a=6,b=4,c=2;
+int res=a++   +    ++b   +   --c   +   a--   +   a++   +   b++  -   c++    +  --a    +   b--   -   c++;
+cw(res);
+---------------------------------------------------------------
+int a=4,b=-1,c=0;
+cw(a++);
+cw(b++);
+cw(c++);
+cw(a--);
+cw(b--);
+cw(c--);
+cw(++a);
+cw(++c);
+cw(--c);
+cw(b++);
+cw(c--);
+---------------------------------------------------------------------------------------------
+7. Bitwise Operator.  --->> Pending
+--------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
