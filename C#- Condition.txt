@@ -1,0 +1,488 @@
+Bitwise Operator:-
+------------------------------------
+>> it works on bits.(0,1)
+---------------------------------------
+1. Bitwise AND.   (&)
+2. Bitwise OR.     (|)
+3. Bitwise XOR.  (^)
+4. shift left.          (<<)
+5. shift right.        (>>)
+----------------------------------------------
+1. Bitwise AND.   (&):-  >> Both condition must be true.
+------------------------------------
+int a=5;  -> 0101 
+int b=4; ->  0100
+------------------------------
+a&b     ->   0100   -> 4 ans
+-----------------------------------------------
+using System;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 5, b = 4, res;
+            res = a & b;
+            Console.WriteLine(res); // 4
+        }
+    }
+}
+----------------------------
+2. Bitwise OR.     (|) 
+>> Either one of the condition is true then result is true.
+int a=5;  -> 0101 
+int b=4; ->  0100
+------------------------------
+a|b     ->     0101  -> 5 ans
+-----------------------------------------------
+3. Bitwise XOR.  (^)
+Note:->>   If both inputs are same then result will be 0 (0 0 , 1 1) whether both inputs are high,otherwise true.
+int a=5;  -> 0101 
+int b=4; ->  0100
+------------------------------
+a^b     ->     0001 -> 1 ans
+---------------------------------------
+using System;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 5, b = 4, res;
+            res = a ^ b;
+            Console.WriteLine(res); // 1
+        }
+    }
+}
+---------------------------------------------
+4. Shift Left:-   << 
+------------------------------
+>> shift all the bits towards its left.
+>> It works on 8 bits.
+---------------------------------------------------------
+using System;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 5,res;
+            res = a<<3;
+            Console.WriteLine(res); // 40
+        }
+    }
+}
+----------------------
+5. SHift Right.
+-----------------------
+>> Shift all the bits towards its right.
+-----------------------------------------------------------------
+using System;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 5,res;
+            res = a>>2;
+            Console.WriteLine(res); // 1
+        }
+    }
+}
+----------------------------------------------------------------------------------------------
+Conditional Statements:-
+---------------------------------------------
+>> it is used to provide condition in a program.
+There are several types of conditional statemnts-
+1. if
+2. if-else
+3. if-else if
+4. Nested if 
+5. Switch.
+-------------------------------------------
+1. if
+>> it is used to provide only single condition.
+Syntax:-
+--------------------
+if(condition)
+{
+statement;
+}
+----------------------------------------------
+For Example:-
+---------------------------
+using System;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 5, b = 10;
+            if (a !=b)
+            {
+                Console.WriteLine("Hello I am a Programmer!!");
+            }
+        }
+    }
+}
+--------------------------------
+2. if-else:-
+----------------
+>> This statement is used to test the condition and take one of the two possible action.
+Syntax:--
+---------------
+if(condition)
+{
+statement1;
+}
+else
+{
+statement2;
+}
+--------------------------------------
+For Example:-
+---------------------------
+using System;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 10, b = 10;
+            if (a>=b  && a!=b)
+            {
+                Console.WriteLine("Hello I am a Programmer!!");
+            }
+            else
+            {
+                Console.WriteLine("Bad Code!!");
+            }
+        }
+    }
+}
+-----------------------------------------------------
+3. if-else if
+--------------------
+>> It is used to provide multiple condition in a program.
+Syntax:-
+-------------------
+if(condition1)
+{
+statement1;
+}
+else if(condition2)
+{
+statement2;
+}
+else if(condition3)
+{
+statement3;
+}
+else if(condition4)
+{
+statement4;
+}
+else
+{
+statement5;
+}
+---------------------------------------------------------
+For Ex:-
+-----------------
+using System;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 10, b = 10,c=5;
+            if (!(a>b && b!=c))
+            {
+                Console.WriteLine("Hello I am a Programmer!!");
+            }
+            else if(a!=b || c!=a)
+            {
+                Console.WriteLine("Bad Code!!");
+            }
+            else if(a==c || b==a)
+            {
+                Console.WriteLine("Hii C# how are you??");
+            }
+            else
+            {
+                Console.WriteLine("End of Program..");
+            }
+        }
+    }
+}
+------------------------------------------------------------------------------------
+4. Nested if:-
+---------------------------
+>> if within if is called nested if.
+----------------------------------------------
+Syntax:- 1. T/T -> st2  2.  T/F -> st3  3. F -> st1.
+----------------
+if(condition1)
+{
+if(condition2)
+{
+statement2;
+}
+else
+{
+statement3;
+}
+else
+{
+statement1;
+}
+}
+----------------------------------------------------------
+For Example:-
+---------------------------
+wap to find the greatest no. among three no using nested if.
+using System;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 35, b = 100, c = 20;
+            if (a > b)
+            {
+                if (a > c)
+                {
+                    Console.WriteLine("A is Greatest");
+                }
+                else
+                {
+                    Console.WriteLine("C is Greatest");
+                }
+            }
+            if (b > a)
+            {
+                if (b > c)
+                {
+                    Console.WriteLine("B is Greatest");
+                }
+                else
+                {
+                    Console.WriteLine("C is Greatest");
+                }
+            }
+        }
+    }
+}
+--------------------------------------------
+5. Switch:-
+-----------------------
+>> It is used for creating "Menu Based Programming".
+Syntax:-
+------------------------
+switch(expression)
+{
+case 1:
+statements1;
+break;
+case 2:
+statements2;
+break;
+case 3:
+statements3;
+break;
+case 4:
+statements4;
+break;
+default:  // Optional
+statement5;
+break
+}
+-----------------------------------------------------------------------------------------
+write a menu based program.
+1  -> Tea
+2  -> Coffee
+3 ->  ColdDrink
+-----------------------------------------
+using System;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int choice = 5;
+            switch(choice)
+            {
+                case 1:
+                    Console.WriteLine("Tea");
+                    break;
+                case 2:
+                    Console.WriteLine("Coffee");
+                    break;
+                case 3:
+                    Console.WriteLine("Cold Drink");
+                    break;
+                default:
+                    Console.WriteLine("This item is Not Available");
+                    break;
+            }
+        }
+    }
+}
+----------------------------------------------------------------------------------------
+Assignment Question:-
+----------------------------------
+1. wap to input two number and find the smallest no. using if-else and ternary.
+2. wap to input three number and find the smallest no. using if-else-if and ternary.
+3. wap to input a no. and check number is positive or negative.
+4. wap to input a year and check its leap year or not.
+5. wap to input a no. and check no. is even or odd.
+6. wap to input a character and check its vowel or consonant.
+7. wap to input a character and check whether input character is in uppercase,lowercase,digit,or special symbol.
+8. wap to find the week of day using switch.
+9. wap to find the month of year using switch.
+10. wap to input five subject marks and calculate the sum and percentage and then find the following Grade listed Below:-
+100%-90%  -> S
+90%-80%  -> A
+80%-70%  -> B
+70%-60%  -> C
+60%-50%  -> D
+<50%     -> F
+==========================================================
+10. wap to make calculator program using switch.
+ + -> add
+ -  -> sub
+ * -> mult
+ / -> div
+--------------------------------------------------------------------------------------------------------------------------
+Control Statement/ Loop:-  PENDING
+-------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
