@@ -1,0 +1,346 @@
+5. Assignment Operator.
+>> It is used to assign a value into a variable.
+=         
++=
+-=
+*=
+/=
+%=
+-----------------------------------------------
+int a=5;
+int -> data type
+a -> variable.
+= -> assignment operator.
+5 -> contant value.
+==================================================================
+a+=4; (Shorthand notation.) or a=a+4;
+a-=4; or a=a-4;
+a*=4; or a=a*4;
+a/=4; or a=a/4;
+a%=4; or a=a%4;
+-----------------------------------------------using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            double a = 5;
+            Console.WriteLine(a); // 5
+            Console.WriteLine(a+=5); // a=a+5 =>  10 
+            Console.WriteLine(a-=4); // a=a-4  6    1
+            Console.WriteLine(a*=2); // a=a*2  12
+            Console.WriteLine(a/=2); //  a=a/2 => 6
+            Console.WriteLine(a%=3); // 6%3 => 0
+        }
+    }
+}
+-----------------------
+6. Inc/Dec.
+------------------
+>> This operator is used to inc/dec a value of operand/variable.
+ 	a) Pre Inc/Dec. -> Operator comes first before operand.
+	++a; or a=1+a;
+	--b or b=1-b;
+	b) Post Inc/Dec. -> Operator comes after operand.
+	a++; or a=a+1;
+	b-- or b=b-1;
+------------------------------------------------------------------------------------------------------- 
+int a=5;
+cw(a++); 5   5 // 6   6     
+cw(a++); 6   6 // 7   6 
+cw(++a); 8    8 // 8   8  
+cw(a++); 8    8 // 9   8 
+cw(++a); 10    10 // 10 10
+cw(a++); 10    10// 11 10 
+cw(a++); 11   11 // 12  11
+----------------------------------------------------------------------------------
+int a=9;
+cw(a++); 9     // 9       9   
+cw(a++); 10     // 10    10
+cw(a++); 11    //  11   11
+cw(++a); 13     //  10   12   13
+cw(a++); 13    // 10     12  13
+cw(a++);  14   // 10      13  14
+cw(++a);  16   // 9        15  16
+cw(a++);  16   // 9       15   16
+cw(++a);  18   // 10      17   18
+cw(a++);   18   //            17  18
+cw(a++);   19  //             18  19
+cw(++a);   21   //              20  21
+---------------------------------------------------------------------------
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            double a = 9;
+            Console.WriteLine(a++);
+            Console.WriteLine(a++);
+            Console.WriteLine(a++);
+            Console.WriteLine(++a);
+            Console.WriteLine(a++);
+            Console.WriteLine(a++);
+            Console.WriteLine(++a);
+            Console.WriteLine(a++);
+            Console.WriteLine(++a);
+            Console.WriteLine(a++);
+            Console.WriteLine(a++);
+            Console.WriteLine(++a);
+
+        }
+    }
+}
+--------------------------------------------------------------------------------
+int a=4;
+cw(a++); 4  4 4
+cw(--a); 4     4  4
+cw(a--); 4     4  4
+cw(a++);3   3  3 
+cw(a++); 4  4  4
+cw(a--); 5     5  5
+cw(a++);4       4
+cw(--a); 4        4
+cw(a++); 4     4
+cw(a++); 5     5
+cw(a--);  6      6
+cw(--a); 4        4
+cw(a++); 4      4
+-----------------------------------------------------------------
+Bitwise Operator:-
+-------------------------------------------
+Bit -> 0,1
+---------------------------
+1. Bitwise AND.   &
+2. Bitwise OR.     |
+3. Bitwise XOR   ^
+4. Shift Left.       <<
+5. Shift Right.    >>
+---------------------------------------------------------------------------
+1. Bitwise AND.   &
+>> Both condition must be true then result is true otherwise false.
+int a=5   -> 0101
+int b=4  ->  0100
+---------------------------------------------
+a&b       ->  0100   --> 4 Ans
+----------------------------------------------
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 5, b = 4;
+            int res = a & b;
+            Console.WriteLine(res); // 4
+        }
+    }
+}
+-----------------------------
+2. Bitwise OR   |
+>> Either one of the condition is true then result is true else false.
+int a=5   -> 0101
+int b=4  ->  0100
+---------------------------------------------
+a|b       ->    0101 --> 5  Ans
+----------------------------------------------
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 5, b = 4;
+            int res = a | b;
+            Console.WriteLine(res); // 5
+        }
+    }
+}
+-----------------------------------------------------------------------
+3. Bitwise XOR     ^
+NOTE:-=> If the input is same(0 0 or 1 1) then result is 0(False), otherwise True(1).
+int a=5   -> 0101
+int b=4  ->  0100
+---------------------------------------------
+a^b      ->    0001    --> 1  Ans
+----------------------------------------------
+4. Shift Left.   << 
+--------------------------------------------
+>> Shift all the bits towards its Left.
+>> it works on 8 bits.
+--------------------------------------------------
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 5;
+            int res =a<<3;  // SHIFT LEFT
+            Console.WriteLine(res); // 40
+        }
+    }
+}
+-----------------------------------------------
+5. Shift Right:-
+---------------------------------------
+>> SHift all the bits towards its right.
+-----------------------------------------------------
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 5;
+            int res =a>>2;  // SHIFT RIGHT
+            Console.WriteLine(res); // 1
+        }
+    }
+}
+==========================================================================
+Assignment Question:-
+-------------------------------------------
+1. wap to find the following output:-
+int a=4,b=6,c=2;
+int res= a++  +    b++   +  c++    -    --a  +  b++    -    --c   +   a++    +   b++    +   --a    +  b--   +    c++;
+cw(res);
+------------------------------------------------------------------------
+2. int a=8,b=2,c=-1;
+cw(a++);
+cw(a--);
+cw(b++);
+cw(b--);
+cw(c++);
+cw(c--);
+cw(++a);
+cw(b--);
+cw(b++);
+cw(b++);
+cw(++c);
+cw(c++);
+cw(c--);
+cw(++b);
+cw(a++);
+--------------------------
+3. wap to input value in celcius and find farenhite.
+4. find the following -
+int a=-1,b=-2,c=-3;
+res=  a++  + b--  +  c--  + --a + b++   +  c--  + c++   +  a--  + b++  + a++  + b--  +   a++  +  --c   +  b--  +  b++  +  a++  +  c--;
+cw(res);
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
