@@ -1,0 +1,579 @@
+Variable  -> Done
+Data type -> Done
+Operators -> Done
+-------------------------------------------------------------------------
+Conditional Statements / Decision Making Statements:-
+-------------------------------------------------------------------------
+>> It is used to provide condition in a program.
+--------------
+We have several types of conditional statements which are as follows -
+a) if
+b) if-else
+c) if-else-if
+d) Nested If.
+e) Switch.
+------------------------------------------------------------------------------------------
+a) if
+------------------
+>> It is used to check single condition only.
+Syntax:-
+if(condition)
+{
+statement;
+}
+------------------------------------------------------------
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 5;
+            if(a!=10)   //  5!=10 -> True
+            {
+                Console.WriteLine("Hello C#");
+            }
+        }
+    }
+}
+----------------------------------------------------------------------------
+b) if-else
+>> This statement is used to test the condition and take one of the two possible action.
+Syntax:-
+-----------------
+if(Condition)
+{
+Statement1;
+}
+else
+{
+Statement2;
+}
+---------------------------------------------------------------------------------
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 15, b = 10;
+            if(a>b && a==b)   // 15>10
+            {
+                Console.WriteLine("Programming is GOOD");
+            }
+            else
+            {
+                Console.WriteLine("Programming is BAD");
+            }
+        }
+    }
+}
+--------------------------------------------
+c) If-Else-if:-
+-------------------------------
+>> it is used to provide multiple condition in a program.
+if(condition1)
+{
+statement1;
+}
+else if(condition2)
+{
+statement2;
+}
+else if(condition3)
+{
+statement3;
+}
+else if(condition4)
+{
+statement4;
+}
+else 
+{
+statement5;
+}
+-------------------------------------------------------------------------
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 2, b = 5, c = 10;
+            if(a>b && b!=c)
+            {
+                Console.WriteLine("Hello How are U?");
+            }
+            else if(b>c && a<c)
+            {
+                Console.WriteLine("I am Fine!");
+            }
+            else if(c<a || c==a)
+            {
+                Console.WriteLine("What About u?");
+            }
+            else if(!(b<a && a==c))
+            {
+                Console.WriteLine("I am also Good");
+            }
+            else
+            {
+                Console.WriteLine("Bad Programming");
+            }
+        }
+    }
+}
+-----------------------------
+wap to input three no .and find the greatest no. among them.
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a, b, c;
+            Console.WriteLine("Enter three number");
+            a = Convert.ToInt32(Console.ReadLine());
+            b = Convert.ToInt32(Console.ReadLine());
+            c = Convert.ToInt32(Console.ReadLine());
+            if (a>b && a>c)
+            {
+                Console.WriteLine("A is Greatest");
+            }
+            else if(b>a && b>c)
+            {
+                Console.WriteLine("B is Greatest");
+            }
+            else
+            {
+                Console.WriteLine("C is Greatest");
+            }
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------
+d) Nested If.
+---------------------------------
+>> If within if is called nested if.     1.  (T/T) -> ST2   2. T/F -> ST3  3.  F -> ST1.
+if(condition1)
+{
+if(condition2)
+{
+statement2;
+}
+else
+{
+statement3;
+}
+else 
+{
+statement1.
+}
+}
+------------------------------------------------------------------------------
+For Example-
+------------------------
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a, b, c;
+            Console.WriteLine("Enter three number");
+            a = Convert.ToInt32(Console.ReadLine()); // 10
+            b = Convert.ToInt32(Console.ReadLine());  // 15
+            c = Convert.ToInt32(Console.ReadLine());  // 20
+            if (a > b)
+            {
+                if (a > c)
+                {
+                    Console.WriteLine("A is Greatest");
+                }
+                else
+                {
+                    Console.WriteLine("C is Greatest");
+                }
+            }
+            else
+            {
+                    if (b > c)
+                    {
+                        Console.WriteLine("B is Greatest");
+                    }
+                    else
+                    {
+                        Console.WriteLine("C is Greatest");
+                    }
+                }
+            }
+        }
+    }
+--------------------------------------
+5. Switch :-
+---------------------------------------
+>> it is used to create Menu Based Programs.
+1  -> Tea
+2 -> Coffee
+3 -> ColdDrink
+----------------------------------------------------------------------------------------------
+Syntax:-
+----------------------------
+switch(expression)
+{
+case 1:
+statement1;
+break;
+case 2:
+statement2;
+break;
+case 3:
+statement3;
+break;
+case 4:
+statement4;
+break;
+default:  // Optional
+statement5;
+}
+----------------------------------------------------------------------------------------------------
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int choice = 6;
+            switch (choice)
+            {
+                    case 1:
+                    Console.WriteLine("Tea");
+                    break;
+                    case 2:
+                    Console.WriteLine("Coffee");
+                    break;
+                    case 3:
+                    Console.WriteLine("ColdDrink");
+                    break;
+                    default:
+                    Console.WriteLine("Wrong Input Choice");
+                    break;
+            }
+        }
+    }
+}
+--------------------------------------------------------
+wap to input a character and check whether input character is in Vowel or Consonant.
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            char choice;
+            Console.WriteLine("Enter a Character=");
+            choice =Convert.ToChar(Console.ReadLine().ToLower());
+            switch (choice)
+            {
+                case 'a':
+                case 'e':
+                case 'i':
+                case 'o':
+                case 'u':
+                Console.WriteLine("Input Character is in Vowel");
+                break;
+                default:
+                Console.WriteLine("Input Character is in Constanant");
+                break;
+            }
+        }
+    }
+}
+--------------------------
+if-else:-
+---------------
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            char choice;
+            Console.WriteLine("Enter a Character=");
+            choice =Convert.ToChar(Console.ReadLine().ToLower());
+            if(choice=='a' || choice=='e' || choice=='i' || choice=='o' || choice=='u')
+            {
+                Console.WriteLine("Vowel");
+            }
+            else
+            {
+                Console.WriteLine("Consonant");
+            }
+            }
+        }
+    }
+==============================================================================
+Assignment Question:-
+------------------------------------
+1. wap to input two number and find the smallest no. among them using if-else and Ternary.
+2. wap to input three number and find the smallest no. among them using if-else and Ternary.
+3. wap to input a year and check year is leap or not.
+4. wap to input a no. and check no. is even or odd.
+5. wap to input a no. and check no. is positive or negative.
+6. wap to input a character and check whether input character is in Uppercase,LowerCase, Digit or Special Symbol.
+7. wap to find the day of week using switch.
+8. wap to find the year of month using switch.
+9. wap to input five subject marks and find the total marks and percentage and acc. to the percetange find the following Grade:-
+100%-90%  -> S
+90%-80%  -> A
+80%-70%  -> B
+70%-60%  -> C
+60%-50%  -> D
+< 50%  -> F
+10. wap to make calculator program using switch.
++  -> Addition
+-  -> Subtraction
+* -> Multiply.
+/ -> Divide
+% -> Remainder.
+----------------------------------------------------------------------------------------------------------------------------
+Satya  ----  Sagar
+-----------------------------------------------------------------------------------------------
+C# basic --> var,dt,operator,array,string,functions,loop,conditional,file handling.
+Adavance -> Oop's with practical, this, constructor,partial class,partial method,anonymouse type , collection classes, delegate,interface,
+abstract class,enums,optional parameter,named parameter,ref,out,readonly,  async and await and many more.
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL SERVER -> 
+-------------------------------------
+Table,SP,Trigger,Views, Clauses in sql server, back up and recovery , aggregate function, group by  and having, order by 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+Dot Net Core MVC:-
+---------------------------------------------
+N-tier
+--------------------------------
+Controller,Model,Views,
+EF -> Database First  /  Code First  -->>> LINQ() , Web API  ->> PROJECT.
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
