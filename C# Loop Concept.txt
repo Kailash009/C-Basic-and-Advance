@@ -1,0 +1,605 @@
+Control Statements/Loop/Iterative Statements:-
+---------------------------------------------------------------------------
+Need of Loop -> when a user want to print one statement several times then we use the concept of Loop.
+-------------------------------------------------------------------------------------------------------------------------------------------
+Types of Loop :-
+-----------------------------
+There are four types of Loop in C# which are as follows:-
+1. while.
+2. do-while
+3. for
+4. foreach
+--------------------------------------------------------------------------------------------
+1. While:-
+-------------------
+>> it is also known as 'Entry Controlled Loop'.
+>> In while loop, condition will be checked first,after that statement will be printed.
+--------------------------------------------------------------------------------------------------------------
+Syntax:-
+-------------------------
+while(condition)
+{
+statement;
+inc/dec;
+}
+--------------------------------------------------------------------------------------------------
+For Example:-
+-----------------------
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int i = 5;
+            while(i<10)  // 5<10  // 6<=10  10<10 -> False
+            {
+                Console.WriteLine("Hello C#");
+                i++; // i=i+1
+            }
+        }
+    }
+}
+-----------------------------------------------------------------------
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int i = 10;
+            while(i>=10)  // 5<10  // 6<=10  10<10 -> False
+            {
+                Console.WriteLine("Hello C#");
+                i--; // i=i+1
+            }
+            Console.WriteLine("End of Loop");
+        }
+    }
+}
+---------------------------------------------------------
+2. do-while:-
+-----------------------
+>> It is also known as 'Exit Controlled Loop'.
+>> In do-while loop statement will be executed/printed at once whether the condition is true or False.
+>> In it, statement will be printed first after that condition will be checked.
+----------------------------------------------------------------------------------------------------------------------------------------------
+Syntax:-
+-----------------
+do
+{
+statement;
+inc/dec;
+}
+while(condition); // It must be terminated.
+----------------------------------------------------------------------------------
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int i = 1;
+            do
+            {
+                Console.WriteLine("Welcome to C#");
+                i++;
+            }
+            while (i > 10);  // 2>10  -> False
+        }
+    }
+}
+-------------------------------------------------------------------
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int i = 5;
+            do
+            {
+                Console.WriteLine(i);  //  5  4   3  2  1 
+                i--;  //  4  3
+            }
+            while (i >= 1);  //     4>=1  3>=1   0>=1  -> False
+        }
+    }
+}
+-----------------------------------------------------------------------------
+3. For:-
+----------------
+>> It has three expressions -
+a) Initialization  -- 1 Time.
+b) Condition
+c) Inc/Dec.
+-----------------------------------------------------------
+Syntax:-
+----------------
+for(initialization;condition;inc/dec)
+{
+// statements
+}
+-----------------------------------------------------
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+           for(int i=10;i>5;i--)  // 
+           {
+                Console.WriteLine(i);  //  
+           }
+        }
+    }
+}
+----------------------------------------------------------------------------------
+4. foreach:-
+------------------------
+>> It is used to iterate collection of items.
+Syntax:-
+--------------------
+foreach(datatype  var_name in collection)
+{
+// Block of Statements
+}
+--------------------------------------------------------------------------
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            string str = "COMPUTER";
+            foreach (var res in str)
+            {
+                Console.WriteLine(res);
+            }
+        }
+    }
+}
+--------------------------------------------------
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            string[] sports = { "Cricket","FootBall","Hockey","Tennis","VolleyBall"};
+            foreach (string sp in sports)
+            {
+                Console.WriteLine(sp);
+            }
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            List<int> lt = new List<int>();
+            lt.Add(100);
+            lt.Add(900);
+            lt.Add(675);
+            lt.Add(123);
+            lt.Add(89);
+            lt.Add(873);
+            foreach (int res in lt)
+            {
+                Console.WriteLine(res);
+            }
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------
+Assignment Questions:-
+-----------------------------------------
+1. wap to print 1 to 50 number using while,do-while,for.
+2. wap to print 35 to 1 number using while,do-while,for.
+3. wap to print 1 to 100 even numbers using while,do-while,for.
+4. wap to print 1 to 100 odd number using while,do-while,for.
+5. wap to input a number and find the sum and average.
+n=10 -> 1+2+3++4+ ......10 => n=10 -> 55 ans.
+6. wap to input a number and find the factorial.
+7. wap to input a number and find the fibonacci series.  
+0 1 1 2 3  5  8 13  21 34 55 89 and so on.
+8.  wap to input a number and print the table.
+9. wap to input a number and find the sum of digit.
+n=456
+sm => 15 ans
+10.  wap to input a number and reverse them.
+    n=2347; rev -> 7432
+11. wap to input a number and check the number is Palindrome or not.
+	n=121 -> rev -> 121  -> Palindrome
+	n=123 -> rev -> 321 -> Not Palindrome.
+12. wap to input a number and check whether input number is ArmsTrong or Not.
+n=153; 
+   1   5     3
+    1*1*1   +  5*5*5  +  3*3*3	=> 1+125+27 =>153 -> armstrong
+n=234
+   2*2*2 + 3*3*3 + 4*4*4  
+      8+27+64 => 99 -> Not Armstrong
+13. wap to input a number and check Number is Prime or Not.
+14. wap to input a number and check Number is BUZZ number or not.
+     n= 147
+15. Find the Following Series:- 
+1+2+3+4.......+10  -> 55
+1*1+2*2+3*3+4*4+.... +10
+-------------------------------------------------------------------------------------------------------------------------------------
+Jump Statements:-
+---------------------------------
+1. Break.
+2. Continue.
+3. Return.  ->>> Pending. --> Functions.
+-----------------------------------------------------
+1. Break 
+>> It stop the current execution of loop and transfer control to the next statement.
+For Example:-
+------------------------
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int i;
+            for (i = 1; i <= 10; i++)  // 1<=10  2<=10  6<=10
+            {
+                if(i==6) // 1==6 2==6   6==6
+                {
+                    break;
+                }
+                Console.WriteLine(i);  // 1 2 3 4 5
+            }
+            Console.WriteLine("End of Loop");  // 1 2 3 4 5 End of Loop
+        }
+    }
+}
+--------------------------------------------------------------------------------------
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int i;
+            for (i = 1; i <= 15; i++)  // 
+            {
+                if(i==1 || i==5 || i==10 || i==12 || i==15) // 
+                {
+                    break;
+                }
+                Console.WriteLine(i);  
+            }
+            Console.WriteLine("End of Loop");  //  End of Loop
+        }
+    }
+}
+-----------------------------------------------
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int i;
+            for (i = 1; i <= 15; i++)  // 
+            {
+                if(i==1 && i==5  && i==10 && i==12 && i==15) // 
+                {
+                    break;
+                }
+                Console.WriteLine(i);  
+            }
+            Console.WriteLine("End of Loop");  //  1 to 15 and end of loop
+        }
+    }
+}
+-------------------------------------------
+2. Continue:-
+-----------------------
+>> When you use continue inside any loop,then it transfer control to the begining of the loop.
+----------------------------------------------------------------------------------------------------------------------------------
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int i;
+            for (i = 1; i <= 10; i++)  // 1<=10  7<=10
+            {
+                if(i==7) // 1==7   // 7==7
+                {
+                    continue;
+                }
+                Console.WriteLine(i); // 1  
+            }
+            Console.WriteLine("End of Loop");  
+        }
+    }
+}
+---------------------------------------------------------------
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int i;
+            for (i = 1; i <= 10; i++)  
+            {
+                if(i==7 || i==3 || i==10)  
+                {
+                    continue;
+                }
+                Console.WriteLine(i);   
+            }
+            Console.WriteLine("End of Loop");  
+        }
+    }
+}
+----------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
