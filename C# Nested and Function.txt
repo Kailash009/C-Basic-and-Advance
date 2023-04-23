@@ -1,0 +1,637 @@
+Nested Loop:-
+---------------------------
+>> A Loop with in loop is called Nested Loop.
+-----------------------------------------------------------------
+for(int i=1;i<=5;i++)  i=1; i=2,i=3  1<=5 , 2<=5    // Outer Loop.  // Owner  // ROW
+{
+for(int j=1;j<=5;j++) j=1;  1<=5   2<=5  3<=5 4<=5  5<=5 6<=5 // Inner Loop.  // Servant  // COLUMN
+{
+cw(i) or j  // 1 1 1 1 1    or j    1 2 3 4 5
+}                   2 2 2 2 2 
+}                   3 3 3 3 3
+---------------------------------
+1 1 1 1 1  -> i  // Outer Loop.
+2 2 2 2 2
+3 3 3 3 3
+4 4 4 4 4 
+5 5 5 5 5 
+--------------------------
+using System;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int i, j;
+            for(i=1;i<=5;i++)
+            {
+                for(j=1;j<=5;j++)
+                {
+                    Console.Write(i);
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
+--------------------------------------------------------------------------
+1 2 3 4 5  -> j  // Inner Loop.
+1 2 3 4 5
+1 2 3 4 5
+1 2 3 4 5
+1 2 3 4 5
+------------------------------
+using System;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int i, j;
+            for(i=1;i<=5;i++)
+            {
+                for(j=1;j<=5;j++)
+                {
+                    Console.Write(j);
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
+-------------------------------------------------------------------------------------
+Assignment Question:-
+-----------------------------------
+1
+12
+123
+1234
+12345
+-------------------
+1
+22
+333
+4444
+55555
+---------------------
+*
+**
+***
+****
+*****
+------------
+54321
+5432
+543
+54
+5
+--------------
+12345
+1234
+123
+12
+1
+-------------
+5
+54
+543
+5432
+54321
+-----------------
+11111
+2222
+333
+44
+5
+-----------------
+1
+21
+321
+4321
+54321
+----------------------
+A
+AB
+ABC
+ABCD
+ABCDE
+----------------
+E 
+ED
+EDC
+EDCB
+EDCBA
+--------------------
+ABCDE
+ABCD
+ABC
+AB
+A
+-----------------------
+C
+CC
+CCC
+CCCC
+CCCCC
+-----------------------
+Functions/Methods:-
+--------------------------------------
+>> A function is block of statements,i.e used to divide the work of a program.
+>> Function provide the idea of Re-usablity.
+>> Easy to maintain.
+>> Simplified Testing.
+>> Easy to debug.
+------------------------------------------------------------------------------------------------------------------------------------
+How to create a Function in C#:-
+---------------------------------------------
+you need to Follow two steps:-
+-------------------------------------------------
+1. Function Defination.  -> Function must be define at once.
+2. Function Calling.  -> Function can be called by multiple times.
+-------------------------------------------------------------------------------------------------------------------
+There are some approaches to create a function:-
+-------------------------------------------------------------------------------
+a) Function with no parameter and no return type.
+b) Function with parameter and no return type.
+c) Function with no parameter and return type.
+d) Function with parameter and return type.  --> BEST
+-------------------------------------------------------------------------------------
+a) Function with no parameter and no return type:-
+-----------------------------------------------------------------------------------
+using System;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+        public void Display()  // Function Defination  // Non-Static
+        {
+            Console.WriteLine("Hello C# How are you?");
+        }
+        static void Main()
+        {
+            Demo sushil = new Demo();  // ClassName objName = new ClassName();  -> It is the syntax of object creation.
+            sushil.Display();  // Calling
+            sushil.Display();
+            sushil.Display();
+            sushil.Display();
+            sushil.Display();
+
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------
+b) Function with parameter and no return type.
+Parameter/Argument :- 
+--------------------------------------
+>> With the help of parameter we can pass information to the function.
+There are two types of Parameter:-
+1. Actual Parameter.
+>> It takes the original value of a program.
+2. Formal Parameter.
+>> It takes the copied value of Actual parameter.
+----------------------------------------------------------------------------------------
+using System;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+        public void Rectangle(int l,int b)  // Parameter / Argument.  // Formal Parameter
+        {
+            int ar = l * b;
+            Console.WriteLine("Area="+ar);
+        }
+        static void Main()
+        {
+            Demo dm = new Demo();
+            dm.Rectangle(10,20); // Actual Parameter
+        }
+    }
+}
+--------------------------------------------------------------------------------------
+c) Function with no parameter and return type.
+-------------------------------------------------------------------------
+Return -> It returns a value to the function.
+------------------------------------------------------------------------
+Void  -> 0 Byte.
+>> It hold 0 byte.
+>> It doesn't return any value.
+----------------------------------------------------------------------------------------
+using System;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+        public int Rectangle()  // Parameter / Argument.  // Formal Parameter  // MARKET
+        {
+            int l = 5, b = 6,ar;
+            ar = l * b;
+            return ar;
+        }
+        static void Main()  // HOME
+        {
+            Demo dm = new Demo();
+            int res=dm.Rectangle(); // Actual Parameter
+            Console.WriteLine("Area="+res);
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------
+d) Function with parameter and return type.
+----------------------------------------------------------------------------------
+using System;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+        public int Rectangle(int l,int b)  // Parameter / Argument.  // Formal Parameter  // MARKET
+        {
+            int ar=l*b;
+            return ar;
+        }
+        static void Main()  // HOME
+        {
+            Demo dm = new Demo();
+            int res=dm.Rectangle(4,9); // Actual Parameter
+            Console.WriteLine("Area="+res);
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------------------------
+Assignment Question of Methods:-
+----------------------------------------------------
+1. wap to print 1 to 100 number using while,do-while and for.
+2. wap to print HAPPY BIRTHDAY 12 TIMES USING using while,do-while and for.
+3. WAP TO  print the even number between 1 to 100 using while,do-while and for.
+4. WAP TO  print the Odd number between 1 to 100 using while,do-while and for.
+5. WAP TO  print the sum of 1 to 20 number and avg using while,do-while and for.
+6.  wap to input a number and print the fibonacci series.
+7. wap to input a numberand find the factorial.
+8. wap to input a number and print the table.
+9. wap to input a number and check number is prime or not.
+10. wap to input a number and check number is armstrong or not.
+11. wap to input a number and find the sum of its digit.
+12. wap to input a number and reverse them.
+13. wap to input a number and find the palindrome or not.
+14. wap to input a number and check its BUZZ number or not.
+15. wap to input a number and check its DUCK number or not. 
+16. wap to input a number and check its NEON number or not. 
+  9 => 9*9 => 81 -> 8+1 => 9
+--------------------------------------------------------------------------------------------
+1. wap to input two number and find the smallest no. using if-else and ternary.
+2. wap to input three number and find the smallest no. using if-else-if and ternary.
+3. wap to input a no. and check number is positive or negative.
+4. wap to input a year and check its leap year or not.
+5. wap to input a no. and check no. is even or odd.
+6. wap to input a character and check its vowel or consonant.
+7. wap to input a character and check whether input character is in uppercase,lowercase,digit,or special symbol.
+8. wap to find the week of day using switch.
+9. wap to find the month of year using switch.
+10. wap to input five subject marks and calculate the sum and percentage and then find the following Grade listed Below:-
+100%-90%  -> S
+90%-80%  -> A
+80%-70%  -> B
+70%-60%  -> C
+60%-50%  -> D
+<50%     -> F
+==========================================================
+10. wap to make calculator program using switch. (Methods)
+ + -> add
+ -  -> sub
+ * -> mult
+ / -> div
+---------------------------------------------------------------------------------------------------
+wap to find sum of two no.
+-----------------------------------------
+using System;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+       public int Addition()
+       {
+            int a, b;
+            Console.WriteLine("Enter two Number");
+            a = Convert.ToInt32(Console.ReadLine());
+            b = Convert.ToInt32(Console.ReadLine());
+            return a + b;
+        }
+        static void Main()  // HOME
+        {
+            Demo dm = new Demo();
+            int sm=dm.Addition();
+            Console.WriteLine("Sum="+sm);
+        }
+    }
+}
+-------------------------------------
+using System;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+        public int Addition(int a, int b)  // Formal Parameter
+        {
+            return a + b;
+        }
+        static void Main()  // HOME
+        {
+            Demo dm = new Demo();
+            int i, j;
+            Console.WriteLine("Enter two number=");
+            i = Convert.ToInt32(Console.ReadLine());
+            j = Convert.ToInt32(Console.ReadLine());
+            int sm = dm.Addition(i, j); // Actual Parameter
+            Console.WriteLine("Sum=" + sm);
+        }
+    }
+}
+----------------------------------------------------------------------------------------------
+using System;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+       public string Hello()
+       {
+            return "Welcome to C#";
+       }
+        static void Main()  // HOME
+        {
+            Demo dm = new Demo();
+            string msg=dm.Hello();
+            Console.WriteLine(msg);
+        }
+    }
+}
+-------------------------------------------------
+using System;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+       public string Authentcate()
+       {
+            return "SUCCESS";
+       }
+        static void Main()  // HOME
+        {
+            Demo dm = new Demo();
+            string msg=dm.Authentcate();
+            if(msg== "FAILED")
+            {
+                Console.WriteLine("you login SuccessFully!!");
+            }
+            else
+            {
+                Console.WriteLine("Invalid User!!");
+            }
+        }
+    }
+}
+--------------------------------------------------------------
+using System;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+       public bool Authentcate()
+       {
+            return true;
+       }
+        static void Main()  // HOME
+        {
+            Demo dm = new Demo();
+            bool msg=dm.Authentcate();
+            if(msg== false)
+            {
+                Console.WriteLine("you login SuccessFully!!");
+            }
+            else
+            {
+                Console.WriteLine("Invalid User!!");
+            }
+        }
+    }
+}
+---------------------------------
+using System;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+       public bool Authenticate(string username,string password)
+       {
+            if (username == "admin" && password == "123")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+       }
+        static void Main()  // HOME
+        {
+            Demo dm = new Demo();
+            Console.WriteLine("Enter UserName and Password::");
+            string u_name = Console.ReadLine();
+            string u_paswd = Console.ReadLine();
+            bool msg=dm.Authenticate(u_name,u_paswd);
+            if(msg== true)
+            {
+                Console.WriteLine("you login SuccessFully!!");
+            }
+            else
+            {
+                Console.WriteLine("Invalid User!!");
+            }
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
