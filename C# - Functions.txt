@@ -1,0 +1,569 @@
+Functions:-
+-----------------------
+>> Functions are the basic building block of code, i.e. used to divide the work of a program.
+>> When we have complex problem then we divide the complex problem into subproblems with the help of Function.
+>> Easy to Access.
+>> Simplified Testing and Maintenance.
+>> Code  Re-usability -> we don't need to re-write same code again and again.
+-------------------------------------------------------------------------------------------------------------------------------------------
+Function -> WithoutClass.
+Method -> Inside Class.
+------------------------------------------------------------------------------------
+Types of Function-
+---------------------------------------
+There are two types of Function -
+1. Library Function/Built-In
+>> A function which is defined by the System.
+2. User Defined Function.
+>> A function which is defined by the User.
+-----------------------------------------------------------------------------------
+Here we focus on User Defined Function -
+To create user Defined Function you need to follow Following two steps -
+1. Function Defination. -> A function must be defined at once.
+2. Function Calling. -> Once function is defined, it can be called into multiple times.
+---------------------------------------------------------------------------------------------------------------------------------------
+using System;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        public void Msg()  // Function Defination
+        {
+            Console.WriteLine("Welcome to Programming World!!");
+        }
+        static void Main()
+        {
+            Demo dm = new Demo();    // Classname objName=new ClassName();
+            dm.Msg();
+            dm.Msg();
+            dm.Msg();
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------------
+There are four ways to create User Defined Function:-
+a) Function with no parameter and no return type.
+b) Function with parameter and no return type.
+c) Function with no parameter and return type.
+d) Function with parameter and return type.  -- BEST
+----------------------------------------------------------------------------------------
+a) Function with no parameter and no return type.
+using System;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        public void Addition()
+        {
+            int a = 5, b = 9, c = a + b;
+            Console.WriteLine("Sum="+c);
+        }
+        static void Main()
+        {
+            Demo dm = new Demo();    // Classname objName=new ClassName();
+            dm.Addition();
+            dm.Addition();
+            dm.Addition();
+            dm.Addition();
+            dm.Addition();
+        }
+    }
+}
+---------------------------------------------------------------------------
+b) Function with parameter and no return type.
+Parameter -> To pass information into a function.
+Types of Parameter:
+1. Actual Parameter -  It takes the original value of a program.
+2. Formal Parameter - It takes the copied value of Actual Parameter.
+---------------------------------------------------------------------------------------------------------------
+using System;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        public void Addition(int a, int b, int c)  // Parameter // Formal Parameter
+        {
+            int res = a + b + c;
+            Console.WriteLine("Sum="+res);
+        }
+        static void Main()
+        {
+            Demo dm = new Demo();    // Classname objName=new ClassName();
+            dm.Addition(3,4,5);  // Actual Parameter
+           
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------------
+c) Function with no parameter and return type.
+Return -> This statement is used to return a value to the function.
+>> void can't return any value.
+>> void is 0 byte.
+-------------------------------------------------------------------------------------------------------------
+using System;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        public int Addition()  // MARKET
+        {
+            int a = 4,b = 6, c = 3;
+            int res = a + b + c;
+            return res;
+        }
+        static void Main()   // HOME
+        {
+            Demo dm = new Demo();    // Classname objName=new ClassName();
+            int output=dm.Addition();
+            Console.WriteLine("Sum="+output);
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------------
+d) Function with parameter and return type.  -- BEST
+using System;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        public int Addition(int a,int b, int c)  // MARKET
+        { 
+            int res = a + b + c;
+            return res;
+        }
+        static void Main()   // HOME
+        {
+            Demo dm = new Demo();    // Classname objName=new ClassName();
+            int output=dm.Addition(10,20,30);
+            Console.WriteLine("Sum="+output);
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------------------------------
+using System;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        public string HelloUser(string msg)
+        {
+            return "Welcome!" + msg;
+        }
+        static void Main()   // HOME
+        {
+            Demo dm = new Demo();    // Classname objName=new ClassName();
+            string wl = dm.HelloUser("Manoj");
+            Console.WriteLine(wl);
+        }
+    }
+}
+------------------------------------------------
+using System;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        public string OTP(string msg)
+        {
+            if(msg=="SUCCESS")
+            {
+                return "Verified";
+            }
+            else
+            {
+                return "Not Verified";
+            }
+        }
+        static void Main()   // HOME
+        {
+            Demo dm = new Demo();    // Classname objName=new ClassName();
+            string res= dm.OTP("SUCCESS");
+            if(res!="SUCCESS")   1!=1 F     3!=8 T 
+            {
+                Console.WriteLine("Welcome to my Programming World");
+            }
+        }
+    }
+}
+--------------------------------------------------------------------------------------------
+using System;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        public string OTP(string msg)
+        {
+            if(msg=="SUCCESS")
+            {
+                return "Verified";
+            }
+            else
+            {
+                return "Not Verified";
+            }
+        }
+        static void Main()   // HOME
+        {
+            Demo dm = new Demo();    // Classname objName=new ClassName();
+            string res= dm.OTP("FAILURE");
+            if(res=="SUCCESS")
+            {
+                Console.WriteLine("Welcome to my Programming World");
+            }
+            else
+            {
+                Console.WriteLine("Hello C#");
+            }
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------
+using System;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        public bool IsAuthenticate(string msg)
+        {
+            if(msg=="Login")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        static void Main()   // HOME
+        {
+            Demo dm = new Demo();    // Classname objName=new ClassName();
+            bool b=dm.IsAuthenticate("Login");
+            if(!b)
+            {
+                Console.WriteLine("C#");
+            }
+            else
+            {
+                Console.WriteLine("Java");
+            }
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------------
+using System;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        public bool IsAuthenticate(string msg)
+        {
+            if(msg=="Login")
+            {
+                return true;
+            }
+            return false;
+        }
+        static void Main()   // HOME
+        {
+            Demo dm = new Demo();    // Classname objName=new ClassName();
+            bool b=dm.IsAuthenticate("Logout");
+            if(!b)
+            {
+                Console.WriteLine("you are SuccessFully Login!");
+            }
+            else
+            {
+                Console.WriteLine("You are SuccessFully Logout!");
+            }
+        }
+    }
+}
+-----------------------------------------------------------------------------
+using System;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        public bool IsAuthenticate(string username, string password)
+        {
+            if (username == "admin" && password == "123")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        static void Main()   // HOME
+        {
+            Demo dm = new Demo();    // Classname objName=new ClassName();
+            Console.WriteLine("Enter User Name and Password");
+            string u_name = Console.ReadLine();
+            string u_paswd = Console.ReadLine();
+            bool b=dm.IsAuthenticate(u_name,u_paswd);
+            if(!b)
+            {
+                Console.WriteLine("Login Failed!!!");
+            }
+            else
+            {
+                Console.WriteLine("Login SuccessFully!!!");
+            }
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------
+using System;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        public float GetNumber(double d) 
+        {
+            if (d == 12.34)
+            {
+                return 1.1f+2.3f;
+            }
+            else
+            {
+                return 1.2f+2.4f;
+            }
+        }
+        static void Main()   // HOME
+        {
+            Demo dm = new Demo();    // Classname objName=new ClassName();
+            float res = dm.GetNumber(12.43);
+            if(res!=3.6)
+            {
+                Console.WriteLine("SUCCESS");   // SUCCESS -- Ans
+            }
+            else
+            {
+                Console.WriteLine("FAILURE");
+            }
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------------
+using System;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        public char IsChar(char ch) 
+        {
+            if (ch == 'i' || ch == 'o' || ch =='p')
+            {
+                return 'y';
+            }
+            else
+            {
+                return 'n';
+            }
+        }
+        static void Main()   // HOME
+        {
+            Demo dm = new Demo();    // Classname objName=new ClassName();
+            char ch = dm.IsChar('p');
+            if(!(ch!='n' && ch=='n'))
+            {
+                Console.WriteLine("SUCCESS");
+            }
+            else
+            {
+                Console.WriteLine("FAILURE");
+            }
+        }
+    }
+}
+--------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
