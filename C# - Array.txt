@@ -1,0 +1,620 @@
+using System;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        public bool IsAuthenticate(string username, string password)
+        {
+            if (username == "admin" && password == "123")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        static void Main()   // HOME
+        {
+            int i = 1;
+            char ch;
+            do
+            {
+                if (i != 4)
+                {
+                    Demo dm = new Demo();    // Classname objName=new ClassName();
+                    Console.WriteLine("Enter User Name and Password");
+                    string u_name = Console.ReadLine();
+                    string u_paswd = Console.ReadLine();
+                    bool b = dm.IsAuthenticate(u_name, u_paswd);
+                    if (!b)
+                    {
+                        Console.WriteLine("Login Failed!!!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Login SuccessFully!!!");
+                        break;
+                    }
+                    Console.WriteLine("Do you wish to Login Again(Y/N)?");
+                    ch = Convert.ToChar(Console.ReadLine());
+                }
+                else
+                {
+                    Console.WriteLine("Now you Attempt more than 3 times,Login Again after Some Time..");
+                    break;
+                }
+                i++;
+            }
+            while (ch == 'y' || ch == 'Y');
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------
+Non-Static Vs Static:-
+------------------------------------------
+1. Non-Static:-
+------------------------------------
+>> Non-static method required object reference.
+>> It takes more memory.
+>> Performance Slow.
+-------------------------------------------------------------------------------
+For Example:-
+--------------------------------
+using System;
+
+namespace Batch12PMConsoleAkarsh
+{
+    // Example of Non-Static.
+    class Demo
+    {
+        int i = 0;
+        public void Inc()  //  NON-Static Method..   1 1 1 
+        {
+            i++;
+            Console.WriteLine(i);  //   1 1 1
+        }
+        static void Main()   // HOME
+        {
+            Demo dm1 = new Demo(); // 1000
+            dm1.Inc();
+
+            Demo dm2 = new Demo();
+            dm2.Inc();
+
+            Demo dm3 = new Demo();
+            dm3.Inc();
+        }
+    }
+}
+-------------------------------------------------
+2. Static:--
+------------------
+>> Static method doesn't require object reference.
+>> Static method can be called with the help of ClassName.
+>> It takes less memory.
+>> Performance High.
+Syntax:-
+--------------
+ClassName.MethodName();
+--------------------------------------------------------------------------------------------
+using System;
+
+namespace Batch12PMConsoleAkarsh
+{
+    // Example of Static.
+    class Demo
+    {
+        static int i = 0;
+        public static void Inc()  //  Static Method..    1 2 3 
+        {
+            i++;
+            Console.WriteLine(i);  //   
+        }
+        static void Main()   // HOME
+        {
+            Demo.Inc();
+            Demo.Inc();
+            Demo.Inc();
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------
+Array:-  ?????????????????????
+---------------------
+>> When a  user want to store multiple values into a single variable.
+----------------------------------------------------------------------------------------------------------------------
+>> It is a collection of similar type of data items, it takes contiguous memory allocation.
+>> Array Indexing start from zero.
+Types of Array:-
+-----------------------------------------
+1. 1- D array.
+2. 2-D or Multidemensional.
+3. Jagged Array.
+-----------------------------------------------------------
+1. 1- D Array:-
+---------------------------------
+Array Initialization:-
+------------------------------------------
+int[] a = new int[5] {12,34,56,78,876 };   
+int -> Data type
+a -> Array Name
+new -> Keyword
+[] -> Subscript.
+5 -> Size of Array.
+----------------------------------------------------------------------------------------------------
+using System;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()   // HOME
+        {
+            int[] a = new int[5] {12,34,56,78,876 };
+            for(int i=0;i<5;i++)
+            {
+                Console.WriteLine(a[i]);
+            }
+        }
+    }
+}
+--------------------------------------------------------------------------------------
+1-D Declaration:-
+-----------------------------------------------
+int[] a = new int[5];
+--------------------------------------------------------
+using System;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()   
+        {
+            int[] a = new int[5];
+            Console.WriteLine("Enter 5 Elements=");
+            for (int i=0;i<5;i++)
+            {
+                a[i] =Convert.ToInt32(Console.ReadLine());
+            }
+            Console.WriteLine("Print 5 Elements=");
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine(a[i]);
+            }
+        }
+    }
+}
+------------------------------------------------------------------------------------
+or
+-------------
+using System;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()   
+        {
+            int size;
+            Console.WriteLine("Enter the size of Array=");
+            size = Convert.ToInt32(Console.ReadLine());
+            int[] a = new int[size];
+            Console.WriteLine("Enter Elements=");
+            for (int i=0;i<size;i++)
+            {
+                a[i] =Convert.ToInt32(Console.ReadLine());
+            }
+            Console.WriteLine("Print Elements=");
+            for (int i = 0; i < size; i++)
+            {
+                Console.WriteLine(a[i]);
+            }
+        }
+    }
+}
+--------------------------------------------------------------------------
+1-D Array Assignment:-
+----------------------------------------
+1. wap to input 10 elments and find the sum and average.
+2. wap to input 12 elements and find the even and odd number, and also count total even and odd number.
+3. wap to input 5 elements and find the greatest number.
+4. wap to input 5 elements and find the smallest number.
+5. wap to input 10 element and search particular number.
+------------------------------------------------------------------------------
+using System;
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()   
+        {
+            int size;
+            Console.WriteLine("Enter the size of Array=");
+            size = Convert.ToInt32(Console.ReadLine());
+            int[] a = new int[size];
+            Console.WriteLine("Enter Elements=");
+            for(int i=0;i<size;i++)
+            {
+                a[i] =Convert.ToInt32(Console.ReadLine());
+            }
+            Console.WriteLine("Print Elements=");
+            foreach (int res in a)
+            {
+                Console.WriteLine(res);
+            }
+        }
+        }
+    }
+--------------------------------------------------------
+using System;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()   
+        {
+            int []a = new int[5] { 22, 34, 56, 67, 78 };
+            foreach (int res in a)
+            {
+                if(res==56)
+                {
+                    break;
+                }
+                Console.WriteLine(res);
+            }
+            Console.WriteLine("End of Loop");
+        }
+        }
+    }
+--------------------------------------------------------------------------------------------------------
+2-D Array:-
+-----------------------------
+1. Initialization in 2-D:-
+------------------------------------
+int[,] a =new int[3,3] { { 12, 34, 55 },{ 67,89,12},{ 9,8,42} }; 
+-------------------------------------------------------------------------------------------
+using System;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()   
+        {
+            int[,] a =new int[3,3] { { 12, 34, 55 },{ 67,89,12},{ 9,8,42} };
+            Console.WriteLine("Print 3X3 Elements::");
+            for (int i=0; i<3;i++)
+            {
+                for(int j=0;j<3;j++)
+                {
+                    Console.Write(a[i,j]+"\t");
+                }
+                Console.WriteLine();
+            }
+        }
+        }
+    }
+--------------------------------
+2- D Declaration:-
+--------------------------------
+using System;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int[,] a = new int[3, 3];
+            Console.WriteLine("Enter 3X3 Elements::");
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    a[i, j] = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+            Console.WriteLine("Print These 3X3 Elements::");
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    Console.Write(a[i, j] + "\t");
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
+----------------------------------------------------------------------------------
+or
+-----------
+using System;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int row, col;
+            Console.WriteLine("Enter Rows and Columns=");
+            row = Convert.ToInt32(Console.ReadLine());
+            col = Convert.ToInt32(Console.ReadLine());
+            int[,] a = new int[row,col];
+            Console.WriteLine("Enter Elements::");
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j < col; j++)
+                {
+                    a[i, j] = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+            Console.WriteLine("Print These Elements::");
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j < col; j++)
+                {
+                    Console.Write(a[i, j] + "\t");
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
+--------------------------------------------------------------------
+using System;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int[] a = { 12, 34, 56, 565, 454, 45, 434, 43, 4343, 434, 3,8,9,7,5,4,3,3,2,3 };
+            Console.WriteLine("Len="+a.Length); // 20
+            for (int i = 0; i <a.Length; i++) // 0<20
+            {
+                Console.WriteLine(a[i]);
+            }
+        }
+    }
+}
+------------
+using System;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int[,] a=new int[,] { { 12, 34, 5 }, { 4, 5, 63 }, { 12, 45, 678 } };
+            Console.WriteLine("Print These Elements::");
+            for (int i = 0; i < a.GetLength(0); i++)
+            {
+                for (int j = 0; j < a.GetLength(1); j++)
+                {
+                    Console.Write(a[i, j] + "\t");
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
+----------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
