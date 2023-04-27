@@ -1,0 +1,374 @@
+Assignment of 2-D:-
+------------------------------
+1. wap to input 3X3 elements and finds its sum and average.
+2. wap to input 3X3 elements and finds even and and odd number.
+3. wap to input 3X3 elements and print the diagonal element only.
+4. wap to input 3X3 elements and print the transpose element.
+5. wap to input two 3X3 elements and print the sum and sub.
+6. wap to input two 3X3 elements and find the matrix multiplication.
+-------------------------------------------------------------------------------------------------------
+3. Jagged Array:-
+------------------------------
+>> it is also known as 'Array of Arrays'.
+>> when we have different size of array merge them to get a single array.
+----------------------------------------------------------------------------------------------------------------------------------
+using System;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int[][] a = new int[3][];  // JAGGED ARRAY.
+            a[0] = new int[3] { 10, 45, 56 };
+            a[1] = new int[5] { 67, 78, 90, 755,12 };
+            a[2] = new int[2] { 345, 789 };
+            foreach (int[] ary in a)
+            {
+                foreach (int res in ary)
+                {
+                    Console.Write(res+"\t");
+                }
+                Console.WriteLine();
+            }
+
+
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------
+String:-
+----------------------
+>> It is a collection of characters.
+>> It is Immutable. (Which we can't modify).
+>> Performance is Slow.
+>> It takes more memory.
+--------------------------------------------------------------------------------
+For Example:-
+-------------------------
+using System;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            string str = "Hello"; // 1000
+            str =str+ "Ram";  // 2000
+            str = str + "How are You?"; //3000
+            Console.WriteLine(str);
+        }
+    }
+}
+-------------------------------------------------------------------------------------
+String Builder:-
+--------------------------------
+>> It is Mutable. (which we can modify).
+>> It is a class.
+>> Performance High.
+>> It takes Less memory.
+--------------------------------------------------------------------------------
+using System;
+using System.Text;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("Hello!");
+            sb.Append("Ram");
+            sb.Append("How Are You?");
+            Console.WriteLine(sb);
+        }
+    }
+}
+------------------------------------------------------------------------------------
+wap to count the length of string.
+-------------------------------------------------------
+using System;
+using System.Text;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            string str;
+            Console.WriteLine("Enter a String=");
+            str = Console.ReadLine();
+            Console.WriteLine(str.Length);
+        }
+    }
+}
+--------------------------------------------------------------------------------------------
+Assignment Question:-
+------------------------------------
+1. wap to input a string and reverse them.
+2. wap to input two string and check both string are equal or not.
+3. wap to  input a string and check string is palindrome or not.
+4. wap to input a string and find the total vowel and consonant.
+5. wap to input a string and print only the first character of that string.
+Hint : I Love My India
+Output -> I L M I
+-----------------------------------------------------------------------------------------------------------------------
+Assembly:-
+----------------------
+>> it is group of related logic that must be added while using any method.
+>> it contains the information about classes , methods,interfaces etc.
+------------------------------------------------------------------------------------------------------
+There are two types of Assembly:-
+1. Private Assembly. -> which we can't shared.  it generate .exe (Executable) file.
+2. Public Assembly. -> which we can shared.  it generate .dll (Dynamic Link Library) file.  -> Class Library Template.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Public Assembly:-
+---------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CalculatorEx
+{
+    public class Authentication
+    {
+        public bool checkAuthenticate(string username,string password)
+        {
+            if(username=="admin" && password=="123")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public string Msg(string user)
+        {
+            return "Welcome!" + user;
+        }
+    }
+}  -> Now Build your Code.
+----------------------------------------------
+Private Assembly:-  -> Add Reference of your dll.
+------------------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using CalculatorEx;
+
+namespace AuthenticaionWindows
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        public void Clear()
+        {
+            txtUserName.Text = "";
+            txtPassword.Text = "";
+        }
+
+        private void btnAuthen_Click(object sender, EventArgs e)
+        {
+            string uname = txtUserName.Text;
+            string passowd = txtPassword.Text;
+            Authentication auth = new Authentication();
+            bool b=auth.checkAuthenticate(uname,passowd);
+            if(b==true)
+            {
+                MessageBox.Show(auth.Msg(txtUserName.Text));
+                Clear();
+            }
+            else
+            {
+                MessageBox.Show("Incorrect UserName and Password!!");
+                Clear();
+            }
+        }
+    }
+}
+------------------------------------------------------
+Assignment :-
+---------------------------
+1. Create an assembly to perform calculator operations like add,sub,mult,div.
+--------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
