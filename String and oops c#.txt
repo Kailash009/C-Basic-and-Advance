@@ -1,0 +1,269 @@
+String:-
+-------------------------
+>> It is a Immutable entity.(Which we can't modify).
+>> String hold multiple values.
+>> It is repersented as Double Quotes. (" ")
+>> Performance of string is slow.
+>> It creates separate memory every time whenever we are going to assign any new value.
+----------------------------------------------------------------------------------------------------------------------------------------------------
+For Example:-
+----------------------------
+using System;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            string str = "Hello!";
+            str = str + "Ram";
+            str = str + "How are you?";
+            Console.WriteLine(str);
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------
+StringBuilder:-
+----------------------------------
+>> It is a Mutable.(which we can modify).
+>> It doesn't create separate memory.
+>> StringBuilder is a built-in Class, it defined into "System.Text" namespace.
+>> SP Performance is very high.
+-------------------------------------------------------------------------------------------------------------
+ using System;
+using System.Text;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("Hello!");
+            sb.Append("Ram");
+            sb.Append("How are you?");
+            Console.WriteLine(sb);
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------
+Assignment Question:-
+-----------------------------------------------
+1. wap to input a string and reverse them.
+2. wap to input a string and check its Palindrome string or not.
+hint:  madam  ->> madam  -> Palindrome
+abc -> cba -> Not Palindrome.
+3. wap to input a string and count total no. of vowel and consonant of a given string.
+str ="Mithlesh"  -> vw =2   cnt=6
+4. wap to input a string and find the length of string.
+5. wap to input a string and check both strings are equal or not.
+--------------------------------------------------------------------------------------------------------------------------------
+Assembly:-
+------------------------------
+>> An assembly is a building block of dot net framework.
+>> It is basically compiled code that can be executed by the CLR.
+>> An assembly is a collection of types and resources that are built to work together and form a logical unit of functionality.
+There are two types of assembly  in c#:-
+1. Private Assembly. -> it can't be shared.   (.exe) -> Executable File.
+2. Public or Shared Assembly. -> which we can share. ->  (.dll) -> Dynamic Link Library.  -> "Class Library."
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+Class Library:-
+------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AuthenticationManagement
+{
+    public class LoginManagement
+    {
+        public bool checkCredentials(string userName,string password)
+        {
+            if(userName=="admin" && password=="123")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public string getUserName(string userName)
+        {
+            return "Welcome! " + userName;
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------
+Windows Based Application-
+--------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using AuthenticationManagement;
+
+namespace WinAuthenticationForm
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void ClearTextBox()
+        {
+            txtUserName.Text = "";
+            txtPassword.Text = "";
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            string uName = txtUserName.Text;
+            string uPaswd = txtPassword.Text;
+            LoginManagement lm = new LoginManagement();
+            bool b=lm.checkCredentials(uName,uPaswd);
+            if(b==true)
+            {
+                MessageBox.Show(lm.getUserName(uName));
+                ClearTextBox();
+            }
+            else
+            {
+                MessageBox.Show("Invalid Login Credentials");
+                ClearTextBox();
+            }
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------
+Assignment Task:-
+-----------------------------------------------------
+Create an Assembly to Perform Calculator. -> add,sub,mult,div
+-----------------------------------------------------------------------------------------------------------
+OOp's:-  
+-------------------------
+>> It stands for Object Oriented Programming.
+>> To promote Greater flexibility and Maintainablity in programming.
+>> In OOp's we focus on "Objects".
+-----------------------------------------------------------------------------------------------------------------------
+OOp's Concept:-
+----------------------------
+1. Class.
+2. Object.
+3. Encapsulation.  -->> Pending.
+4. Data Abstraction.
+5. Inheritance.
+6. Polymorphism.
+------------------------------------------------------------------------------------------------------------------------
+1. Class.
+------------------------------------------
+>> It is nothing just like a blue print for creating an particular kind of objects.
+>> It contains two things -
+a) Data Member/Variable.
+b) Member Function / Methods.
+Syntax:-
+-------------------
+class ClassName
+{
+Data Member;
+MemberFunction.
+}
+------------------------------------------------------------------------------------------------------------------------
+2. Object:-
+------------------------
+>> Object is a real world entity(Living+Non-Living).
+>> Object is an instance of a class.
+------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
