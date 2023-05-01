@@ -1,0 +1,462 @@
+Boxing -> it is used to convert value type to reference type.
+UnBoxing -> it is used to convert reference type to value type.
+--------------------------------------------------------------------------------------------------------------
+Boxing:-
+------------------
+using System;
+using System.Text;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 34;  // Value type
+            object b = a;  // Boxing ---->>  object -> Reference
+            Console.WriteLine(b);
+        }
+    }
+}
+--------------------------------------------------------------------------------------
+UnBoxing:-
+--------------------------
+using System;
+using System.Text;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            object b = 45;  // Reference Type.
+            int a =(int)b; // UnBoxing     Value Type
+            Console.WriteLine(a);
+        }
+    }
+}
+------------------------------------------------------------------------------------------------
+Example of Value Type:-
+------------------------------------------------
+>> Whatever changes made to the Formal Parameter doesn't reflect back to the actual parameter.
+Actual Parameter  -> which takes the original value of a program.
+Formal Parameter -> which takes the copied value of actual parameter.
+-------------------------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        public static void ValueType(int a,int b) // Formal Parameter  // 10 20
+        {
+            int temp;
+            temp = a; // temp=10
+            a = b;  // a=20
+            b = temp; // b=10
+            Console.WriteLine("Changes in Formal Parameter");
+            Console.WriteLine("a="+a+","+"b="+b);  // 20 // 10
+        }
+        static void Main()
+        {
+            int i, j;
+            Console.WriteLine("Enter two number=");
+            i = Convert.ToInt32(Console.ReadLine()); // 10
+            j = Convert.ToInt32(Console.ReadLine()); // 20
+            Console.WriteLine("Before Calling Function");
+            Console.WriteLine("i=" + i + "," + "j=" + j); // 10 20
+            ValueType(i, j); // 10 ,20  // Actual Parameter
+            Console.WriteLine("After Calling Function");
+            Console.WriteLine("i=" + i + "," + "j=" + j); // 10 // 20
+        }
+    }
+}
+--------------------------------------------------------------------------------
+2. Example of Reference Type:-
+------------------------------------------------
+>> Whatever changes made to the Formal Parameter does reflect back to the actual parameter.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Employee
+    {
+        public string Name;
+        public int Age;
+    }
+    class Demo
+    {
+        public static void ReferenceType(Employee empObj) // Formal Parameter  // 
+        {
+            empObj.Name = "Mohit";
+            empObj.Age = 22;
+            Console.WriteLine("Changes in Formal Parameter");
+            Console.WriteLine("Name="+empObj.Name+","+"Age="+empObj.Age);  // Mohit   22
+        }
+        static void Main()
+        {
+            Employee emp = new Employee();
+            emp.Name = "Akarsh";  // Actual Value
+            emp.Age = 20;
+            Console.WriteLine("Before Function Calling=");
+            Console.WriteLine("Name="+emp.Name+","+"Age="+emp.Age);  // Akarsh // 20
+            ReferenceType(emp);  // Reference Type
+            Console.WriteLine("After Function Calling=");
+            Console.WriteLine("Name=" + emp.Name + "," + "Age=" + emp.Age);  // Mohit // 22
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------
+OOp's:-
+-----------------
+>> OOp's is an approach to promote greater Flexibility and Maintainablity in programming.
+>> Easy to Access.
+>> Re-usablity.
+>> Reduce Complexity in a program.
+-----------------------------------------------------------------------------------------
+Oop's Concept:-
+----------------------------
+1. Class.
+2. Object.
+3. Data Abstraction.
+4. Encapsulation.
+5. Inheritance. 
+6. Polymorphism.
+----------------------------------------------------------------
+1. Class:-
+>> It is just a blue print for creating a particular kind of object.
+>> A class is a collection of similar kind of object.
+>> Class contains two things:-
+	a) Data Member. -> Attributes of a Class.
+	b) Member Function. -> Behaviour of a Class.
+Syntax:-
+-----------------
+class ClassName
+{
+Data Member/Variable
+Member Function / Method
+}
+------------------------------------------------------------------------------------------------- 
+2. Object:-
+>> Any real world (Living + Non-Living) entity is known as object.
+>> Objects are the instance of a class.
+>> Object must belong to the above class.
+----------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Employee
+    {
+        public string Name; // Attributes
+        public int Age; // Attributes
+        public void setEmployee()
+        {
+            Console.WriteLine("Enter Name and Age");
+            Name = Console.ReadLine();
+            Age = Convert.ToInt32(Console.ReadLine());
+        }
+        public void getEmployee()
+        {
+            Console.WriteLine("Name="+Name);
+            Console.WriteLine("Age="+Age);
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Employee emp = new Employee();
+            emp.setEmployee();
+            emp.getEmployee();
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------------------------
+6. Polymorphism:-
+------------------------------------------
+>> It is the ability to take more than one Forms.
+>> Poly + Morphism  => Many Forms.
+>> assign one person multiple Duties.
+For Ex:-
+-------------------
++ -> 2+3
++ -> "ram"+"shyam"
++ -> 2.4+5.6
+-------------------------------------------------------------------------------------------
+Types of Polymorphism:-
+--------------------------------------------------
+There are two types of Polymorphism:-
+a) Compile Time Polymorphism.
+>> It is also known as 'Early Binding'.
+>> To achieve compile time polymorpshim we use the concept of 'Method Overloading'.
+b) Run Time Polymorphism.
+>> It is also known as 'Late Binding'.
+>> To achieve Run time polymorpshim we use the concept of 'Method Overriding'.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+Method Overloading:-
+-----------------------------------------
+>> Method name same having different number of parameters.
+----------------------------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Employee
+    {
+        public string getEmployee()
+        {
+            return "No Employee!";
+        }
+        public string getEmployee(string name)
+        {
+            return "One Employee!"+name;
+        }
+        public string getEmployee(string name,string city)
+        {
+            return "Two Employee!" + name + ","+city;
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Employee emp = new Employee();
+            string first=emp.getEmployee();
+            Console.WriteLine("First="+first);
+            string second=emp.getEmployee("Akarsh");
+            Console.WriteLine("Second="+second);
+            string third=emp.getEmployee("Mohit","Noida");
+            Console.WriteLine("Third="+third);
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------------
+2. Method Overriding:-
+---------------------------------------------------------------------------------------------
+>> Method Name same having same number of parameters.
+------------------------------------------------------------------------------------------
+For Example:-
+-------------------------------------
+Parent - Father -> Transport -> Cycle.
+Child   -  Son  -> Transport -> Bike.
+----------------------------------------------------------------------
+To achieve method overriding in c# we use three keywords:-
+1. virtual -> It always used in Parent Class.
+2. override -> It always used in Child Class.
+3. base (Optional) -> It used when you want to see/access Parent methods.
+-----------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Parent
+    {
+        public virtual void transport()
+        {
+            Console.WriteLine("CYCLE");
+        }
+    }
+    class Child:Parent
+    {
+        public override void transport()
+        {
+            //base.transport(); // Optional see parent properties
+            Console.WriteLine("BIKE");
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Parent p = new Child();
+            p.transport();  // BIKE
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------
+3. Data Abstraction.  -->> Pending
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
