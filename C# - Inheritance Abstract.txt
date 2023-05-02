@@ -1,0 +1,324 @@
+3. Data Abstraction:-
+------------------------------------------
+>> Hiding unnecessary information and show only essential things.
+>> It referes to the act of representing essential features only without including the background details or Explanation.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+To achieve data abstraction in C# we use the concept of "Abstract" Class/Method.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+C# -
+------------
+Class ---  By Default  -> Internal.
+Variable/Methods -> By Default ->  Private.
+---------------------------------------------------------------------
+Abstract Class:-
+-------------------------------------
+>> In abstract class we use 'abstract' keyword.
+>> In Abstract class we can create abstract as well as non-abstract method.
+>> Abstract method can't be private.
+>> In Abstract class we can create Data Member/Variable.
+>> In Abstract class we can create Constructor.
+>> We can't create an Object of Abstract Class.
+>> we can't achieve multiple Inheritance through abstract class.
+---------------------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+
+namespace Batch12PMConsoleAkarsh
+{
+    abstract class Employee  // Abstract Class
+    {
+        public abstract int sum(int a, int b);
+        public abstract int mult(int c, int d);
+    }
+    class Owner:Employee
+    {
+        public override int sum(int a, int b)
+        {
+            return a + b;
+        }
+        public override int mult(int c, int d)
+        {
+            return c * d;
+        }
+    }
+   class Demo
+    {
+        static void Main()
+        {
+            Owner own = new Owner();
+            int sm=own.sum(10,20);
+            Console.WriteLine("Sum="+sm);
+            int mt=own.mult(3,4);
+            Console.WriteLine("Mult="+mt);
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------------------------------
+Inheritance:-
+-------------------------
+>> Object of one class acquire the properties of object in another class.
+>> Child class always inherits the properties of its Parent.
+>> It provides the idea of Re-usablity.
+----------------------------------------------------------------------------------------------------------------
+Types of Inheritance:-
+-------------------------------------
+There are five types of Inheritance -
+a) Single Level Inheritance. -> There is only one parent class and only one child class.
+b) Multi-Level Inheritance.
+c) Multiple Inheritance.
+d) Hybrid Inheritance.
+e) Hierarchical Inheritance.
+---------------------------------------------------------------------------------------------------------------
+Single Level Inheritance:-
+-------------------------------------------
+using System;
+using System.Text;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Parent
+    {
+        public void Display()
+        {
+            Console.WriteLine("Hello Parent!!");
+        }
+    }
+    class Child:Parent
+    {
+        public void Show()
+        {
+            Console.WriteLine("Hello Child!!");
+        }
+    }
+   class Demo
+    {
+        static void Main()
+        {
+            Child ch = new Child();
+            ch.Display();
+            ch.Show();
+        }
+    }
+}
+------------------------------------
+or
+-----------
+using System;
+using System.Text;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Parent
+    {
+        public int c;
+        public int Addition(int a, int b)
+        {
+            c = a + b;
+            return c; // 70
+        }
+    }
+    class Child : Parent
+    {
+        int p;
+        public int Multiplication(int m)
+        {
+            p = c * m; // 70 * 7
+            return p; // 490
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Child ch = new Child();
+            int ad = ch.Addition(10, 60);
+            Console.WriteLine("Sum=" + ad); // 70
+            int mt = ch.Multiplication(7);
+            Console.WriteLine("Multiplication=" + mt); // 490
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------
+Multiple Inheritance:-
+---------------------------------------------
+>> C# doesn't support multiple inheritance.
+>> But if you want to support multiple inheritance in C# then we use the concept of "Interface".
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Interface:-
+----------------------
+>> To create interface we use 'interface' keyword.
+>> In Interface we provide only method Declaration.
+>> In Interface we can't create Constructor.
+>> In interface we can't create Data Member.
+>> We can achieve Multiple Inheritance.
+>> We can't create an object of Interface.
+>> Whatever method you declare inside interface,It must be Implemented with their child classes.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+
+namespace Batch12PMConsoleAkarsh
+{
+    interface Father
+    {
+        public int Addition(int a, int b);
+    }
+    interface Mother
+    {
+        public int Multiplication(int c, int d);
+    }
+    class Son : Father, Mother
+    {
+        public int Addition(int a, int b)
+        {
+            return a + b;
+        }
+        public int Multiplication(int c, int d)
+        {
+            return c * d;
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Son sn = new Son();
+            int ad=sn.Addition(10, 80);
+            Console.WriteLine("Sum="+ad);
+            int mt=sn.Multiplication(3, 9);
+            Console.WriteLine("Multiplication="+mt);
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------------
+Inheritance:- (Assignment)
+-------------------------------------------------------------------
+1. Multi-Level Inheritance
+2. Hierarchical Inheritance.
+3. Hybrid Inheritance.
+--------------------------------------------------------------------
+Encapsulation:-
+------------------------------------
+>> It is also known as Data Hiding or Information Hiding.
+>> The wrapping up of data and function into a single unit is known as 'Encapsulation'.
+------------------------------------------------------------------------------------------------------------------------------------------
+To achieve Encapsulation in C# we use the concept of 'Access Specifier/Modifier'.
+-------------------------------------------------------------------------------------------------------------------------------------
+a) Public.
+b) Private.
+c) Protected.
+d) Internal.
+e) Protected Internal.
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
