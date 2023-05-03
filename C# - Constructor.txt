@@ -1,0 +1,387 @@
+Encapsulation:-
+------------------------------------
+>> It is also known as Data Hiding or Information Hiding.
+>> The wrapping up of data and function into a single unit is known as 'Encapsulation'.
+------------------------------------------------------------------------------------------------------------------------------------------
+To achieve Encapsulation in C# we use the concept of 'Access Specifier/Modifier'.
+-------------------------------------------------------------------------------------------------------------------------------------
+a) Public. -> It can be accessible anywhere in a program / (and also you can access different assembly)
+b) Private. -> It can be accessible inside their class where you created.(within block)
+c) Protected.-> It is same as Private,Protected comes into picture when you peform Inheritance.
+d) Internal.  -> With in same assembly/namespace you can access internal dataMember/Methods.
+e) Protected Internal. -> It can be accessbile with in same namespace or you can also access in different namespace only when you provide inheritance.
+--------------------------------------------------------------------------------------------------------
+Order of Accessibility Lowest to Highest:-
+--------------------------------------------------------------------
+Private  -> Protected -> internal  -> protected internal -> public
+--------------------------------------------------------------------------------------------------------------------
+Constructor:-
+-----------------------------------------------------
+>> It is used for variable initialization.
+>> It is a special method, that have same name of above class.
+>> Constructor can't return any value.
+>> Constructor called automatically when we create an object of a class.
+-----------------------------------------------------------------------------------------------------------------------------
+Types of Constructor:-
+-----------------------------------
+1. Default/Non-Parameterized.
+2. Parameterized.
+3. Copy Constructor.
+4. Private Constructor.
+5. Static Constructor.
+-------------------------------------------------------------------------------------------------------------------------
+1. Default / Non-Parameterized.
+>> In this, we can't pass any parameter inside constructor.
+-----------------------------------------------------------------------------------------------------------------------
+For Example:-
+----------------------------
+using System;
+using System.Text;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        Demo()  // Default Constructor
+        {
+            Console.WriteLine("Hello Default Constructor");
+        }
+        static void Main()
+        {
+            Demo dm=new Demo();
+            Demo dm1 = new Demo();
+            Demo dm2 = new Demo();
+        }
+    }
+}
+---------------------------------------------------------------------------------------------
+2. Parameterized.
+>> In this type of constructor we pass parameter.
+using System;
+using System.Text;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        string name;
+        int age;
+        Demo(string n,int a)  // Parameterized Constructor
+        {
+            name = n;
+            age = a;
+        }
+        public void show()
+        {
+            Console.WriteLine("Name="+name);
+            Console.WriteLine("Age="+age);
+        }
+        static void Main()
+        {
+            Demo dm=new Demo("Ravi",12);
+            dm.show();
+        }
+    }
+}
+--------------------------
+3. Copy Constructor:-
+------------------------------------
+>> In copy constructor we can copy one constructor value into another constructor.
+using System;
+using System.Text;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        string name;
+        int age;
+        Demo(string n,int a)  
+        {
+            name = n;
+            age = a;
+            Console.WriteLine("First Constructor");
+            Console.WriteLine("Name="+name);  // Ravi 
+            Console.WriteLine("Age="+age); //12
+        }
+        Demo(Demo dmObj)
+        {
+            name=dmObj.name;
+            age = dmObj.age;
+            Console.WriteLine("Copy Constructor");
+            Console.WriteLine("Name=" + name);
+            Console.WriteLine("Age=" + age);
+        }
+        static void Main()
+        {
+            Demo dm1=new Demo("Ravi",12);
+            Demo dm2 = new Demo(dm1); // Copy Constructor Worked Here.....
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------------------
+Assignment Question:-
+-------------------------------------
+1. Private. 
+2. Static.
+-----------------------------------------
+Constructor Overloading:-
+------------------------------------------
+>> Constructor name same having different no. of parameters/arguments.
+--------------------------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        Demo()
+        {
+            Console.WriteLine("Hello Default Constructor");
+        }
+        Demo(int i)
+        {
+            int sq = i * i;
+            Console.WriteLine("Square="+sq);
+        }
+        Demo(int l,int b)
+        {
+            int ar = l * b;
+            Console.WriteLine("Area="+ar);
+        }
+        static void Main()
+        {
+            Demo dm1 = new Demo();
+            Demo dm2 = new Demo(5);
+            Demo dm3 = new Demo(10,8);
+        }
+    }
+}
+----------------------------------------------------
+Constructor using Inheritance:-
+------------------------------------------------------
+using System;
+using System.Text;
+
+namespace Batch12PMConsoleAkarsh
+{
+    public class Parent
+    {
+        public string name="Ravi";
+        public int age=12;
+        public void show()
+        {
+            Console.WriteLine("Name=" + name); // Ravi
+            Console.WriteLine("Age=" + age); //12
+        }
+    }
+    class Child : Parent
+    {
+        int n;
+        int m;
+       public Child(int num)
+        {
+            n = num;
+        }
+        public Child(int num,int c)
+        {
+            n = num;
+            m = c;
+        }
+        
+        public void Calculate()
+        {
+            int op = n * age; // 90 *12 => 1080
+            Console.WriteLine("Op="+op);
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Child ch = new Child(90);
+            Child ch1 = new Child(10,20);
+            ch.show();
+            ch.Calculate();
+            ch1.show();
+            ch1.Calculate();
+        }
+    }
+}
+------------------------------------------------------------------------------------------------
+this -> Pending.
+----------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
