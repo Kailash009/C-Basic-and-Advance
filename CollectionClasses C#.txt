@@ -1,0 +1,476 @@
+This Keword in c#:-
+---------------------------------------
+>> this keyword is used for current calling object.
+>> this can be called for instance variable.
+--------------------------------------------------------------------------------------
+using System;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Employee
+    {
+        string name, address;
+        int age;
+        public Employee(string name,string address,int age)
+        {
+            this.name = name;
+            this.address = address;
+            this.age = age;
+        }
+        public void getDetails()
+        {
+            Console.WriteLine("Name="+this.name);
+            Console.WriteLine("Address="+this.address);
+            Console.WriteLine("Age="+this.age);
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Employee emp = new Employee("Alok","New Ashok nagar",12);
+            emp.getDetails();
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------
+Collection Classes in c#:-
+--------------------------------------------
+On the basic of storing data we can categorized collection into two parts:-
+1. Non-Generic.
+2. Generic.
+----------------------------------
+1. Non-Generic.
+>> It is used to store different types of element together.
+>> All Non-Generic classes are defined into this namespace "using System.Collections;"
+Non-Generic classes are the following :-
+1. ArrayList.
+2. HashTable.
+3. Sorted List.
+4. Stack
+5. Queue.
+------------------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+using System.Collections;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            ArrayList al = new ArrayList();
+            al.Add(123);
+            al.Add(true);
+            al.Add(DateTime.Now);
+            al.Add("Dot Net Core");
+            al.Add(345.678);
+            foreach (object item in al)
+            {
+                Console.WriteLine(item);
+            }
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------------
+2. HashTable.
+>> It store data in Key/Value Pair.
+-----------------------------------------------------------------------------
+using System;
+using System.Text;
+using System.Collections;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            Hashtable ht = new Hashtable();
+            ht.Add(1, "Hockey");
+            ht.Add("abc", 123);
+            ht.Add(true, "GOOD");
+            ht.Add(13, 34.56);
+            ht.Add(123, "BaseBall");
+            foreach (DictionaryEntry dt in ht)
+            {
+                Console.WriteLine(dt.Key+"="+dt.Value);
+            }
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------
+3. Sorted List.
+>> it returns the data in sorting format.
+>> it also store in key-value format.
+------------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+using System.Collections;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            SortedList sl = new SortedList();
+            sl.Add("po", "Apple");
+            sl.Add("zo", "Mango");
+            sl.Add("eo", "Graphes");
+            sl.Add("fo", "Banana");
+            sl.Add("go", "Papaya");
+            sl.Add("ao", "Watermelon");
+            foreach (DictionaryEntry item in sl)
+            {
+                Console.WriteLine(item.Key+"="+item.Value);
+            }
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------------------------
+4. Stack
+>> LIFO (Last in First out).
+>> Push -> To insert an element into the stack.
+>> POP -> To remove an element from the stack.
+--------------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+using System.Collections;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            Stack st = new Stack();
+            st.Push(20);
+            st.Push("Apple");
+            st.Push("java");
+            st.Push(20.34);
+            st.Push(true);
+            st.Pop();
+            st.Pop();
+            foreach (object item in st)
+            {
+                Console.WriteLine(item);
+            }
+        }
+    }
+}
+-----------------------------------------------------------------------------------
+5. Queue.
+-------------------------------
+>> FIFO (First in First out)
+>> Rear -> To perform insert an element into queue.
+>> Front -> Remove an element from the queue.
+-----------------------------------------------------------------------------------
+using System;
+using System.Text;
+using System.Collections;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            Queue qu = new Queue();
+            qu.Enqueue(12);
+            qu.Enqueue(true);
+            qu.Enqueue(12.446);
+            qu.Enqueue("Hello");
+            qu.Enqueue("Java");
+            qu.Enqueue(false);
+            qu.Dequeue();
+            qu.Dequeue();
+            foreach (object item in qu)
+            {
+                Console.WriteLine(item);
+            }
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------
+2. Generic Class:-
+----------------------------------
+>> it store only same type of value.
+>> In generic class we used "using System.Collections.Generic"
+--------------------------------------------------------------
+It has Following classes which are as given below-
+1. List.
+using System;
+using System.Text;
+using System.Collections.Generic;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            List<int> lt = new List<int>();
+            lt.Add(12);
+            lt.Add(34);
+            lt.Add(89);
+            lt.Add(233);
+            lt.Add(34);
+            foreach (int res in lt)
+            {
+                Console.WriteLine(res);
+            }
+        }
+    }
+}
+2. Dictionary.
+>> It store values in key-value pair.
+using System;
+using System.Text;
+using System.Collections.Generic;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            Dictionary<int, string> dt = new Dictionary<int, string>();
+            dt.Add(12, "Java");
+            dt.Add(13,"PHP");
+            dt.Add(14, "DOt NEt");
+            dt.Add(15, "Angular");
+            dt.Add(16, "React");
+            foreach (KeyValuePair<int,string> kp in dt)
+            {
+                Console.WriteLine(kp.Key+"="+kp.Value);
+            }
+        }
+    }
+}
+3. Sorted List.
+using System;
+using System.Text;
+using System.Collections.Generic;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            SortedList<string,int> sl = new SortedList<string,int>();
+            sl.Add("po", 23);
+            sl.Add("lng", 903);
+            sl.Add("pqr", 233);
+            sl.Add("ab", 24423);
+            sl.Add("bg", 723);
+            foreach (KeyValuePair<string,int> item in sl)
+            {
+                Console.WriteLine(item.Key+"="+item.Value);
+            }
+        }
+    }
+}
+4. Stack
+using System;
+using System.Text;
+using System.Collections.Generic;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            Stack<string> st = new Stack<string>();
+            st.Push("java");
+            st.Push("php");
+            st.Push("dot net");
+            st.Push("c#");
+            st.Push("html");
+            st.Pop();
+            st.Pop();
+            st.Pop();
+            foreach (string item in st)
+            {
+                Console.WriteLine(item);
+            }
+        }
+    }
+}
+--------------------
+5. Queue.
+using System;
+using System.Text;
+using System.Collections.Generic;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+           Queue<string> qu = new Queue<string>();
+            qu.Enqueue("java");
+            qu.Enqueue("php");
+            qu.Enqueue("dot net");
+            qu.Enqueue("c#");
+            qu.Enqueue("html");
+            foreach (string item in qu)
+            {
+                Console.WriteLine(item);
+            }
+        }
+    }
+}
+------------------------------------------------------------------------
+6. HashSet:-
+---------------------------------------
+>> Performance High.
+>> It ignore duplicate values.
+---------------------------------------------------------
+using System;
+using System.Text;
+using System.Collections.Generic;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            HashSet<string> hst = new HashSet<string>();
+            hst.Add("A");
+            hst.Add("B");
+            hst.Add("C");
+            hst.Add("A");
+            hst.Add("A");
+            hst.Add("D");
+            hst.Add("A");
+            hst.Add("E");
+            hst.Add("A");
+            hst.Add("F");
+            foreach (string item in hst)
+            {
+                Console.WriteLine(item);
+            }
+        }
+    }
+}
+=================================================================
+User Defined Generic Class:-  Pending
+User Defined Generic Method:- Pending
+File Handling. Pending
+------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
