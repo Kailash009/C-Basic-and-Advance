@@ -1,0 +1,231 @@
+1. Class.
+2. Object.
+3. Encapsulation. 
+4. Data Abstraction.
+5. Inheritance.
+6. Polymorphism.
+--------------------------------------
+5. Inheritance.
+-------------------------------------
+>> Object of one class acquire the object of another class.
+>> Child class always inherits the properties of its parent class.
+>> Re-usablilty.(we don't need to re-write same code again and again)
+-------------------------------------------------------------------------------------------------------------------------
+Types of Inheritance:-
+1. Single Level Inheritance.
+using System;
+using System.Text;
+
+namespace Batch12PMWE
+{
+    class Parent
+    {
+        public void show()
+        {
+            Console.WriteLine("Hello Parent!!");
+        }
+    }
+    class Child:Parent
+    {
+        public void display()
+        {
+            Console.WriteLine("Hello Child!!");
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Child ch = new Child();
+            ch.show();
+            ch.display();
+        }
+    }
+}
+or
+------------
+using System;
+using System.Text;
+
+namespace Batch12PMWE
+{
+    class Parent
+    {
+        public int res;
+        public int addition(int a,int b)
+        {
+            res = a + b;
+            return res;  // 28
+        }
+    }
+    class Child:Parent
+    {
+        int sb;
+        public int subtraction(int c)
+        {
+            sb = res - c; // 28-100
+            return sb;   // -72
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Child ch = new Child();
+            int sm=ch.addition(20, 8);
+            Console.WriteLine("Sum="+sm);  // 28
+            int sbt=ch.subtraction(100);
+            Console.WriteLine("Subtraction="+sbt); // -72
+        }
+    }
+}
+------------
+In C#:- (IMP)
+--------------
+Class -> By Default -> Internal.
+Data Member/Methods -> By Default -> Private.
+---------------------------------------------------------------------------------
+2. Multiple Inheritance.
+>> C# also doesn't support multiple inheritance.
+>> But if you want to support multiple inheritance then we use the concept of 'Interface'.
+-----------------------------------------------------------------------------------------------------------------------------------------
+Interface:-
+-----------------------
+>> To declare interface we use 'interface' keyword.
+>> In Interface we only provide method declaration.
+>> we can't create Data Member inside interface.
+>> we can't create constructor inside interface.
+>> We can achieve multiple inheritance.
+>> All the interface methods must be implemented with their child classes.
+-------------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+
+namespace Batch12PMWE
+{
+    
+    interface Father
+    {
+        public int Addition(int a, int b);
+    }
+    interface Mother
+    {
+        public int Subtraction(int c, int d);
+    }
+    class Child : Father, Mother
+    {
+        public int Addition(int a, int b)
+        {
+            return a + b;
+        }
+        public int Subtraction(int c, int d)
+        {
+            return c - d;
+        }
+        public void display()
+        {
+            Console.WriteLine("Hello Child");
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Child ch = new Child();
+            int s=ch.Addition(10, 34); 
+            Console.WriteLine("Sum="+s); //44
+            int sb=ch.Subtraction(3, 4); 
+            Console.WriteLine("Subt="+sb); //-1
+            ch.display();
+        }
+    }
+}
+===========================================================================
+Assignment Question:-
+--------------------------------------------
+3. Multi-level Inhertiance.
+4. Hybrid Inheritance.
+5. Hierarchical Inheritance.
+-------------------------------------------------------------------------
+4. Data Abstraction.
+>> It refers to the act of representing essential features only without including the background details or explanation.
+>> show only essential things and hide unnecessary information.
+---------------------------------------------------------------------------------------------------------------------------
+In C# we can achieve data abstraction using "Abstract Class".
+-----------------------------------------------------------------------------------------------
+Abstract Class:-
+--------------------------------------
+>> To declare abstract class or method we use Abstract keyword.
+>> In abstract we can also provide only method declaration.
+>> we can also define method but it should be non-abstract.
+>> We can create Data Member inside it.
+>> We can also create constructor.
+>> We don't create an object of Abstract class.
+>> we can't achieve multiple inheritance using abstract class.
+>> It is necessary you have to override all the abstract methods inside child classes.
+--------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+
+namespace Batch12PMWE
+{
+    abstract class A  // Abstract Class  // S.D
+    {
+        abstract public int Addition(int a, int b);
+        abstract public int Subtraction(int c, int d);
+    }
+    class Child : A
+    {
+        public override int Addition(int a, int b)
+        {
+            return a + b;
+        }
+        public override int Subtraction(int c, int d)
+        {
+            return c - d;
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+           //A obj =new A(); // We can't create an Object of Abstract Class.
+            Child ch = new Child();
+            int s=ch.Addition(10,20);
+            Console.WriteLine("Sum="+s);
+            int sb=ch.Subtraction(20,30);
+            Console.WriteLine("Sub="+sb);
+        }
+    }
+}
+------------------------------------------------------------------------------------------
+4. Polymorphism:-
+-------------------------------
+>> It is the ability to take more than one forms.
+>> Poly + Morhphism => Many Forms.
+------------------------------------------------------------------------------------
+For Example:-
+-----------------------------
+1. assign multiple duties to a single person.
+2. 
++ -> 2+3
++ -> "ram"+"shyam"
++ -> 1.2+4.5
+----------------------------------------- 
+Types of Polymorphism:-
+------------------------------------------
+There are two types of Polymorphism:-
+1. Compile Time Polymorphism. / Early Binding.
+>> This  Polymorphism can be achieved by using  "FUNCTION OVERLOADING".
+2. Run Time  Polymorphism. / Late Binding.
+>> This  Polymorphism can be achieved by using  "FUNCTION OVERRIDING".
+-------------------------------------------------------------------------------------------------------------------------------
+FUNCTION OVERLOADING :- PENDING.
+-------------------------------------------------------------------------------
+3. Encapsulation.:-
+>> The wrapping up of data and function into a single unit is known as Encapsulation.
+>> It is also known as Data Hiding or Information Hiding.
+-----------------------------------------------------------------------------------------------------------------------------------
+
+
+
