@@ -1,0 +1,347 @@
+Types of Polymorphism:-
+------------------------------------------
+There are two types of Polymorphism:-
+1. Compile Time Polymorphism. / Early Binding.
+>> This  Polymorphism can be achieved by using  "FUNCTION OVERLOADING".
+2. Run Time  Polymorphism. / Late Binding.
+>> This  Polymorphism can be achieved by using  "FUNCTION OVERRIDING".
+-------------------------------------------------------------------------------------------------------------------------------
+Method OVERLOADING :- 
+-------------------------------------------------------------------------------
+>> Method name same having different number of parameters.
+---------------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+
+namespace Batch12PMWE
+{
+    class ExampleOverload
+    {
+        public void rectangle()
+        {
+            Console.WriteLine("Having No Parameter");
+        }
+        public void rectangle(int s)
+        {
+            int sq = s * s;
+            Console.WriteLine("Having One Parameter");
+            Console.WriteLine("Square="+sq);
+        }
+        public void rectangle(int l,int b)
+        {
+            int ar = l * b;
+            Console.WriteLine("Having Two Parameter");
+            Console.WriteLine("Area="+ar);
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            ExampleOverload ex = new ExampleOverload();
+            ex.rectangle();
+            ex.rectangle(5);
+            ex.rectangle(10, 30);
+        }
+    }
+}
+----------------------------------------------------------------------------------------------
+Method Overriding:-
+------------------------------------
+>> Method name same and parameter should also be same.
+-----------------------------------------------------------------------------------------------
+Father ---> Transport  -> Cycle.
+Son -> Transport -> Bike.
+----------------------------------------------------------------------
+To achieve method overriding in c# we generally used three keywords:-
+1. virtual. -> This keyword always used in Parent Class.
+2. override -> This keyword always used in Child Class.
+3. base -> This is an optional. whenever you want to see parent properties or behaviour then you can use base keyword.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+
+namespace Batch12PMWE
+{
+    class Parent
+    {
+        public virtual void transport()
+        {
+            Console.WriteLine("CYCLE");
+        }
+    }
+    class Child:Parent
+    {
+        public override void transport()
+        {
+            //base.transport();  // Optional
+            Console.WriteLine("BIKE");
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Parent ch = new Child();
+            ch.transport();
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------
+3. Encapsulation.:-
+>> The wrapping up of data and function into a single unit is known as Encapsulation.
+>> It is also known as Data Hiding or Information Hiding.
+To achieve encapsulation in c# we use the concept of access Modifier:-
+1. Public. -> It can be access anywhere in a program. it means outside and inside the assembly/namespace.
+2. Private. -> It can't be access anywhere. it can access only within the block/class.
+3. Protected. -> It is similar as Private but protected member can be access when inheritance comes into picture.
+4. Internal. -> it can be access with in assembly/namespace.
+5. Protected Internal. ->  it can be accessibly with in assembly as well as outside the assembly only when you provide inheritance.
+---------------------------------------------------------------------------------------------------------------------------------
+Accessibility to Lowest to Highest:-
+-------------------------------------------------------
+Private -> Protected -> Internal -> Protected Internal -> Public.
+-------------------------------------------------------------------------------------------
+Constructor:-
+-------------------------
+>> It is used for variable Initialization.
+>> it is a special method that contains the same name of above class.
+>> It doesn't return any value.
+>> Constructor can be called automatically when you create an object of a class.
+------------------------------------------------------------------------------------------------------------------------------
+Types of Constructor:-
+1. Default/Non-Parameterized. 
+>> In it, we can't pass any parameter.
+using System;
+using System.Text;
+
+namespace Batch12PMWE
+{
+    public class Example
+    {
+        public Example()  // Constructor Invoked
+        {
+            Console.WriteLine("Hello Default Constructor");
+        }
+    }
+
+    class Demo
+    {
+        static void Main()
+        {
+            Example ex = new Example();
+            Example ex1 = new Example();
+            Example ex2 = new Example();
+
+        }
+    }
+}
+2. Parameterized.
+>> In it, we pass parameter.
+using System;
+using System.Text;
+
+namespace Batch12PMWE
+{
+    public class Example
+    {
+        string n;
+        int a;
+        public Example(string name,int age)  // Constructor Invoked
+        {
+            n = name;
+            a = age;
+        }
+        public void Display()
+        {
+            Console.WriteLine("Name="+n);
+            Console.WriteLine("Age="+a);
+        }
+    }
+
+    class Demo
+    {
+        static void Main()
+        {
+            Example ex = new Example("Sushil",19);
+            ex.Display();
+        }
+    }
+}
+------------------------------------------------------------------------------------------------
+3. Copy.
+>> In this we copy one constructor value into another constructor.
+using System;
+using System.Text;
+
+namespace Batch12PMWE
+{
+    public class Example
+    {
+        string n;
+        int a;
+        public Example(string name,int age)  // Constructor Invoked
+        {
+            n = name;
+            a = age;
+            Console.WriteLine("First Constructor Values");
+            Console.WriteLine("Name="+n);
+            Console.WriteLine("Age="+a);
+        }
+        public Example(Example ex)  // Constructor Invoked
+        {
+            n = ex.n;
+            a = ex.a;
+            Console.WriteLine("Copy Constructor Values");
+            Console.WriteLine("Name=" + n);
+            Console.WriteLine("Age=" + a);
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Example ex = new Example("Sushil",19);
+            Example ex1 = new Example(ex);  // Copy constructor Worked Here.
+        }
+    }
+}
+Assignment Task:-
+-------------------------------------------
+4. Private
+5. Static.
+-----------------------------------------------------------------------------
+Constructor Overlaoding:-
+------------------------------------------------------
+>> Constructor name same having different no. of arguments.
+----------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+
+namespace Batch12PMWE
+{
+    public class Example
+    {
+        public Example()
+        {
+            Console.WriteLine("Having No Parameter");
+        }
+        public Example(int a)
+        {
+            int cube = a * a * a;
+            Console.WriteLine("Having One Parameter");
+            Console.WriteLine("Cube="+cube);
+        }
+        public Example(int c,int d)
+        {
+            int ar = c * d;
+            Console.WriteLine("Having Two Parameter");
+            Console.WriteLine("Area="+ar);
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Example ex1 = new Example();
+            Example ex2 = new Example(5);
+            Example ex3 = new Example(12,5);
+        }
+    }
+}
+---------------------------------------------------------------------------------------------
+Collection Classes in C#:-  Pending
+-------------------------------------------------------------------------------------------
+1. Non-Generic.
+	>> In it you can store different elements together.
+	using System.Collections;
+	a) ArrayList.
+	b) HashTable.
+	c) Sorted List.
+	d) Stack
+	e) Queue.
+2. Generic.
+	>> In it you can store only similar type of elements together.
+	using System.Collections.Generic
+	a) List
+	b) Dictionary.
+	c) Sorted List.
+	d) Stack.
+	e) Queue.
+------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
