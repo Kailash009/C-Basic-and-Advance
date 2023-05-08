@@ -1,0 +1,485 @@
+Generic Class:-
+-------------------------------
+>> It allows you to delay the specification of type with any data type.
+>> It allows you to work with any data type.
+>> It increases type safe, code-reuse and Performance.
+------------------------------------------------------------------------------------------------------------------------------------------
+Syntax:-
+------------------
+class ClassName<T>
+{
+}
+--------------------------------------------------------------------
+using System;
+using System.Text;
+using System.Collections.Generic;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Employee<T>  // Generic Class
+    {
+        T value;
+        public Employee(T value)
+        {
+            this.value = value;
+        }
+        public void show()
+        {
+            Console.WriteLine(this.value);
+        }
+    }
+
+    class Demo
+    {
+        static void Main()
+        {
+            Employee<int> emp = new Employee<int>(23);
+            Employee<string> emp1 = new Employee<string>("Hello");
+            Employee<double> emp2 = new Employee<double>(234.34);
+            emp.show();
+            emp1.show();
+            emp2.show();
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+using System.Collections.Generic;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Employee<T1,T2>  // Generic Class
+    {
+        T1 name;
+        T2 age;
+        public Employee(T1 name, T2 age)
+        {
+            this.name = name;
+            this.age = age;
+        }
+        public void show()
+        {
+            Console.WriteLine("Name=" + this.name);
+            Console.WriteLine("Age=" + this.age);
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Employee<string, int> emp = new Employee<string, int>("Akarsh",12);
+            emp.show();
+            Employee<bool, double> emp1 = new Employee<bool, double>(true, 12.34);
+            emp1.show();
+        }
+    }
+}
+--------------------------------------------------------------
+Generic Method:-
+----------------------------------
+using System;
+using System.Text;
+using System.Collections.Generic;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Example
+    {
+        public void Swap<T>(ref T a, ref T b)  // Generic Method
+        {
+            T temp;
+            temp = a;
+            a = b;
+            b = temp;
+            Console.WriteLine("Changes in Formal Parameter");
+            Console.WriteLine("a=" + a +","+ "b=" + b);  // 20  // 10
+        }
+    }
+
+    class Demo
+    {
+        static void Main()
+        {
+            Example exObj = new Example();
+            int a = 10, b = 20;
+            char i = 'P', j = 'Q';
+            double c = 12.34, d = 45.678;
+            Console.WriteLine("Before Calling Value=");
+            Console.WriteLine("a="+a+","+"b="+b); // 10 //20
+            Console.WriteLine("I=" + i + "," + "J=" + j); // P // Q
+            Console.WriteLine("C=" + c + "," + "D=" + d);
+            exObj.Swap(ref a,ref b); // 10,20
+            exObj.Swap(ref i,ref j); // P Q
+            exObj.Swap(ref c, ref d); // 12.34 45.678
+            Console.WriteLine("After Calling Value=");
+            Console.WriteLine("a=" + a +","+"b=" + b); // 10 //20
+            Console.WriteLine("I=" + i + "," + "J=" + j); // P // Q
+            Console.WriteLine("C=" + c + "," + "D=" + d);
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------------------------------
+File Handling:-
+----------------------------------
+File -> File is used for keeping a record.
+---------------------------------------------------------------------------
+Variable -- Then DrawBacks:-
+---------------------------------------------------------
+1. In variable you can store only data in temporarily manner.
+2. It store only limited amount of Data.
+3. you can't retrieve your previous values.
+---------------------------------------------------------------------------------------------
+File Handling :-
+----------------------------
+1. Permanent Nature.
+2. Huge amount of Data.
+3. you can work with previous values.
+---------------------------------------------------------------------------------------------
+Operations on File Handling:-
+-----------------------------------------------
+1. Read. -> it is used for readling purpose.
+2. Write. -> it is used for writing purpose.
+3. Append.-> it is used to write your file with previous values.
+Note :-  When you open any file in write mode , if file does not exist then it will created automatically.
+When you open any file in read mode , if file does not exist then it will throw an error.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+using System.IO;
+------------------------------------------
+StreamWriter
+StreamReader
+-----------------------------------------------
+Note :-> File would be terminated by null.
+-------------------------------------------------------------------------------------------------------
+1. wap to create a file and perform write and read operation.
+using System;
+using System.Text;
+using System.IO;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        { 
+          // Writing a File.
+            string msg;
+            Console.WriteLine("Enter a String=");
+            msg = Console.ReadLine();
+            using (StreamWriter sw = new StreamWriter("H://testing.txt",true))
+            {
+                foreach (char res in msg)
+                {
+                    sw.Write(res);
+                }
+            }
+            // Reading File.
+            string line = "";
+            using (StreamReader sr = new StreamReader("H://testing.txt"))
+            {
+                while((line=sr.ReadLine())!=null)
+                {
+                    Console.Write(line);
+                }
+            }
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------------------
+Enums:-
+---------------------
+>> It contains collection of elements.
+>> With the help of enum you can directly extract enum values.
+>> In Enum indexing will be start at 0.
+-----------------------------------------------------------------------------------------------------
+Syntax -
+enum enum_name {collection of elements}
+-------------------------------------------------------------------
+Enum Outside Class:-
+--------------------------------------
+using System;
+using System.Text;
+using System.IO;
+
+namespace Batch12PMConsoleAkarsh
+{
+
+    enum OTP { Verified,NotVerified=450,Failed=500,Error=600,NotFound};
+
+    class Demo
+    {
+        static void Main()
+        {
+            string msg =Convert.ToString(OTP.Verified);
+            int val =(int)OTP.Failed;
+            Console.WriteLine(msg); // Verified
+            Console.WriteLine(val); // 
+        }
+    }
+}
+---------------------------------------------------------------------------------------
+using System;
+using System.Text;
+using System.IO;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        enum Week {Sunday,Monday,Tuesday,Wednesday,thursday,Friday,Saturday };
+        static void Main()
+        {
+            string day =Convert.ToString(Week.thursday);
+            Console.WriteLine(day);
+        }
+    }
+}
+-------------------------------------------------------
+Enum in Switch Case:-
+---------------------------------------
+using System;
+using System.Text;
+using System.IO;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        enum Week {Sunday,Monday,Tuesday,Wednesday,thursday,Friday,Saturday,January };
+        static void Main()
+        {
+            switch(Week.January)
+            {
+                case Week.Sunday:
+                Console.WriteLine("Sunday");
+                    break;
+                case Week.Monday:
+                    Console.WriteLine("Monday");
+                    break;
+                case Week.Tuesday:
+                    Console.WriteLine("Tuesday");
+                    break;
+                case Week.Wednesday:
+                    Console.WriteLine("Wednesday");
+                    break;
+                case Week.thursday:
+                    Console.WriteLine("Thursday");
+                    break;
+                case Week.Friday:
+                    Console.WriteLine("Friday");
+                    break;
+                case Week.Saturday:
+                    Console.WriteLine(Week.Saturday);
+                    break;
+                default:
+                    Console.WriteLine("Wrong Input Day");
+                    break;
+            }
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
