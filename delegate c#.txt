@@ -1,0 +1,342 @@
+Exception Handling:-
+--------------------------------------------
+Exception:-
+------------------------
+>> It is an abnormal condition that occurs at runtime.
+>> It is an abnormal condition that stop the normal execution of program.
+-------------------------------------------------------------------------------------------------------
+Exception Handling:- 
+--------------------------------------
+>> It is a mechanism i.e. used to solve Run Time Error.
+>> In Exception Handling 'Exception' is the Base class to handle all the exception.
+-----------------------------------------------------------------------------------------------------------------------
+In Exception handling we have predefined keywords which are as given below:-
+1. try.
+>> In try block we write program logic of code.
+2. catch.
+>> In catch block we catch the exception, which generates from try block.
+>> This block is responsible to handle the exception.
+3. finally.
+>> This block executed at once,whether an exception has raised or not.
+4. throw.
+>> throw is a keyword by which we can throw our exception to catch. catch accept throw message and print them accordingly.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+using System.IO;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            //try
+            //{
+            //    string a = null;
+            //    Console.WriteLine(a.Count());
+            //}
+            //catch(Exception ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+            //}
+            //try
+            //{
+            //    int[] a = { 23, 45, 56 };
+            //    for (int i = 0; i < a.Length; i++)
+            //    {
+            //        Console.WriteLine(a[i]);
+            //    }
+            //}
+            //catch(Exception ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+            //}
+            //try
+            //{
+            //    int a, b, res;
+            //    Console.WriteLine("Enter two Number");
+            //    a = Convert.ToInt32(Console.ReadLine());
+            //    b = Convert.ToInt32(Console.ReadLine());
+            //    res = a / b;
+            //    Console.WriteLine("Divide=" + res);
+            //}
+            //catch(Exception ax)
+            //{
+            //    Console.WriteLine(ax.Message);
+            //}
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------------------------------------------
+try-catch-finally:-
+--------------------------------
+using System;
+using System.Text;
+using System.IO;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            try
+            {
+                int a, b, res;
+                Console.WriteLine("Enter two Number");
+                a = Convert.ToInt32(Console.ReadLine());
+                b = Convert.ToInt32(Console.ReadLine());
+                res = a / b;
+                Console.WriteLine("Divide=" + res);
+            }
+            catch (Exception ax)
+            {
+                Console.WriteLine(ax.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Hello I am Finally!!");
+            }
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------
+try-catch-throw-finally:-
+-------------------------------------------------------
+using System;
+using System.Text;
+using System.IO;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            try
+            {
+                int age;
+                Console.WriteLine("Enter your Age=");
+                age = Convert.ToInt32(Console.ReadLine());
+                if (age>18)
+                {
+                    Console.WriteLine("Valid for Vote....");
+                }
+                else
+                {
+                    throw new Exception("Invalid age for Vote");
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Hii I am Finally Block");
+            }
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------
+Delegates:-
+-------------------------
+>> A delegate is a reference type variable that hold reference to a method.
+>> It is generally used for call back function and event handling.
+>> It is similar to pointer in c or c++.
+>> In delegate we can pass function as a parameter.
+To perform delegate program in c# we need to follow the following steps:-
+1. Delegate Declaration.
+2. Instantiation.
+3. Invoke. / Calling
+-----------------------------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+using System.IO;
+
+namespace Batch12PMConsoleAkarsh
+{
+    public delegate int doSomething(int a);  // Delegate Declaration
+    class Demo
+    {
+        static int n = 10;
+        public static int AddNum(int s)
+        {
+            n = n + s;
+            return n; // 15
+        }
+        public static int MultNum(int s)
+        {
+            n = n * s;  // n=15*10
+            return n; // 150
+        }
+        public static int getNum()
+        {
+            return n;
+        }
+        static void Main()
+        {
+            doSomething ds1 = new doSomething(AddNum); // Instatantion
+            doSomething ds2 = new doSomething(MultNum); // Instatantion
+            ds1(5);  // Invoking
+            Console.WriteLine("Sum=" + getNum());  // Sum=15
+            ds2(10); // Invoking
+            Console.WriteLine("Multiply=" + getNum()); // Multiply=150
+        }
+    }
+}
+------------------------------------
+Assignment Task:-
+------------------------------------
+wap to create calculator program using delegate.
+wap to find armstrong no. using delegate.
+------------------------------------------------------------------------------------------------------------------
+Optional Parameter:-
+---------------------------------------------------
+>> At the function calling and at the time of function declaration both parameter must be same.
+>> To overcome this problem we use the concept of Optional Parameter.
+using System;
+using System.Text;
+using System.IO;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Example
+    {
+        public void Calc(int a, int b,int c=30) // Optional Parameter
+        {
+            int res = a + b + c;
+            Console.WriteLine(res);
+        }
+    }
+    class Demo
+    { 
+        static void Main()
+        {
+            Example ex = new Example();
+            ex.Calc(10, 20);
+        }
+    }
+}
+------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+using System.IO;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Example
+    {
+        public void Calc(int a=2, int b=5,int c=2) // Optional Parameter
+        {
+            int res = a + b + c;
+            Console.WriteLine(res);
+        }
+    }
+    class Demo
+    { 
+        static void Main()
+        {
+            Example ex = new Example();
+            ex.Calc(10,20,30); // 60
+            ex.Calc(); // 9
+            ex.Calc(50); // 57
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------------
+Named Parameter -> Pending
+-----------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
