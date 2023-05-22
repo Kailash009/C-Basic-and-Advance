@@ -1,0 +1,460 @@
+Lambda Expression. 
+-------------------------------------------------------
+>> It is represented by ( => )  this symbol.
+>> It has Fast performance.
+>> In Lambda we pass expression and it can be executed at one line.
+---------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+using System.IO;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int[] a = { 2, 4, 5, 6, 7 };
+            var square = a.Select(x => x * x);  // Lambda Expression
+            foreach (int res in square)
+            {
+                Console.WriteLine(res);
+            }
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+using System.IO;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            List<int> numbers = new List<int>() { 12,34,56,78,90,123,456,7,6,54,33};
+            List<int> evenNumbers = numbers.FindAll(x => (x % 2 != 0));  // Lambda Expression
+            foreach (int res in evenNumbers)
+            {
+                Console.WriteLine(res);
+            }
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------------
+Partial Class and Methods:-
+>> Partial class is used to distribute that class in multiple developers.
+>> With Partial class you can create same class name again and again.
+using System;
+using System.Text;
+using System.IO;
+
+namespace Batch12PMConsoleAkarsh
+{
+   partial class Employee
+   { 
+        public void print()
+        {
+            Console.WriteLine("Hello Print");
+        }
+   }
+    partial class Employee
+    {
+        
+        public void display()
+        {
+            Console.WriteLine("Hello Display");
+        }
+    }
+    partial class Employee
+    {
+        public void show()
+        {
+            Console.WriteLine("Hello Display");
+        }
+    }
+
+    class Demo
+    {
+        static void Main()
+        {
+            Employee emp = new Employee();
+            emp.print();
+            emp.display();
+            emp.show();
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------- 
+Partial Method:-
+------------------------------
+>> partial keyword is used to create partial method.
+>> partial method must be declared inside partial class.
+>> Do not provide implementation of partial method.
+>> Do not specify any access modifier while making partial method.
+>> Partial Method can be static.
+-------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+using System.IO;
+using System.Net.Http.Headers;
+
+namespace Batch12PMConsoleAkarsh
+{
+    partial class Department
+    {
+       partial void getTotalEmployees();   // Creation of Partial Method.
+    }
+    partial class Employee
+    {
+        public void display()
+        {
+            Console.WriteLine("Hello Display");
+        }
+    }
+    partial class Employee
+    {
+        public void show()
+        {
+            Console.WriteLine("Hello Display");
+        }
+    }
+    class Example : Department
+    {
+        public void getTotalEmployees() // Partial Method Implmented Here.
+        {
+            Console.WriteLine("Hello");
+        }
+    }
+    class Example2:Department
+    {
+        void getTotalEmployees() // Partial Method Implmented Here.
+        {
+            Console.WriteLine("Hello 2");
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Example ex = new Example();
+            ex.getTotalEmployees();
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------------
+Sealed Class.
+>> A class which can't be inherit.
+sealed class Employee  // It is a Sealed class it can't share data with any other class.
+    {
+        public void hello()
+        {
+            Console.WriteLine("Hello EMployee");
+        }
+    }
+    class Example:Employee  // Inheritance Not Possible..........
+    {
+        public void print()
+        {
+            Console.WriteLine("hello Print");
+        }
+    }
+------------------------------------------------------------------------------------------------------------
+Anonymous type.
+>> A method without name is called anyonymous type.
+
+using System;
+using System.Text;
+using System.IO;
+using System.Net.Http.Headers;
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            var employee = new { Id = 101, Name = "Shiva", Age = 12, City = "Noida",pincode=12334 };  // Anonymous Type.
+            int eid = employee.Id;
+            string name = employee.Name;
+            int age = employee.Age;
+            string city = employee.City;
+            Console.WriteLine("EID=" + eid);
+            Console.WriteLine("Name=" + name);
+            Console.WriteLine("Age=" + age);
+            Console.WriteLine("City=" + city);
+            Console.WriteLine("PinCode="+employee.pincode);
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------
+Tuple
+>> A tuple contains collection of items.
+>> In tuple max limit is 7 Element.
+>> These items can be access through item1,item2,item3 and so on.
+using System;
+using System.Text;
+using System.IO;
+using System.Net.Http.Headers;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            Tuple<int, string, int, string, int> emp = new Tuple<int, string, int, string, int>(1091,"Akarsh",18,"Noida",90823);
+            Console.WriteLine(emp.Item1);
+            Console.WriteLine(emp.Item2);
+            Console.WriteLine(emp.Item3);
+            Console.WriteLine(emp.Item4);
+            Console.WriteLine(emp.Item5);
+        }
+    }
+}
+----------
+or
+---------
+using System;
+using System.Text;
+using System.IO;
+using System.Net.Http.Headers;
+
+namespace Batch12PMConsoleAkarsh
+{
+    class Demo
+    {
+        static void Main()
+        {
+            Tuple<int, string, int, string, int, double, int> emp = Tuple.Create(101, "Akarsh", 12, "Noida", 34094, 345.67, 123);
+            Console.WriteLine(emp.Item1);
+            Console.WriteLine(emp.Item2);
+            Console.WriteLine(emp.Item3);
+            Console.WriteLine(emp.Item4);
+            Console.WriteLine(emp.Item5);
+            Console.WriteLine(emp.Item6);
+            Console.WriteLine(emp.Item7);
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------------------
+Extension Method:-
+--------------------------------------------
+>> To add something.
+>> It is represented by downward arrow keys.
+-----------------------------------------------------------------------------------
+steps-
+--------------
+>> class must be static.
+>> Method must be static.
+>> Method parameter must contain this keyword.
+==============================================
+using System;
+using System.Text;
+using System.IO;
+using System.Net.Http.Headers;
+
+namespace Batch12PMConsoleAkarsh
+{
+    /// <summary>
+    ///   wap to create extension method to find total number of elements in a given string. 
+    /// </summary>
+    
+    static class Example
+    {
+        public static int GetTotalNumberofCharacters(this string str)
+        {
+            if(!string.IsNullOrEmpty(str))
+            {
+               return str.Count();
+            }
+            else
+            {
+                return 0;
+            }
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+           int count= Example.GetTotalNumberofCharacters("Akarsh");
+           Console.WriteLine("Count="+count);
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------------------------
+or 
+-------------
+1. Create Class Libary add this libary in your console project and add some method in the same class library.
+Class Library- 
+namespace EmployeeClassLib
+{
+    public class Employee
+    {
+        public void DoTask()
+        {
+            Console.WriteLine("Employee Do Task");
+        }
+        public void MarkAttendance()
+        {
+            Console.WriteLine("Employee Mark his Attendance");
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------
+Add this class lib in my Project Reference and do this code. ---
+using System;
+using System.Text;
+using System.IO;
+using System.Net.Http.Headers;
+using EmployeeClassLib;
+
+namespace Batch12PMConsoleAkarsh
+{
+    static class Example
+    {
+        public static void TakeSalary(this Employee emp)
+        {
+            Console.WriteLine("Employee Take Salary");
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Employee emp = new Employee();
+            emp.DoTask();
+            emp.MarkAttendance();
+            emp.TakeSalary();  // Extension Method (Downward Arrow Key)
+        } 
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Installation of Sql Server -
+-----------------------------------------------------
+1. Sql Server -
+https://www.microsoft.com/en-in/sql-server/sql-server-downloads   --- Express.
+2. Download and Install SSMS (SQL SERVER MANAGEMENT STUDIO).
+ Free Download for SQL Server Management Studio (SSMS) 19.0.2
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
