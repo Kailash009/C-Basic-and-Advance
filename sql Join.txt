@@ -1,0 +1,266 @@
+Operators in Sql Server:-
+-----------------------------------------------------------------------
+1. Arithmetic Operator.
++ , -  *    /
+2. Relational Operator.
+> >=   <  <=    <>
+3. Logical Operator
+and   or  not  
+-----------------------------------------
+Special Operator:-
+-----------------------------------
+In
+not in
+between
+not between
+like --
+>> It is used for Searching Purpose.
+It uses two symbol - Wild Card
+a) Underscore _  -> it read one character at a time.
+b) Percentage % -> it read all character at a time.
+--------------------------------------------------------------------------------------------------------
+Top -> it returns top records.
+order by :-
+>> It is used to perform the data in ascending or descending order.
+-----------------------------------------------------------------------------------------------------
+select 10+4 as 'Addition'
+select 10-4 as 'Subtraction'
+select 10*4 as 'Multiplication'
+select 10/4 as 'Division'
+select * from tbl_Employee
+select ename+post from tbl_Employee
+select * from tbl_Employee
+--waq to get all the employee whose salary is less than 20000.
+select * from tbl_Employee where salary<20000
+select * from tbl_Employee where ename <> 'subham'
+-- waq to get all the employee whose name is rajeev and post is TL
+select * from tbl_Employee where ename='rajeev' and post='TL'
+select * from tbl_Employee where ename='rajeev' or post='CA'
+select * from tbl_Employee where not ename='subham'
+-- waq to get all the employee whose name is sanjeev ,vikas and ajay.
+select * from tbl_Employee where ename='sanjeev' or ename='vikas' or ename='ajay'
+-- or
+select * from tbl_Employee where ename in('sanjeev','vikas','ajay')
+select * from tbl_Employee where ename not in('sanjeev','vikas','ajay')
+
+-- waq to get all the employee whose salary is between 2000 to 5000.
+select * from tbl_Employee where salary between 2000 and 5000
+select * from tbl_Employee where salary not between 2000 and 5000
+-- LIKE OPERATOR
+select * from tbl_Employee where ename like 's_b_a_'
+-- waq to get all the employee whose name start from s.
+select * from tbl_Employee where ename like 's%'
+-- waq to get all the employee whose name ends from s.
+select * from tbl_Employee where ename like '%s'
+-- waq to get all the employee whose name exist s.
+select * from tbl_Employee where ename like '%s%'
+-- waq to get the top 3 records from the table.
+select top 3 * from tbl_Employee
+-- waq to get the top 3 latest records from the table. 
+select top 3 * from tbl_Employee order by eid desc
+-- waq to get all the employee name is ascending order.
+select * from tbl_Employee order by ename desc
+-----------------------------------------------------------------------------------------------
+Aggregate Function:-
+------------------------------------
+1. max()
+2. min()
+3. sum()
+4. avg()
+5. count()
+---------------------------------
+Clauses in SQL Server:-
+---------------------------------------
+>> These clauses must be used with Aggregate function.
+>> it will not work without aggregate function.
+a) GROUP BY
+b)  HAVING -> it is used to provide condition.
+------------------------------------------------------------------------------------------
+Types of Relationship-
+---------------------------------------
+a) One to One.
+b) One to Many or Many to One.
+c) Many to Many.
+-----------------------------------------------------------------------------------------------------
+Student -- PersonalDetails  ---> One to One.
+Student - PaymentDetails -> One to Many or Many to One.
+Student - Course  -> Many to Many.
+1 S => Many Course
+1 C => Many Student
+-------------------------------------------------------------------------------------------------
+Student :-
+---------------------
+eid   ename  age    fee       cname
+1      avinash 10    23450    Dot Net
+1      avinash 10     34905    AWS -> we are not able to maintain student and course record in one table then we need to design two different table and perform JOIN.
+-----------------------------------------------------------------------------------------
+JOIN IN SQL SERVER:-
+------------------------------------------
+>> To retreive data from multiple tables.
+-------------------------------------------------------------------------------------
+Types of JOIN -
+----------------------------
+1. Inner Join. -->>>> Pending
+2. Outer Join. 
+	a) Left    b) Right  c) Full
+3. Cross Join.
+4. Natural Join.
+5. Self Join.
+----------------------------------------------------------------------------------------------
+Foreign key -
+>> it is used to create a relationship among tables.
+>> First Table Primary key work as a Foreign key in another table.
+ Rules:-
+	a) Column name must be same
+	b) Data type must be same.
+---------------------------------------------------------------------------------------------------
+select max(salary) as 'Max_Salary' from tbl_Employee
+select min(salary) as 'Min_Salary' from tbl_Employee
+select avg(salary) as 'AVG_Salary' from tbl_Employee
+select sum(salary) as 'Tatal_Salary' from tbl_Employee
+select count(*) as 'Total Employee' from tbl_Employee
+
+select * from tbl_Employee
+-- waq to get total no. of employee in each department.
+select post,count(*) as 'Total Employee' from tbl_Employee group by post order by post desc
+-- waq to get total salary of employee in each departement.
+select post,sum(salary) as 'Total Salary' from tbl_Employee group by post
+select post,count(*) as 'Total Employee',sum(salary) as 'Total Salary' from tbl_Employee group by post
+-- waq to get total number of employee in each department where employee is greater than 2.
+select post,count(*) from tbl_Employee group by post having count(eid)>=2
+
+-- JOIN IN SQL SERVER  -- Student  -- Course
+create table tbl_Course  -- Parent Table
+(
+cid int primary key identity(1,1),
+cname nvarchar(50)
+)
+create table tbl_Student  -- Child Table
+(
+sid int primary key identity(1,1),
+sname nvarchar(50),
+sage int,
+saddress nvarchar(50),
+sfee decimal(20,2),
+cid int foreign key references tbl_Course(cid)  -- Syntax to Create Foreign Key.
+)
+select * from tbl_Course
+select * from tbl_Student
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
