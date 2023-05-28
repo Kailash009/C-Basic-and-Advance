@@ -1,0 +1,189 @@
+Anonymous Type.  --- Pending
+Tuple.
+Enum.
+Partial Class/Method.
+String Interpolation.
+Lambda Expression.
+Extension Method.
+Exception Handling.
+Reflection.
+Multithreading.
+--------------------------------------------------------
+Generic Method:-
+--------------------------------------
+using System;
+using System.Text;
+using System.Collections.Generic;
+using System.ComponentModel;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+        public static void GenericSwap<T>(ref T a, ref T b)  // GENERIC METHOD  // Formal Parameter
+        {
+            T shiva;
+            shiva = a;
+            a = b;
+            b = shiva;
+            Console.WriteLine("Swapping Values");
+            Console.WriteLine("A=" + a);  // 200 // Q
+            Console.WriteLine("B=" + b);  // 100   //P
+        }
+        static void Main()
+        {
+            int i = 100;
+            int j = 200;
+            char k = 'P';
+            char c = 'Q';
+            double m = 344.56;
+            double n = 123.78;
+            Console.WriteLine("Before Function Calling=");
+            Console.WriteLine("I=" + i); // 100 
+            Console.WriteLine("J=" + j); // 200
+
+            Console.WriteLine("K=" + k); // P
+            Console.WriteLine("C=" + c); // Q
+
+            Console.WriteLine("M=" + m); // 344.56
+            Console.WriteLine("N=" + n); // 123.78
+
+
+
+            GenericSwap<int>(ref i, ref j);  // Function Calling.
+            GenericSwap<char>(ref k, ref c);
+            GenericSwap<double>(ref m, ref n);
+            Console.WriteLine("After Function Calling");
+            Console.WriteLine("I=" + i); //  200
+            Console.WriteLine("J=" + j); //  100
+
+            Console.WriteLine("K=" + k); //  Q
+            Console.WriteLine("C=" + c); //  P
+
+            Console.WriteLine("M=" + m); // 123.78
+            Console.WriteLine("N=" + n); // 344.78
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------
+Delegation:-
+--------------------------------
+>> It is reference type variabe that hold reference to a method. 
+>> It is used to handle callback function and Event Handling.
+>> It is similar to pointer in c or c++.
+To perform delegate operation we need to follow following three steps:-
+1. Delegate Declaration.
+2. Instantiation.
+3. Invoking.
+--------------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+using System.Collections.Generic;
+using System.ComponentModel;
+
+namespace Batch12PMWE
+{
+    delegate int dosomething(int n); // Delegate Decalaration
+    class Demo
+    {
+        static int a = 10;
+        public static int AddNum(int s) // 6
+        {
+            a += s; // a=a+s
+            return a; // a=16
+        }
+        public static int MultNum(int p) // 9
+        {
+            a*=p; // a=a*p;
+            return a; // a=16*9 = 144
+        }
+        public static int getNum()
+        {
+            return a;
+        }
+        static void Main()
+        {
+            dosomething obj1 = new dosomething(AddNum);  // Instantiation
+            obj1(6);  // Invoking
+
+            Console.WriteLine("Sum="+getNum()); // 16
+
+            dosomething obj2 = new dosomething(MultNum);  // Instantiation
+            obj2(9);  // Invoking
+
+            Console.WriteLine("Mult=" + getNum()); // 144
+        }
+    }
+}
+----------------------------------------------------------------------------------------
+Non-return type - Delegate
+--------------------------------------------
+using System;
+using System.Text;
+using System.Collections.Generic;
+using System.ComponentModel;
+
+namespace Batch12PMWE
+{
+    delegate void dosomething(); // Delegate Decalaration
+    class Demo
+    {
+        public static void Display() // 6
+        {
+            Console.WriteLine("Hello Delegate How are You???");
+        }
+        public static void show() // 6
+        {
+            Console.WriteLine("I am Good What About You???");
+        }
+        static void Main()
+        {
+            dosomething obj1 = new dosomething(Display);  // Instantiation
+            obj1();  // Invoking
+
+            dosomething obj2 = new dosomething(show);  // Instantiation
+            obj2();  // Invoking            
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
