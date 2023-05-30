@@ -1,0 +1,124 @@
+Dot Net Framework  - Old Version of dot.
+Dot Net Core -> Latest version (New Version) -> Open Source.
+------------------------------------
+C#:-
+------------------------------------
+>> C# is a high level,object oriented and type safe programming language.
+>> C# is a platform independent language.  ????
+>> C# was developed by 'Anders Heljsberg in 2002'. (Microsoft)
+>> High Performance.
+>> It inherits most of the features of Java.
+---------------------------------------------------------------------------------------------------------
+Type safe -
+----------------------
+int a="hello"; at a time it will show an error. (Before compilation).  -> in  C#
+---------------------------------------------------------------------------------------------------------------
+In C - type Unsafe.
+int a="hello"; After compilation it show an error.
+---------------------------------------------------------------------------------------------
+Dot Net Framework:-
+---------------------------------------------
+>> Dot net is not a programming language, it is a framework for building various kind of applications.
+Net -> Network Enabled Technology.
+>> Dot net support multiple programming language. (63+) -> vb.net,f#,j#,c# and many more......
+------------------------------------------------------------------------------------------------------------------------------------------------------
+Types of Application :-
+------------------------------------------------------
+1. CUI. (Command User Interface). ->>> cmd (Command Prompt)
+	>> User should know the command.
+2. GUI. (Graphical User Interface).
+	a) Desktop Application (Windows based Application)  -> Standalone Application.
+>> An application that runs with the help of Operating System. -> Tally, photoshop, office package and many more. -> .exe File.
+>> It must be installed on O.S.
+32 bit O.S   -. 64 bit app Photshop. -> Compatibility Issue.
+	b) Web Application
+>> an application that runs with the help of Web Browser.
+>> It follows client-server architecture.
+>> It can be access by anywhere.
+	c) Android App -> Xamarin / Mono (Mobile App)
+	d) Web Services -> WCF  (Windows Communication Foundation), WPF (Windows Presentation Foundation)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Dot Net Core:-
+------------------------------
+a) Desktop
+b) Web
+c) Mobile/ Android -> MAUI(Multi Level Application User Interface)
+d) IOT. (Internet of Things)
+e) Game Development.  -> Unity.
+f) Machine Learning -  ML.Net
+g) AI (Aritificial Intelligence)
+------------------------------------------------------------------------------------------------------------------------------------
+Dot Net Components:-
+--------------------------------------------
+There are two major components used in dot net which are as follows -
+a) CLR (Common Language Runtime)
+	>> All dot net applications are executed by CLR.
+	>> CLR is the heart of dot net framework.
+	CLR contains some sub-components which includes:	
+		a) CTS (Common Type System)  --->> PENDING.
+		b) CLS (Common Language Specification)
+		c)  Native Code. 
+		d)  GC (Garbage Collector).
+-------------------------------------------------------------------------------------------------------------------
+b) BCL/FCL (Base Class Library)/ Framework Class Library.
+>> all predefined methods,classes , interfaces and libraries defined into it.
+In C -> 
+#include<stdio.h>
+printf()
+scanf()
+-----------------------------------
+In C#
+using System; // BCL/FCL. System -> Namespace
+Console.readLine() -> To take input from the user.   
+Console.writeLine() -> To display the result.
+Console -> Class
+readline() , writeline () -> Methods.
+--------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
