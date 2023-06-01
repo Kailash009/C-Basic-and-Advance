@@ -1,79 +1,262 @@
-Dot Net Framework  - Old Version of dot.
-Dot Net Core -> Latest version (New Version) -> Open Source.
-------------------------------------
-C#:-
-------------------------------------
->> C# is a high level,object oriented and type safe programming language.
->> C# is a platform independent language.  ????
->> C# was developed by 'Anders Heljsberg in 2002'. (Microsoft)
->> High Performance.
->> It inherits most of the features of Java.
----------------------------------------------------------------------------------------------------------
-Type safe -
-----------------------
-int a="hello"; at a time it will show an error. (Before compilation).  -> in  C#
----------------------------------------------------------------------------------------------------------------
-In C - type Unsafe.
-int a="hello"; After compilation it show an error.
----------------------------------------------------------------------------------------------
-Dot Net Framework:-
----------------------------------------------
->> Dot net is not a programming language, it is a framework for building various kind of applications.
-Net -> Network Enabled Technology.
->> Dot net support multiple programming language. (63+) -> vb.net,f#,j#,c# and many more......
-------------------------------------------------------------------------------------------------------------------------------------------------------
-Types of Application :-
-------------------------------------------------------
-1. CUI. (Command User Interface). ->>> cmd (Command Prompt)
-	>> User should know the command.
-2. GUI. (Graphical User Interface).
-	a) Desktop Application (Windows based Application)  -> Standalone Application.
->> An application that runs with the help of Operating System. -> Tally, photoshop, office package and many more. -> .exe File.
->> It must be installed on O.S.
-32 bit O.S   -. 64 bit app Photshop. -> Compatibility Issue.
-	b) Web Application
->> an application that runs with the help of Web Browser.
->> It follows client-server architecture.
->> It can be access by anywhere.
-	c) Android App -> Xamarin / Mono (Mobile App)
-	d) Web Services -> WCF  (Windows Communication Foundation), WPF (Windows Presentation Foundation)
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Dot Net Core:-
-------------------------------
-a) Desktop
-b) Web
-c) Mobile/ Android -> MAUI(Multi Level Application User Interface)
-d) IOT. (Internet of Things)
-e) Game Development.  -> Unity.
-f) Machine Learning -  ML.Net
-g) AI (Aritificial Intelligence)
-------------------------------------------------------------------------------------------------------------------------------------
-Dot Net Components:-
---------------------------------------------
-There are two major components used in dot net which are as follows -
-a) CLR (Common Language Runtime)
-	>> All dot net applications are executed by CLR.
-	>> CLR is the heart of dot net framework.
-	CLR contains some sub-components which includes:	
-		a) CTS (Common Type System)  --->> PENDING.
-		b) CLS (Common Language Specification)
-		c)  Native Code. 
-		d)  GC (Garbage Collector).
--------------------------------------------------------------------------------------------------------------------
-b) BCL/FCL (Base Class Library)/ Framework Class Library.
->> all predefined methods,classes , interfaces and libraries defined into it.
-In C -> 
-#include<stdio.h>
-printf()
-scanf()
+Constant:-
+------------------------
+>> It is also known as 'Literals'.
+>> It is a fixed value i.e. never going to be changed through out the whole program.
+Types of Constant:-
 -----------------------------------
-In C#
-using System; // BCL/FCL. System -> Namespace
-Console.readLine() -> To take input from the user.   
-Console.writeLine() -> To display the result.
-Console -> Class
-readline() , writeline () -> Methods.
---------------------------------------------------------------------------------------------------
+There are three types of constant:-
+1. Numeric Constant.
+>> it hold numeric values like 1,2,3........
+	it has sub types:-
+		a) Octal -> it hold 0 to 7.
+		b) Decimal -> it hold 0 to 9.
+		c) Hexadecimal -> it hold 0 to 15.
+		d) Real or Floating-point Constant. -> 23.45 ,   34  etc.
+2. Character Constant.
+	>> it hold single value.
+	>> it is represented by single quotes.
+	'a'     '1'    '%'  etc.
+3. String Constant.
+	>> it hold multiple values.
+	>> it is represented by double quotes. 
+	"abcd" , "123345" , "fsdf^*&*&*#K"
+--------------------------------------------------------------------------------------
+Data Type:-
+------------------------
+>> It specifies that which type of value a variable can hold.
+Types of Data type:-
+--------------------------------------------------------------------------------------
+a) Primitive Data type. -> It is used to store only single value.
+	bool,byte,char,float,double,int
+bool -> 1 bit.
+byte -> 8 bit. (1 byte)
+char -> 16 bit. (2 byte)
+int  -> 32 bit (4 byte)
+float -> 32 bit. (4 byte)
+double -> 64 bit (8 byte)
+----------------------------------------------------------------------------------------------------
+b) Non-Primitive or Reference. -> it is used to store multiple values.
+	string,class,array,delegate,interface,enums etc.
+----------------------------------------------------------------------------------------------------
+Keywords :-
+--------------------------
+>> Keywords are the reserved words which have special meaning in a program.
+private,public,static,while,do-while,for,foreach,if and so on.....
+-----------------------------------------------------------------------------------------------------------------
+wap to find sum of two number.
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int x = 10;
+            int y = 20;
+            //int z = x + y;
+            Console.WriteLine("Sum="+(x+y));
+        }
+    }
+}
+----------------------------------------------------------------------
+wap to input two number and find sum.
+---------------------------------------------------------------------
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a, b, c;
+            Console.WriteLine("Enter Two Numbers=");
+            a =Convert.ToInt32(Console.ReadLine());
+            b =Convert.ToInt32(Console.ReadLine());
+            c = a + b;
+            Console.WriteLine("Sum="+c);
+        }
+    }
+}
+------------------------------------------------------------------------
+Type Conversion:-
+-----------------------------------
+>> To convert one type to another type.
+There are three types of type conversion:-
+	a) Implicit.
+	b) Explicit.
+	c) Conversion between Incompatible Types.
+---------------------------------------------------------------------------------------------------------
+a) Implicit/Automatic :-
+-----------------------------------
+>> To convert lower data type value into higher data type.
+>> There is no data loss occur.
+---------------------------------------------------------------------------------------------------
+For Example:-
+--------------------------
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 356; // 4 Byte.
+            double b = a;  // 8 Byte // Implicit.
+            Console.WriteLine(b); // 356
+        }
+    }
+}
+---------------------------------------------------------------------------------------
+b) Explicit.
+>> It is also known as 'Type Casting'.
+>> To convert Higher data type value into Lower Data type.
+>> Data loss is possible here.
+---------------------------------------------------
+For Example:-
+------------------------------
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            double d = 345.789;
+            int a =(int)d; // Higher to Lower
+            Console.WriteLine(a); //345      .789 Loss
+        }
+    }
+} 
+------------------------------------------------------------------------
+c) Conversion between Incompatible Types:-  (int - string)
+>> Both data type must be opposite with each other.
+a) Convert Class.
+b) parse method.
+---------------------------------------------------------------------------------------------
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a =Convert.ToInt32("3456"); // Convert Class.
+            int b =int.Parse("1234"); // Parse Method
+            Console.WriteLine(a);
+            Console.WriteLine(b);
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------
+Operators in C#:-
+-----------------------------
+>> Operators are the special symbol in which we perform some action.
+Types of Operator:-
+a) Arithmetic Operator.
+b) Relational Operator.  --->> Pending.
+c) Logical Operator.
+d) Assignment Operator.
+e) Ternary Operator.
+f)  Bitwise Operator.
+g) Inc/Dec Operator.
+--------------------------------------------------------------------------------------
+a) Arithmetic Operator.
+>> it is used to perform mathmatical operation.
++ , - , * , / , %
+wap to input two no. and find sum,sub,mult,div,rem.
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a, b;
+            Console.WriteLine("Enter two number=");
+            a = Convert.ToInt32(Console.ReadLine());
+            b = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Sum="+(a+b));
+            Console.WriteLine("Sub=" + (a - b));
+            Console.WriteLine("Mult=" + (a * b));
+            Console.WriteLine("Div=" + (a / b));
+            Console.WriteLine("Rem=" + (a % b));
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------------------
+Assignment Questions:-
+-----------------------------------------
+1. wap to input two no. and swap using third variable.
+2. wap to input two no. and swap without using third variable.
+3. wap to input the radius of circle and find its area and cirumference.
+4. wap to input the length and breath of rectangle find its area, perimeter and diagonal.
+5. wap to input the celcuis and convert it into farenhite and vice-versa.
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
