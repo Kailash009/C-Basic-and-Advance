@@ -1,0 +1,259 @@
+Types of Parameter in SP:-
+---------------------------------------------------
+There are two types of Parameter we can create in SP which are as follows:-
+	a) Input Parameter.
+		i) Without Parameter.    ii) With Parameter.
+	b) Output Parameter.
+--------------------------------------------------------------------------------------------------------------------------------
+a) Input Parameter (Without Parameter).
+-------------------------------------------------------------------------------
+create/alter proc/procedure  procedure_Name
+as begin
+<Query Statements>
+end
+--------------------------------------------------------------------------------
+Command to Execute/Run a Procedure:-
+--------------------------------------------------------
+exec/execute procedure_Name
+-------------------------------------------------------
+>> wap to show the record of all the employee.
+select * from tbl_Employee
+-- Input Parameter / WithOut Parameter.
+create procedure sp_getallemp
+as begin
+select * from tbl_Employee
+end
+-- Run a Procedure
+execute sp_getallemp
+-----------------------------------------------------------------------
+To create the Following Procedure:-
+--------------------------------------------------------------
+1. Show All Employee.  -- Done.
+2. Insert an Employee.  -- Done.
+3. Update an employee.
+4. Delete an Employee.
+5. show a specific employee record.
+--------------------------------------------------------------
+Input (With Parameter):-
+------------------------------------------
+Syntax:-
+----------------
+create/alter proc/procedure  procedure_Name
+(
+@parameter1 datatype1,
+@parameter2 datatype2(size),
+@parameter3 datatype3,
+.
+.
+.
+.
+.
+@parameterN datatypeN,
+)
+as begin
+insert into tablename(col1,col2,col3) values(@parameter1,@parameter2,@parameter3)
+end
+-----------------------------------------------------------------------------------------------------------------------------------
+-- Procedure of Insert an Employee -- Input Parameter
+create proc sp_insertemp
+(
+@name nvarchar(50),
+@age int,
+@mobileno nvarchar(20),
+@post nvarchar(50),
+@salary money
+)
+as begin
+insert into tbl_Employee(ename,age,mobileno,post,salary) values(@name,@age,@mobileno,@post,@salary)
+end
+exec sp_getallemp
+exec sp_insertemp 'sunil',20,'343093434','TL',45003
+-----------------------------------------------------------------------------------------------------------------
+3. Update an employee. (Input Parameter)
+Syntax:-
+--------------------
+create proc sp_insertemp
+(
+@parameter1 datatype
+@parameter datatype(size),
+.
+.
+.
+@parameter datatype
+)
+as begin
+update tablename set @parameter1=value1,@paramete2=value2 where @parameter3=value3
+end
+------------------------------------------------------------------------------------------------------------------------------------------------
+create proc sp_updateemp
+(
+@eid int,
+@name nvarchar(50),
+@age int,
+@mobile nvarchar(50),
+@post nvarchar(50),
+@salary money
+)
+as begin
+update tbl_Employee set ename=@name,age=@age,mobileno=@mobile,post=@post,salary=@salary where eid=@eid
+end
+exec sp_getallemp
+exec sp_updateemp 109,'Kunal Singh',18,'9001234','TL',90834
+------------------------------------------------------------------------------------------------------------------------
+Delete an Employee (Input Parameter):-
+-----------------------------------------------------------
+Syntax:-
+--------------------
+create proc proc_Name
+(
+@parameter1 datatype
+)
+as begin
+delete from tablename where @parameter=value
+end
+----------------------------------------------------------------------------------------
+create proc sp_delemp
+(
+@eid int
+)
+as begin
+delete from tbl_Employee where eid=@eid
+end
+
+exec sp_getallemp
+exec sp_delemp 111
+--------------------------------------------
+5. Search Specific Employee:-
+-------------------------------------------
+Syntax:-
+--------------------
+create proc proc_Name
+(
+@parameter1 datatype
+)
+as begin
+select from tablename where @parameter=value
+end
+----------------------------------------------------------------------------
+create proc sp_singlemp
+(
+@eid int
+)
+as begin
+select * from tbl_Employee where eid=@eid
+end
+
+exec sp_getallemp
+exec sp_singlemp 115
+------------------------------------------------------------------------------------------------
+Create a Single Procedure that perform all these operations:-
+1. Show All Employee.
+2. Insert an Employee.
+3. Update an employee.
+4. Delete an Employee.
+5. show a specific employee record.
+-------------------------------------------------------------------------------------------
+alter proc sp_Employee
+(
+@action nvarchar(50)=null,
+@eid int=0,
+@name nvarchar(50)=null,
+@age int=0,
+@mobile nvarchar(50)=null,
+@post nvarchar(60)=null,
+@salary money=0
+)
+as begin
+if(@action='Create')
+begin
+insert into tbl_Employee(ename,age,mobileno,post,salary) values(@name,@age,@mobile,@post,@salary)
+select 1 as result
+end
+else if(@action='Update')
+begin
+update tbl_Employee set ename=@name,age=@age,mobileno=@mobile,post=@post,salary=@salary where eid=@eid
+select 1 as result
+end
+else if(@action='Delete')
+begin
+delete from tbl_Employee where eid=@eid
+select 1 as result
+end
+else if(@action='Select')
+begin
+select * from tbl_Employee
+end
+else if(@action='Select_Single')
+begin
+select * from tbl_Employee where eid=@eid
+end
+else 
+print('No Match Found!!')
+end
+-- Test/Run/Execute your Procedure
+exec sp_Employee 'Create',0,'AJAY',34,'11122333','Manager',45049  -- Insert/Create
+exec sp_Employee 'Select'  -- Select
+exec sp_Employee 'Update',105,'BABLU SINGH',10,'9831111','SE',3494  -- Update
+exec sp_Employee 'Delete',117  -- DELETE
+exec sp_Employee 'Select_Single',113
+exec sp_Employee 'Insert'
+----------------------------------------------------------------------------------------------------------------------------------------------------
+b) Output Parameter. --->> PENDING
+----------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
