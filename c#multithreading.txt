@@ -1,0 +1,306 @@
+Extension Method:-
+--------------------------------------------
+>> To add something.
+>> It is represented by downward arrow key.
+>> static and this keyword is used to create extension method.
+--------------------------------------------------------------------------------------------------------
+wap to create extension method that count total of character in a string.
+using System;
+using System.Text;
+using System.Collections.Generic;
+using System.ComponentModel;
+
+namespace Batch12PMWE
+{
+    static class DemoExt
+    {
+        public static int CountCharacter(this string str)
+        {
+            if(!string.IsNullOrEmpty(str))
+            {
+                return str.Count();
+            }
+            else
+            {
+                return 0;
+            }
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+         int count=DemoExt.CountCharacter("sushilchaudhary");
+         Console.WriteLine("Total no. of Character="+count);
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------
+Exception Handling:-
+--------------------------------------
+Exception:-> It is an abnormal condition that stop the normal execution of a program.
+-----------------------
+Exception Handling:-
+---------------------------------------
+>> "Exception" is the base/parent class to handle any type of exception.
+>> using "System.Threading" namespace we can define all the exception.
+>> To solve run time error we use the concept of exception handling.
+It provide some keywords to solve run time error which are as follows:-
+a) try
+>> In try block, we write our program logic.
+b) catch
+>> catch block is responsible to handle run time error.
+c) finally
+>> It must be executed at once whether the exception has raised or not.
+d) throw.
+-------------------------------------------------------------------------------------------------------
+try-catch:-
+------------------------------
+using System;
+using System.Text;
+using System.Collections.Generic;
+using System.ComponentModel;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            try
+            {
+                int a, b, res;
+                Console.WriteLine("Enter two number=");
+                a = Convert.ToInt32(Console.ReadLine());
+                b = Convert.ToInt32(Console.ReadLine());
+                res = a / b;
+                Console.WriteLine("Divide=" + res);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------
+try-catch-finally:-
+-----------------------------------
+using System;
+using System.Text;
+using System.Collections.Generic;
+using System.ComponentModel;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            try
+            {
+                int a, b, res;
+                Console.WriteLine("Enter two number=");
+                a = Convert.ToInt32(Console.ReadLine());
+                b = Convert.ToInt32(Console.ReadLine());
+                res = a / b;
+                Console.WriteLine("Divide=" + res);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Hello I am Finally Block.");
+            }
+        }
+    }
+}
+----------------------------------------------------------------------------
+try-catch-finally-throw:-
+--------------------------------------------
+using System;
+using System.Text;
+using System.Collections.Generic;
+using System.ComponentModel;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            try
+            {
+                int age;
+                Console.WriteLine("Enter your age");
+                age = Convert.ToInt32(Console.ReadLine());
+                if (age > 18)
+                {
+                    Console.WriteLine("Valid For Vote..");
+                }
+                else
+                {
+                    throw new Exception("Under Age.. Not valid for Vote Now.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Hello I am Finally Block.");
+            }
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------------------------
+Reflection:-
+-----------------------------
+>> It is a process to get metadata of a type at runtime. The System.Reflection namespace contains required classes for reflection.
+>> It is used to provide meta type (Complete Information) of any variable,methods,class at runtime.
+>> To get meta inforamtion of any variable or any method then we have some predefined methods or classes :-
+a) Memeberinfo
+b) Constructor info
+c) Type.
+d) IsEnum
+e) Fieldinfo
+f) Assembly
+g) Propertyinfo and etc.
+-----------------------------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+using System.Collections.Generic;
+using System.ComponentModel;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 34;
+            long b = 45;
+            short c = 12;
+            Console.WriteLine(a.GetType());  // System.int32
+            Console.WriteLine(b.GetType()); // System.int64
+            Console.WriteLine(c.GetType()); // System.int16
+        }
+    }
+}
+-----------------------------------------------
+using System;
+using System.Text;
+using System.Collections.Generic;
+using System.ComponentModel;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            string str = "Hello C#";
+            Console.WriteLine(str);
+            Type t = typeof(System.String);
+            Console.WriteLine(str.GetType());
+            Console.WriteLine(t.Assembly);
+            Console.WriteLine(t.FullName);
+            Console.WriteLine(t.BaseType);
+            Console.WriteLine(t.IsClass);
+            Console.WriteLine(t.IsEnum);
+            Console.WriteLine(t.IsInterface);
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------
+Multithreading:-
+-----------------------------------------
+Thread :-
+-----------------------
+>> A thread is single execution flow of program.
+>> Thread is a light weight process.
+>> Thread is depend upon O.S.
+>> Thread is small program.
+>> it can be defined in System.Threading Namespace.
+-------------------------------------------------------------------------------
+Multithreading:-
+------------------------------
+>> When two or more process executed concurrently then it is the concept of Multithreading. (which is not in our hand)
+>> it depend upon O.S.
+Without Using Threading Concept
+p1 ->  10 Min.
+p2  ->  5 Min.   -> T.T. -> 15 Min.
+p3   -> 1 Min  -> T.T -> 16 Min.
+--------------------------------------------------------------------------------------------------------
+Thread Life cycle -
+-------------------------------
+start,sleep,abort,terminate,suspend,resume.
+---------------------------------------------------------------------------
+using System;
+using System.Text;
+using System.Collections.Generic;
+using System.ComponentModel;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+        public static void task1()
+        {
+            for (int i = 1; i <= 100; i++)
+            {
+                Console.WriteLine("I=" + i);  // 100 Min.
+            }
+        }
+        public static void task2()
+        {
+            for (int j = 1; j <= 50; j++)
+            {
+                Console.WriteLine("J=" + j);  // 100 Min.
+            }
+        }
+        static void Main()
+        {
+            Thread t1 = new Thread(new ThreadStart(task1));
+            t1.Start();
+            Thread t2 = new Thread(new ThreadStart(task2));
+            t2.Start();
+        }
+    }
+}
+---------------------
+using System;
+using System.Text;
+using System.Collections.Generic;
+using System.ComponentModel;
+
+namespace Batch12PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            for(int i=1;i<=10;i++)
+            {
+                Console.WriteLine(i);
+                Thread.Sleep(4000); // 4 Sec
+            }
+        }
+    }
+}
+--------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
