@@ -1,0 +1,390 @@
+Control Statements/Loop:
+----------------------------------------------------
+>>  When a user want to perform iteration/repetition on a single statement then we use the concept of Loop.
+---------------------------------------------------------------------------------------------------------------------------------------------------
+Types of Loop in C#:-
+--------------------------------------------
+1. while.
+2. do-while.
+3. for.
+4. foreach.
+------------------------------------------------------------------------------
+1. while:-
+-------------------
+>> It is also known as  'Entry controlled Loop'.
+>> In while loop, condition will be checked first, and after that statement will be printed/executed.
+--------------------------------------------------------------------------------------------------------------------------------------------
+Syntax:-
+---------------------
+while(condition)
+{
+statement;
+inc/dec;
+}
+----------------------------------------------------------------------------------------------------------------------
+using System;
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 1;
+            while(a<=10)  // 1<=10 2<=10 11<=10 -> False
+            {
+                Console.WriteLine(a); // 1 2
+                a++; //2
+            }
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------
+2. do-while:-
+-------------------------------
+>> It is also known as 'Exit Controlled Loop'.
+>> In do-while loop, statement will be printed at once whether the condition is true or false.
+>> Do-while statement print first and after that condition will be checked.
+----------------------------------------------------------------------------------------------------------------------------------------
+Syntax:-
+---------------------
+do
+{
+statement;
+inc/dec;
+}
+while(condition);   // Condition must be terminated.
+-------------------------------------------------------------------------------------------------------
+using System;
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 15;
+            do
+            {
+                Console.WriteLine(a); 
+                a--; 
+            }
+            while (a > 8);
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------
+3. For:-
+----------------------
+It has three expression -
+a) Initialization.  -> only one time.
+b) Condition.
+c) Inc/Dec.
+---------------------------------------------------------------
+Syntax:-
+-----------------------
+for(initialization;condition;inc/dec)
+{
+statement;
+}
+--------------------------------------------------
+using System;
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int i = 1;
+            for (; i <= 10; i++)
+            {
+                Console.WriteLine(i); // 11
+            }
+        }
+    }
+}
+-------------------------------------------------------------------------------------
+foreach:-
+---------------------------------
+>> it is used to iterate collection of items.
+Syntax:-
+-----------------------------
+foreach(datatype varname in collection)
+{
+// Statement
+}
+--------------------------------------------------------------------------------------------------
+using System;
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            string str = "ABHISHEK";
+            foreach (char res in str)
+            {
+                Console.WriteLine(res);
+            }
+        }
+    }
+}
+----------------------
+using System;
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            string str = "ABHISHEK";
+            char ch;
+            for(int i=0;i<str.Length;i++)
+            {
+                ch = str[i];
+                Console.WriteLine(i+"="+ch);
+            }
+        }
+    }
+}
+------------------------------------------------------------------------
+using System;
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            string[] sports = { "Cricket", "FootBall", "BasketBall", "Ludo", "Hockey", "Batminton", "Chess" };
+            foreach (string spt in sports)
+            {
+                Console.WriteLine(spt);
+            }
+        }
+    }
+}
+---------------------------------------------------------------------------------------
+Assignment Quesiton of Loop:-
+-----------------------------------------------------------------
+1. wap to print 1 to 50 number using while, do-while,for and foreach.
+2. wap to print 50 to 1 number using while, do-while,for and foreach.
+3. wap to print even number only between 1 to 100 using while , do-while and for.
+4. wap to print odd number only between 1 to 100 using while , do-while and for.
+5. wap to print 1 to 15 number and find its sum and average.
+6. wap to input a number and print the fibonacci series.
+0 1 1 2 3 5 8 13 21 34 55 etc.
+7. wap to input a number and find the factorial.
+5! => 120
+4! => 24
+6! => 720
+8.wap to input a number and check number is prime or not.
+9. wap to input a number and check number is armstrong number or not.
+10. wap to input a no .and print the table.
+11. wap to input a no. and find the sum of its digit.
+  n=1234 => 10
+12. wap to input a no. and find the reverse.
+ n=4567 => 7654
+13. wap to input a no. and check its palindrome no. or not.
+14. wap to input a no. and check its neon no. or not.
+n=9 -> 9*9 => 81  => 8+1 => 9 neon number
+15. wap to input a no. and check its BUZZ no. or not.
+----------------------------------------------------------------------------------------------------------------
+Jump Statement:-
+-----------------------------------
+There are three types of Jump Statement which are as follows:-
+1. break.
+2. continue.
+3. return.  --> It returns a value to the function.   Pending (Function)
+---------------------------------------------------------------------------------------------------------
+1. Break:-
+---------------------------
+>> Break statement stop the current execution of loop,and transfer control to the next statement.
+using System;
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                if (i == 5 || i==6 || i==10)
+                {
+                    break;
+                }
+                Console.WriteLine(i);// 1 2 3 4
+            }
+            Console.WriteLine("End of Loop"); // 1 to 4 end of loop
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------
+2. Continue:-
+-----------------------------
+>> It transfer control to the begining of a loop.
+using System;
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                if (i == 5 || i==2 || i==10) // 1==5 5==5 6==10
+                {
+                    continue;
+                }
+                Console.WriteLine(i); //1 2 3 4 6 ...10 end of loop
+            }
+            Console.WriteLine("End of Loop");
+        }
+    }
+}
+--------------------------------------------------------------------------------------
+Nested Loop:-   Pending
+-----------------------------------------------------------------------
+>> Loop within loop is called Nested Loop.
+for(int i=1;i<=5;i++)   // Outer Loop.
+{
+for(int j=1;j<=5;j++)  // Inner Loop.
+{
+}
+}
+-----------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
