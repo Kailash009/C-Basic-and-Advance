@@ -1,0 +1,431 @@
+Nested Loop:-  
+-----------------------------------------------------------------------
+>> Loop within loop is called Nested Loop.
+
+
+for(int i=1;i<=5;i++)  i=1,i=2,i=3 ->  1<=5 2<=5 3<=5 6<=5(False)   // Outer Loop. // Owner  // Row 
+{
+for(int j=1;j<=5;j++)   j=1 j=2 1<=5  2<=5 3<=5 4<=5 5<=5 6<=5 (False) // Inner Loop.  // Servant // Column
+{
+cw(i); (j) 1 1 1 1 1           1 2 3 4 5
+}             2 2 2 2 2
+              3 3 3 3 3
+cwl(); // To change the line
+}
+-------------------------------------------------------
+1 1 1 1 1   ->>>> i
+2 2 2 2 2
+3 3 3 3 3
+4 4 4 4 4
+5 5 5 5 5
+-----------------------------------
+1 2 3 4 5  ->>>> j
+1 2 3 4 5
+1 2 3 4 5 
+1 2 3 4 5
+1 2 3 4 5
+-----------------------------------
+Assignment Question of Loop:-
+----------------------------------------------
+1
+22
+333
+4444
+55555
+----------------------------------------
+1
+12
+123
+1234
+12345
+--------------------------
+*
+**
+***
+****
+*****
+-----------------------------
+5
+44
+333
+2222
+11111
+-------------------------
+5
+54
+543
+5432
+54321
+---------------------
+1
+21
+321
+4321
+54321
+-------------------------
+54321
+5432
+543
+54
+5
+----------------
+11111
+2222
+333
+44
+5
+------------------
+C
+CC
+CCC
+CCCC
+CCCCC
+------------------
+C
+CO
+COM
+COMP
+COMPU
+COMPUT
+COMPUTE
+COMPUTER
+---------------------------------
+     *
+    ***
+   *****
+  *******
+------------------------------------
+*******
+ *****
+  ***
+   *
+---------------------------------------------------
+EDCBA
+EDCB
+EDC
+ED
+E
+---------------------
+12345
+1234
+123
+12
+1
+----------------------
+A
+AB
+ABC
+ABCD
+ABCDE
+-----------------------
+E
+ED
+EDC
+EDCB
+EDCBA
+--------------------
+1
+23
+456
+78910
+----------------------------
+1234554321
+1234    4321
+123         321
+12             21 
+1                 1
+-----------------------------
+Functions - Pending
+---------------------------------
+wap to find the sum and avg of 1 to 15 no.
+Sum =120
+avg= 120/15 =>  8
+---------------------------------------
+using System;
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int sm = 0, avg;
+            for(int i=1;i<=15;i++) // 1<=15  2<=15 3<=15
+            {
+                Console.WriteLine(i); // 1 2 3
+                sm = sm + i; // sm=0+1=1 sm=1+2 =3 sm=3+3=6
+            }
+            avg = sm / 15;
+            Console.WriteLine("Sum="+sm);
+            Console.WriteLine("Average="+avg);
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------------------
+using System;
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int n,sm = 0, avg;
+            Console.WriteLine("Enter a number");
+            n =Convert.ToInt32(Console.ReadLine());
+            for (int i=1;i<=n;i++) // 1<=15  2<=15 3<=15
+            {
+                Console.WriteLine(i); // 1 2 3
+                sm = sm + i; // sm=0+1=1 sm=1+2 =3 sm=3+3=6
+            }
+            avg = sm / n;
+            Console.WriteLine("Sum="+sm);
+            Console.WriteLine("Average="+avg);
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------------
+Print even number between 1 to 50.
+2 4 6 8 ......50
+----------------------------------------
+using System;
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            for(int i=2;i<=50;i=i+2)
+            {
+                    Console.WriteLine(i);
+            }
+        }
+    }
+}
+------------------------------------------------------------------------------------------
+Print 1 to 50 odd no.
+-------------------------------------------------------------------------------------------
+using System;
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            for (int i = 1; i <= 50; i++)
+            {
+                if (!(i % 2 == 0))
+                {
+                    Console.WriteLine(i);
+                }
+            }
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------
+wap to input character and check its vowel or consonant.
+-------------------------------------------------------------------------------------------
+Input  : t  -> consonant
+input  : o -> vowel.
+---------------------------------------------
+using System;
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            char ch;
+            Console.WriteLine("Enter a Character");
+            ch = Convert.ToChar(Console.ReadLine());
+            switch (ch)
+            {
+                case 'a':
+                case 'e':
+                case 'i':
+                case 'o':
+                case 'u':
+                    Console.WriteLine("Vowel");
+                    break;
+                default:
+                    Console.WriteLine("Consonant");
+                    break;
+            }
+        }
+    }
+}
+-----------
+or
+using System;
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            char ch;
+            Console.WriteLine("Enter a Character");
+            ch = Convert.ToChar(Console.ReadLine());
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
+            {
+                Console.WriteLine("Vowel");
+            }
+            else
+            {
+                Console.WriteLine("Consonant");
+            }
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------
+using System;
+using System.Xml.Serialization;
+
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            char choice;
+            do
+            {
+                char ch;
+                Console.WriteLine("Enter a Character");
+                ch = Convert.ToChar(Console.ReadLine());
+                if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
+                {
+                    Console.WriteLine("Vowel");
+                }
+                else
+                {
+                    Console.WriteLine("Consonant");
+                }
+
+                Console.WriteLine("Enter your choice (Y/N)?");
+                choice = Convert.ToChar(Console.ReadLine());
+            }
+            while (choice == 'y' || choice == 'Y');
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
