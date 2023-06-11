@@ -1,0 +1,454 @@
+CSS:-
+---------------
+>> it stands for Cascading style sheet.
+>> The file extension of css file is .css.
+>> it is used to design the layout of a web page.
+>> <style> tag is used to apply any type of style on an element.
+------------------------------------------------------------------------------------------------------------------
+Types of Css:-
+-------------------------------
+1. Inline. -> Right next to the element it to decorates.
+<p style="attribute1:value1;attribute2:value2;"></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p style="font-size:30px;color:blue;background-color: burlywood;text-align: center;"> HELLO CSS HOW ARE YOU? </p>
+</body>
+</html>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2. Internal.  -> It can apply inside <head></head> tag.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    p
+    {
+       color:brown;
+       font-size: 50px;
+       background-color: chartreuse;
+       text-align: center; 
+    }
+    body
+    {
+        background-color:blueviolet;
+    /* background-image:url("images/nature.jpg"); */
+    }
+    h1
+    {
+        color:white;
+        text-align: center;
+    }
+
+    </style>
+</head>
+<body>
+    <h1>Example of Internal Css / Element Selector </h1>
+    <p> HELLO CSS HOW ARE YOU? </p>
+    <p> HELLO HTML HOW </p>
+    <p> HELLO CSS I am FINE </p>
+</body>
+</html>
+--------------------------------------------------------------------------------------------
+3. External.
+>> html file must be different and css must be different.
+>> link must be write inside <head> tag.
+<link href="path" rel="stylesheet" type="text/css" />
+type -> Optional attribute.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="sushil.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <h1>Example of Internal Css / External Selector </h1>
+    <p class="pp"> HELLO CSS HOW ARE YOU? </p>
+    <p class="kl zx pp"> HELLO HTML HOW </p>
+    <p class="pp"> HELLO CSS I am FINE </p>
+    <p id="zx">Hello JAva Script</p>
+</body>
+</html>
+-------------------------
+css file:-
+-----------------
+.pp
+    {
+       color:brown;
+       font-size: 50px;
+       background-color: chartreuse;
+       text-align: center; 
+    }
+    .kl
+    {
+        color:red;
+    }
+    #zx
+    {
+        background-color: coral;
+    }
+    body
+    {
+        background-color:blueviolet;
+    /* background-image:url("images/nature.jpg"); */
+    }
+    h1
+    {
+        color:white;
+        text-align: center;
+    }
+----------------------------------------------------------------------------------------------------
+Selector:-
+------------------------------
+>> it is used to select an element which you want to style.
+Types of selector:-
+----------------------------------
+1. Element Selector. -> <p>, <h1> <body> <div>  etc.
+Syntax:-
+-------------------
+selector_name  p
+{
+attribute1:value1;
+attribute2:value2;
+attribute3:value3;
+}
+----------------------------------------------------------------------------
+2. Id Selector.
+>> it is represented by # symbol.
+>> you can apply id in one element one id. (multiple id on same element can't be apply).
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #pp
+    {
+       color:brown;
+       font-size: 50px;
+       background-color: chartreuse;
+       text-align: center; 
+    }
+    #kl
+    {
+        color:red;
+    }
+    #zx
+    {
+        background-color: coral;
+    }
+    body
+    {
+        background-color:blueviolet;
+    /* background-image:url("images/nature.jpg"); */
+    }
+    h1
+    {
+        color:white;
+        text-align: center;
+    }
+
+    </style>
+</head>
+<body>
+    <h1>Example of Internal Css / ID Selector </h1>
+    <p id="zx"> HELLO CSS HOW ARE YOU? </p>
+    <p id="kl"> HELLO HTML HOW </p>
+    <p id="pp"> HELLO CSS I am FINE </p>
+</body>
+</html>
+----------------------------------------------------------------------------------------------------------------------------------------------
+3. Class Selector.
+---------------------------------------------------
+>> It is represented by dot symbol.
+>> we can apply mutiple classes on a single element.
+-------------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .pp
+    {
+       color:brown;
+       font-size: 50px;
+       background-color: chartreuse;
+       text-align: center; 
+    }
+    .kl
+    {
+        color:red;
+    }
+    .zx
+    {
+        background-color: coral;
+    }
+    body
+    {
+        background-color:blueviolet;
+    /* background-image:url("images/nature.jpg"); */
+    }
+    h1
+    {
+        color:white;
+        text-align: center;
+    }
+
+    </style>
+</head>
+<body>
+    <h1>Example of Internal Css / Class Selector </h1>
+    <p class="zx pp"> HELLO CSS HOW ARE YOU? </p>
+    <p class="kl zx pp"> HELLO HTML HOW </p>
+    <p class="pp"> HELLO CSS I am FINE </p>
+</body>
+</html>
+-----------------------------------------------------------------------------------------------------------------------------
+JAVA SCRIPT:-
+---------------------------------------
+>> JS is client side programming language, ie. used to make our html pages dynamic.
+>> Change the behaviour of your web page. / DOM (Document Object Model) Manipulation.
+>> Js is a case sensitive.
+>> Js initially named was "Mocha -> Live Script -> Java Script".
+>> JS is used with html and css.
+>> Js is a dynamic language. (It can't compile) it directly Run.
+>> No need to define the type of variable.
+a=12  -> int
+a="hello" -> string
+Source Code -> RUN.
+>> <script> tag is used to write js code.
+--------------------------------------------------------------------------------------------------------------------------------
+Variable:-
+-------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DEMO</title>
+</head>
+<body>
+
+    <script>
+      a=12;
+      alert(a);
+      console.log('a='+a);   
+      document.write(a);   
+    </script>
+</body>
+</html>
+---------------------------------------------------------------
+JS Print Statements:-
+-------------------------------------
+alert()
+console.log()
+document.write()
+---------------------------------------
+Data Type:-
+--------------------------
+>> typeof() is used to check the type of a variable.
+number,string,boolean etc.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DEMO</title>
+</head>
+<body>
+    <script>
+      a=12;
+      console.log(a)
+      console.log(typeof(a))   
+      a="Hello"
+      console.log(a)
+      console.log(typeof(a))
+      a=34.56
+      console.log(a);
+      console.log(typeof(a))
+      a=true
+      console.log(a)
+      console.log(typeof(a))
+    </script>
+</body>
+</html>
+------------------------------------------------------------------------------------------------------
+JS Boxes:-
+--------------------------
+1. alert().  -> To show popUp message.
+2. prompt(). -> To take input from the User. prompt() return type is String.  "12" + "34"  -> 1234
+3. confirm(). -> When you want to delete a particular item before going to delete show a message are you sure you want to delete this item or not.
+-------------------------------------------------------------------
+>> sum of two number using prompt().
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DEMO</title>
+</head>
+<body>
+    <script>
+      let a=parseInt(prompt("Enter First Number","First Number"))
+      console.log(a);
+      console.log(typeof(a));
+      let b=parseInt(prompt("Enter Second Number","Second Number"))
+      console.log(b);
+      console.log(typeof(b));
+      let c=a+b;
+      alert(c);
+    </script>
+</body>
+</html>
+--------------------------------------------------------------------------------------------------------
+Confirm Box:-
+---------------------------------------
+>> its return type is Boolean. (True/False)
+------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DEMO</title>
+</head>
+<body>
+    <script>
+      let isDeleted=confirm('Are you Sure you want to Delete this Item(Y/N)?');
+      console.log(isDeleted);
+      console.log(typeof(isDeleted));
+      if(isDeleted==true)
+      {
+        alert('Item has been Deleted SuccessFully!!');
+      }
+      else{
+        alert('Item Deletion Failed!');
+      }
+    </script>
+</body>
+</html>
+--------------------------------------------------------------------------------------------------------------------------
+Conditional Statements:-
+--------------------------------------------
+1. if-else
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DEMO</title>
+</head>
+<body>
+    <script>
+      let a=5;
+      let b=3;
+      if(a>b)
+      {
+        console.log('Hello JS');
+      }
+      else
+      {
+        console.log('Hello HTML');
+      }
+    </script>
+</body>
+</html>
+2. if-else if ladder.
+>> multiple condition in a program.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DEMO</title>
+</head>
+<body>
+    <script>
+      let a=5;
+      let b=3;
+      let c=45;
+      if(a>b && a>c)
+      {
+        console.log('Hello JS');
+      }
+      else if(c<a || a<b)
+      {
+        console.log('Hello HTML');
+      }
+      else if(a==b || a==c)
+    {
+        console.log('Hello CSS')
+    }
+    else
+    {
+        console.log('Happy Coding')
+    }
+    </script>
+</body>
+</html>
+----------------------------------------------------------
+3. switch.
+Assignment :-
+--------------------------------
+Example of switch assignment -> Calculator.
+----------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
