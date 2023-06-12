@@ -1,0 +1,172 @@
+using System;
+using System.Xml.Serialization;
+
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int []a = { 20,19,18,17,16,15};
+            foreach(int res in a)
+            {
+                Console.WriteLine(res);
+            }
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Xml.Serialization;
+
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            List<int> lt = new List<int>();
+            for(int i=50;i>=1;i--)
+            {
+                lt.Add(i);
+            }
+            foreach(int res in lt)
+            {
+                Console.WriteLine(res);
+            }
+        }
+    }
+}
+------------------------------------------------------------------------------
+Function:-
+-----------------------
+>> Function is a block of statement,i.e. to divide the work of a program.
+>> Re-usablity -> we can define a function only once , and call multiple times.
+>> Easy to test.
+>> Easy to maintain.
+--------------------------------------------------------------------------------------------------------------------------------
+To understand a function three things are very imp:-
+1. Function Name.
+2. No. of parameter.
+3. Return Type.
+--------------------------------------------------------------------------------------
+Types of Function:-
+-------------------------------------------
+1. Library Function./Built-in Function. -> which is defined by the system.
+2. User Defined Function. -> which is defined by the user.
+---------------------------------------------------------------------------------------------------------------------------------------
+To create User Defined function we have two steps:-
+1. Function Defination.
+2. Function Calling.
+---------------------------------------------------------------------------------------------------------
+Here we focus on user defined function:-
+------------------------------------------------------------------
+There are four ways to make user defined function -
+1. Function with no parameter and no return type.
+2. Function with parameter and no return type.
+3. Function with no parameter and return type.
+4. Function with parameter and return type.
+----------------------------------------------------------------------------------------------------------------
+1. Function with no parameter and no return type.
+Function ->  without class
+Method -> inside class
+void:-
+---------------
+>> void is a data type.
+>> void capacity is 0 byte.
+>> void doesn't return any value.
+-----------------------------------------------------------------------------
+Syntax to create an object of a class-
+ClassName objectname=new ClassName();
+-----------------------------------------------------------------------------------
+using System;
+
+namespace Batch3PMAsgar
+{
+    class Example
+    {
+        public void Testing()  // Method Defination
+        {
+            Console.WriteLine("Hello Testing");
+        }
+    }
+    class Demo
+    {
+        static void Main()  // Entry Point of a Program.
+        {
+            Example ex = new Example(); // Object Creation of a Class.
+            ex.Testing();  // Method Calling
+            ex.Testing(); // Method Calling
+            ex.Testing();
+           
+        }
+    }
+}
+----------------------------------------------------------------
+No. is Prime or Not.
+using System;
+namespace Batch3PMAsgar
+{
+    // wap to input a no. and check its Prime or not.
+    class Demo
+    {
+        static void Main()  
+        {
+            int i,n,c=0;
+            Console.WriteLine("Enter a number");
+            n = Convert.ToInt32(Console.ReadLine()); // n=7
+            for(i=1;i<=n;i++) // 1<=7
+            {
+                if (n % i == 0) // 7%1==0 7%2==0 7%3 
+                {
+                    c++; // c=1 c=2
+                }
+            }
+            if(c==2) // 2==2
+            {
+                Console.WriteLine("Number is Prime");
+            }
+            else
+            {
+                Console.WriteLine("Number is Not Prime");
+            }
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------
+2. Function with parameter and no return type.  -- PENDING.
+--------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
