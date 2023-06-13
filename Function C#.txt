@@ -1,0 +1,345 @@
+2. Function with parameter and no return type.
+---------------------------------------------------------------------------
+Types of parameter:-
+1. Actual Parameter.
+>> It takes the original value of a program which is given by the user.
+2. Formal Parameter
+>> It takes the copied value of actual parameter.
+----------------------------------------------------------------------------------------
+using System;
+namespace Batch3PMAsgar
+{
+    // Function with parameter and no return type.
+
+    class Example
+    {
+        public void Rectangle(int l,int b)  // Formal Parameter
+        {
+            int ar = l * b;
+            Console.WriteLine("Area="+ar);
+        }
+    }
+    class Demo
+    {
+        static void Main()  
+        {
+            Example exp = new Example();
+            exp.Rectangle(10,20); // Actual Parameter.
+        }
+    }
+}
+---------------------------------------------------------------------------------------------
+3. Function with no parameter and return type.
+using System;
+namespace Batch3PMAsgar
+{
+    // Function with no parameter and return type.
+
+    class Example
+    {
+        public int Rectangle()  // Formal Parameter   // Market
+        {
+            int l=10, b=30;
+            int ar = l * b;
+            return ar;
+        }
+    }
+    class Demo
+    {
+        static void Main()    // HOME
+        {
+            Example exp = new Example();
+            int res=exp.Rectangle(); // Actual Parameter.
+            Console.WriteLine("Area="+res);
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------
+4. Function with parameter and return type. -- (BEST)
+using System;
+namespace Batch3PMAsgar
+{
+    // Function with parameter and return type
+
+    class Example
+    {
+        public int Rectangle(int l, int b)  // Formal Parameter   // Market
+        {
+            int ar = l * b;
+            return ar;
+        }
+    }
+    class Demo
+    {
+        static void Main()    // HOME
+        {
+            Example exp = new Example();
+            int res=exp.Rectangle(10,80); // Actual Parameter.
+            Console.WriteLine("Area="+res);
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------
+Assignment:-
+----------------------------------------
+Conditional Statements - 10
+Control / Loop  -15 -> do these 25 program using Function.
+--------------------------------------------------------------------------------------------------------------------------
+Some More example of Functions:-
+---------------------------------------------------------------
+using System;
+namespace Batch3PMAsgar
+{
+
+    class LoginManagement
+    {
+        public bool checkAuthentication(string username, string password)
+        {
+            if (username == "shiva" && password == "admin")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+    class Demo
+    {
+        static void Main()    // HOME
+        {
+            char ch;
+            int count = 0;
+            do
+            {
+                if (count != 3)
+                {
+                    LoginManagement lm = new LoginManagement();
+                    Console.WriteLine("Enter UserName and Password");
+                    string u_name = Console.ReadLine();
+                    string u_passwd = Console.ReadLine();
+                    bool b = lm.checkAuthentication(u_name, u_passwd);
+                    if (!b)
+                    {
+                        Console.WriteLine("Login Failed!!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Login SuccessFully!!");
+                        break;
+                    }
+                    Console.WriteLine("Do you wish to Login Again Press(Y/N)?");
+                    ch = Convert.ToChar(Console.ReadLine());
+                    count++;
+                }
+                else
+                {
+                    Console.WriteLine("You Exceeded your Limit! Login Again After Sometime!!");
+                    break;
+                }
+            }
+            while (ch == 'y' || ch == 'Y');
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------------------------------
+using System;
+namespace Batch3PMAsgar
+{
+
+    class Rectangle
+    {
+        public double Hello(double a, double b)
+        {
+            return a + b;
+        }
+    }
+    class Demo
+    {
+        static void Main()    // HOME
+        {
+            Rectangle rt = new Rectangle();
+            double res = rt.Hello(11.45, 993.34);
+            Console.WriteLine("Result=" + res);
+        }
+    }
+}
+--------------------------------------------------------------------------------------------
+using System;
+namespace Batch3PMAsgar
+{
+
+    class Rectangle
+    {
+        public char Hello(char ch)
+        {
+            if (ch == 'a' || ch == 'b' || ch == 'z' || ch == 'y')
+            {
+                return 'y';
+            }
+            else
+            {
+                return 'n';
+            }
+        }
+    }
+    class Demo
+    {
+        static void Main()    // HOME
+        {
+            Rectangle rt = new Rectangle();
+            char res = rt.Hello('m');
+            if (res == 'y')
+            {
+                Console.WriteLine("YES");
+            }
+            else
+            {
+                Console.WriteLine("No");
+            }
+        }
+    }
+}
+----------------------------------------------------------------------------------------
+using System;
+namespace Batch3PMAsgar
+{
+
+    class Rectangle
+    {
+        public string Display()
+        {
+            string name="bablu";
+            if(name=="shiva")
+            {
+                return "TRUE";
+            }
+            else
+            {
+                return "FALSE";
+            }
+        }
+    }
+    class Demo
+    {
+        static void Main()    // HOME
+        {
+            Rectangle rt = new Rectangle();
+            string msg=rt.Display();
+            if(msg=="TRUE")
+            {
+                Console.WriteLine("Name Found!!");
+            }
+            else
+            {
+                Console.WriteLine("Name not Found!");
+            }
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------
+using System;
+namespace Batch3PMAsgar
+{
+    class Employee
+    {
+        public void getDetails(string name,int age,string city)
+        {
+            Console.WriteLine("Name="+name);
+            Console.WriteLine("Age=" + age);
+            Console.WriteLine("City=" + city);
+        }
+    }
+    class Demo
+    {
+        static void Main()    // HOME
+        {
+            Employee emp = new Employee();
+            emp.getDetails("shiva",22,"Noida");
+        }
+    }
+}
+---------------------------------------------------------------------------------
+using System;
+namespace Batch3PMAsgar
+{
+    class Employee
+    {
+        public string Message()
+        {
+            return "I Love My India";
+        }
+    }
+    class Demo
+    {
+        static void Main()    // HOME
+        {
+            Employee emp = new Employee();
+            string msg = emp.Message();
+            if(msg== "I Love My India")
+            {
+                Console.WriteLine("Hello India");
+            }
+            else
+            {
+                Console.WriteLine("Not Hello India");
+            }
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------
+TASK:-
+----------------------
+>> wap to make calculator using function -- switch.  -> 10 Min.
++ -> add
+- -> sub
+* -> mult
+/ -> div
+% -> rem
+-------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
