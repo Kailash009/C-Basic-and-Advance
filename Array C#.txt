@@ -1,340 +1,217 @@
-Non-STATIC VS STATIC:-
----------------------------------------------------
-Non-Static:-
-------------------------
->> It allocates more memory in a program.
->> Non-static method require object creation.
->> Non-static method can be called with the help of Object.
->> Performance Slow.
-------------------------------------------------------------------------------------------------------
-For Example:-
---------------------------------
-using System;
-namespace Batch12PMWE
-{
-    class Demo
-    {
-        int i = 0;
-        public void Inc()  // Non-Static
-        {
-            i++;
-            Console.WriteLine(i);   // 1 1 1
-        }
-        static void Main()
-        {
-            Demo d1 = new Demo();
-            d1.Inc();
-            
-            Demo d2 = new Demo();
-            d2.Inc();
-            
-            Demo d3 = new Demo();
-            d3.Inc();
-        }
-    }
-}
-------------------------------------------------------------------------------------------------------------------
-2. Static:-
------------------------
->> It is used for Memory Management.
->> It doesn't need object creation.
->> Static method can be called directly with the help of ClassName.
->> static keyword is used to create static method.
-Syntax:-
-ClassName.MethodName()
----------------------------------------------------------------------------
-For Example:-
----------------------------
-using System;
-
-namespace Batch12PMWE
-{
-    class Demo
-    {
-        static int i = 0;
-        public static void Inc()  // Static
-        {
-            ++i;
-            Console.WriteLine(i);   // 1 2 3
-        }
-        static void Main()
-        {
-            Demo.Inc();
-            Demo.Inc();
-            Demo.Inc();
-        }
-    }
-}
------------------------------------------------------------------------------------------------------------------------------------------
-Assignment -  Conditional Statements + Control Statements Loop -> using Function Concept.
------------------------------------------------------------------------------------------------------------------------------------------
-Arrays:- ????????
------------------------------------------
->> When a user want to store multiple elements into a single variable then we use the concept of Array.
--------------------------------------------------------------------------------------------------------------------------------------------------------------
->> An array is a similar type of data items which takes contiguous memory allocation.
->> In array we create static memory allocation.
->>  At runtime you can't increase the size of array.
----------------------------------------------------------------------------------------------------
-Types of Array:-
--------------------------------
-In C# there are three types of Array:-
-1. 1-D Array.
-2. 2-D Array or Multidemensional Array.
-3. Jagged Array.
---------------------------------------------------------------------------------------------
-1. 1-D Array.
----------------------------------
-Initialization:-
--------------------------------
-using System;
-
-namespace Batch12PMWE
-{
-    class Demo
-    {
-        static void Main()
-        {
-            int[] a = new int[7] { 12, 34, 56, 78, 766, 32,123 }; // Initialization
-            for (int i = 0; i < 7; i++)
-            {
-                Console.WriteLine(a[i]);
-            }
-        }
-    }
-}
--------------------------------------------------------------------
-using System;
-
-namespace Batch12PMWE
-{
-    class Demo
-    {
-        static void Main()
-        {
-            int[] a = new int[] { 12, 34, 56, 78, 766, 32,123,3,4,5,2,1,2,4,56,23 }; // Initialization
-            for (int i = 0; i < a.Length; i++)
-            {
-                Console.WriteLine(a[i]);
-            }
-        }
-    }
-}
-------------------------------------------------------------------
-1-D
--------------
-Declaration:-
-------------------------------------
-using System;
-
-namespace Batch12PMWE
-{
-    class Demo
-    {
-        static void Main()
-        {
-            int[] a = new int[8];  // 1-D Declaration
-            Console.WriteLine("Enter 8 Elements=");
-            for (int i = 0; i < 8; i++)
-            {
-                a[i] = Convert.ToInt32(Console.ReadLine());
-            }
-            Console.WriteLine("Print 8 Elements=");
-            for (int i = 0; i < 8; i++)
-            {
-                Console.WriteLine(a[i]);
-            }
-        }
-    }
-}
-------------------------------------------------------------------------------
-or
-------------
-using System;
-
-namespace Batch12PMWE
-{
-    class Demo
-    {
-        static void Main()
-        {
-            int size;
-            Console.WriteLine("Enter the size of Array=");
-            size = Convert.ToInt32(Console.ReadLine());
-            int[] a = new int[size];  // 1-D Declaration
-            Console.WriteLine("Enter Elements=");
-            for (int i = 0; i < size; i++)
-            {
-                a[i] = Convert.ToInt32(Console.ReadLine());
-            }
-            Console.WriteLine("Print Elements=");
-            for (int i = 0; i < size; i++)
-            {
-                Console.WriteLine(a[i]);
-            }
-        }
-    }
-}
-----------------------------------------------------------------------------
-Assignment of 1-D:-
----------------------------------
-1. wap to input 12 element in an array and perform sum and avg.
-2. wap to input 10 element in an array and find even and odd element and also count total even and total odd elements in an array.
-3. wap to input 10 elements and search a particular elements in an array.
-4. wap to input 5 element  and find the smallest element in an array.
-5. wap to input 5 element  and find the greatest element in an array.
-----------------------------------------------------------------------------------------------------------------
-2-D:-
-----------------
-Initialization:-
----------------------------------
-using System;
-
-namespace Batch12PMWE
-{
-    class Demo
-    {
-        static void Main()
-        {
-            int[,] a = new int[3, 3] { { 12, 34, 56 }, { 56, 78, 98 }, { 123, 456, 789 } }; // 2-D Initialization
-            Console.WriteLine(a[2,1]); // 456
-            Console.WriteLine(a[1, 1]); // 78
-            Console.WriteLine(a[2, 2]); // 789
-        }
-    }
-}
-----------------------------------------------------------------------------------------------------------------------------
-using System;
-
-namespace Batch12PMWE
-{
-    class Demo
-    {
-        static void Main()
-        {
-            int[,] a = new int[3, 3] { { 12, 34, 56 }, { 56, 78, 98 }, { 123, 456, 789 } }; // 2-D Initialization
-            for (int i = 0; i < 3; i++)
-            {
-                for (int j = 0; j < 3; j++)
-                {
-                    Console.Write(a[i,j]+"\t");
-                }
-                Console.WriteLine();
-            }
-        }
-    }
-}
--------------------------------------------------------------------------
-Declaration (2-D):-
------------------------------
-using System;
-
-namespace Batch12PMWE
-{
-    class Demo
-    {
-        static void Main()
-        {
-            int[,] a = new int[3, 3]; // 2-D Declaration
-            Console.WriteLine("Enter 3X3 Elements");
-            for (int i = 0; i < 3; i++)
-            {
-                for (int j = 0; j < 3; j++)
-                {
-                    a[i, j] = Convert.ToInt32(Console.ReadLine());
-                }
-            }
-            Console.WriteLine("Print 3X3 Elements");
-            for (int i = 0; i < 3; i++)
-            {
-                for (int j = 0; j < 3; j++)
-                {
-                    Console.Write(a[i, j] + "\t");
-                }
-                Console.WriteLine();
-            }
-        }
-    }
-}
------------------------------------------------------------------------------
-or
-------------------------
-using System;
-
-namespace Batch12PMWE
-{
-    class Demo
-    {
-        static void Main()
-        {
-            int row, col;
-            Console.WriteLine("Enter how many rows and cols you want=");
-            row = Convert.ToInt32(Console.ReadLine());
-            col = Convert.ToInt32(Console.ReadLine());
-            int[,] a = new int[row, col]; // 2-D Declaration
-            Console.WriteLine("Enter Elements");
-            for (int i = 0; i < row; i++)
-            {
-                for (int j = 0; j < col; j++)
-                {
-                    a[i, j] = Convert.ToInt32(Console.ReadLine());
-                }
-            }
-            Console.WriteLine("Print Elements");
-            for (int i = 0; i < row; i++)
-            {
-                for (int j = 0; j < col; j++)
-                {
-                    Console.Write(a[i, j] + "\t");
-                }
-                Console.WriteLine();
-            }
-        }
-    }
-}
--------------------------------------------------------------------------------------
-Assignment of 2-D Array:-
----------------------------------------
-1. wap to input 2-D array and find its sum and average.
-2. wap to input 2-D array and print the diagonal elements only.
-3. wap to input 2-D array and print the transpose element only.
-4. wap to input two 2-D array and find the sum and sub.
-5.  wap to input two 2-D array and find the Matrix Multiplication.
---------------------------------------------------------------------------------------------------------------------------
 Jagged Array:-
--------------------------------
+-----------------------------
 >> It is also known as 'Array of Arrays'.
->> In jagged array we have different sizes of array, we want to merge them to get a single array is known as Jagged Array.
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+>> When we want to store different size of array and merge them to get a single sorted array then we use the concept of Jagged Array.
+-------------------------------------------------------------------------------------------------------------------------------- 
 using System;
-
-namespace Batch12PMWE
+namespace Batch3PMAsgar
 {
     class Demo
     {
         static void Main()
         {
-            int[][] a = new int[3][];  // Array of Array or Jagged Array
-            a[0] = new int[4] { 12, 45, 67, 89 };
+            int [][]a= new int[3][];  // Jagged Array
+            a[0] = new int[3] { 12, 54, 43 };
             a[1] = new int[2] { 123, 567 };
-            a[2] = new int[5] { 5, 67, 554, 32, 101 };
-            foreach (int[] arr in a)
+            a[2] = new int[5] { 23, 76, 43, 21, 21 };
+            foreach (int []arr in a)
             {
-                foreach (int item in arr)
+                foreach (int res in arr)
                 {
-                    Console.Write(item + "\t");
+                    Console.Write(res+"\t");
                 }
                 Console.WriteLine();
             }
+               
         }
     }
 }
-----------------------------------------------------------------------------------------------------------------------
-Assignment of Jagged Array-
-1. Create a Jagged array and perform sum and avg.
+-----------------------------------------------------------------------------------------------------------
+String:-
+----------------------------------
+>> It is immutable (which we can't modify) entity.
+>> string is represented by double quotes.
+>> it contains more than one character.
+>> Performance is slow.
+>> In string when you assign new value into the same variable then it creates a separate memory to store that value.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+using System;
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            string str = "Hello\n";
+            str = str + "I am Asgar\n";
+            str = str + "I worked for Infosys";
+            Console.WriteLine(str);
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------------
+StringBuilder:- using System.Text;
+--------------------------------------------------
+>> It is Mutable. (which we can modify).
+>> Peformance high.
+>> It doesn't create separate memory to store new value.
+--------------------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("Hello");
+            sb.Append("I am asgar");
+            sb.Append("I worked for infosys");
+            Console.WriteLine(sb);
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------
+Assignment Question of String:-
+----------------------------------------------------
+1. wap to input two string and check string is equal or not.
+2. wap to input a string and reverse them
+3. wap to input string and find the length of the string.
+4. wap to input string and check input string is Palindrome or not.
+5. wap to input a string in lower case and convert it into uppercase and vice-versa.
+------------------------------------------------------------------------------------------------------------------------------- 
+Assembly:-
+------------------------------
+>> An assembly is basic building block of dot net framework.
+>> It is collection of type and resources that are built to work together.
+Types of Assembly:-
+------------------------------------
+There are two types of Assembly:-
+-------------------------------------------------------------
+1. Public Assembly or Shared Assembly.
+>> which we can shared.
+>> .dll (Dynamic Link Library).
+-----------------------------------------------------------------
+2. Private Assembly.
+>> which we can't shared.
+>> .exe (Executable file)  -> Desktop Application
+-------------------------------------------------------------------------------------
+How to create dll in c#:-
+-----------------------------------------------------------
+Here we use one template for creating dll -> 'Class Library'.
+-----------------------------------------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CheckAuthentication
+{
+    public class LoginManagement
+    {
+        public bool checkLogin(string username,string password) // Formal Parameter
+        {
+            if(username=="admin" && password=="12345")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public string showUser(string username)
+        {
+            return username;
+        }
+    }
+}
+-----------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using CheckAuthentication;
+namespace WinLoginForm
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (txtUserName.Text == "" && txtPassword.Text == "")
+            {
+                MessageBox.Show("Plz Enter UserName and Password!!");
+            }
+            else
+            {
+                string u_name = txtUserName.Text;
+                string u_paswd = txtPassword.Text;
+                LoginManagement lm = new LoginManagement();
+                bool b = lm.checkLogin(u_name, u_paswd); // Function Calling. Actual Paramter
+                if (b == true)
+                {
+                    MessageBox.Show("Welcome!" + lm.showUser(u_name));
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect UserName and Password!!");
+                }
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtUserName.Text = "";
+            txtPassword.Text = "";
+        }
+    }
+}
 ---------------------------------------------------------------------------------------------------------------------
-String:- Pending.
----------------------------------------
+Assignment Task:- Monday
+-----------------------------------------------------
+Create a dll that perform calculator - add,sub,mult,div,rem.
+--------------------------------------------------------------------------------------------------------------
+Oop's:-
+-----------------------
+>> It stands for Object Oriented Programming.
+>> It is an approach to promote greater flexibility and maintainablity in programming.
+-----------------------------------------------------------------------------------------------------------------------------------
+Oop's Features:-
+------------------------------
+1. Class.
+2. Object.
+-----------------------------------
+Pillars of OOp's:-
+------------------------------------
+3. Data Abstraction.
+4. Encapsulation.
+5. Inheritance.
+6. Polymorphism.
+---------------------------------------------------
+TASK:-
+----------------------
+>> wap to make calculator using function -- switch.  -> 10 Min.
+method must be parameterized and return value.
+------------------------------------------------------------------------------------------
++ -> add
+- -> sub
+* -> mult
+/ -> div
+% -> rem
+----------------------------------------------------------------------------------------
 
 
 
@@ -433,109 +310,6 @@ String:- Pending.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
 
 
 
