@@ -1,0 +1,123 @@
+C#:- 11.0
+-----------------------
+>> C# was developed by 'Anders Heljsberg' in 2002 by Microsoft.
+>> C# is a high level,object oriented and type safe(Strongly Typed) programming language.
+>> C# is a platform independent language.
+-------------------------------------------------------------------------------------------------------------------------------------------
+Dot Net Framework :- (Older Version) -> 4.8.1
+---------------------------------------------------------------------------
+>> dot net is not a programming language,it is a framework to build various kind of application.
+>> dot net framework is platform dependent. (These applications run only windows O.S.)  IIS (Internet Information Services/Server)
+	a) CUI. (Command User Interface.) -> cmd 
+>> User should know each and every command.
+	b) GUI. (Graphical User Interface.)
+		i) Desktop Application.
+>> An application that runs with the help of O.S.  -> office package,tally,photoshop,calc etc.
+Problem :-
+----------------------
+Compatibility issue.
+---------------------------------------------
+		ii) Web Application
+>> An application that runs with the help of Web Browser.
+>> client-server architecture.
+>> it can be access anywhere.
+		iii) Android/Mobile.
+		iv) Web Services. -> WCF(windows communication foundation), WPF (windows presentation Foundation)
+		v) Web API
+--------------------------------------------------------------------------------------------------------
+Dot Net Components:-
+------------------------------------------
+There are two main components in dot net which are as follows -
+1. CLR. (Common Language Runtime)
+>> All dot net applications are executed by CLR.
+	CLR has some sub-components:-
+		a) CTS(Common Type System)
+>> All primitive data types (int,float,char,double,byte,bool) are defined into CTS.
+		b) CLS (Common Language Specification)
+>> you can write your code with any language,it will not make any difference.
+		c)  GC(Garbage Collector)
+>> It is responsible to release/deallocated your occupied memory by the program.
+-----------------------------------------------------------------------------------------------------------------------------------------
+		d)  Native Code.
+		>> It is byte code/Machine Code that can executed with any machine.
+--------------------------------------------------------------------------------------------------------------------------------------
+2. BCL/FCL. (Base class Library/Framework Class Library).
+>> It provide predefined methods,libraries,classes and interfaces.
+C - 
+#include<stdio.h>
+printf()
+scanf()
+-----------------------------------------
+C#:-
+------------
+using System;  // BCL/FCL.
+Console.readline()
+console.writeline();
+-----------------------------------------------------------------------
+Compilation process of C#:-
+------------------------------------------------------------------
+>> C# is a two-way compilation process.
+1. In First Compilation process, our C# compiler(.csc) converted source code into MSIL Code.
+2. In Second Compilation process,our clr gives one additonal compiler i.e. JIT compiler converts our MSIL Code into Native Code/Byte Code.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Dot Net Core:-  7.0
+-------------------------------------------------------------------------------------------------
+>> dot net core is the new version of dot net framework.
+>> it is an open source and cross platform. (win/Linux/mac).
+>> It used roslyn compiler. (110%)
+>> Peformance High.
+>> dot net comes in the year 2016.
+>> dot net core different versions 3.0,3.1,3.2,5.0,5.1,5.2,6.0,6.1,6.2, 7.0
+>> dot net core we can also make different kind of applications like - Desktop App, Web App,Mobile Application,Game Development,
+	Machine Learning,Microservices,AI(Artificial Intelligence) etc.
+>> dot net core used Kestrel web Server -> IIS,Apache,Tomcat,Nginx etc.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+Variable ------>>> Pending..........
+-----------------------------------------------
+https://visualstudio.microsoft.com/downloads/   ->> Community.
+1. Asp.net and Web Development.
+2. .Net Desktop Development.
+3. Data Storage and Processing.
+---------------------------------------------------------------------------------------------------------
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
