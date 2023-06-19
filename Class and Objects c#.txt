@@ -1,0 +1,219 @@
+Oop's:-
+-----------------------
+>> It stands for Object Oriented Programming.
+>> It is an approach to promote greater flexibility and maintainablity in programming.
+-----------------------------------------------------------------------------------------------------------------------------------
+Oop's Features:-
+------------------------------
+1. Class.
+>> A class is a blue print or template for making a particular kind of object.
+>> A class is collection of similar kind of objects.
+---------------------------------------------------------------------------------------------------------------------------------
+Syntax:-
+---------------------
+class ClassName
+{
+DataMember; / Variable
+MemberFunction; / Method
+}
+---------------------------------------------------------------------------
+Syntax to create an object of class:-
+---------------------------------------------------------------------------
+ClassName objectName=new ClassName();
+---------------------------------------------------------------------------
+2. Object.
+>> Any real world(Living + Non-Living) entity is known as object.
+>> Objects are the instance of a class.
+Object contain two things:-
+a) Data Member. -> Attributes/Properties.  -> Variables.
+b) Member Function. -> Behaviour. -> Method.
+-------------------------------------------------------------------------------------------------------------------
+Function -> Without class.
+Method -> With Class.
+---------------------------------------------------------------------
+In C#:-
+-----------------
+Class -> By Default -> Internal.
+Variable/Method -> By Default -> Private.
+---------------------------------------------------------------------------------
+using System;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Example
+    {
+        public int a, b, c;  //    Data Member
+        public void Display()  // Method   // User Defined Method  // Servant
+        {
+            Console.WriteLine("Hello Display");
+        }
+    }
+    class Demo
+    {
+        static void Main()  // Library Method  // Owner
+        {
+            Example ex = new Example();
+            ex.Display();
+            ex.a = 100;
+            ex.b = 200;
+            ex.c = 300;
+            Console.WriteLine(ex.a);
+            Console.WriteLine(ex.b);
+            Console.WriteLine(ex.c);
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------
+using System;
+using System.Runtime.CompilerServices;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Example
+    {
+        public int a,b,c; // Instance Variable.
+        public Example(int a,int b,int c) // Local Variable.
+        {
+           this.a = a;
+           this.b = b;
+           this.c = c;  // Initialization.
+        }
+        public void show()
+        {
+            Console.WriteLine("A="+this.a);
+            Console.WriteLine("B=" + this.b);
+            Console.WriteLine("C=" +this.c);
+        }
+    }
+    class Demo
+    {
+        static void Main()  // Library Method  // Owner
+        {
+            Example ex = new Example(10, 20, 40);
+            ex.show();
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------
+using System;
+using System.Runtime.CompilerServices;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Example
+    {
+        public int Addition(int a,int b,int c)
+        {
+            return a + b + c;
+        }
+        public void show()
+        {
+           int result= Addition(10,20,30);
+           Console.WriteLine("Sum="+result);
+        }
+    }
+    class Demo
+    {
+        static void Main()  // Library Method  // Owner
+        {
+            Example ex = new Example();
+            ex.show();
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------------
+using System;
+using System.Runtime.CompilerServices;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Example
+    {
+        private int Addition(int a, int b)
+        {
+            return a + b;
+        }
+        private int Subtraction(int a, int b)
+        {
+            return a - b;
+        }
+        private int Multiplication(int a, int b)
+        {
+            return a * b;
+        }
+        private int Divide(int a, int b)
+        {
+            return a / b;
+        }
+        public void showDetails()
+        {
+            Console.WriteLine("Sum="+Addition(10,20));
+            Console.WriteLine("Sub="+Subtraction(44,56));
+            Console.WriteLine("Mult="+Multiplication(3,56));
+            Console.WriteLine("Div="+Divide(134,5));
+        }
+    }
+    class Demo
+    {
+        static void Main()  // Library Method  // Owner   
+        {
+            Example ex = new Example();
+            ex.showDetails();
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------
+using System;
+using System.Runtime.CompilerServices;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Employee
+    {
+        string name,address;
+        int age;
+        public void setDetails(string name,int age,string address)
+        {
+            this.name = name;
+            this.age = age;
+            this.address = address;
+        }
+        public void getDetails()
+        {
+            Console.WriteLine("Name="+this.name);
+            Console.WriteLine("Age=" + this.age);
+            Console.WriteLine("Address=" + this.address);
+        }
+    }
+    class Demo
+    {
+        static void Main()  // Library Method  // Owner   
+        {
+            Employee emp = new Employee();
+            emp.setDetails("Akarsh",13,"Ashok Nagar");
+            emp.getDetails();
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------
+Pillars of OOp's:-
+------------------------------------
+3. Data Abstraction.
+4. Encapsulation.
+5. Inheritance.
+6. Polymorphism.
+-----------------------------------------
+Assignment:-
+--------------------------
+Make program of class and object and read it.
+-----------------------------------------------------------------------------------------------
+SELECT FORMAT (dob, "'YYYY-MM-DD'") FROM table name;
+
+
+
+
