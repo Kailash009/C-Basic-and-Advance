@@ -1,0 +1,238 @@
+Multiple Inheritance :-
+----------------------------------------
+>> Multiple parent classes and one child class.
+>> one child class inherit the properties of multiple parent.
+>> C# doesn't support the concept of Multiple Inheritance.
+Note:  But if you want to support multiple inheritance then we use the concept of Interface.
+----------------------------------------------------------------------------------------------------------------------------------------------
+Interface:-
+--------------------------------
+>> Interace keyword is used to create interface.
+>> In interface we provide only method declaration.
+>> we can't create Data Member inside interface.
+>> we can't create constructor inside interface.
+>> All interface methods must be implemented with their child class.
+>> It support multiple inheritance.
+----------------------------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+namespace Batch3PMAsgar
+{
+    interface Father
+    {
+        public int addition(int a, int b);
+    }
+    interface Mother
+    {
+        public int Multiplication(int c, int d);
+    }
+    class Child : Father, Mother
+    {
+        public int addition(int a, int b)
+        {
+            return a + b;
+        }
+        public int Multiplication(int c, int d)
+        {
+            return c * d;
+        }
+    }
+    class Demo
+    {
+        static void Main() 
+        {
+            Child ch = new Child();
+            int sm=ch.addition(10, 6);
+            Console.WriteLine("Sum="+sm);
+            int mt=ch.Multiplication(4, 5);
+            Console.WriteLine("Mult="+mt);
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------------------------------------------
+3. Encapsulation:-
+-----------------------------------
+>> It is also known as Data Hiding or Information Hiding.
+>> The wrapping up of data and function into a single unit is known as Encapsulation.
+----------------------------------------------------------------------------------------------------------------------------------------
+How to achieve encapsulation in c#:-
+----------------------------------------------------------
+By Default :- C# -> Class -> Internal
+		Data Member/MemberFunction -> Private.
+============================================================
+1. public. -> It can be accessible anywhere in a program with in same assembly as well as different assembly.
+2. private. -> it can be accessbile with in the class only.
+3. protected. -> It is similar to private. Protected members can be accessibile when you provide inheritance.
+4. internal.  -> it is similar to public. it can be accessible with in the same assembly/namespace.
+5. protected internal. -> it can be accessbile with in same assembly or another assembly when you provide inheritance.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Order of Accessibility Highest to Lowest:-
+----------------------------------------------------------
+1. Public.
+2. Protected Internal.
+3. Internal.
+4. Protected.
+5. Private.
+--------------------------------------------------------------------
+Polymorphism:-
+----------------------------
+>> Poly + Morphism => Many Forms.
+>> It means one name and many forms.
+------------------------------------------------------------------
+>> It is the ability to take more than one forms.
+For Example:-
+---------------------------------
++ -> 2+3
++ -> "hello" + "java"
++ -> 3.4 + 5.6
+----------------------------------
+Types of Polymorphism:-
+--------------------------------------
+There are two types of polymorphism - 
+1. Compile time Polymorphism.
+>> It is also known as 'Early Binding'.
+>> This polymorphism can be achieved by 'Method Overloading'.
+2. Run time Polymorphism.
+>> It is also known as 'Late Binding'.
+>> This polymorphism can be achieved by 'Method Overriding'.
+---------------------------------------------------------------------------------------------------------------
+Method Overloading:-
+--------------------------------------------------
+>> Function name should be same but their arguments/parameters must be different.
+For Example:-
+---------------------------
+using System;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Rectangle
+    {
+        public void area()
+        {
+            Console.WriteLine("Having No Argument");
+        }
+        public int area(int m)
+        {
+            int ar = m * m;
+            Console.WriteLine("Having one Argument");
+            return ar;
+         
+        }
+        public int area(int i,int j)
+        {
+            int ar = i * j;
+            Console.WriteLine("Having two Argument");
+            return ar;
+        }
+        public int area(int i, int j,int k)
+        {
+            int ar = i * j * k;
+            Console.WriteLine("Having three Argument");
+            return ar;
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Rectangle rt = new Rectangle();
+            rt.area();
+            int a=rt.area(5);
+            Console.WriteLine("One="+a); // 25
+            int b=rt.area(7,8);
+            Console.WriteLine("Two="+b); // 56
+            int c=rt.area(2,3,4);
+            Console.WriteLine("Three="+c); // 24
+
+        }
+    }
+}
+------------------------------------------------------------------------------
+Method Overriding:- Pending
+------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
