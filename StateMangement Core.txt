@@ -1,0 +1,253 @@
+
+State Management in Core:-
+-------------------------------------------------------
+>> http is stateless protocol.
+>> It doesn't maintain the information between client and server.
+>> https://www.flipkart.com/
+--------------------------------------------------------------------------------------------------------
+These are the following technique for state management which are as follows:- 
+a) Client Side
+1. ViewBag.
+2.  ViewData.
+3. TempData.
+4. Cookies.
+------------------------------------
+b) Server Side
+1.Session.
+----------------------------------------------------
+1. ViewBag.:-
+-----------------------------
+>> It is dynamic property.
+>> ViewBag doesn't require typecasting for complex data type.
+>> It is used to transfer information between controller to view.
+>> ViewBag doesn't give compile time error.It only generate Run time error.
+>> The life time of ViewBag is only one/single Http Redirection. 
+Syntax:-
+--------------------
+ViewBag.anyName=value;
+-------------------------------------------------------------------------------------------------------------------------------
+using Batch12PMMohit.Models;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Batch12PMMohit.Controllers
+{
+    public class StateMgtController : Controller
+    {
+        public IActionResult Index()  // controller action method
+        {
+            //string str = "Welcome to ViewBag";
+            //ViewBag.ram = str;
+            //string[] progm = { "Java", "Php", "Python", "Dot Net", "Angular" };
+            //ViewBag.data = progm;
+            Employee emp = new Employee();
+            emp.Eid = 101;
+            emp.Name = "Avinash";
+            emp.Age = 23;
+            emp.Address = "Noida";
+            emp.Salary = 34000;
+            ViewBag.employee = emp;
+            return View();
+        }
+    }
+}
+---------------------------
+<h1>Example of State Management</h1>
+
+
+@*<h1> Data come From =  @ViewBag.ram</h1>*@
+
+@*<ol>
+@{
+    foreach (string spt in ViewBag.data)
+    {
+     <li>@spt</li>   
+    }
+}
+</ol>*@
+
+
+<h1>Employee Information</h1>
+@{
+    var emp = ViewBag.employee;
+}
+<p>@emp.Eid</p>
+<p>@emp.Name</p>
+<p>@emp.Age</p>
+<p>@emp.Address</p>
+<p>@emp.Salary</p>
+------------------------------------------
+2. ViewData.:-
+-----------------------------
+>> It is dictionary type that inherits from DataDictionary.
+>> ViewData require typecasting for complex data type.
+>> It is used to transfer information between controller to view.
+>> ViewData doesn't give compile time error.It only generate Run time error.
+>> The life time of ViewData is only one/single Http Redirection. 
+Syntax:-
+--------------------
+ViewData["variablename"]=value;
+-------------------------------------------------------------------------------------------------------------------------------
+using Batch12PMMohit.Models;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Batch12PMMohit.Controllers
+{
+    public class StateMgtController : Controller
+    {
+        public IActionResult Index()  // controller action method
+        {
+            //string str = "Hello ViewData!!";
+            //ViewData["ram"] = str;
+            //string[] progm = { "Java", "Php", "Python", "Dot Net", "Angular" };
+            //ViewData["data"] = progm;
+            Employee emp = new Employee();
+            emp.Eid = 101;
+            emp.Name = "Avinash";
+            emp.Age = 23;
+            emp.Address = "Noida";
+            emp.Salary = 34000;
+            ViewData["employee"] = emp;
+            return View();
+        }
+    }
+}
+-----------------
+<h1>Example of State Management</h1>
+
+
+@*<h1> Data come From =  @ViewData["ram"]</h1>
+*@
+@*<ol>
+    @{
+        foreach (string spt in  (string[])ViewData["data"])
+        {
+            <li>@spt</li>
+        }
+    }
+</ol>
+*@
+
+<h1>Employee Information</h1>
+@{
+    var emp =(Employee)ViewData["employee"];
+}
+<p>@emp.Eid</p>
+<p>@emp.Name</p>
+<p>@emp.Age</p>
+<p>@emp.Address</p>
+<p>@emp.Salary</p>
+-----------------------------------------------------------------
+3. TempData.:-
+-----------------------------
+>> It is dictionary type that inherits from TempDataDictionary.
+>> TempData require typecasting for complex data type.
+>> It is used to transfer information between controller to view and controller to controller.
+>> TempData doesn't give compile time error.It only generate Run time error.
+>> The life time of TempData is one subsequent request to another subsequent request.
+Syntax:-
+--------------------
+TempData["variablename"]=value;
+-------------------------------------------------------------------------------------------------------------------------------
+using Batch12PMMohit.Models;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Batch12PMMohit.Controllers
+{
+    public class StateMgtController : Controller
+    {
+        public IActionResult Index()  // controller action method
+        {
+            string str = "Hello TempData!!";
+            TempData["ram"] = str;
+            //string[] progm = { "Java", "Php", "Python", "Dot Net", "Angular" };
+            //TempData["data"] = progm;
+            Employee emp = new Employee();
+            emp.Eid = 101;
+            emp.Name = "Avinash";
+            emp.Age = 23;
+            emp.Address = "Noida";
+            emp.Salary = 34000;
+            TempData["employee"] = emp;
+            TempData["ram"] = str;
+            return View();
+            //return RedirectToAction("Index","Employee");
+        }
+    }
+}
+----------------------
+<h1>Example of State Management</h1>
+
+
+<h1> Data come From =  @TempData["ram"]</h1>
+
+@*<ol>
+    @{
+        foreach (string spt in  (string[])TempData["data"])
+        {
+            <li>@spt</li>
+        }
+    }
+</ol>*@
+
+
+<h1>Employee Information</h1>
+@{
+    var emp =(Employee)TempData["employee"];
+}
+<p>@emp.Eid</p>
+<p>@emp.Name</p>
+<p>@emp.Age</p>
+<p>@emp.Address</p>
+<p>@emp.Salary</p>
+------------------------------------------------
+Employee Controller:-
+---------------------------------------
+public IActionResult Index()
+        {
+            if(TempData["ram"]!=null)
+            {
+                return View();
+            }
+}
+-----------------------------
+index.cshtml:-
+-------------------------
+<h2>TempData= @TempData["ram"]</h2>
+------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
