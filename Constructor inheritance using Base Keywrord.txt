@@ -1,0 +1,51 @@
+using System;
+using System.Runtime.CompilerServices;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+
+    // Constructor in Inheritance using Base Keyword.
+    class Rectangle
+    {
+        int a, b, c;
+        public Rectangle(int a,int b,int c)
+        {
+            this.a = a;
+            this.b = b;
+            this.c = c;
+        }
+        public virtual void show()
+        {
+            Console.WriteLine(this.a);
+            Console.WriteLine(this.b);
+            Console.WriteLine(this.c);
+        }
+    }
+    class Test:Rectangle
+    {
+        string mob;
+        int sal;
+        public Test(string mob,int sal):base(2,3,4)
+        {
+            this.mob = mob;
+            this.sal = sal;
+        }
+        public override void show()
+        {
+            base.show();
+            Console.WriteLine(this.mob);
+            Console.WriteLine(this.sal);
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Test tobj = new Test("989779",34000);
+            tobj.show();
+        }
+    }
+}
+
+
