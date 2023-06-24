@@ -1,0 +1,392 @@
+Variable:-
+-------------------------
+>> It is also known as Identifier.
+>> Variable is memory location i.e. used to store a value.
+--------------------------------------
+1. Variable Initialization. 
+>> To assign value into a variable.
+For ex:-
+-----------------
+int a=45; // strongly typed language.(you store only int type)
+2. Variable Declaration.
+>> Don't provide any value to the variable.
+int a,b,c; // Here we declare three variable but don't assign any value.
+-------------------------------------------------------------------------------------------------------------
+Rules for declaraing variable:-
+-------------------------------------------------
+1. variable name should be start with character only.
+int abc23=34;
+2. variable name can't start from digit.
+int 12vc=34; wrong.
+3. variable name can't be keyword.
+int while=34; wrong.
+4. no spaces are allowed while declaring variable.
+int a    b=56; wrong.
+5. hyphen is not allowed for variable declaration.
+int a-b=345;
+6. Underscore is allowed for variable declaration.
+int a_n=34;
+7. variables are case sensitive.(upper case and lower case are treated as two different variable name).
+int age=23;
+int Age=12;
+int AGE=14; Here These are three different variable names.
+--------------------------------------------------------------------------------------------------------
+Constant:-
+--------------------------
+>> It is also known as 'Literals'.
+>> It is fixed value i.e. never going to be changed throughout the whole program.
+Types of constant:-
+1. Numeric constant.
+>> it hold numeric value like 1,2,3,.......
+	a) Decimal constant. -> 0,1,2,....9.
+	b) octal constant. -> 0,1,2...7
+	c) hexadecimal constant. -> 0,1,2,.....15
+	d) Real or Floating Point constant. -> it hold numeric and decimal values.
+	For Ex:- 434,45,  34.334 etc.
+2. Character constant.
+>> It is represented by single quotes.('')
+>> it contains only single value.
+for ex:-  'a'  '1'  '$' etc.
+3. String constant.
+>> it contains mutiple values.
+>> It is represented by double quotes.(" ")
+For ex;
+-------------------------
+ "abc"  , "345" , "fkds39389&*&*#*#" etc.
+------------------------------------------------------------------------------------------
+Keywords:-
+------------------------
+>> Keywords are the reserved which have special meaning in a program.
+For ex-  while,do-while,for ,foreach , public ,protected etc.
+------------------------------------------------------------------------------------------
+Data types:-
+--------------------------
+>> It identifies that which type  of value a variable can hold.
+>> C# strongly typed language.
+Types of data type -
+1. Primitive data type.
+>> which store only single value.
+void -> 0 byte
+int  -> 4 byte. (32 bits)
+float -> 4 byte. (32 bits)
+double -> 8 byte. (64 bit)
+char -> 2 byte. (16 bit)
+boolean -> 1 bit.   T/F
+byte ->  1 byte. (8 bit)
+-------------------------------------------------------------------------------------
+2. Non-primitive or reference data type.
+>> which hold multiple value in a program.
+ array,string,delegate,interface class,object etc.
+-----------------------------------------------------------------------------------
+https://visualstudio.microsoft.com/downloads/ -- Community.
+--------------------------------------------------------------------------------
+Type Conversion:-
+------------------------------------
+>> To convert one data type value into another data type.
+Types of type conversion:-
+--------------------------------------------
+1. Implicit. (Automatic)
+>> To covert lower data type value into higher data type.
+>> Data loss is not possible.
+------------------------------------------------------------------------------------------------------
+using System;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 345; // 4 byte
+            double b = a;  // 4 byte to 8 byte (lower to higher)
+            Console.WriteLine(b);
+        }
+    }
+}
+--------------------------------------------
+2. Explicit.
+>> It is also known as type casting.
+>> To convert higher data type value into lower data type.
+>> Data loss is possible.
+----------------------------------------------------
+using System;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            double a = 345.679799;  // 8 byte.
+            int b =(int)a; // Explicit  8 byte to 4 byte.
+            Console.WriteLine(b);// 345  // .67 LOSS
+
+        }
+    }
+}
+----------------------------------------------------------------------------
+3. Conversion between Incompatibile types.
+-------------------------------------------------------------------------------------
+int - string
+----------------------------
+>> To convert incompatible types we use the following:-
+	a) Convert class.
+	b) parse method.
+-------------------------------------------------------------------------------------------------------
+using System;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = Convert.ToInt32("34567");
+            int b =int.Parse("88883");
+            Console.WriteLine(a);
+            Console.WriteLine(b);
+
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------
+1. wap to find the sum of two no.
+using System;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 5, b = 10, c = a + b;
+            Console.WriteLine("Sum="+c);
+
+        }
+    }
+}
+-------------------------------------------------------------
+2. wap to find sum,sub,mult,div.
+using System;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 5, b = 10, sm = a + b,sb=a-b,mt=a*b,div=a/b;
+            Console.WriteLine("Sum="+sm);
+            Console.WriteLine("Sub=" + sb);
+            Console.WriteLine("Mult=" + mt);
+            Console.WriteLine("Div=" + div);
+        }
+    }
+}
+------------------------------------------------------------------------------
+User Input - Console.readLine()
+-----------------------------------------------
+wap to input two no. and find sum.
+using System;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a, b, c;
+            Console.WriteLine("Enter two number");
+            a =Convert.ToInt32(Console.ReadLine());
+            b =int.Parse(Console.ReadLine());
+            c = a + b;
+            Console.WriteLine("Sum="+c);
+        }
+    }
+}
+--------------------------------------------------------------
+wap to input two no. and find sum,sub,mult,div.
+using System;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a, b, c,sb,ravi,div;
+            Console.WriteLine("Enter two number");
+            a =Convert.ToInt32(Console.ReadLine());
+            b =int.Parse(Console.ReadLine());
+            c = a + b;
+            sb = a - b;
+            ravi = a * b;
+            div = a / b;
+            Console.WriteLine("Sum="+c+","+"Sub="+sb+","+"Mult=" +ravi+","+"Div=" +div);
+            Console.WriteLine("Sub=" + sb);
+            Console.WriteLine("Mult=" + ravi);
+            Console.WriteLine("Div=" + div);
+        }
+    }
+}
+----------------------------------------------------------------------------------------------
+Assignment Question:-
+----------------------------------------
+1. wap to input two no. and swap(Interchange) using third variable.
+a=5 ,b=10
+ans:  a=10 b=5
+------------------------------------
+2. wap to input two no. and swap without using third variable.
+3. wap to input the length and breath of rectangle and find its area,perimeter and diagonal.
+4. wap to input the radius of circle and find the area and cirumference.
+-----------------------------------------------------------------------------------------------------------
+Operators:- 
+----------------------------------
+>> Operators specified that which operation we need to be performed.
+Types of Operator:-
+----------------------------------
+1. Arithmetic. -> + , - , * , / , %
+using System;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a, b, c,sb,ravi,div,rem;
+            Console.WriteLine("Enter two number");
+            a =Convert.ToInt32(Console.ReadLine());
+            b =int.Parse(Console.ReadLine());
+            c = a + b;
+            sb = a - b;
+            ravi = a * b;
+            div = a / b;
+            rem = a % b;
+            Console.WriteLine("Sum="+c+","+"Sub="+sb+","+"Mult=" +ravi+","+"Div=" +div);
+            Console.WriteLine("Sub=" + sb);
+            Console.WriteLine("Mult=" + ravi);
+            Console.WriteLine("Div=" + div);
+            Console.WriteLine("Rem=" + rem);
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------
+2. Relational. -- Pending.
+3. Logical.
+4. Assignment.
+5. Ternary/Conditional
+6.  Bitwise.
+7.  Inc/Dec.
+------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
