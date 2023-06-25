@@ -1,0 +1,601 @@
+2. Relational.
+>> it returns boolean value.
+>
+>=
+<
+<=
+==
+!=
+using System;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 5, b = 6;
+            Console.WriteLine(a>b); // F
+            Console.WriteLine(a>=b); // F
+            Console.WriteLine(a <b); //T
+            Console.WriteLine(a <= b); //T
+            Console.WriteLine(a == b); //F
+            Console.WriteLine(a!=b); //T
+        }
+    }
+}
+--------------------------------
+3. Logical.
+and  &&  -> Both condition must be true.
+or     ||  -> Either one of the condition is true then result is true.
+not   !  -> If condition is true then result false and vice-versa.
+----------------------------------------------------------------------------------------
+using System;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 5, b = 6,c=10;
+            Console.WriteLine(a > b && a < c); // F
+            Console.WriteLine(a < c || a < c); // T
+            Console.WriteLine(a >c || b < c); //  T
+            Console.WriteLine(a < b && b < a); //  F
+            Console.WriteLine(!(a > b && a != b)); // T
+
+        }
+    }
+}
+---------------------------------
+4. Assignment.
+>> (=)
+>> it is used to assign a value into variable.
+5. Ternary/Conditional
+ >> It uses this symbol  ? :
+Syntax:-
+----------------
+(condition)?True:False;
+---------------------------------------------
+for ex:-
+----------------
+int a=5,b=10,res;
+res=(a>b)?a:b;
+cw(res); // 10
+using System;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 5, b = 10,res;
+            res = (a > b) ? a : b;
+            Console.WriteLine(res); // 10
+        }
+    }
+}
+----------------------------------
+6.  Bitwise.
+>> it works on bits. (0,1)
+a) Bitwise AND.  &
+int a=5; -> 0101
+int b=4; -> 0100
+--------------------------------
+a&b  ->      0100  -> 4 ans.
+--------------------------------
+using System;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 5, b = 4, res;
+            res = a & b;
+            Console.WriteLine(res);
+        }
+    }
+}
+---------------------------------------
+b) Bitwise OR.    |
+int a=5; -> 0101
+int b=4; -> 0100
+--------------------------------
+a|b  ->      0101  -> 5 ans.
+--------------------------------
+using System;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 5, b = 4, res;
+            res = a | b;
+            Console.WriteLine(res);
+        }
+    }
+}
+c) Bitwise XOR.  ^
+Note: -> if the input is same(0 0 , 11) then result is 0 otherwise 1.
+int a=5; -> 0101
+int b=4; -> 0100
+--------------------------------
+a^b  ->      0001  -> 1 ans.
+--------------------------------
+using System;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 5, b = 4, res;
+            res = a ^ b;
+            Console.WriteLine(res);
+        }
+    }
+}
+d) shift left.   <<
+>> it works on 8 bit.
+using System;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 5, res;
+            res = a<<3;
+            Console.WriteLine(res);
+        }
+    }
+}
+e) shift right.  >>
+using System;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 5, res;
+            res = a>>2;
+            Console.WriteLine(res);
+        }
+    }
+}
+---------------------------------------------------
+7.  Inc/Dec.
+---------------------------------
+1. Prefix -> operator comes  before operand.
+	++a; or a=1+a;
+	--a; or a=1-a;
+2. Postfix -> operator comes after operand. 
+      a++; or a=a+1;
+      a--; or a=a-1;
+------------------------------------------------------------------------------------
+int a=5;
+cw(a++); 5
+cw(++a); 7     
+cw(a++); 7
+cw(a++); 8  
+cw(++a); 10  
+cw(a++);  10
+cw(a);       11
+----------------------
+using System;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 5;
+            Console.WriteLine(a++);
+            Console.WriteLine(++a);
+            Console.WriteLine(a++);
+            Console.WriteLine(a++);
+            Console.WriteLine(++a);
+            Console.WriteLine(a++);
+            Console.WriteLine(a);
+        }
+    }
+}
+-----------------------------------------------------------------
+int a=4;
+cw(a--); 4  
+cw(a++); 3
+cw(--a); 3
+cw(a++); 3
+cw(a++); 4
+cw(++a); 6
+cw(--a); 5
+cw(a++); 5
+cw(a--); 6
+cw(a++); 5
+cw(a--); 6
+-----------------------------------------------------
+using System;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 4;
+            Console.WriteLine(a--);
+            Console.WriteLine(a++);
+            Console.WriteLine(--a);
+            Console.WriteLine(a++);
+            Console.WriteLine(a++);
+            Console.WriteLine(++a);
+            Console.WriteLine(--a);
+            Console.WriteLine(a++);
+            Console.WriteLine(a--);
+            Console.WriteLine(a++);
+            Console.WriteLine(a--);
+        }
+    }
+}
+-------------------------------------------------------------------------------
+Conditional Statements:-
+---------------------------------------------
+>> it is used to provide condition in a program.
+1. if.
+>> This statement is used to provide single condition only.
+syntax-
+-----------------
+if(condition)
+{
+statement;
+}
+------------------
+using System;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 5;
+            if(a!=10)
+            {
+                Console.WriteLine("Hello C#");
+            }
+        }
+    }
+}
+2. if-else
+>> It is used check the condition and take one of the two possible action.
+syntax:-
+-------------------
+if(condition)
+{
+statement1;
+}
+else
+{
+statement2;
+}
+-----------------------
+using System;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 5;
+            if(a>10)
+            {
+                Console.WriteLine("hello C#");
+            }
+            else
+            {
+                Console.WriteLine("hello Java");
+            }
+        }
+    }
+}
+3. if-elseif ladder
+>> it is  used to provide multiple condition in a program.
+Syntax:-
+----------------------
+if(condition1)
+{
+statement1;
+}
+else if(condition2)
+{
+statement2;
+}
+else if(condition3)
+{
+statement3;
+}
+else if(condition4)
+{
+statement4;
+}
+else
+{
+condition;
+}
+---------------------------------------
+using System;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 5,b=3,c=10;
+            if(a>10)
+            {
+                Console.WriteLine("hello C#");
+            }
+            else if(b==c)
+            {
+                Console.WriteLine("hello Angular");
+            }
+            else if(b>c)
+            {
+                Console.WriteLine("hello react");
+            }
+            else
+            {
+                Console.WriteLine("hello Java");
+            }
+        }
+    }
+}
+--------------------------------------------
+4. nested if.
+>> if with in if is called nested if.
+Syntax:-
+--------------------
+if(condition1)   ---->> 1.  T/T -> st2  2. T/F ->  st3   3. F -> st1.
+{
+if(condition2)
+{
+statement2;
+}
+else
+{
+statement3;
+}
+else
+{
+statement1;
+}
+}
+-----------------------------
+using System;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        // wap to find the greatest in three no.
+        static void Main()
+        {
+            int a = 15, b = 13, c = 10;
+            if (a > b)
+            {
+                if (a > c)
+                {
+                    Console.WriteLine("A is Greatest");
+                }
+                else
+                {
+                    Console.WriteLine("C is Greatest");
+                }
+            }
+            else
+            {
+                if (b > c)
+                {
+                    Console.WriteLine("B is Greatest");
+                }
+                else
+                {
+                    Console.WriteLine("C is Greatest");
+                }
+            }
+        }
+    }
+}
+---------------------------------------------------------------------------------------
+5. switch.
+--------------------------------------------------------------
+>> It is used for menu based program.
+--------------------------------------------------------------
+Syntax:-
+-------------------
+switch(expression)
+{
+case 1:
+statements1;
+break;
+case 2:
+statements2;
+break;
+case 3:
+statements3;
+break;
+case 4:
+statements4;
+break;
+default:    // optional
+statement5;
+}
+------------------------------
+1 - Tea
+2 - Coffe
+3 -  Milk.
+4 - ColdDrink.
+---------------------------------
+using System;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        // wap to find the greatest in three no.   
+        static void Main()
+        {
+            int ch = 8;
+            switch (ch)
+            {
+                case 1:
+                    Console.WriteLine("Tea");
+                    break;
+                case 2:
+                    Console.WriteLine("Coffee");
+                    break;
+                case 3:
+                    Console.WriteLine("Milk");
+                    break;
+                case 4:
+                    Console.WriteLine("ColdDrink");
+                    break;
+                default:
+                    Console.WriteLine("This item is not Available");
+                    break;
+            }
+        }
+    }
+}
+---------------------------------------------------------------------------------------------
+Assignment of Conditional Statements:-
+-----------------------------------------------------------------
+1. wap to input two no. and find the greatest among them using if-else and ternary.
+2. wap to input three no. and find the greatest among them using if-else and ternary.
+3. wap to input character and check its vowel and consonant.
+4. wap to make calculator program using user choice-
++ -> add
+- -> sub
+* -> mult
+/ -> div
+% -> rem
+5. wap to input year and check leap year or not.
+6. wap to input  5 subject marks and find total and percentage and find the following grade -
+100%-90% ->  S
+90%-80% ->  A
+80%-70% ->  B
+70%-60% ->  C
+60%-50% ->  D
+ < 50%    ->   F
+----------------------------------------------------
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
