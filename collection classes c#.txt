@@ -1,0 +1,590 @@
+Method Overriding:-
+--------------------------------------------------
+>> Method name same and parameter should also be same.
+----------------------------------------------------------------------------------------------
+Parent class
+{
+
+}	
+child class : parent class
+{
+// child class don't want to use parent class implementation.
+}
+----------------------------------------------------------------------------------------------------------------
+For ex:--
+--------------------
+Father  -> Transport  -> Cycle. 
+Son  -> Transport  -> Bike.
+------------------------------------------------------------
+To achieve method overriding in C# we use the following three keywords:-
+1. virtual. -> This keyword always used in parent class.
+2. override. -> This keyword  always used by child class.
+3. base. -> When you want to see parent method implementation in child class.
+---------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Runtime.CompilerServices;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Parent
+    {
+        public virtual void transport()
+        {
+            Console.WriteLine("Cycle");
+        }
+    }
+    class Child:Parent
+    {
+        public override void transport()
+        {
+            //base.transport();
+            Console.WriteLine("Bike");
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Parent ch = new Child();
+            ch.transport();
+        }
+    }
+}
+-----------------------------------------------------------------------------------------
+Collection Classes in C#:-
+------------------------------------------
+On the basis of value storing it can be divided into two categories -
+1. Non-Generic.
+>> you can store any type of value.
+using System.collections;
+	a) ArrayList.
+using System;
+using System.Collections;
+using System.Runtime.CompilerServices;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            ArrayList al = new ArrayList();
+            al.Add(345);
+            al.Add("Hello");
+            al.Add(78.54);
+            al.Add(DateTime.Now);
+            foreach(object res in al) // object can handle any type of value.
+            {
+                Console.WriteLine(res);
+            }
+        }
+    }
+}
+
+	b) HashTable.
+>> it hold value in key-value pair.
+using System;
+using System.Collections;
+using System.Runtime.CompilerServices;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            Hashtable ht = new Hashtable();
+            ht.Add(1, "Java");
+            ht.Add(4, 545);
+            ht.Add(5, 45.67);
+            ht.Add(6, true);
+            ht.Add(7, 334.32);
+            ht.Add(9, "Python");
+            foreach (DictionaryEntry dt in ht)
+            {
+                Console.WriteLine(dt.Key+"="+dt.Value);
+            }
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------
+	c) Sorted List.
+>> it used to sort the list either in ascending order.
+using System;
+using System.Collections;
+using System.Runtime.CompilerServices;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            SortedList sl = new SortedList();
+            sl.Add(4,"Java");
+            sl.Add(5, "Python");
+            sl.Add(7, "C#");
+            sl.Add(2, "Angular");
+            sl.Add(1, "Dot Net COre");
+            sl.Add(6, "React");
+            foreach (DictionaryEntry item in sl)
+            {
+                Console.WriteLine(item.Key+"="+item.Value);
+            }
+        }
+    }
+}
+	d) Stack 
+>> LIFO (Last in First out)
+>>  Insert  -> Push()
+>>  Delete -> Pop().
+---------------------------------------------------------------------
+using System;
+using System.Collections;
+using System.Runtime.CompilerServices;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            Stack st = new Stack();
+            st.Push("Java");
+            st.Push("Php");
+            st.Push("Angular");
+            st.Push("React");
+            st.Push("C#");
+            st.Pop();
+            st.Pop();
+            foreach (string item in st)
+            {
+                Console.WriteLine(item);
+            }
+        }
+    }
+}
+	e) Queue.
+>> FIFO -> First in First out.
+Insert  -> Enqueue.
+Delete -> Dequeue.
+using System;
+using System.Collections;
+using System.Runtime.CompilerServices;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            Queue qu = new Queue();
+            qu.Enqueue("Java");
+            qu.Enqueue("Php");
+            qu.Enqueue("Angular");
+            qu.Enqueue("React");
+            qu.Enqueue("C#");
+            qu.Dequeue();
+            qu.Dequeue();
+            foreach (string item in qu)
+            {
+                Console.WriteLine(item);
+            }
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------
+2. Generic.
+>> you can store similar type of value.
+using System.collections.generic;
+	a) List.
+using System;
+using System.Collections;
+using System.Runtime.CompilerServices;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            List<int> lt = new List<int>();
+            lt.Add(344);
+            lt.Add(12);
+            lt.Add(45);
+            lt.Add(124);
+            lt.Add(4543);
+            foreach (int res in lt)
+            {
+                Console.WriteLine(res);
+            }
+        }
+    }
+}
+---------------------------------------------------------
+	b) Dictionary.
+using System;
+using System.Collections;
+using System.Runtime.CompilerServices;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            Dictionary<int, string> dt = new Dictionary<int, string>();
+            dt.Add(1, "Java");
+            dt.Add(2, "python");
+            dt.Add(3, "angular");
+            dt.Add(5, "react");
+            dt.Add(6, "c#");
+            foreach (KeyValuePair<int,string> kvp in dt)
+            {
+                Console.WriteLine(kvp.Key+"="+kvp.Value);
+            }
+        }
+    }
+}
+	c) Sorted List.
+>> arrang in ascending order.
+using System;
+using System.Collections;
+using System.Runtime.CompilerServices;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            SortedList<int, string> st = new SortedList<int, string>();
+            st.Add(4, "Java");
+            st.Add(2, "python");
+            st.Add(1, "angular");
+            st.Add(5, "react");
+            st.Add(8, "c#");
+            foreach (KeyValuePair<int,string> kvp in st)
+            {
+                Console.WriteLine(kvp.Key+"="+kvp.Value);
+            }
+        }
+    }
+}
+	d) Stack 
+using System;
+using System.Collections;
+using System.Runtime.CompilerServices;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            Stack<int> st = new Stack<int>();
+            st.Push(56);
+            st.Push(34);
+            st.Push(334);
+            st.Push(44);
+            st.Push(234);
+            foreach (int res in st)
+            {
+                Console.WriteLine(res);
+            }
+        }
+    }
+}
+	e) Queue.
+using System;
+using System.Collections;
+using System.Runtime.CompilerServices;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            Queue<int> qu = new Queue<int>();
+            qu.Enqueue(56);
+            qu.Enqueue(34);
+            qu.Enqueue(334);
+            qu.Enqueue(44);
+            qu.Enqueue(234);
+            qu.Dequeue();
+            foreach (int res in qu)
+            {
+                Console.WriteLine(res);
+            }
+        }
+    }
+}
+	f) Hashset. 
+>> Performance high.
+>> it doesn't accept duplicate value.
+-------------------------------------------------------------
+using System;
+using System.Collections;
+using System.Runtime.CompilerServices;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            HashSet<int> ht = new HashSet<int>();
+            ht.Add(23);
+            ht.Add(243);
+            ht.Add(23);
+            ht.Add(2453);
+            ht.Add(21233);
+            ht.Add(23);
+            ht.Add(112);
+            foreach (int item in ht)
+            {
+                Console.WriteLine(item);
+            }
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------------------
+Constructor:-
+---------------------------
+>> Constructor is used for variable initialization.
+>> Constructor is special method that contain the same name of above class.
+>> it doesn't return any value.
+>> Constructor call automatically when we create an object of a class.
+-----------------------------------------------------------------------------------------------------------------------------
+Types of Constructor:-
+---------------------------------------------
+1. Default. /  Non-Parameterized.
+>> In it we don't pass any parameter.
+using System;
+using System.Collections;
+using System.Runtime.CompilerServices;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Example
+    {
+        public Example()  // Default Constructor
+        {
+            Console.WriteLine("Hello Default Constructor");
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Example ex = new Example();
+        }
+    }
+}
+------------------------------------------------------
+2. Parameterized.
+>> In it we pass Parameter.
+using System;
+using System.Collections;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Example
+    {
+        int a, b, c;  // Instance Variable
+        public Example(int a,int b,int c) // Local Variable  // parameterized Constructor
+        {
+            this.a = a;
+            this.b = b;
+            this.c = c;
+        }
+        private int cube()
+        {
+            return this.a * this.b * this.c;
+        }
+
+        public void show()
+        {
+           int res= cube();
+           Console.WriteLine("Result="+res);
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Example ex = new Example(10,20,30);
+            ex.show();
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------
+3. Copy Constructor.
+>> In this type of constructor we copy one constructor value into another constructor.
+-----------------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Example
+    {
+        int a, b;
+        public Example(int a,int b)
+        {
+            this.a = a;
+            this.b = b;
+            Console.WriteLine("A="+this.a); // 100
+            Console.WriteLine("B="+this.b); // 200
+        }
+        public Example(Example exp)
+        {
+            a = exp.a;
+            b = exp.b;
+            Console.WriteLine("Copy Constructor Value");
+            Console.WriteLine("A=" + a);
+            Console.WriteLine("B=" +b);
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Example ex1 = new Example(100,200);
+            Example ex2 = new Example(ex1); // Copy Constructor worked here.
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------------
+Assignment Question:-
+----------------------------------
+4. Private. 
+5. Static.
+----------------------------------------------------------------------------
+Constructor Overloading:-
+-------------------------------------------
+>> constructor name same having different number of parameters.
+-----------------------------------------------------------------------------------------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Example
+    {
+        public Example()
+        {
+            Console.WriteLine("Having No Parameter");
+        }
+        public Example(int a)
+        {
+            int c = a * a;
+            Console.WriteLine("C="+c);
+            Console.WriteLine("Having One Parameter");
+        }
+        public Example(int l,int b)
+        {
+            int ar = l * b;
+            Console.WriteLine("Area="+ar);
+            Console.WriteLine("Having Two Parameter");
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Example ex1 = new Example();
+            Example ex2 = new Example(10);
+            Example ex3 = new Example(5,8);
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------------------------
+Generic Class:- Pending
+-------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
