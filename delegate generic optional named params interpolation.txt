@@ -1,0 +1,465 @@
+Generic Class:-
+-------------------------------------
+>> It allows you to work with any data type but once you defined.
+>> It helps you to improve code-reuse,performance and type safety.
+---------------------------------------------------------------------------------------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Example<T>    // Generic Class.
+    {
+        T a;
+        public Example(T a)
+        {
+            this.a = a;
+        }
+        public void display()
+        {
+            Console.WriteLine(this.a);
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Example<int> ob = new Example<int>(230);
+            ob.display();
+            Example<string> ob1 = new Example<string>("python");
+            ob1.display();
+            Example<double> ob2 = new Example<double>(456.765);
+            ob2.display();
+            Example<bool> ob3 = new Example<bool>(true);
+            ob3.display();
+        }
+    }
+}
+------------------------------------------------------------
+Generic Method:-
+------------------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Example    
+    {
+        public void Swap<T>(T a,T b)  // Generic Method
+        {
+            T temp;
+            temp = a;
+            a = b;
+            b = temp;
+            Console.WriteLine("Swap Values");
+            Console.WriteLine("a="+a);
+            Console.WriteLine("b=" + b);
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            int i = 12, j = 34;
+            Console.WriteLine("I="+i);
+            Console.WriteLine("J="+34);
+            Example ex = new Example();
+            ex.Swap<int>(i, j);
+
+            char m='P', n='Q';
+            Console.WriteLine("P=" + m);
+            Console.WriteLine("Q=" + n);
+            Example ex1 = new Example();
+            ex1.Swap<char>(m,n);
+
+            double t = 123.45, h = 654.98;
+            Console.WriteLine("T=" + t);
+            Console.WriteLine("H=" + h);
+            Example ex2 = new Example();
+            ex2.Swap<double>(t, h);
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Example    
+    {
+        public T operation<T>(T i)
+        {
+            return i;
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Example ex = new Example();
+            int res = ex.operation<int>(345);
+            Console.WriteLine(res);
+
+            Example ex1 = new Example();
+            char re = ex.operation<char>('H');
+            Console.WriteLine(re);
+
+            Example ex2 = new Example();
+            double r = ex2.operation<double>(765.323);
+            Console.WriteLine(r);
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------
+Delegate:-
+---------------------
+>> It is similar to pointer in c or c++.
+>> Delegate is reference type variable,that hold reference to a method.
+>> It is used for event handling and callback function.
+>> In delegate we pass method as a reference.
+----------------------------------------------------------------------------------------------------
+How to create delegate in c#:-
+------------------------------------------------
+you need to follow three steps:-
+1. Declaration.
+2. Instantiation.
+3. Invoking.
+----------------------------------------------------------------------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    delegate void Message();  // Declaration
+    class Demo
+    {
+        public static void Hello()
+        {
+            Console.WriteLine("Hello Dot Net Core");
+        }
+        public static void Display()
+        {
+            Console.WriteLine("Hello Python!");
+        }
+        static void Main()
+        {
+            Message msg1 = new Message(Hello);  // Instantiation
+            Message msg2 = new Message(Display);
+            msg1();  // Invoking.
+            msg2();  // Invoking
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    delegate int doOperation(int p);  // Declaration
+    class Demo
+    {
+        static int m=10;
+        public static int Add(int i)
+        {
+            m += i; // or m=m+i
+            return m;
+        }
+        public static int Mult(int j)
+        {
+            m *= j;
+            return m;
+        }
+        public static int getResult()
+        {
+            return m;
+        }
+        static void Main()
+        {
+            doOperation op1 = new doOperation(Add);  // Instantiation
+            doOperation op2 = new doOperation(Mult);
+            op1(8);  // Invoking.
+            Console.WriteLine("Sum=" + getResult());
+            op2(9);  // Invoking
+            Console.WriteLine("Mult="+getResult());
+        }
+    }
+}
+----------------------------------------------------------------------------------
+or
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    delegate int doOperation(int p);  // Declaration
+    class Demo
+    {
+        int m=10;
+        public int Add(int i)
+        {
+            m += i; // or m=m+i
+            return m;
+        }
+        public int Mult(int j)
+        {
+            m *= j;
+            return m;
+        }
+        public int getResult()
+        {
+            return m;
+        }
+        static void Main()
+        {
+            Demo d = new Demo();
+            doOperation op1 = new doOperation(d.Add);  // Instantiation
+            doOperation op2 = new doOperation(d.Mult);
+            op1(8);  // Invoking.
+            Console.WriteLine("Sum=" + d.getResult());
+            op2(9);  // Invoking
+            Console.WriteLine("Mult="+d.getResult());
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------
+Optional Parameter:-
+------------------------------------
+>> At the time of function calling you have to pass the same parameter while you define at function defination.
+>> In optional parameter there is no requirement to check paramters at the time of calling.
+---------------------------------------------------------------------------------------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Example
+    {
+        public int mult(int i=1,int j=3,int k=2) // Optional Parameter // Function Defination.
+        {
+            return i * j * k;
+        }
+    }
+    class Demo
+    {    
+        static void Main()
+        {
+            Example ex = new Example(); 
+            int r=ex.mult(10,4);           // Function Calling.
+            Console.WriteLine(r); //80
+            int k=ex.mult(5); 
+            Console.WriteLine(k); // 30
+            int l=ex.mult();
+            Console.WriteLine(l); //6
+        }
+    }
+}
+------------------------------------------------------------------------------------
+Named parameter:-
+---------------------------------------
+>> named parameter matches name and assign values.
+>> it is used to map your values with formal parameter according to by passing name.
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Example
+    {
+        public int mult(int i,int j,int k) // Function Defination.
+        {
+            return i * j * k;
+        }
+    }
+    class Demo
+    {    
+        static void Main()
+        {
+            Example ex = new Example();
+            int r= ex.mult(k:8, i:3, j:4); // Named parameter
+            Console.WriteLine(r);
+        }
+    }
+}
+------------------------------------------------------------------------------------------------------
+Param Parameter:-
+----------------------------------
+>> with the help of param parameter you can pass n number of parameter at the time of function calling.
+------------------------------------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Example
+    {
+        public void Employee(params object[] a) // Function Defination.
+        {
+            foreach (object item in a)
+            {
+                Console.WriteLine(item);
+            }
+        }
+    }
+    class Demo
+    {    
+        static void Main()
+        {
+            Example ex = new Example();
+            ex.Employee(101,"Kavita",18,"Noida",2390);
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------------
+or
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Example
+    {
+        public void Employee(params int[] a) // Function Defination.
+        {
+            int sm = 0;
+            foreach (int item in a)
+            {
+                sm += item;
+            }
+            Console.WriteLine("Sum="+sm);
+        }
+    }
+    class Demo
+    {    
+        static void Main()
+        {
+            Example ex = new Example();
+            ex.Employee(1,2,3,4,5,6,7,8,9,10,45,56,78,76);
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------
+String Interpolation:-
+------------------------------------
+>> Here we use $ and {} braces symbol.
+>> To pass dynamic string.
+-------------------------------------------------------------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Text;
+
+namespace Batch3PMAsgar
+{ 
+    class Demo
+    {    
+        static void Main()
+        {
+            string str = "Hello!";
+            string str1 = "How are you?";
+            string str2 = "Programming in C# is Good";
+            string msg = $"{str} Asgar {str1} {str2}";  // String Interpolation
+            Console.WriteLine(msg);
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
