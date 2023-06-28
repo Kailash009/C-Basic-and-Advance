@@ -1,0 +1,499 @@
+Partial Class  and Method:-
+---------------------------------------------
+>> When a developer don't want to write all the code in one class then it separte their code among classes for better readability and maintainability.
+>> we can create same name of classes using partial class.
+>> partial keyword is used to create partial class.
+----------------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Text;
+
+namespace Batch3PMAsgar
+{ 
+    partial class ABC
+    {
+        int a=20;
+        public void show()
+        {
+            Console.WriteLine(a);
+        }
+    }
+    partial class ABC
+    {
+        int i = 3, j = 5;
+        public void mult()
+        {
+            int c = i * j;
+            Console.WriteLine(c);
+        }
+    }
+    class Demo
+    {    
+        static void Main()
+        {
+            ABC ob = new ABC();
+            ob.show();
+            ob.mult();
+        }
+    }
+}
+-------------------------------------------------------
+Partial Method:-
+-----------------------------
+>> partial keyword is used to create partial method.
+>> partial method doesn't have return type.
+>> Access specifier can't be used.
+>> partial method can be declared in one class and implement in another class.
+----------------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    partial class ABC  // Partial Class
+    {
+        partial void show();  // Partial Method
+    }
+    partial class ABC
+    {
+         partial void show()
+        {
+            Console.WriteLine("Hello Partial");
+        }
+        public void display()
+        {
+            show();
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            ABC ob = new ABC();
+            ob.display();
+        }
+    }
+}
+-------------------------------------------------------------------------------------------
+Exception Handling:-
+--------------------------------------------
+Exception:-
+-----------------------
+>> It is an abnormal situation/condition that stop the normal execution of program.
+--------------------------------------------------------------------------------------------------------------------------
+Exception Handling:-
+-----------------------------------
+>> 'Exception is the parent class to handle all the exception.'
+>> To handle run time error.
+To handle run time error in C# we have following keywords in exception -
+1. try.
+>> In try block we write program logic of code.
+2. catch.
+>> catch block handle the exception which has raised by try block.
+-----------------------------------------------------------------------------------------------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            try
+            {
+                int a, b, res;
+                Console.WriteLine("Enter two number=");
+                a = Convert.ToInt32(Console.ReadLine());
+                b = Convert.ToInt32(Console.ReadLine());
+                res = a / b;
+                Console.WriteLine("Divide=" + res);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            //catch(DivideByZeroException ex)
+            //{
+            //    Console.WriteLine("You can't divide a number by Zero"+ex.Message);
+            //}
+            //catch (FormatException ex1)
+            //{
+            //    Console.WriteLine(ex1.Message);
+            //}
+        }
+    }
+}
+-------------------------------------------------------------
+3. finally.
+>> Finally block must be executed at once whether the exception has raised or not.
+--------------------------------------------------------------------------------------------------------------------------
+try-catch-finally:-
+--------------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            try
+            {
+                int a, b, res;
+                Console.WriteLine("Enter two number=");
+                a = Convert.ToInt32(Console.ReadLine());
+                b = Convert.ToInt32(Console.ReadLine());
+                res = a / b;
+                Console.WriteLine("Divide=" + res);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Hello! I am Finally Block!!");
+            }
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------
+4. throw.
+>> thow block thow an exception.
+>> Whatever exception throw by throw block it handled by catch block.
+------------------------------------------------------------------------------------------------------------
+try-catch-finally-throw:-
+---------------------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            try
+            {
+                int age;
+                Console.WriteLine("Enter your age=");
+                age = Convert.ToInt32(Console.ReadLine());
+                if (age > 18)
+                {
+                    Console.WriteLine("Valid for Vote!!");
+                }
+                else
+                {
+                    throw new Exception("Not Valid for Vote!!");
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Hii! I am Finally Block!!");
+            }
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Linq.Expressions;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            try
+            {
+                int[] a = { 12, 34, 55, 445 };
+                Console.WriteLine(a[2]);
+                Console.WriteLine(a[3]);
+                Console.WriteLine(a[1]);
+                Console.WriteLine(a[0]);
+                Console.WriteLine(a[5]);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+    }
+}
+------------------------------------------------------------------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Linq.Expressions;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        static void Main()
+        {
+            try
+            {
+                string a = null;
+                Console.WriteLine(a.Length);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------
+Enums:-
+--------------------
+>> Enums is special class that represents a group of constants.
+>> To create an enum we use enum keyword.
+>> It is also known as 'Enumeration'.
+>> It store set of named constant such as season day,month etc.
+>> It indexing start from zero.
+-------------------------------------------------------------------
+For Example:-
+--------------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Linq.Expressions;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    //OutSide the Class
+    enum Days   // Enum Creation
+    {
+        sun,mon=40,tue,wed,thur,fri,sat
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            string d = Convert.ToString(Days.fri);
+            Console.WriteLine(d); // fri
+            int dd =Convert.ToInt32(Days.wed);
+            Console.WriteLine(dd); //  42
+        }
+    }
+}
+------------------------------------------------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Linq.Expressions;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        //InSide the Class
+        enum Days   // Enum Creation
+        {
+            sun, mon = 40, tue, wed, thur, fri, sat
+        }
+
+        static void Main()
+        {
+            string d = Convert.ToString(Days.fri);
+            Console.WriteLine(d); // fri
+            int dd =Convert.ToInt32(Days.wed);
+            Console.WriteLine(dd); //  42
+        }
+    }
+}
+------------------------------------------------------------
+Enum as Switch:-
+-----------------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Linq.Expressions;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Demo
+    {
+        //InSide the Class
+        enum Days   // Enum Creation
+        {
+            sun, mon = 40, tue, wed, thur, fri, sat,none
+        }
+
+        static void Main()
+        {
+            switch (Days.none)  // Enum as Switch.
+            {
+                case Days.sun:
+                    Console.WriteLine("SunDay");
+                    break;
+                case Days.mon:
+                    Console.WriteLine("MonDay");
+                    break;
+                case Days.tue:
+                    Console.WriteLine("TuesDay");
+                    break;
+                case Days.wed:
+                    Console.WriteLine("WednesDay");
+                    break;
+                case Days.thur:
+                    Console.WriteLine("ThursDay");
+                    break;
+                case Days.fri:
+                    Console.WriteLine("FriDay");
+                case Days.sat:
+                    Console.WriteLine("SaturDay");
+                    break;
+                default:
+                    Console.WriteLine("Wrong input choice");
+                    break;
+            }
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------
+Anonymous type:-
+----------------------------------
+>> A function without name is called anonymouse type.
+-----------------------------------------------------------------------------------------------
+For Example:-
+-------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Linq.Expressions;
+using System.Text;
+
+namespace Batch3PMAsgar
+{
+    class Demo
+    { 
+        static void Main()
+        {
+            var employee = new { Eid = 101, Name = "Rahul Sharma", Age = 17, City = "Delhi" };//Anonymous Type
+            Console.WriteLine(employee);
+            
+            Console.WriteLine(employee.Eid);
+            Console.WriteLine(employee.Name);
+            Console.WriteLine(employee.Age);
+            Console.WriteLine(employee.City);
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
