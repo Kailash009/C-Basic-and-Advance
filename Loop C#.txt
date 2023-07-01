@@ -1,152 +1,140 @@
-Control Statement/ Loop/Iterative Statements:-
----------------------------------------------------------------------------
->> when a user want to print/execute one statement several times then we use the concept of Loop.
---------------------------------------------------------------------------------------------------------------------------------------------------
-There are four types of loop in c#:
-------------------------------------------------
-1. while
-2. do-while
-3. for
-4. foreach
-----------------------------
-1, while
----------------
->> Entry controlled loop.
->> In while loop, condition will be checked first ,after statement will be printed.
-Syntax:-
+Loop/Control/Iterative Statements:-
+-----------------------------------------------------------------
+>> When we want to perform iteration on a statement then we use the concept of loop.
+>> When a user want to print one statement several times then we use the concept of Loop.
+-----------------------------------------------------------------------------------
+There are four types of loop in C#:-
+------------------------
+1. while.
+2. do-while.
+3. for.
+4. foreach.
+--------------------------------------
+1. while.
+>> In while loop condition will be checked first and after that statement will be executed.
+>> It is also known as 'Entry Controlled Loop.'
+Syntax-
 while(condition)
 {
-statement;
+statement1;
 inc/dec;
 }
------------------------
+-------------------------------------
 using System;
 
-namespace Batch12PMWE
+namespace Batch5PMWE
 {
     class Demo
     {
         static void Main()
         {
-            int i = 5;
-            while (i!= 10)
+            int i = 1;
+            while(i!=3)
             {
-                Console.WriteLine(i);
+                Console.WriteLine("Hello C#");
                 i++;
             }
         }
     }
 }
-------------------------
+------------------------------------------------------------------
 2. do-while:-
---------------------
->> Exit Controlled Loop.
->> In do-while loop, statement will be printed at once whether the condition it true or not.
->> The statement will be executed first and after that condition will be checked.
+---------------------
+>> In do-while statemnet will be executed at once whether the condition is true or false.
+>> statement will be executed first and after that condition will be checked.
+>> Do-while loop is also known as 'Exit Controlled Loop'.
+-----------------------------------------------------------------------------------------------
 Syntax:-
---------------------
+-------------
 do
 {
 statement;
 inc/dec;
 }
-while(condition); // It must be Terminated.
-----------------------------------------------------------------------
+while(condition); // It must be terminated.
+--------------------------------------------------------------------------------------------
 using System;
 
-namespace Batch12PMWE
+namespace Batch5PMWE
 {
     class Demo
     {
         static void Main()
         {
-            int a = 2;
+            int a = 5;
             do
             {
-                Console.WriteLine(a);  // 2
-                a++;  //3
+                Console.WriteLine(a);
+                a--;
             }
-            while (a >= 10);  // 3>=10  -> False
+            while (a <3);
         }
     }
 }
----------------------------------------------------
+-----------------------------------------------------------------------
 using System;
 
-namespace Batch12PMWE
+namespace Batch5PMWE
 {
     class Demo
     {
         static void Main()
         {
-            int a = 10;
+            int a = 5;
             do
             {
-                Console.WriteLine(a);  // 
-                a--;  //
+                Console.WriteLine(a);
+                a--;
             }
-            while (a >7);  //
+            while (a !=1 && a>6);
         }
     }
 }
----------------------------------
+--------------------------------------------------------------
+for:-
+-------------
+>> it has three expression
+for(initialization;condition;inc/dec)
+{
+statement;
+}
+--------------------------------------------------------------
 using System;
 
-namespace Batch12PMWE
+namespace Batch5PMWE
 {
     class Demo
     {
         static void Main()
         {
-            int a = 10;
-            do
-            {
-                Console.WriteLine(a);  // 
-                a++;  //
-            }
-            while (a >7);  //
-        }
-    }
-}
-------------------------------------------------------------------------------
-3. for:-
--------------------
->> it has three expression.
-a) Initialization.  -> First Time.
-b) condition
-c) inc/dec
----------------------------------
-for(intialization;condition;inc/dec)
-{
-// statements
-}
-using System;
-
-namespace Batch12PMWE
-{
-    class Demo
-    {
-        static void Main()
-        {
-            for (int i = 1; i < 10; i++)
+            for (int i = 1; i > 10; i++)
             {
                 Console.WriteLine(i);
             }
         }
     }
 }
-------------------------------------------------
+-----------------------------------------------------------------
+foreach:-
+---------------------
+>> it is used to iterate collection of items.
+foreach(datatype varname in collection)
+{
+statements
+}
+-------------------------------------------------------------------
 using System;
 
-namespace Batch12PMWE
+namespace Batch5PMWE
 {
     class Demo
     {
         static void Main()
         {
-            for (int i = 4; i != 7; i++)
+            string str = "DIWAKAR";
+            foreach (char res in str)
             {
-                Console.WriteLine(i);
+                Console.WriteLine(res);
             }
         }
     }
@@ -154,221 +142,438 @@ namespace Batch12PMWE
 ---------------------------------------------------
 using System;
 
-namespace Batch12PMWE
+namespace Batch5PMWE
 {
     class Demo
     {
         static void Main()
         {
-            for (int i = 4; i <= 7; i--)
+            string str = "DIWAKAR";
+            for (int i = 0; i < str.Length; i++)
             {
-                Console.WriteLine(i);
+                Console.WriteLine(str[i]);
             }
         }
     }
 }
-
-----------------------------------------------------
-4. foreach:-
---------------------
->> it is used to iterate collection of elements.
-Syntax:-
-------------------
-foreach(var item in collection)
-{
-// Statements
-}
-----------------------------------------------------------------------------------------------------
+--------------------------------------------
 using System;
 
-namespace Batch12PMWE
+namespace Batch5PMWE
 {
     class Demo
     {
         static void Main()
         {
-            string str = "PANDEY";
-            foreach (char ch in str)
-            {
-                Console.WriteLine(ch);
-            }
-        }
-    }
-}
-------------------------------------------------------
-using System;
-
-namespace Batch12PMWE
-{
-    class Demo
-    {
-        static void Main()
-        {
-            string str = "PANDEY";
-            Char ch;
-            for(int i=0;i<str.Length;i++)
-            {
-                ch = str[i];
-                Console.WriteLine(ch);
-            }
-        }
-    }
-}
-----------------------------------------
-using System;
-
-namespace Batch12PMWE
-{
-    class Demo
-    {
-        static void Main()
-        {
-            string[] sports = { "Cricket", "Footabll", "Hockey", "Tennis", "VolleyBall" };
-            foreach(string spt in sports)
+            List<string> sport = new List<string> { "FootBall", "Cricket", "VollyBall", "Batminton", "BaseBall" };
+            foreach (string spt in sport)
             {
                 Console.WriteLine(spt);
             }
         }
     }
 }
-----------------------------------------------------------------------------
-Jump Statements:-
--------------------------------
-1. Break.
->> It stop the current execution of Loop, and transfer control to the next statement.
+-------------------------------------------------------------------------------
 using System;
 
-namespace Batch12PMWE
+namespace Batch5PMWE
 {
     class Demo
     {
         static void Main()
         {
-            for(int i=1;i<=12;i++)
+            string []sport= { "FootBall", "Cricket", "VollyBall", "Batminton", "BaseBall" };
+            foreach (string spt in sport)
             {
-                if(i==7) // 1==12 2==12  7==7
-                {
-                    break;
-                }
-                Console.WriteLine(i); // 1 2 3 4 5 6  End of Loop
+                Console.WriteLine(spt);
             }
-            Console.WriteLine("End of Loop");
         }
     }
 }
+----------------------------------------------------------------------------------------
+Assignment Question of Loop.
+----------------------------------------------
+1. wap to print 1 to 50 number using while,do-while,for.
+2. wap to print 50 to 1 number using while,do-while,for.
+3. wap to print even no. between 1 to 50 using while,do-while,for.
+4. wap to print odd no. between 1 to 50 using while,do-while,for.
+5. wap to input a number and find its sum and avg.
+6. wap to input a no. and find the factorial.
+7. wap to input a no. and print the fibonacci series.
+8. wap to input a no. and check its prime no. or not.
+9. wap to input a no. and print the table.
+10. wap to input a no. and check its armstrong no. or not.
+11. wap to input a no.and find the sum of its digit.
+12. wap to input a no. and reverse them.
+13. wap to input a no.and check its palindrome no. or not.
+14. wap to input a no.and check its neon no. or not.
+15. wap to input a no. and check its buZZ no. or not.
+----------------------------------------------------------------------------------------------------------------------
+ Nested Loop:-
+------------------------------
+>> Loop within loop is called nested loop.
+--------------------------------------------------------------------
+for(int i=1;i<=;5i++) i=1 1<=5 , 2<=5    // row     // Owner
+{
+for(int j=1;j<=5;j++)  1<=5 2<=5     // column  // Servant
+{
+cw(i); or j  // 1 1 1 1 1       1 2 3 4 5
+}                  2 2 2 2 2
+}
+----------------------------------
+1 1 1 1 1   --> row same  ->>> i
+2 2 2 2 2
+3 3 3 3 3
+4 4 4 4 4
+5 5 5 5 5
+-----------------------
+1 2 3 4 5  -> col same  -> j
+1 2 3 4 5
+1 2 3 4 5
+1 2 3 4 5
+1 2 3 4 5
+-----------------------
+using System;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            for(int i=1;i<=5;i++)
+            {
+                for(int j=1;j<=5;j++)
+                {
+                    Console.Write(j);
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
+--------------------------------------------------------------------------------------
+Assignment Question of Nested Loop:-
+-----------------------------------------------------------------
+1
+12
+123
+1234
+12345
+-----------------
+1
+22
+333
+4444
+55555
+----------------
+1
+21
+321
+4321
+54321
+--------------------
+*
+**
+***
+****
+*****
+------------------
+54321
+5432
+543
+54
+5
+--------------------
+12345
+1234
+123
+12
+1
+----------------------
+5
+54
+543
+5432
+54321
+----------------
+1
+23
+456
+78910
+-----------------
+A
+AB
+ABC
+ABCD
+ABCDE
+-----------------
+EDCBA
+EDCB
+EDC
+ED
+E
+------------------
+E
+ED
+EDC
+EDCB
+EDCBA
+-------------------
+  *
+ ***
+*****
+-------------------
+*****
+ ***
+  *
 ---------------------
+COMPUTER
+    OMPUTER
+        MPUTER
+            PUTER
+               UTER
+                   TER
+	    ER
+                        R
+-----------------------------------------------------
+55555
+4444
+333
+22
+1
+------------------
+11111
+2222
+333
+44
+5
+------------------
+5
+44
+333
+2222
+11111
+---------------------
+Assignment of Conditional Statements:-
+-----------------------------------------------------------------
+1. wap to input two no. and find the greatest among them using if-else and ternary.
+2. wap to input three no. and find the greatest among them using if-else and ternary.
+3. wap to input character and check its vowel and consonant.
+4. wap to make calculator program using user choice-   
++ -> add
+- -> sub
+* -> mult
+/ -> div
+% -> rem
+5. wap to input year and check leap year or not.
+6. wap to input  5 subject marks and find total and percentage and find the following grade -  
+100%-90% ->  S
+90%-80% ->  A
+80%-70% ->  B
+70%-60% ->  C
+60%-50% ->  D
+ < 50%    ->   F
+----------------------------------------------------
+Ternary Operator:-
+----------------------------------
+(Condition)?True:False;
+----------------------------------------
 using System;
 
-namespace Batch12PMWE
+namespace Batch5PMWE
 {
     class Demo
     {
         static void Main()
         {
-            for(int i=1;i<=12;i++)
+            int a = 5, b = 10, res;
+            res = (a < b) ? a : b;
+            Console.WriteLine(res);
+        }
+    }
+}
+--------------------------------------------------------
+using System;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            string msg,output;
+            Console.WriteLine("Enter Some Message=");
+            msg = Console.ReadLine();
+            output = (msg == "python" ? "Hello Python" : "Hello C#");
+            Console.WriteLine(output);
+        }
+    }
+}
+---------------------------------------------------------
+using System;
+
+namespace Batch5PMWE
+{
+    // wap to check character is vowel or consonant.
+    class Demo
+    {
+        static void Main()
+        {
+            string ch,res;
+            Console.WriteLine("Enter a Character");
+            ch =Console.ReadLine();
+            res = (ch == "a" || ch == "e" || ch == "i" || ch == "o" || ch == "u") ? "Input String is in Vowel" :"Input String is in Consonant";
+            Console.WriteLine(res);
+        }
+    }
+}
+-----------------------------------------------------------------------------------
+using System;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            char ch;
+            int a, b, c;
+            Console.WriteLine("Enter your choice among +,-,*,/,% ::");
+            ch = Convert.ToChar(Console.ReadLine());
+            Console.WriteLine("Enter two number");
+            a = Convert.ToInt32(Console.ReadLine());
+            b = Convert.ToInt32(Console.ReadLine());
+            switch (ch)
             {
-                if(i==7 || i==9 || i==12 || i==2) 
-                {
+                case '+':
+                    c = a + b;
+                    Console.WriteLine("Sum="+c);
                     break;
-                }
-                Console.WriteLine(i); //  1 end of loop
-            }
-            Console.WriteLine("End of Loop");
-        }
-    }
-}
----------------------------------
-using System;
-
-namespace Batch12PMWE
-{
-    class Demo
-    {
-        static void Main()
-        {
-            for(int i=1;i<=12;i++)
-            {
-                if(i==7 && i==9 && i==12 && i==2) 
-                {
+                case '-':
+                    c = a - b;
+                    Console.WriteLine("Sub=" + c);
                     break;
-                }
-                Console.WriteLine(i); // 1 to 12 End of Loop
+                case '*':
+                    c = a * b;
+                    Console.WriteLine("Mult=" + c);
+                    break;
+                case '/':
+                    c = a / b;
+                    Console.WriteLine("Div=" + c);
+                    break;
+                case '%':
+                    c = a % b;
+                    Console.WriteLine("Remainder=" + c);
+                    break;
+                default:
+                    Console.WriteLine("Wrong Input Choice");
+                    break;
             }
-            Console.WriteLine("End of Loop");  
         }
     }
 }
--------------------------------------------------------------
-2. Continue.
->> when continue appears inside any loop, then it transfer control to the begining of the loop.
-using System;
+-------------------------------------------------------------------------------------------------------------------
 
-namespace Batch12PMWE
-{
-    class Demo
-    {
-        static void Main()
-        {
-            for(int i=1;i<=12;i++)
-            {
-               if(i==5)
-               {
-                    continue;
-               }
-                Console.WriteLine(i); // 1 2 3 4 6 7 to 12 and end of loop
-            }
-            Console.WriteLine("End of Loop");  
-        }
-    }
-}
-------------------------------------------------------------------------------------------
-using System;
 
-namespace Batch12PMWE
-{
-    class Demo
-    {
-        static void Main()
-        {
-            for(int i=1;i<=12;i++)
-            {
-               if(i==5 || i==2 || i==11 || i==9)
-               {
-                    continue;
-               }
-                Console.WriteLine(i); // 
-            }
-            Console.WriteLine("End of Loop");  
-        }
-    }
-}
-------------------------------------------------------------------------------------
-3. Return.  -> Pending )(Discuss on Function Topic).
--------------------------------------------------------------------------------------------------------------------------------------
-Assignment Question:-
------------------------------------
-1. wap to print 1 to 100 number using while,do-while and for.
-2. wap to print HAPPY BIRTHDAY 12 TIMES USING using while,do-while and for.
-3. WAP TO  print the even number between 1 to 100 using while,do-while and for.
-4. WAP TO  print the Odd number between 1 to 100 using while,do-while and for.
-5. WAP TO  print the sum of 1 to 20 number and avg using while,do-while and for.
-6.  wap to input a number and print the fibonacci series.
-7. wap to input a numberand find the factorial.
-8. wap to input a number and print the table.
-9. wap to input a number and check number is prime or not.
-10. wap to input a number and check number is armstrong or not.
-11. wap to input a number and find the sum of its digit.
-12. wap to input a number and reverse them.
-13. wap to input a number and find the palindrome or not.
-14. wap to input a number and check its BUZZ number or not.
-15. wap to input a number and check its DUCK number or not. 
-16. wap to input a number and check its NEON number or not. 
-  9 => 9*9 => 81 -> 8+1 => 9
----------------------------------------------------------------------------------------------------------------------------------
-Nested LOOP ->>> Pending
------------------------------------------------------------------------
-Functions -> Pending
---------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
