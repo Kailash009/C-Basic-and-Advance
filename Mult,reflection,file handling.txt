@@ -1,0 +1,337 @@
+File Handling in  C#:-
+---------------------------------------
+Drawback of variable:-
+-------------------------------------
+>> Variable store data on a temporarily manner.
+>> we can't store large amout of data.
+>> we can't work with previous data.
+------------------------------------------------------------------------------------------
+>> File is used for keeping a record.
+>> it can store data on permanent basis
+>> we can store huge amount of data.
+>> we can work with previous data.
+----------------------------------------------------------------------------
+>> File Handling is used to handle files.
+>> In file handling we have predefined classes and methods to perform file operations.
+>> "using System.IO" namespace in which all methods and classes are defined.
+---------------------------------------------------------------------------------------------------------------------
+Operations on File:-
+--------------------------------------
+1. Writing a file.
+>> To write a file we have predefined class name as 'StreamWriter'.
+>> When we write any file if file doesn't exist then it will created automatically.
+2. Reading a file.
+>> To write a file we have predefined class name as 'StreamReader'.
+>> File must be there.
+-------------------------------------------------------------------------------------------------------------------------
+Writing and Reading a File:-
+------------------------------------------------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Linq.Expressions;
+using System.Text;
+using System.IO;
+
+namespace Batch3PMAsgar
+{
+    // Writing and Reading a File.
+    class Demo
+    {
+        static void Main()
+        {
+            try
+            {
+                string[] names = { "Prasant", "Ananad", "Abhishek", "Kavita", "Asgar", "Arvind", "Aditiya", "Arpita", "Chand" };
+                using (StreamWriter sw = new StreamWriter("H:\\abhi.txt"))
+                {
+                    foreach (string name in names)
+                    {
+                        sw.WriteLine(name);
+                    }
+                }
+                // Reading File.
+                using (StreamReader sr = new StreamReader("H:\\Dot Net Projects.txt"))
+                {
+                    string line = "";
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        Console.WriteLine(line);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+    }
+}
+-----------------------------------------------------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Linq.Expressions;
+using System.Text;
+using System.IO;
+
+namespace Batch3PMAsgar
+{
+    // Writing and Reading a File.
+    class Demo
+    {
+        static void Main()
+        {
+            string msg = "This is C# Programming language,developed by Anders Heljsberg in 2002 by Microsoft";
+            using(StreamWriter sw=new StreamWriter("H:\\msg.txt"))
+            {
+                foreach(var str in msg)
+                {
+                    sw.Write(str);
+                }
+            }
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------------------
+Multithreading:-
+--------------------------------
+Thread:-
+----------------------------
+>> A thread is a single sequential flow of program.
+>> A thread is a light weight process.
+>> it consist of multiple process.
+--------------------------------------------------------------------------------------------------
+Types of Threading:-
+--------------------------------------
+1. SingleThreading.
+>> when single process executed at a time.
+2. MultiThreading.
+>> when multiple process executed continuously.
+-----------------------------------------------------------------------------------------------
+Multithreading:-
+------------------------------
+>> In Multithreading multiple process can be executed simultaneously.
+>> Our O.S is based on Multithreading.
+>> In multithreading no process has to wait for another process to execute.
+>> In multithreading we use 'using System.Threading' namespace.
+---------------------------------------------------------------------------------------------------------------------
+Life cycle of Thead:-
+-------------------------------
+1. Start.
+2. Sleep.
+3. Abort.
+4. Suspend.
+5. Resume.
+6. Terminate.
+---------------------------------
+WHY ???
+--------------------
+p1  -> 10 min.
+p2  -> 3 min.  -> 13 min.
+p3 ->  2 min.  -> 15 min.
+--------------------------------------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Linq.Expressions;
+using System.Text;
+using System.IO;
+using System.Threading;
+
+namespace Batch3PMAsgar
+{
+    // Single Threading
+    class Demo
+    {
+        static void Test()  // Function Defination
+        {
+            for (int i = 1;i<=20;i++) // Process - 20 
+            {
+                Console.WriteLine(i);
+                Thread.Sleep(3000); // 3 Sec.
+            }
+        }
+        static void Main()
+        {
+            Thread t1 = new Thread(Test);
+            t1.Start();
+           
+        }
+    }
+}
+----------------------------------------------------------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Linq.Expressions;
+using System.Text;
+using System.IO;
+using System.Threading;
+
+namespace Batch3PMAsgar
+{
+    // Single Threading
+    class Demo
+    {
+        static void Test1()  // Function Defination
+        {
+            for (int i = 1; i <= 20; i++)
+            {
+                Console.WriteLine("TEST 1="+i);
+                Thread.Sleep(2000);
+            }
+        }
+        static void Test2()
+        { 
+            for (int i = 1; i <= 10; i++) 
+            {
+                Console.WriteLine("TEST 2="+i);
+                Thread.Sleep(3000);
+            }
+        }
+        static void Main()
+        {
+            Thread t1 = new Thread(Test1);
+            Thread t2 = new Thread(Test2);
+            t1.Start();
+            t2.Start();
+      }
+    }
+}
+----------------------------------------------------------------------------------------
+Reflection:-
+-----------------------------
+>> It is used to get meta information at runtime.
+>> It provide meta information about classes,interface,methods etc.
+>> using System.Reflection.
+1. Method.
+2. Type.
+3. Interface
+4. MemberInfo
+5. PropertyInfo
+--------------------------------------------------------------------------------------------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Linq.Expressions;
+using System.Text;
+using System.IO;
+using System.Threading;
+
+namespace Batch3PMAsgar
+{
+    // Single Threading
+    class Demo
+    { 
+        static void Main()
+        {
+            int a = 23;
+            Type t = typeof(int);
+            Console.WriteLine(t.GetType());
+            Console.WriteLine(t.Name);
+            Console.WriteLine(t.FullName);
+            Console.WriteLine(t.IsValueType);
+            Console.WriteLine(t.Assembly);
+            Console.WriteLine(t.BaseType);
+            
+        }
+    }
+}
+-------------------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Linq.Expressions;
+using System.Text;
+using System.IO;
+using System.Threading;
+
+namespace Batch3PMAsgar
+{
+    // Single Threading
+    class Demo
+    { 
+        static void Main()
+        {
+            short a = 23;
+            Console.WriteLine(a.GetType());
+        }
+    }
+}
+------------------------------------------------------------
+Lamda Expression - PENDING.
+-----------------------------------------------------------
+SQL SERVER --- PENDING
+-----------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
