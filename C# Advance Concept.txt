@@ -1,0 +1,663 @@
+Lamda Expression:-
+-----------------------------------
+>> it is also known as one liner expression.
+>> It is represented by => .
+>> The performance of lambda expression is very fast.
+---------------------------------------------------------------------------------------
+wap to find the even no. in a given list.
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Linq.Expressions;
+using System.Text;
+using System.IO;
+using System.Threading;
+using System.Reflection;
+
+namespace Batch3PMAsgar
+{
+    
+    class Demo
+    { 
+        static void Main()
+        {
+            List<int> number = new List<int> { 12, 45, 67, 89, 67, 23, 34, 5 };
+            List<int> evenNumber = number.FindAll(arvind => (arvind % 2) != 0); // 
+            foreach (int  res in evenNumber)
+            {
+                Console.WriteLine(res);
+            }
+        }
+    }
+}
+-----------------------
+wap to find the square of given element.
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Linq.Expressions;
+using System.Text;
+using System.IO;
+using System.Threading;
+using System.Reflection;
+
+namespace Batch3PMAsgar
+{
+    
+    class Demo
+    { 
+        static void Main()
+        {
+            List<int> number = new List<int> {1,2,3,4,5,6,7,8};
+            List<int> square = number.Select(x => (x * x)).ToList(); 
+            foreach (int  res in square)
+            {
+                Console.WriteLine(res);
+            }
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------------------------
+Boxing -> It convert value type into reference type.
+UnBoxing -> It convert reference type into value type.
+-------------------------------------------------------------------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Linq.Expressions;
+using System.Text;
+using System.IO;
+using System.Threading;
+using System.Reflection;
+
+namespace Batch3PMAsgar
+{
+    
+    class Demo
+    { 
+        static void Main()
+        {
+            int a = 34;
+            object b = a;  // Boxing.
+            Console.WriteLine(b);
+            int c = (int)b; // UnBoxing.
+            Console.WriteLine(c);
+        }
+    }
+}
+-----------------------------------------------------------------------------------------
+Value Type:-
+------------------------
+>> In value type we pass value.
+>> whatever changes made to the formal parameter doesn't reflect back to the actual parameter.
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Linq.Expressions;
+using System.Text;
+using System.IO;
+using System.Threading;
+using System.Reflection;
+
+namespace Batch3PMAsgar
+{
+    
+    // Value Type
+    class Employee
+    {
+        public void empDetails(string name,int age) // Formal Parameter
+        {
+            name = "Amit";
+            age = 25;
+            Console.WriteLine("Changes in Formal Parameter");
+            Console.WriteLine("Name="+name); // Amit
+            Console.WriteLine("Age="+age); // 25
+        }
+    }
+    class Demo
+    { 
+        static void Main()
+        {
+            string Name = "Ravi";
+            int age = 20;
+            Employee emp = new Employee();
+            emp.empDetails(Name,age); // Actual parameter
+            Console.WriteLine("Actual Parameter");
+            Console.WriteLine("Name="+Name); // Ravi
+            Console.WriteLine("Age="+age);  // 20
+        }
+    }
+}
+--------------------------------------------------------
+Reference Type:-
+----------------------------
+>> In reference type we pass reference.
+>> whatever changes made to the formal parameter does reflect back to the actual parameter.
+---------------------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Linq.Expressions;
+using System.Text;
+using System.IO;
+using System.Threading;
+using System.Reflection;
+
+namespace Batch3PMAsgar
+{
+    
+    // Reference Type
+    class Employee
+    {
+        public string name;
+        public int age;
+        public void empDetails(Employee empobj) // Formal Parameter
+        {
+            empobj.name = "Amit";
+            empobj.age = 25;
+            Console.WriteLine("Changes in Formal Parameter");
+            Console.WriteLine("Name="+empobj.name); // Amit
+            Console.WriteLine("Age="+empobj.age); // 25
+        }
+    }
+    class Demo
+    { 
+        static void Main()
+        {
+            Employee emp = new Employee();
+            emp.name = "Ravi";
+            emp.age = 20;
+            emp.empDetails(emp); // Actual parameter
+            Console.WriteLine("Actual Parameter");
+            Console.WriteLine("Name="+emp.name); // Amit
+            Console.WriteLine("Age="+emp.age);  // 25
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------
+or: using ref keyword -
+----------------------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Linq.Expressions;
+using System.Text;
+using System.IO;
+using System.Threading;
+using System.Reflection;
+
+namespace Batch3PMAsgar
+{
+    
+    // Reference Type
+    class Employee
+    {
+        public void empDetails(ref string name,ref int age) // Formal Parameter
+        {
+            name = "Amit";
+            age = 25;
+            Console.WriteLine("Changes in Formal Parameter");
+            Console.WriteLine("Name="+name); // Amit
+            Console.WriteLine("Age="+age); // 25
+        }
+    }
+    class Demo
+    { 
+        static void Main()
+        {
+            string name = "Ravi";
+            int age = 20;
+            Employee emp = new Employee();
+            emp.empDetails(ref name,ref age); // Actual parameter
+            Console.WriteLine("Actual Parameter");
+            Console.WriteLine("Name="+name); // Amit
+            Console.WriteLine("Age="+age);  // 25
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------
+ref -> value must be there while passing to the function.
+out -> It is not necessary that value must be there while passing to the function.
+---------------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Linq.Expressions;
+using System.Text;
+using System.IO;
+using System.Threading;
+using System.Reflection;
+
+namespace Batch3PMAsgar
+{
+    class Employee
+    {
+        string name;
+        public void empDetails(ref string name) // Formal Parameter
+        {
+            Console.WriteLine("Name="+name); // Amit
+        }
+    }
+    class Demo
+    { 
+        static void Main()
+        {
+            string name;
+            Employee emp = new Employee();
+            emp.empDetails(ref name); // Mandatory value must be there.
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------------------
+Out Keyword:-
+---------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Linq.Expressions;
+using System.Text;
+using System.IO;
+using System.Threading;
+using System.Reflection;
+
+namespace Batch3PMAsgar
+{
+    class Employee
+    { 
+        public void empDetails(out string name) // Formal Parameter
+        {
+            name = "ravi";
+            Console.WriteLine("Name="+name); // Amit
+        }
+    }
+    class Demo
+    { 
+        static void Main()
+        {
+            string name;
+            Employee emp = new Employee();
+            emp.empDetails(out name); // Not Mandatory value must be there.
+        }
+    }
+}
+-------------------
+· Properties
+public string Name { get; set; }  // Property
+-------------------------------------------------------------------
+Global Assembly Cache
+>> All assembly file contains in GAC.
+--------------------------------------------------------------------
+Extension Methods:-
+-------------------------------------
+>> To add something.
+Rules to create extension method:-
+1. class must be static.
+2. method must be static.
+3. method must contain this keyword.
+4. It is represented by downward arrow keys.
+-----------------------------------------------------------------------------------
+wap to create extension method that count no. of character in a string.
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Linq.Expressions;
+using System.Text;
+using System.IO;
+using System.Threading;
+using System.Reflection;
+
+namespace Batch3PMAsgar
+{
+    static class Example
+    {
+        public static int getCharacter(this string str)
+        {
+            if(!string.IsNullOrEmpty(str))
+            {
+                return str.Count();
+            }
+            else
+            {
+                return 0;
+            }
+        }
+    }
+    class Demo
+    { 
+        static void Main()
+        {
+            int c=Example.getCharacter("Abhishek");
+            Console.WriteLine(c);
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------
+or Class Library:-
+----------------------------------------
+namespace Example
+{
+    public class Employee
+    {
+        public void Attendance()
+        {
+            Console.WriteLine("Employee Mark Attendance");
+        }
+        public void Task()
+        {
+            Console.WriteLine("Employee Completed Task");
+        }
+        public void Salary()
+        {
+            Console.WriteLine("Employee Take Salary");
+        }
+        public void Holiday()
+        {
+            Console.WriteLine("Enjoy Weekend!!");
+        }
+    }
+}
+---------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Linq.Expressions;
+using System.Text;
+using System.IO;
+using System.Threading;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using Example;
+namespace Batch3PMAsgar
+{
+    static class Example
+    {
+        public static void Incentive(this Employee emp)
+        {
+            Console.WriteLine("Employee Take Incentive");
+        }
+    }
+    static class Demo
+    {
+        static void Main()
+        {            
+            Employee emp = new Employee();
+            emp.Attendance();
+            emp.Task();
+            emp.Salary();
+            emp.Incentive();
+            emp.Holiday();
+        }
+    }
+}
+----------------------------------------------------------------------------------------------
+Tuples:-
+--------------------
+>> we can store collection of elements in tuples.
+>> Accessing tuple element as an item.
+>> Max 7 item will be there in tuple.
+-----------------------------------------------------------------------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Linq.Expressions;
+using System.Text;
+using System.IO;
+using System.Threading;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using Example;
+namespace Batch3PMAsgar
+{
+    static class Demo
+    {
+        static void Main()
+        {
+            Tuple<int, string, int, string,int,string,string> tp = new Tuple<int, string, int, string,int,string,string>(101,"Ajay",93030,"Noida",344,"fds","3rdf");
+            Console.WriteLine(tp.Item1);
+            Console.WriteLine(tp.Item2);
+            Console.WriteLine(tp.Item3);
+            Console.WriteLine(tp.Item4);
+            Console.WriteLine(tp.Item5);
+            Console.WriteLine(tp.Item6);
+            Console.WriteLine(tp.Item7);
+
+        }
+    }
+}
+------------------------------------------------------------------------------
+ What is name of Expression
+>> Name of expression find the name of any class,interface,methods,variable or datatype.
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Linq.Expressions;
+using System.Text;
+using System.IO;
+using System.Threading;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using Example;
+namespace Batch3PMAsgar
+{
+    static class Demo
+    {
+        static void Main()
+        {
+            string a="helo";
+            List<int> lt = new List<int>() { 34, 67, 89 };
+            Console.WriteLine(nameof(List<int>));
+            Console.WriteLine(nameof(lt.Count));
+            Console.WriteLine(nameof(a));
+        }
+    }
+}
+----------------------------------------------------------------------------------
+Expression-bodied function members:-
+-----------------------------------------------------------------
+using System;
+using System.Collections;
+using System.Diagnostics;
+using System.Linq.Expressions;
+using System.Text;
+using System.IO;
+using System.Threading;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using Example;
+namespace Batch3PMAsgar
+{
+    class Addition
+    {
+        public int sum(int a, int b) => a + b;  // Expression bodied       
+    }
+    static class Demo
+    {
+        static void Main()
+        {
+            Addition ad = new Addition();
+            Console.WriteLine(ad.sum(10,30));
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------
+Null Condional Operator:-
+--------------------------------------------------
+>>  It set default value when you have null in your variable.
+>> ?. is used to represent null conditional operator.
+>> it prevent from Null Reference Error.
+-------------------------------------------------------------------------------------------
+For Example  ->> Pending.
+--------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
