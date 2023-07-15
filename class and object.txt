@@ -1,0 +1,274 @@
+File Handling:-
+------------------------------
+using System.IO;
+-------------------------------
+1. How to write File.
+StreamWriter
+2. How to read File.
+StreamReader
+-------------------------------------
+using System;
+using System.Text;
+using System.IO;
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            // Writing File.
+            string[] names = { "Kamal,abhishek,niskarsh,manish,dewakar,vaibh" };
+            using(StreamWriter sw = new StreamWriter("H://vaibhav.txt",true))  // it automatically dipose or clear the memory of that class.
+            {
+                foreach (string res in names)
+                {
+                    sw.WriteLine(res);
+                }
+            }
+            // Reading File.
+            string line = "";
+            using (StreamReader sr = new StreamReader("H://vaibhav.txt"))
+            {
+                while((line=sr.ReadLine())!=null)
+                {
+                    Console.WriteLine(line);
+                }
+            }
+        }
+    }
+}
+--------------------------------------------------------------------------------------
+Boxing -> To convert value type to reference type.
+UnBoxing -> To convert reference type to value type.
+-------------------------------------------------------------------------------------
+using System;
+using System.Text;
+using System.IO;
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 23;
+            object b = a;  // Boxing.
+            Console.WriteLine(b);
+            object d = 678;
+            int c =(int)d;    // UnBoxing
+            Console.WriteLine(d);
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------
+Example of Value Type:-
+-----------------------------------------------
+>> In value type we pass value into the function.
+>> whatever changes made to the formal parameter , it doesn't back to the actual parameter.
+using System;
+using System.Text;
+using System.IO;
+namespace Batch5PMWE
+{
+    class Emp
+    {
+        public void Employee(string name, int age)  // Function Defination.
+        {
+            name = "Divakar";
+            age = 21;
+            Console.WriteLine("Changes in Formal Parameter");
+            Console.WriteLine(name); // Divakar
+            Console.WriteLine(age); // 21
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            string name = "Vaibhav";
+            int age = 19;
+            Emp emp = new Emp();
+            emp.Employee(name,age);  // Function Calling
+            Console.WriteLine("Actual Parameters are");
+            Console.WriteLine("Name="+name);// Vaibhav
+            Console.WriteLine("Age="+age);   // 19
+        }
+    }
+}
+----------------------
+Example of Reference Type:-
+--------------------------------------------
+>> In reference type we pass reference into the function.
+>> whatever changes made to the formal parameter , it does back to the actual parameter.
+------------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+using System.IO;
+namespace Batch5PMWE
+{
+    class Emp
+    {
+        public string name;
+        public int age;
+        public void Employee(Emp empObj)  // Function Defination.
+        {
+            empObj.name = "Divakar";
+            empObj.age = 21;
+            Console.WriteLine("Changes in Formal Parameter");
+            Console.WriteLine(name); // Divakar
+            Console.WriteLine(age); // 21
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Emp em = new Emp();
+            em.name = "Vaibhav";
+            em.age = 20;
+            Console.WriteLine("Before Calling Function");
+            Console.WriteLine("Name="+em.name);// Vaibhav
+            Console.WriteLine("Age="+em.age); //20
+            em.Employee(em);  // Function Calling
+            Console.WriteLine("After Calling Function");
+            Console.WriteLine("Actual Parameters are");
+            Console.WriteLine("Name="+em.name);// Divakar
+            Console.WriteLine("Age="+em.age);   // 21
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------
+Oop:-
+-------------
+>> In object oriented programming we focus on object.
+>> oop is an approach to promote greater flexibility and maintainablity in a program.
+--------------------------------------------------------------------------------------
+Oop's Concept:-
+---------------------------
+1. Class.
+>> A class is blue print that is used to create a particular kind of object.
+>> A class is a way by which we can represent object.
+>> One class have multiple object.
+--------------------------------------------------------------------------------------------------------------
+Syntax:-
+--------------
+class className
+{
+Data Member; / Variable  -> it represent the attibutes of an object.
+Member Function or Method / Methods  -> It represent the behaviour of an object.
+}
+----------------------------------------------------
+class Person  
+{
+eye,nose,ear -- attributes.
+how to talk() -- behaviour
+}
+----------------
+class DotNet
+{
+vaibhav -> attr,behav
+diwakar -> attr,behav
+abhishek -> attr,behav
+}
+-----------------------------------------------------------------------
+Dotnet vaibhav=new DotNet(); // vaibhav=1000
+Dotnet diwakar=new DotNet(); // diwakar=2000
+Dotnet abhishek=new DotNet(); // abhishek=3000
+------------------------------------------------------------------------
+2. Object.
+>> Object is real world (Living  + Non - Living ) entity is known as object.
+>> Object is an instance of a class.
+------------------------------------------------------------
+Syntax to create an object of a class:-
+------------------------------------------------------------
+className objname=new className();
+----------------------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+using System.IO;
+namespace Batch5PMWE
+{
+    class Employee
+    {
+        public int aa, bb, cc;  // Class Variable or Instance Variable.
+        public int addition(int a,int b,int c)  // Local Variable.
+        {
+            aa = a;
+            bb = b;
+            cc = c;
+            return aa+bb+cc;
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Employee emp = new Employee();  // emp=1000
+            int sm=emp.addition(10,20,30);
+            Console.WriteLine("Sum="+sm); // 60
+        }
+    }
+}
+----------------------------------------
+this Keyword:-
+------------------------
+>> It hold the current reference of an object.
+>> this keyword is used to call Instance variable.
+-------------------------------------------------------------------------
+using System;
+using System.Text;
+using System.IO;
+namespace Batch5PMWE
+{
+    class Employee
+    {
+        public int a, b, c;  // Class Variable or Instance Variable.
+        public int addition(int a,int b,int c)  // Local Variable.
+        {
+            this.a = a;  // 10
+            this.b = b; // 20
+            this.c = c; //30
+            return this.a + this.b + this.c;
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Employee emp = new Employee();  // emp=1000
+            int sm=emp.addition(10,20,30);
+            Console.WriteLine("Sum="+sm); // 60
+        }
+    }
+}
+---------------------------------------------------------------------------
+****Pillars of Oop's *****
+3. Inheritance.
+4. Data Abstraction.
+5. Encapsulation.
+6. Polymorphism.
+-----------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
