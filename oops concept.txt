@@ -1,0 +1,383 @@
+*Pillars of Oop's **
+3. Inheritance.
+4. Data Abstraction.
+5. Encapsulation.
+6. Polymorphism.
+-------------------------------------------------------
+3. Inheritance:-
+--------------------------------
+>> It is the process by which object of one class acquire the properties object of another class.
+>> child class always inherits the properties of its parent class.
+>> we can modify existing class to the new class.
+>> It provide the idea of Re-usablity.(we don't need to re-write same  code again and again).
+----------------------------------------------------------------------------------------------------------------------------------------
+Types of Inheritance:-
+-----------------------------------
+1. Single Inheritance.
+2. Multiple Inheritance.
+3. MultiLevel Inheritance.
+4. Hierarchical Inheritance.
+5. Hybrid Inheritance.
+------------------------------------------------------------------
+Single Inheritance:-
+------------------------------
+using System;
+using System.Text;
+using System.IO;
+
+namespace Batch5PMWE
+{
+    class Parent
+    {
+        public void show()
+        {
+            Console.WriteLine("Hello Parent");
+        }
+    }
+    class Child:Parent
+    { 
+        public void display()
+        {
+            Console.WriteLine("Hello Child");
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Child ch = new Child();
+            ch.show();
+            ch.display();
+        }
+    }
+}
+-----------------
+or
+-----------
+In C#:-
+------------------
+Class => By Default  => Internal.
+Properties/Method => By Default => private.
+-------------------------------------------------------------------------
+using System;
+using System.Text;
+using System.IO;
+
+namespace Batch5PMWE
+{
+    class Parent
+    {
+        public int c;
+        public int addition(int a, int b)
+        {
+            c = a + b;
+            return c; // 13
+        }
+    }
+    class Child:Parent
+    {
+        int m;
+        public int Multiplication(int p)
+        {
+            m = p * c; // 9*13
+            return m;  // 117
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Child ch = new Child();
+            int s=ch.addition(6,7);
+            Console.WriteLine("Sum="+s); //13
+            int mt=ch.Multiplication(9);
+            Console.WriteLine("Mult="+mt); // 117
+        }
+    }
+}
+-----------------------------
+2) Multiple Inhertiance:-
+---------------------------------------
+>> Multiple base/Parent classes and single child class.
+------------------------------------------------------------------------------
+>> C# doesn't support Multiple Inheritance.
+>> But if you want to support Multiple Inheritance in C#,then we use the concept of 'Interface'.
+------------------------------------------------------------------------------------------------------------------------------------------
+Interface:-
+-----------------------
+>> we use interface keyword to create interface.
+>> Interface can't contain instance field.
+>> In Interface we provide only Method Declaration.
+>> Interface can't contain instance constructor.
+>> Interface by default is Public.
+>> Interface is used to achieve Multiple Inheritance.
+>> Whatever the method we declare inside interface it must be implemented with their child classes.
+----------------------------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+using System.IO;
+
+namespace Batch5PMWE
+{
+    interface Father
+    {
+        int Addition(int a, int b);
+        int Multiplication(int c, int d);
+    }
+    interface Mother
+    {
+        double Divide(double i, double j);
+    }
+    class Child : Father, Mother
+    {
+        public int Addition(int a, int b)
+        {
+            return a + b;
+        }
+
+        public double Divide(double i, double j)
+        {
+            return i / j;
+        }
+        public int Multiplication(int c, int d)
+        {
+            return c * d;
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Child ch = new Child();
+            int s=ch.Addition(10, 20);
+            Console.WriteLine("Sum="+s);
+            int m = ch.Multiplication(5, 6);
+            Console.WriteLine("Multiplication="+m);
+            double d=ch.Divide(100, 9);
+            Console.WriteLine("Divide="+d);
+        }
+    }
+}
+-----------------------------
+4. Data Abstraction.
+--------------------------------------------
+>> It refers to the act of representing essential features only, and hiding the unnecessary things.
+------------------------------------------------------------------------------------------------------------------------------------------------------
+How to achieve Data Abstraction in c#:-
+---------------------------------------------------------------------
+Abstract Class:-
+-----------------------------
+>> abstract keyword is used to create abstract class and method.
+>> In abstract class we create only abstract method.
+>> abstract method doesn't have implementation.
+>> abstract method can' t be private.
+>> we can' t achieve multiple inheritance.
+>> abstract can contain instance field.
+>> we can create Constructor inside abstract class.
+>> All abstract class method must be override with their child classes.
+>> we can't create an object of Abstract Class.
+-----------------------------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+using System.IO;
+
+namespace Batch5PMWE
+{
+    abstract class Rectangle
+    {
+        public abstract int area(int l, int b);  // Data Abstraction.
+        public abstract int addition(int i, int j);
+        public abstract int multiplication(int a, int c);
+    }
+    class Child : Rectangle
+    {
+        public override int addition(int i, int j)
+        {
+            return i+j;
+        }
+
+        public override int area(int l, int b)
+        {
+            return l * b;
+        }
+        public override int multiplication(int a, int c)
+        {
+            return a * c;
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Child ch = new Child();
+            Console.WriteLine("Sum="+ch.addition(10, 20));
+            Console.WriteLine("Area="+ch.area(3, 4));
+            Console.WriteLine("Mult="+ch.multiplication(9, 6));
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+using System.IO;
+using System.ComponentModel;
+
+namespace Batch5PMWE
+{
+    abstract class Show   // Senior Developer
+    {
+        public abstract void Display();
+    }
+    class abc:Show  // SE
+    {
+        public override void Display()
+        {
+            Console.WriteLine("Hello Pandey");  // LOGIC
+        }
+    }
+    class bcd:Show  // JD
+    {
+        public override void Display()
+        {
+            Console.WriteLine("Hello Sudhir");
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            //abc on = new abc();
+            //on.Display();
+            bcd d = new bcd();
+            d.Display();
+        }
+    }
+}
+-----------------------------------------
+5. Encapsulation.
+>> It is also known as Data Hiding or information Hiding.
+>> Wrapping up of data and function into a single unit is known as Encapsulation.
+>> we can achieve encapsulation in c# by using access modifier.
+	a) Public.
+	b) Private.
+	c) Protected.
+	d) Internal.
+	e) Protected Internal.
+---------------------------------------------------------------------------------------------------------
+6. Polymorphism.
+>> Poly + Morphism  => Many Forms.
+>> It is the ability to take more than one forms.
+>> assign multiple task to one person.
++ -> 3+4
++ -> 3.4+5.6
++ => "ram"+"shyam"
+How to achieve Polymorphism in C#:-
+----------------------------------------------------------
+>> To achieve Polymorphism in C# we have two concepts which are as follows -
+	a) Method Overloading. ==>> Compile Time Polymorphism. ==>> Early Binding.
+	b) Method Overriding.   ===>  Run Time Polymorphism. ===>> Late Binding.
+------------------------------------------------------------------------------------------------------------------------------------------------------
+Assignment Task:-
+-----------------------------
+1. MultiLevel.
+2. Hybrid.
+3. Hierarchical
+----------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
