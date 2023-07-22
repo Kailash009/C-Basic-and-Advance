@@ -1,0 +1,402 @@
+In C#:-
+---------------
+Classes By Default -> Internal.
+Data Member/Methods -> By Default -> Private.
+---------------------------------------------------------------------------------
+Note:-
+--------------
+Data Member and Member function can be accessibile in the following two ways-
+a) Create an object of a class.
+b) With the help of Inheritance.
+-------------------------------------------------------------------------------------------------------------------
+5. Encapsulation.
+>> It is also known as Data Hiding or information Hiding.
+>> Wrapping up of data and function into a single unit is known as Encapsulation.
+>> we can achieve encapsulation in c# by using access modifier.
+	a) Public. => It can be accessibile anywhere in a program.
+                  	>> public can be accessible different namespaces also.
+	b) Private. => It can be accessible within class only where it is declared.
+	>> Outside the class it can't be used.
+	c) Protected.
+	==>> It is similar to private.
+	==>> protected can be accessible when you provide inheritance. 
+	d) Internal.
+	>> Internal is same as public.
+	>> Internal can be accessible within the same namespace.
+	>> Internal can't be accessible different namespace.
+	e) Protected Internal.
+	>> It can be accessible within the same namesapace.
+	>> You can accessible datamember/methods outside the namespace only when you provide inheritance.
+------------------------------------------------------------------------
+Order of Accessiblity:-
+----------------------------------------
+Public -> Protected Internal -> Internal -> Protected -> Private (Highest to Lowest)
+Private -> protected -> Internal -> Protected Internal -> public (Lowest to Highest) 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+6. Polymorphism.
+>> Poly + Morphism  => Many Forms.
+>> It is the ability to take more than one forms.
+>> assign multiple task to one person.
++ -> 3+4
++ -> 3.4+5.6
++ => "ram"+"shyam"
+How to achieve Polymorphism in C#:-
+----------------------------------------------------------
+>> To achieve Polymorphism in C# we have two concepts which are as follows -
+	a) Method Overloading. ==>> Compile Time Polymorphism. ==>> Early Binding.
+	b) Method Overriding.   ===>  Run Time Polymorphism. ===>> Late Binding.
+---------------------------------------------------------------------------------------------------------------------------------------
+a) Method Overloading :-
+----------------------------------------------
+>> Method name must be same and their parameters must be different it is known as 'Method Overloading'
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+add()
+add(int a)
+add(int l,int b)
+--------------------------------
+For Example:-
+-----------------------------
+using System;
+using System.Text;
+using System.IO;
+
+namespace Batch5PMWE
+{
+   public class Rectangle
+   {
+        public string area()
+        {
+            return "Having No Argument";
+        }
+        public int area(int a)
+        {
+            return a * a;
+        }
+        public int area(int l,int d)
+        {
+            return l * d;
+        }
+   }
+    class Demo
+    {
+        static void Main()
+        {
+            Rectangle rt = new Rectangle();
+            string m=rt.area();
+            Console.WriteLine(m);
+            int sq=rt.area(5);
+            Console.WriteLine("Square="+sq);
+            int ar=rt.area(7,9);
+            Console.WriteLine("Area="+ar);
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------
+Method Overriding:-
+---------------------------------------
+Parent -> Cycle -> transportation. 
+Child   -> Bike -> transportation.
+----------------------------------------------------------------------------------------------------------
+>> When child want to override its parent class methods then we use the concept of overriding.
+>> Method name must be same and their argument should also be same.
+-----------------------------------------------------------------------------------------------------------
+In C#,we can achieve method overriding with the following three keywords:-
+a) virtual -> This keyword must be used with Parent class only.
+b) override -> This keyword always used with child clas.
+c) base (optional) -> If you want to see parent implementation,then we can use base keyword.
+--------------------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+using System.IO;
+
+namespace Batch5PMWE
+{
+    class Parent
+    {
+        public virtual void transport()  // Senior Developer
+        {
+            Console.WriteLine("CYCLE"); // 10 Min.
+        }
+    }
+    class Child:Parent  // Junior
+    {
+        public override void transport()
+        {
+            //base.transport(); see parent class Implementation
+            Console.WriteLine("BIKE");  // 5 Min.
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Parent pt = new Child();
+            pt.transport();
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------
+Enums:-
+-------------------
+>> It is constant value.
+>> It contains collection of values which can be accessible at once.
+>> enum can be defined outside class,inside class,switch.
+>> enum indexing start from 0.
+-------------------------------------------------------------------------------------------------------
+Outside class:-
+------------------------
+using System;
+using System.Text;
+using System.IO;
+
+namespace Batch5PMWE
+{   
+    enum Sports
+    {
+       Cricket,FootBall=100,Tennis,BasketBall=201,VolleyBall,Chess,Kabadi
+    };
+    class Demo
+    {
+        static void Main()
+        {
+            string sp = Sports.VolleyBall.ToString();
+            Console.WriteLine(sp); // accessing string value.
+            int st =(int)Sports.Chess;
+            Console.WriteLine(st); // accessing int value
+        }
+    }
+}
+-------------
+Inside class:-
+-----------------------
+using System;
+using System.Text;
+using System.IO;
+
+namespace Batch5PMWE
+{  
+    class Demo
+    {
+        enum Sports
+        {
+            Cricket, FootBall = 100, Tennis, BasketBall = 201, VolleyBall, Chess, Kabadi
+        };
+        static void Main()
+        {
+            string sp = Sports.VolleyBall.ToString();
+            Console.WriteLine(sp); // accessing string value.
+            int st =(int)Sports.Chess;
+            Console.WriteLine(st); // accessing int value
+        }
+    }
+}
+--------------------
+Enum as Switch:-
+-------------------------------
+using System;
+using System.Text;
+using System.IO;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        enum Sports
+        {
+            Cricket, FootBall = 100, Tennis, BasketBall = 201, VolleyBall, Chess, Kabadi,apple
+        };
+        static void Main()
+        {
+            switch (Sports.apple)
+            {
+                case Sports.Cricket:
+                    Console.WriteLine("Cricket");
+                    break;
+                case Sports.FootBall:
+                    Console.WriteLine("Football");
+                    break;
+                case Sports.Tennis:
+                    Console.WriteLine("Tennis");
+                    break;
+                case Sports.BasketBall:
+                    Console.WriteLine("BasketBall");
+                    break;
+                case Sports.VolleyBall:
+                    Console.WriteLine("VolleyBall");
+                    break;
+                case Sports.Chess:
+                    Console.WriteLine("Chess");
+                    break;
+                case Sports.Kabadi:
+                    Console.WriteLine("kabadi");
+                    break;
+                default:
+                    Console.WriteLine("Wrong Input Choice");
+                    break;
+            }
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------------
+Optional Parameter:-
+---------------------------------------
+>> At the time function calling we need to pass same parameters as we passed at the time of method defination.
+>> I don't want to pass same parameter as we passed at the time of function defination then we use the concept of optional parameter.
+using System;
+using System.Text;
+using System.IO;
+
+namespace Batch5PMWE
+{
+    class Employee
+    {
+        public void getDetails(string name="rohan",int age=23,string city="Delhi") // Optional Parameter
+        {
+            Console.WriteLine(name);
+            Console.WriteLine(age);
+            Console.WriteLine(city);
+        }
+    }
+    class Demo
+    { 
+        static void Main()
+        {
+            Employee emp = new Employee();
+            emp.getDetails();
+            emp.getDetails("Anurag");
+            emp.getDetails("shivam",34,"Noida");
+        }
+    }
+}
+-------------------------------------------------------------------------------------------
+Named Parameter  -> Pending
+Params Parameter -> Pending
+------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
