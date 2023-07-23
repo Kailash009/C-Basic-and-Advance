@@ -1,0 +1,513 @@
+Named Parameter:-
+-----------------------------------
+>> With the help of named parameter we can pass value to the formal parameter.
+using System;
+using System.Text;
+using System.IO;
+
+namespace Batch5PMWE
+{
+    class Employee
+    {
+        public void getDetails(int a, int b,int c) 
+        {
+            Console.WriteLine(a);
+            Console.WriteLine(b);
+            Console.WriteLine(c);
+        }
+    }
+    class Demo
+    { 
+        static void Main()
+        {
+            Employee emp = new Employee();
+            emp.getDetails(b:12,c:34,a:56); // Named Parameter
+        }
+    }
+}
+-------------------------------------------------------------------------------------------------------------------------------
+Params Parameter:-
+------------------------------------------
+>> With the help of param at the function calling we can pass N number of parameter don't need to check how many parameters we passed at the time of function defination.
+-------------------------------------------------------------------------------------------------------
+using System;
+using System.Text;
+using System.IO;
+
+namespace Batch5PMWE
+{
+    class Employee
+    {
+        int sm = 0;
+        public void getDetails(params int[] a)  // Params Parameter
+        {
+            for(int i=0;i<a.Length;i++)
+            {
+                sm += a[i];
+            }
+            Console.WriteLine("Sum="+sm);
+        }
+    }
+    class Demo
+    { 
+        static void Main()
+        {
+            Employee emp = new Employee();
+            emp.getDetails(1,2,3,4,5,6,7,8,9,10); 
+        }
+    }
+}
+----------------------------------------------------------------------------
+String Interpolation:-
+-----------------------------------
+>> In string interpolation we use $ ,{}  symbol.
+>> It is used to design string.
+---------------------------------------------------------------------------
+using System;
+using System.Text;
+using System.IO;
+
+namespace Batch5PMWE
+{
+    class Demo
+    { 
+        static void Main()
+        {
+            string str = "My name is Joshi";
+            string str1 = "I love Programming languages";
+            string str2 = "React is very powerful to create front end development";
+            string msg = $"Hii!!{str} {str1} {str2}";
+            Console.WriteLine(msg);
+        }
+    }
+}
+------------------------------------------------------------------------
+Collection classes in C#:-
+-------------------------------------------------
+>> It contains either similar type of value or dissimilar type of data.
+>> it contains multiple values.
+-------------------------------------------------------
+On the basis of collection it can be categorized into two categories:-
+a) Non-Generic.
+>> it contains dissimilar type of value.
+>> using System.Collections namespace in which we defined all non-generic classes.
+1. ArrayList.
+using System;
+using System.Text;
+using System.IO;
+using System.Collections;
+
+namespace Batch5PMWE
+{
+    class Demo
+    { 
+        static void Main()
+        {
+            ArrayList al = new ArrayList();
+            al.Add(12);
+            al.Add("Mohan");
+            al.Add(34.56);
+            al.Add(true);
+            al.Add(DateTime.Now);
+            foreach (object res in al)
+            {
+                Console.WriteLine(res);
+            }
+        }
+    }
+}
+------------------------
+2. Hashtable.
+>> It store value in the form of key-value pair.
+using System;
+using System.Text;
+using System.IO;
+using System.Collections;
+
+namespace Batch5PMWE
+{
+    class Demo
+    { 
+        static void Main()
+        {
+            Hashtable ht = new Hashtable();
+            ht.Add("adf", 12);
+            ht.Add("tyu", true);
+            ht.Add("nm", 34.56);
+            ht.Add("cv", "Rohit");
+            foreach (DictionaryEntry dt in ht)
+            {
+                Console.WriteLine(dt.Key+"="+dt.Value);
+            }
+        }
+    }
+}
+----------------------------
+3. Stack.
+>> LIFO (Last in First out.)
+Push => Elements can be inserted into the stack.
+Pop => Elements can be removed from the stack.
+--------------------------------------------------------------------------
+using System;
+using System.Text;
+using System.IO;
+using System.Collections;
+
+namespace Batch5PMWE
+{
+    class Demo
+    { 
+        static void Main()
+        {
+            Stack st = new Stack();
+            st.Push("Apple");
+            st.Push(34);
+            st.Push(true);
+            st.Push(16.45);
+            st.Pop();
+            st.Pop();
+            foreach (object item in st)
+            {
+                Console.WriteLine(item);
+            }
+        }
+    }
+}
+-----------------------
+4. Queue.
+>> FIFO (First in First out)
+Enqueue => Insert an element into Queue.
+Dequeue => Delete an element from the Queue.
+------------------------------------------------------------------------------
+using System;
+using System.Text;
+using System.IO;
+using System.Collections;
+
+namespace Batch5PMWE
+{
+    class Demo
+    { 
+        static void Main()
+        {
+            Queue qu = new Queue();
+            qu.Enqueue("Roshan");
+            qu.Enqueue(34);
+            qu.Enqueue(45.32);
+            qu.Enqueue(false);
+            qu.Dequeue();
+            qu.Dequeue();
+            foreach (object res in qu)
+            {
+                Console.WriteLine(res);
+            }
+        }
+    }
+}
+-------------------------------------------------
+5. Sorted List.
+>> it hold value in key-value pair.
+>> it give resutl on sorted order.
+using System;
+using System.Text;
+using System.IO;
+using System.Collections;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            SortedList st = new SortedList();
+            st.Add("zc", 34);
+            st.Add("qw", 56);
+            st.Add("vb", true);
+            st.Add("df", "Kunal");
+            st.Add("po", 456.23);
+            foreach (DictionaryEntry item in st)
+            {
+                Console.WriteLine(item.Key+"="+item.Value);
+            }
+        }
+    }
+}
+---------------------------------------------------------------------------
+b) Generic.
+>> It contains only similar type of value.
+>> using System.Collections.Generic namespace in which we defined all generic classes.
+1. List.
+using System;
+using System.Text;
+using System.IO;
+using System.Collections.Generic;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            List<int> lt = new List<int>();
+            lt.Add(343);
+            lt.Add(34);
+            lt.Add(64);
+            lt.Add(74);
+            lt.Add(84);
+            lt.Add(94);
+            lt.Add(14);
+            foreach (int item in lt)
+            {
+                Console.WriteLine(item);
+            }
+        }
+    }
+}
+------------------------------------------------------------
+2. Dictionary.
+using System;
+using System.Collections.Generic;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            Dictionary<int, string> dt = new Dictionary<int, string>();
+            dt.Add(1, "java");
+            dt.Add(4, "python");
+            dt.Add(5, "php");
+            dt.Add(6, "react");
+            dt.Add(7, "angular");
+            foreach (KeyValuePair<int,string> item in dt)
+            {
+                Console.WriteLine(item.Key+"="+item.Value);
+            }
+        }
+    }
+}
+3. Stack.
+using System;
+using System.Collections.Generic;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            Stack<int> st = new Stack<int>();
+            st.Push(34);
+            st.Push(54);
+            st.Push(64);
+            st.Push(74);
+            st.Push(84);
+            st.Pop();
+            st.Pop();
+            foreach (int item in st)
+            {
+                Console.WriteLine(item);
+            }
+        }
+    }
+}
+
+4. Queue.
+using System;
+using System.Collections.Generic;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            Queue<int> qu = new Queue<int>();
+            qu.Enqueue(34);
+            qu.Enqueue(54);
+            qu.Enqueue(64);
+            qu.Enqueue(74);
+            qu.Enqueue(84);
+            qu.Dequeue();
+            qu.Dequeue();
+            foreach (int item in qu)
+            {
+                Console.WriteLine(item);
+            }
+        }
+    }
+}
+5. Sorted List.
+using System;
+using System.Collections.Generic;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            SortedList<string, int> sl = new SortedList<string, int>();
+            sl.Add("gh", 34);
+            sl.Add("vh", 54);
+            sl.Add("zh", 64);
+            sl.Add("ah", 74);
+            sl.Add("eh", 84);
+            sl.Add("rth", 94);
+            foreach (KeyValuePair<string,int> item in sl)
+            {
+                Console.WriteLine(item.Key+"="+item.Value);
+            }
+        }
+    }
+}
+----------------------------
+6. HashSet.
+>> It doesn't return duplicate value in the set.
+using System;
+using System.Collections.Generic;
+
+namespace Batch5PMWE
+{
+    class Demo
+    {
+        static void Main()
+        {
+            HashSet<int> hs = new HashSet<int>();
+            hs.Add(34);
+            hs.Add(54);
+            hs.Add(34);
+            hs.Add(64);
+            hs.Add(34);
+            hs.Add(94);
+            hs.Add(34);
+            foreach (int item in hs)
+            {
+                Console.WriteLine(item);
+            }
+        }
+    }
+}
+-----------------------------------------------------------------------------
+Generic Class/Generic Method:-
+-------------------------------------------------------
+How to Create Your Own Generic Class:-
+-----------------------------------------------------------------------
+Generic Class:-
+-----------------------------
+>> It allows you can work with any datatype once it defined.
+>> It improve performance,code-reusea and safety.
+------------------------------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+
+namespace Batch5PMWE
+{
+    class Employee<T>  // Generic Class T -> Type
+    {
+        T t;
+        public Employee(T t)
+        {
+            this.t = t;
+        }
+        public void display()
+        {
+            Console.WriteLine(this.t);
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Employee<int> em = new Employee<int>(10);
+            em.display();
+            Employee<string> em1 = new Employee<string>("Java");
+            em1.display();
+            Employee<bool> emp2 = new Employee<bool>(true);
+            emp2.display();
+            Employee<double> em3 = new Employee<double>(345.56);
+            em3.display();
+        }
+    }
+}
+------------------------
+Generic Method -- Pending
+------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
