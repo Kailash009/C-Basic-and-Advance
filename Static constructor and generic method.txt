@@ -1,0 +1,313 @@
+Generic Method :-
+--------------------------------
+>> A method which can handle any type of parameter.
+---------------------------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+
+namespace Batch5PMWE
+{
+    
+    class Demo
+    {
+        public void Swap<T>(T a,T b)  // Generic Method
+        {
+            T temp;
+            temp = a;
+            a = b;
+            b = temp;
+            Console.WriteLine("Swap Values");
+            Console.WriteLine("a="+a);
+            Console.WriteLine("b=" + b);
+        }
+        static void Main()
+        {
+            Demo d = new Demo();
+            int a = 10, b = 20;
+            char c = 'P',k = 'Q';
+            double m = 45.67, n = 123.45;
+            Console.WriteLine("Before Swap Int Value");
+            Console.WriteLine("a=" + a + "b=" + b);
+            Console.WriteLine("Before Swap Char Value");
+            Console.WriteLine("C=" + c + "K=" + k);
+            Console.WriteLine("Before Swap Double Value");
+            Console.WriteLine("M=" + m + "N=" + n);
+            d.Swap<int>(a,b);
+            d.Swap<char>(c, k);
+            d.Swap<double>(m, n);
+        }
+    }
+}
+----------------------------------------------------------------------------------------------
+Constructor:-
+------------------------------
+>> It is special method that contain the same name of above class.
+>> It doesn't return any value.
+>> Constructor call automatically, when we create an object of a class.
+>> It is used for variable initialization.
+------------------------------------------------------------------------------------------------------
+Types of Constructor:-
+------------------------------------------
+There are five types of constructor -
+1. Default/Non-Parameterized.
+2. Parametrized.
+3. Copy constructor.
+4. static.
+5. private.
+----------------------------------------------------------------------------------------
+1. Default/Non-Parameterized.
+>> in it, we don't pass any parameter.
+---------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+
+namespace Batch5PMWE
+{
+    class Employee
+    {
+        public Employee()
+        {
+            Console.WriteLine("Hello Default Constructor");
+
+        }
+    }
+    class Demo
+    { 
+        static void Main()
+        {
+            Employee emp1 = new Employee();
+            Employee emp2 = new Employee();
+            Employee emp3 = new Employee();
+        }
+    }
+}
+-----------------------
+2. Parameterized:-
+>> In It,we pass Parameter.
+-----------------------------------------------------------
+using System;
+using System.Collections.Generic;
+
+namespace Batch5PMWE
+{
+    class Employee
+    {
+        int a, b, c;  // Instance Variable.
+        public Employee(int a, int b, int c) // Local Variable.
+        {
+            this.a = a;
+            this.b = b;
+            this.c = c;
+        }
+        private int cube()
+        {
+            return this.a * this.b * this.c;
+        }
+        public void display()
+        {
+            Console.WriteLine(cube());
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Employee emp1 = new Employee(10, 20, 30); // emp1=1000
+            emp1.display();
+            Employee emp2 = new Employee(5, 6, 7);
+            emp2.display();
+            Employee emp3 = new Employee(100, 200, 300);
+            emp3.display();
+        }
+    }
+}
+------------------------------------
+3. Copy Constructor:-
+---------------------------------------
+>> To copy one constructor value into another constructor.
+---------------------------------------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+
+namespace Batch5PMWE
+{
+    class Employee
+    {
+        string msg;
+        public Employee(string msg)
+        {
+            this.msg = msg;
+            Console.WriteLine("First Constructor");
+            Console.WriteLine(this.msg);
+        }
+        public Employee(Employee empObj) // empObj=1000
+        {
+            this.msg = empObj.msg; 
+            Console.WriteLine("Copy Constructor");
+            Console.WriteLine(this.msg);
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Employee emp1 = new Employee("Hello C# How Are You??"); // emp1=1000
+            Employee emp2 = new Employee(emp1); // Copy Constructor worked here.
+            
+        }
+    }
+}
+-------------------------------------------------------------------------------------
+4. Static.
+>> static keyword is used to create static constructor.
+>> it creates only single instance.
+>> in static constructor only static data member used.
+>> C# static constructor cannot have any modifier or parameter.
+>> Static constructors cannot be inherited or overloaded.
+>> Static constructor doesn't contain any parameters.
+>> The user has no control on when the static constructor is executed in the program.
+>> A static constructor will run before an instance constructor.
+-----------------------------------------------------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+
+namespace Batch5PMWE
+{
+    class Employee
+    {
+        public Employee()  // Instance Constructor
+        {
+            int i = 0;
+            Console.WriteLine("Hello Instance Constructor");
+            i++;
+            Console.WriteLine(i);
+        }
+        static int i = 0;
+        static Employee() // Static Constructor 
+        {
+            i++;
+            Console.WriteLine("Hello Static Constructor");
+            Console.WriteLine(i);
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Employee emp1 = new Employee();
+            Employee emp2 = new Employee();
+            Employee emp3 = new Employee();
+        }
+    }
+}
+-------------------------------------------------------------------------------
+5. Private. -> Assignment
+--------------------------------------------------------------------------------
+Constructor Overloading:-
+--------------------------------------------------
+>> Constructor name same having different number of parameters/arguments and their data type.
+---------------------------------------------------------------------------------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+
+namespace Batch5PMWE
+{
+    class Employee
+    {
+        public Employee()
+        {
+            Console.WriteLine("Having No Argument");
+        }
+        public Employee(int a)
+        {
+            int sq = a * a;
+            Console.WriteLine("Having one Argument");
+            Console.WriteLine("Square="+sq);
+        }
+        public Employee(double a)
+        {
+            double cube = a * a * a;
+            Console.WriteLine("Having Double Type Argument");
+            Console.WriteLine(cube);
+        }
+        public Employee(int l,int b)
+        {
+            int ar = l * b;
+            Console.WriteLine("Having two Argument");
+            Console.WriteLine("Area="+ar);
+        }
+    }
+    class Demo
+    {
+        static void Main()
+        {
+            Employee emp1 = new Employee();
+            Employee emp2 = new Employee(5);
+            Employee emp3 = new Employee(2.5);
+            Employee emp4 = new Employee(5,7);
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------------------------
+Delegate in C#:- Pending
+---------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
