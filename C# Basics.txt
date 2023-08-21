@@ -1,74 +1,72 @@
-CLR has some SubComponent:-
-	a) CTS.
-	>> It stands for Common Type System.
-	>> All primitive data types(int,float,bool,double,char,short,long) are defined into CTS.
-	b) CLS.
-	>> it stands Common Language Specification.
-	>> you can write your code in any language,after compilation of your code it will not make any difference. (MSIL) Code (Microsoft Intremediate Language).
-	c) GC.
-	>> It stands for Garbage Collector.
-	>> GC is a feature that perform automatic memory management.
-	>> GC released unused object from your program.
-	d) Native Code.
-	>> It is machine code, that can execute with any machine.
--------------------------------------------------------------------------
-Compilation Process of C#:-
----------------------------------
->> It is two-way compilation process.
->> In First Compilation process, our Source Code converted into MSIL Code using .csc(Compiler name of C#). MSIL code is machine dependent code. it can't run in any Machine.
->> In Second Compilation process, MSIL Code converted into Native Code(Machine Independent Code[we can run this code with any machine]) using JIT(Just-in-Time Compiler).
-----------------------------------------------------------------------------
-How to Visual Studio 2022:-
-----------------------------
-1. Community. -> Install Community. [FREE].
-https://visualstudio.microsoft.com/downloads/
-Please check only below files:-
-1. asp.net and web development.
-2. .Net Desktop Development.
-3. Data Storage and Processing.
-------------------------------------------------------
-2. Professional.
-3. Enterprise.
-----------------------------------------------------------------
-Install SQL SERVER:-
+BACKEND DEVELOPMENT:-
 -------------------------
-1. https://www.microsoft.com/en-in/sql-server/sql-server-downloads  -- EXPRESS.
----------------------------
-Install SSMS (SQL SERVER MANAGEMENT STUDIO).
-https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16
-----------------------------------------------
-Console Application - C#:-
--------------------------------------
-How to take Console App Project Template.
-Note:  The File Extension of C# Code is .cs
+C#:-
+------------
+>> C# is the extension of C++.
+>> C# was developed by Anders Heljsberg in 2002.
+>> it is the product of Microsoft.
+>> C# is a high level,object oriented and type safe programming language.
+>> C# is a platform independent language.
+----------------------------------------------------------
+Languages:-
+--------------------
+1. Low Level Language. (Machine language)
+2. Middle Level Language. -> C
+3. High level Language. -> C++ , C#, Python,Java , PHP etc.
+-----------------------------------------------------------------
+What is type Safe?
+>> Whatever the type of a variable we can store only that type of value,if you store any other value then at a time it show an error.
 -------------------------------------------------------
-Namespace -> It is collection of Classes.
-------------------------------------------------------
-In Programming two things are very imp:-
-1. How to Read data/To take input from user.
-Console.readLine();
-2. How to display Result.
-Console.WriteLine();
-------------------------------------------------
-Console.write() -> it doesn't change the line.
-console.writeline() -> it change the line.
-------------------------------------------------
-using System;  // BCL/FCL
-
-namespace BatchHeena3PMWE
-{ 
-    class Demo
-    {
-        static void Main()
-        {
-            Console.WriteLine("Hello");
-            Console.WriteLine("C#");
-        }
-    }
-}
-------------------------------------------------------------------
-Variable:-
+For Example:-
+-----------------------
+int a="Hello"; -> Before compilation it show an error. Type Safe(C#)
+int a="HEllo"; -> After compilation it show an error. (Type Unsafe)[C]
+-------------------------------------------------------------------------
+DOT NET:-
+---------------
+>> Dot net is not a programming language,it is a framework to build various kind of application.
+>> Dot net support multiple programming language(62+).
+-------------------------------------------------------
+Types of Application:-
+----------------------------
+1. CUI. (Command User Interface)
+>> CMD Prompt.
+>> In CUI based application you should know each and every command.
+>> it is not so popular in the market.
+-----------------------------------------------------------
+2. GUI. (Graphical User Interface)
+-----------------------------------------
+	a) Desktop Application. (Windows Based Application)
+>> An application that runs with the help of O.S.
+Compatibility Issue:-
+	b) Web Application.
+>> An application that runs with the help of WebBrowser.
+>> It can be access by anywhere.
+>> It follows client-server architecture.
+	c) Mobile App/Andriod App.  -> Xamarin/Mono.
+	d) Web Services.
+	e) Web API.
+------------------------------------------------------------
+Dot Net Components:-
 --------------------------
+There are two major component in dot net which are as follows-
+1. CLR. [COMMON LANGUAGE RUNTIME]
+2. BCL/FCL. [BASE CLASS LIBRARY/FRAMEWORK CLASS LIBRARY]. -- PENDING
+--------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
