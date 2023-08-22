@@ -49,10 +49,89 @@ Compatibility Issue:-
 ------------------------------------------------------------
 Dot Net Components:-
 --------------------------
-There are two major component in dot net which are as follows-
+There are two major component in dot net which are as follows:-
 1. CLR. [COMMON LANGUAGE RUNTIME]
-2. BCL/FCL. [BASE CLASS LIBRARY/FRAMEWORK CLASS LIBRARY]. -- PENDING
---------------------------------------------------------------------------
+>> Whatever dot net applications you developed it can be executed by CLR.
+>> All dot net application executed by CLR.
+	CLR also has some sub-components:-
+		a) CTS. [COMMON TYPE SYSTEM]
+	>> All primitive data type(int,short,long,float,double,bool,char) are defined into CTS.
+		b) CLS. [COMMON LANGUAGE SPECIFICATION]
+>> After compilation of your code you will not get any difference,it will give you common code i.e. MSIL(Microsoft Intermediate Language).
+		c) GC. [GARBAGE COLLECTOR]
+	>> GC is used to perform automatic memory management.
+	>> It released all unused objects of program automatically.
+		d) Native Code. -> machine Code/ByteCode which is executed by any 		machine.
+------------------------------------------------------
+2. BCL/FCL. [BASE CLASS LIBRARY/FRAMEWORK CLASS LIBRARY].
+>> All predefined classes,interfaces,methods are defined into BCL.
+In C -
+#include<stdio.h> ->Preprocessor Directive.
+scanf()
+printf()
+---------------
+In C#:-
+-------------
+using System;  // BCL/FCL
+Console.readLine() -> To take the input from the User.
+Console.writeLine() -> To Display the result.
+------------------------------------------------------------------
+System.Console.WriteLine(); -> To display the result.
+System -> namespace. => It is collection of classes.
+Console -> Class.
+writeLine() -> Method
+------------------------------------------------------------------
+C# Compilation Process:-
+----------------------------
+>> It is two-way compilation process.
+1. In First Compilation process our C# code is converted into MSIL Code using .csc Compiler. This code can't be executed/run with any machine.(machine dependent code).
+2. In Second Compilation process our MSIL code converted into machine Code using jit compiler.[C# is Platform independent language].
+----------------------------------------------------------------------
+How to Install Visual Studio:-
+-----------------------------------
+1. Community. [FREE] -> https://visualstudio.microsoft.com/downloads/
+2. Professoinal.
+3. Enterprise.
+---------------------------------------
+when you install vs setup then you need to select following things only -
+1. Asp.Net and Web Development.
+2. .Net Desktop Development.
+3. Data Storage and Processing.
+---------------------------------
+Install SQL SERVER:-
+--------------------------
+1. https://www.microsoft.com/en-in/sql-server/sql-server-downloads -> EXPRESS.
+>> it will execute/run your sql query.
+--------------------
+2. Install SSMS (SQL SERVER MANAGEMENT STUDIO)
+https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16
+>> SSMS provide an enviornment where you write your query.
+-------------------------------------------------------------------
+How to write C# Code:-
+--------------------------------
+wap to print welcome to C#.
+--------------------------------
+using System;  // BCL
+namespace Batch10AM   // Namespace
+{
+class Demo    // Creating Class.
+{
+static void Main()   // Entry Point of a Program. // Method
+{
+Console.WriteLine("Welcome to C#.")  // Statements.
+}
+}
+}
+---------
+Steps:-
+---------
+1. BCL.
+2. Namespace.
+3. Creating Class.
+4. Variable/Methods.
+5. Statements / Logic of Code.
+-------------------------------------------------------------------
+
 
 
 
