@@ -1,0 +1,268 @@
+Console Application - C#
+--------------------------------
+1. How to take project template of console application.
+Console.write() -> do not change the line.
+Console.writeLine() -> Change the Line.
+--------------------------------------'
+using System;
+namespace Batch10AM21Aug
+{
+    class Demo
+    {
+        static void Main()
+        {
+            Console.WriteLine("Welcome");
+            Console.WriteLine("To");
+            Console.WriteLine("C#");
+        }
+    }
+}
+--------------------------------------------------
+using System;
+namespace Batch10AM21Aug
+{
+    class Demo
+    {
+        static void Main()
+        {
+            Console.WriteLine("Welcome");
+            Console.WriteLine("To");
+            Console.WriteLine("C#");
+        }
+    }
+    class Test
+    {
+        static void Main()
+        {
+            Console.WriteLine("Hello Testing");
+        }
+    }
+}
+---------------------------------------------------------
+Variable:-
+---------------
+>> It is also known as Identifier.
+>> Variable is just a name i.e. used to store a value.
+>> In variable data will be store on a temporarily manner.[RAM].
+>> As soon as when program has terminated value must be lost. you will not get your previous value back.
+------------------------------
+Need to variable:-
+------------------------
+>> In programming we work on some data,then variable provide that data to our program.
+------------------------------------
+Variable Initialization:-
+------------------------------
+>> To assign value into a variable.
+For Example:-
+-------------------
+int a=5;
+int -> Data type.
+a -> Variable.
+= -> Assignment Operator.
+5 -> Constant.
+; -> Delimeter
+------------------
+variable Declaration:-
+---------------------------- 
+>> Don't provide any value to the variable.
+int a,b,c; // Here we declare three variable.
+---------------------------------------------------
+Rules of Creating variable:-
+--------------------------------
+1. Variable name can't start with Digit.
+   1a -> Wrong.
+2. Variable name always start with character.
+    a123 -> right.
+3. Varible name can't be keyword.
+     while,if,switch etc -> Wrong.
+4. Underscore is allowed to give variable name.    
+      a_b -> right.
+5. Hyphen is not allowed.
+     a-b -> wrong.
+6. No spaces are allowed in variable name.
+	a    b  -> wrong
+7. Special symbols are not allowed.  
+	#$%$#@@@*&$&&$  -> Wrong.
+8. Both Uppercase and lower case treated as two different variable name.
+      age,Age,AGE are three different variable names.
+-----------------------------------------------------------------
+Constant:-
+--------------------
+>> it is also known as Literals.
+>> It is a fixed value i.e. never going to be changed through out the whole program.
+Types of Constant:
+-------------------------
+1. Numeric Constant.
+>> which hold numeric value between 1,2,3,4,5...... and so on.
+	a) Decimal Constant.  [ 0 to 9 ]
+	b) Octal Constant.   [0 to 7]
+	c) Hexadecimal Constant. [0 to 15(F)]
+	d) Real/Floating-Point Constant. 12 , 45.67 etc.
+2. Character Constant.
+>> It is represented by single quotes. ''
+>> It hold only single character value.
+For Ex-    'a'  '2'   '&' etc.
+3. String Constant.
+>> It is represented by double quotes. ""
+>> It hold more than one character.
+For Ex-  "abc"  "1234"  "abc&**@34"  etc.
+--------------------------------------------------------
+Data Type:-
+-----------------
+>> Data Type specifies that which type of value a variable can hold.
+Two types of Data type-
+1. Primitive Data type.
+>> It store only single value.
+void -> 0 byte.
+bool -> 8 bit. (1 byte)
+byte -> 8 bit.
+int -> 32 bit.(4 byte.)
+float -> 32 bit. (4 byte)
+char -> 16 bit. (2 byte.)
+double -> 64 bit.(8 byte.)
+---------------------------------------------
+2. Non-primitive/Reference Data type.
+>> which store more than one value.
+string,array,delegate,interface,struct etc.
+----------------------------------------------------
+Keywords:-
+----------------
+>> It is reserved word which have special meaning in a program.
+>> It is like a Dictionary of a program.
+For Ex- while,if,public,protected,do-while,static,sealed etc.
+-------------------------------------------------------------------
+wap to find the sum of two no.
+using System;
+namespace Batch10AM21Aug
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 100, b = 456;
+            Console.WriteLine("Sum="+(a+b));
+        }
+    }
+}
+-----------------------------------------
+wap to find sum,sub,mult,div,rem.
+----------------------------------------
+using System;
+namespace Batch10AM21Aug
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 100, b = 456;
+            Console.WriteLine("Sum="+(a+b));
+            Console.WriteLine("Sub=" + (a - b));
+            Console.WriteLine("Mult=" + (a * b));
+            Console.WriteLine("Div=" + (a / b));
+            Console.WriteLine("Rem=" + (a % b));
+        }
+    }
+}
+-------------------------------------------
+wap to input two number and find sum.
+using System;
+namespace Batch10AM21Aug
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a, b;
+            Console.WriteLine("Enter two Number");
+            a =Convert.ToInt32(Console.ReadLine()); // UserInput
+            b = int.Parse(Console.ReadLine());
+            Console.WriteLine("Sum="+(a+b));
+        }
+    }
+}
+--------------------------------------------------------------
+Assignment:-
+----------------
+1. wap to input two number and find sum,sub,mult,div,rem. 
+2. wap to input two number and find swap using third variable.
+for Ex- 
+input => int a=10 ,b=20
+output => int a=20,b=10
+3. wap to input two number and find swap without using third variable.
+4. wap to input the length and breath of rectangle and find its area,perimeter and diagonal.
+5. wap to input the radius of circle and find the area and circumference.
+6. wap to create program of temperature Calculator.
+	a) Celcius to Farenhite.
+	b) Farenhite to Celcius.
+------------------------------------------------------------
+Type Conversion - PENDING.
+------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
