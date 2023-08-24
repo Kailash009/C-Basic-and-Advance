@@ -1,0 +1,272 @@
+Type Conversion:-
+----------------------
+>> To convert one data type value into another data type.
+There are three types of type conversion in C#:-
+1. Implicit.
+2. Explicit/Type Casting.
+3. Conversion between Incompatible Types.
+-------------------------------------------------------
+1. Implicit.
+>> it is also known as Automatic type conversion.
+>> To convert lower data type value into higher data type.
+>> There is no data loss in implicit.
+For Example:-
+-------------------
+int a=10; -> 32 bit.
+double b=a; -> 64 bit.
+---------------------------
+using System;
+namespace Batch10AM21Aug
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 45;
+            double b = a;
+            Console.WriteLine(b); // 45
+        }
+    }
+}
+------------------------------------
+2. Explicit/Type Casting.
+>> To Covert Higher data type value into lower data type.
+>> There is a data loss possible.
+For Example:-
+-------------------
+double a=345.67;
+int b=a;  // .67  [loss]
+-----------------------------------------
+using System;
+namespace Batch10AM21Aug
+{
+    class Demo
+    {
+        static void Main()
+        {
+            double a = 456.89;
+            int b = (int)a;
+            Console.WriteLine(b); //.89 loss
+        }
+    }
+}
+----------------------------------------------------
+3. Conversion between Incompatible Types.
+----------------------------------------------------
+>> To convert conversion between incompatible data types.
+int -- string.
+Here we have two ways-
+1. Convert Class.
+2. parse Method.
+-----------------------------
+using System;
+namespace Batch10AM21Aug
+{
+    class Demo
+    {
+        static void Main()
+        {
+            //int a =Convert.ToInt32("12345");
+            int a =int.Parse("87887");
+            Console.WriteLine(a); // 12345
+        }
+    }
+} 
+-------------------------------------------------------
+Operator:-
+----------------
+>> Operator specfies that which operation need to be performed.
+---------------------------------------------------------------------
+Types of Operator:-
+---------------------------
+1. Arithmetic Operator.
+>> it is used to perform mathmatical calculation.
++,-,*,/,%
+a+b -> Here a and b are operands and + is an operator.
+NOTE: In operator variables are known as 'Operands'.
+-----------------------------------------------------------
+using System;
+namespace Batch10AM21Aug
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a, b;
+            Console.WriteLine("Enter two Number");
+            a =Convert.ToInt32(Console.ReadLine());
+            b= Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(a + b);
+            Console.WriteLine(a -b);
+            Console.WriteLine(a * b);
+            Console.WriteLine(a / b);
+            Console.WriteLine(a % b);
+        }
+    }
+} 
+2. Relational Operator.
+< ,<= > >= != ==  -> the return type of relatinal operator is boolean.(True/False)
+=  it is used to assign value.
+== it is used to compare between two values.
+using System;
+namespace Batch10AM21Aug
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 12, b = 34;
+            Console.WriteLine(a>b); // F
+            Console.WriteLine(a < b); // T
+            Console.WriteLine(a >= b); // F 
+            Console.WriteLine(a <= b); // T
+            Console.WriteLine(a != b); // T
+            Console.WriteLine(a== b); // F
+        }
+    }
+} 
+------------------------------
+3. Logical Operator.
+and  && -> Both condition must be true.
+or  || -> Either one of condition is true then result is true.
+not  ! -> if condition is True then result is False and vice-versa.
+using System;
+namespace Batch10AM21Aug
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 12, b = 34,c=56;
+            Console.WriteLine(a>b && b<c); // F 
+            Console.WriteLine(!(a!=c&&b<a)); // T
+            Console.WriteLine(b>c || a>b); // F
+            Console.WriteLine(b<c && b!=a); //T
+            Console.WriteLine(a>b || c<a); // F
+            Console.WriteLine(b<a || c>a); // T
+            Console.WriteLine(!(a<b || b<a)); //F
+        }
+    }
+} 
+----------------------------------------------------------------------
+4. Assignment Operator.
+>> It is used to assign a value into a variable.
+>> = symbol is used to represent assignment operator.
+int a=34;
+------------------------------------------------------------
+5. Ternary Operator.
+>> It require three operands.
+>> It used ? : symbol.
+: -> colon.
+Syntax:-
+--------------
+(Condition)?TRUE:False.
+For Example:-
+--------------------
+int a=5,b=10,res;
+res=(a>b)?a:b;
+CW(res); // 10
+------------------------------
+using System;
+namespace Batch10AM21Aug
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 12, b = 34,c;
+            c = (a > b) ? a : b;
+            Console.WriteLine(c);
+        }
+    }
+} 
+------------------------------------------------
+6. Bitwise Operator.  
+1 Nibble = 4 bit.
+>> it works on bit.(0,1).
+1. Bitwise AND.  &
+int a=5; ->  0101 
+int b=4; ->  0100
+-------------------------
+int a&b  ->  0100 -> 4 ans  
+---------------------------
+using System;
+namespace Batch10AM21Aug
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 5, b = 4,c;
+            c =a&b;
+            Console.WriteLine(c); // 4
+        }
+    }
+} 
+2. Bitwise OR.   |
+int a=5; ->  0101 
+int b=4; ->  0100
+-------------------------
+int a|b  ->  0101 -> 5 ans 
+using System;
+namespace Batch10AM21Aug
+{
+    class Demo
+    {
+        static void Main()
+        {
+            int a = 5, b = 4,c;
+            c =a|b;
+            Console.WriteLine(c); // 5
+        }
+    }
+} 
+-----------------------------------
+3. Bitwise XOR.  ^ [caret or Circumflex]  -- PENDING
+4. shift left.   <<
+5. shift right.  >>
+-----------------------------
+7. Inc/Dec Operator.
+--------------------------------------------------
+16 short
+32 - int
+64 - long
+-------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
