@@ -1,0 +1,236 @@
+SET OPERATOR:-
+------------------------------
+>> it is used to combine two or more table together.
+---------------------------------------------------------
+Before going to use set operator in your query you have to follow the following conditions which is listed below:-
+a) Column name must be same of both the table.
+b) Data type must be same of both the table.
+c) Order of Column must be match of both the table.
+-----------------------------------------------------------
+1. UNION. -> It doesn't return duplicate record from the table.
+2. UNION ALL. -> It return duplicate record from the table.
+3. INTERSECT. -> It return common record from the table.
+4. EXCEPT. -> it return all the record from table1 which doesn't exist in table2.
+--------------------------------
+select * from tbl_Employee
+create table tbl_hyd
+(
+bid int,
+bname nvarchar(50),
+blocation nvarchar(50)
+)
+select * from tbl_hyd
+union
+select * from tbl_chennai
+select * from tbl_hyd
+union all
+select * from tbl_chennai
+select * from tbl_hyd
+intersect
+select * from tbl_chennai
+select * from tbl_hyd
+except
+select * from tbl_chennai
+select * from tbl_chennai
+except
+select * from tbl_hyd
+create table tbl_chennai
+(
+bid int,
+bname nvarchar(50),
+blocation nvarchar(50)
+)
+---------------------------------------------
+JOIN IN SQL SERVER:-
+------------------------
+>> It retreive record from more than one table.
+Types of JOIN:-
+---------------------
+1. Inner Join.
+>> it is used to fetch only common record from multiple table.
+Syntax:-
+-----------
+Select <Column_List> from tableName1 inner join tableName2 on <Joining_Condition>
+----------------------------------------------------------------------------------
+Rule to create Foreign Key:-
+--------------------------------
+>> F.K is used to maintain relationship among tables.
+>> First table P.K work as a F.K into another table.
+>> Column name must be same as Parent table.
+>> Data type Must be same.
+Syntax:
+colnameofparenttable datatype foreign key references(colnameofparent_table)
+---------------------------------------------------------------
+2. Outer Join.
+>> It fetch common and uncommon record from both the table.
+-------------------------------------------------------------------
+a) Left
+>> It return all record from the left table matching record from the right table and unmatched return NULL.
+Syntax:-
+--------------
+select * from <tableName1> left outer join <TableName2> on <joining Condition>
+b) Right
+>> It return all record from the right table matching record from the left table and unmatched return NULL.
+Syntax:-
+--------------
+select * from <tableName1> right outer join <TableName2> on <joining Condition>
+c) Full.
+>> It return all record from both the table and wherever find unmatched return NULL.
+Syntax:-
+--------------
+select * from <tableName1> full outer join <TableName2> on <joining Condition>
+------------------------------------------------
+3. Cross Join.
+>> it is used to find product. m*n.
+4. Self join.
+>> Joining a table itself.
+>> we create no. of aliases to create duplicate table.
+---------------------------------------------
+-- Course    1 C - Many Student
+-- Student   1 S - Many Course
+create table tbl_Course  -- Parent table
+(
+cid int primary key identity(1,1),
+cname nvarchar(50)
+)
+create table tbl_Student  -- Child table
+(
+sid int primary key identity(1,1),
+sname nvarchar(50),
+sage int,
+smobileno nvarchar(20),
+scity nvarchar(50),
+cid int foreign key references tbl_Course(cid)
+)
+select * from tbl_Course
+select * from tbl_Student
+--waq to get total no. of student enroll in sql course.
+select sname,sage,smobileno,scity,cname from tbl_Student inner join tbl_Course on tbl_Student.cid=tbl_Course.cid and tbl_Course.cname='Sql'
+-- or
+select s1.sname,s1.sage,s1.smobileno,s1.scity,cname from tbl_Student s1 inner join tbl_Course c1 on s1.cid=c1.cid and c1.cname='python'
+
+-- OUTER JOIN
+--- LEFT
+select * from tbl_Course left outer join tbl_Student on tbl_Course.cid=tbl_Student.cid and tbl_Course.cname='React'
+--- RIGHT
+select * from tbl_Student right outer join tbl_Course on tbl_Course.cid=tbl_Student.cid
+--- Full Outer
+select * from tbl_Course full outer join tbl_Student on tbl_Course.cid=tbl_Student.cid
+
+-- CROSS JOIN
+select * from tbl_Course --10
+cross join tbl_Student -- 9  90 rows
+
+-- SelF JOIN
+select * from tbl_Employee
+--waq to get all the employees who are getting the same salary as vaibhav is getting.
+select * from tbl_Employee where esalary=34993.34 -- salary is not given here
+select * from tbl_Employee where ename='vaibhav' -- only vaibhav record show.
+select e1.ename,e1.esalary from tbl_Employee e1,tbl_Employee e2 where e1.esalary=e2.esalary and e2.ename='vaibhav'
+---------------------------------------------------------------------------
+Constraints in sql server:-
+-----------------------------
+>> Constraint is a condition that must be follow before entering the record into column.
+-------------
+1. unique.
+>> Doesn't allow duplicate value.
+>> It allow only one NULL value.
+----------------------------------------------
+2. not null.
+>> It doesn't allow null value.
+>> it allow duplicate value.
+----------------------------------------
+3. check.
+>> salary should not be greater than 10000.
+-------------------
+4. default
+---------------------
+when all employee belongs to all city.
+------------------------------------------------
+-- Constraints
+-- UNIQUE
+create table tbl_test1
+(
+tid int unique,
+tname nvarchar(40) unique,
+tcity nvarchar(50) unique
+)
+select * from tbl_test1
+insert into tbl_test1 values(102,'salman','Noida')
+insert into tbl_test1 values(null,null,null)
+----------------------------------------------------
+-- NOT NULL
+create table tbl_test2
+(
+tid int not null,
+tname nvarchar(40) not null,
+tcity nvarchar(50) not null
+)
+insert into tbl_test2 values(null,'salman','Noida')
+select * from tbl_test2
+create table tbl_test3
+(
+tid int unique,
+tname nvarchar(40) not null,
+tsalary int check(tsalary<=10000)
+)
+select * from tbl_test3
+insert into tbl_test3 values(103,'shyam',10001)
+
+create table tbl_test4
+(
+tid int unique,
+tcity nvarchar(50) default 'NOIDA',
+)
+select * from tbl_test4
+insert into tbl_test4(tid) values(101)
+insert into tbl_test4(tid) values(102)
+insert into tbl_test4(tid) values(103)
+insert into tbl_test4(tid) values(104)
+insert into tbl_test4(tid) values(105)
+insert into tbl_test4(tid) values(106)
+insert into tbl_test4(tid) values(107)
+insert into tbl_test4(tid) values(108)
+insert into tbl_test4(tid,tcity) values(109,'HYDERABAD')
+---------------------------------------------------------------
+
+
+
+
+
+5. P.K. - Done.
+6. F.K  - Done.
+-------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
