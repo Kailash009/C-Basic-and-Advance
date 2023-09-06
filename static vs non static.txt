@@ -1,0 +1,228 @@
+Non-STATIC VS STATIC:-
+---------------------------------
+Non-Static:
+---------------
+>> It require object creation.
+>> non-static function called with the help of object.
+>> It require more memory in a program.
+>> Performance is slow.
+>> Every time it allocates memory.
+--------------------------------------------------------------
+using System;
+
+namespace Batch10AM21Aug
+{
+    class NonStatic
+    {
+        int i = 1; // Non-Static Variable
+        public  void inc() // Non-Static Method.
+        {
+            Console.WriteLine(i); //  1 1 1
+            i++;
+        }
+    }
+    class Demo
+    {
+        static void Main() // Entry point of a program. [library Function] OWNER
+        {
+            NonStatic ns1 = new NonStatic();
+            ns1.inc();
+            NonStatic ns2 = new NonStatic();
+            ns2.inc();
+            NonStatic ns3 = new NonStatic();
+            ns3.inc();
+        }
+    }
+}
+-------------
+Static:-
+-------------
+>> It doesn't require object creation.
+>> static keyword is used to create static function and variable.
+>> static function called with the help of ClassName.
+>> Performance is fast.
+>> It doesn't create memory everytime.
+--------------------------------------------------------------------
+Syntax to call Static Function:-
+-----------------------------------
+className.FunctionName();
+------------------------------------
+Function ->[Outside Class] A function outside class is called Function.
+Method ->  [Inside Class] A function inside class is called method.
+------------------------------------------------------------
+using System;
+
+namespace Batch10AM21Aug
+{
+    class Static
+    {
+        static int i = 1; // Static Variable
+        public static void inc() // Static Method.
+        {
+            Console.WriteLine(i); //  1 2 3
+            i++;
+        }
+    }
+    class Demo
+    {
+        static void Main() // Entry point of a program. [library Function] OWNER
+        {
+            Static.inc();
+            Static.inc();
+            Static.inc();
+        }
+    }
+}
+------------------------------------
+Value Type and Reference Type:-
+------------------------------------
+Value Type:-
+--------------
+>> Whatever changes made to the formal parameter it doesn't reflect back to the actual parameter.
+For Example:-
+--------------------------
+using System;
+
+namespace Batch10AM21Aug
+{
+    class Employee
+    {
+        public string Ename;
+        public int eage;
+        public void getEmployee(string name,int age) // Formal Parameter
+        {
+            name = "Aditya";
+            age = 21;
+            Console.WriteLine("Changes in Formal Parameter");
+            Console.WriteLine("Name="+name); // Aditiya
+            Console.WriteLine("Age="+age); // 21
+        }
+    }
+    
+    class Demo
+    {
+        static void Main() // Entry Point
+        {
+            Employee emp = new Employee();
+            emp.Ename = "Deepak";
+            emp.eage = 20;
+            Console.WriteLine("Before Function Calling");
+            Console.WriteLine("Name="+emp.Ename); // Deepak
+            Console.WriteLine("Age="+emp.eage); // 20
+            emp.getEmployee(emp.Ename,emp.eage); // Actual Parameter
+            Console.WriteLine("After Function Calling");
+            Console.WriteLine("Name=" + emp.Ename); // Deepak
+            Console.WriteLine("Age=" + emp.eage); //  20
+        }
+    }
+}
+-------------------------------------
+Reference Type:-
+------------------------
+>> Whatever changes made to the formal parameter,it reflect back to the actual parameter.
+----------------------------------------------------------------------------
+using System;
+
+namespace Batch10AM21Aug
+{
+    class Employee
+    {
+        public string Ename;
+        public int eage;
+        public void getEmployee(Employee empObj) // Formal Parameter
+        {
+            empObj.Ename = "Aditya";
+            empObj.eage = 21;
+            Console.WriteLine("Changes in Formal Parameter");
+            Console.WriteLine("Name="+empObj.Ename); // Aditiya
+            Console.WriteLine("Age="+empObj.eage); // 21
+        }
+    }
+    
+    class Demo
+    {
+        static void Main() // Entry Point
+        {
+            Employee emp = new Employee();
+            emp.Ename = "Deepak";
+            emp.eage = 20;
+            Console.WriteLine("Before Function Calling");
+            Console.WriteLine("Name="+emp.Ename); // Deepak
+            Console.WriteLine("Age="+emp.eage); // 20
+            emp.getEmployee(emp); // Actual Parameter
+            Console.WriteLine("After Function Calling");
+            Console.WriteLine("Name=" + emp.Ename); // Aditya
+            Console.WriteLine("Age=" + emp.eage); //  21
+        }
+    }
+}
+----------------------------------------------
+wap to find sum and avg using user input.
+n=10;
+sum=55
+avg=5.5
+------------------------------------------------
+using System;
+
+namespace Batch10AM21Aug
+{
+    // wap to print number using input.
+    class Example
+    {
+        public void series(int n)
+        {
+            int sm = 0;
+            double avg = 0;
+            for (int i = 1;i<=n; i++) // 5<=10 11<=10
+            {
+                sm=sm+i;  // sm1 sm=3 sm=6 sm=10 sm=15 sm=55
+            }
+            avg =(double)sm / n; // 55/10 
+            Console.WriteLine("Sum="+sm);
+            Console.WriteLine("Avg="+avg);
+        }
+    }
+    
+    class Demo
+    {
+        static void Main() // Entry Point
+        {
+            Example ex = new Example();
+            Console.WriteLine("Enter number where you want series=");
+            int t = Convert.ToInt32(Console.ReadLine()); // t=10
+            ex.series(t);
+        }
+    }
+}
+-------------------------------------------------------------
+Array:- PENDING
+--------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
