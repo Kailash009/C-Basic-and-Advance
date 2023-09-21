@@ -1,0 +1,201 @@
+Static Constructor:-
+------------------------------
+>> static keyword is used to create static constructor.
+>> No access modified can be used.
+>> In It ,we can't pass any parameter.
+>> It can be called before default or parameterized constructor.
+>> In one class there is only one static constructor.
+>> It can be called only once.
+>> Static constructors are always called implicitly.
+--------------------------------------------------------------------
+using System;
+using System.Reflection;
+using System.Text;
+
+namespace Batch10AM21Aug
+{
+    class Employee
+    {
+        static Employee()  // Static Constructor. // Implicitly
+        {
+            Console.WriteLine("Static");
+        }
+        public Employee()  // Non-Static Constructor. // Explictly
+        {
+            Console.WriteLine("Non-Static");
+        }
+    }
+    class Demo
+    {
+        static void Main()  // PLL
+        {
+            Employee emp1 = new Employee();
+        }
+    }
+}
+-----------------------------------------------------------------
+Private Constructor:-
+--------------------------
+>> Inside a class if you create a private constructor then this class can't be inherited with their child classes.
+>> Private constructor can't be called outside the class.
+>> static member and properties can be used in private constructor.
+---------------------------------------------------------------------------------
+using System;
+using System.Reflection;
+using System.Text;
+
+namespace Batch10AM21Aug
+{
+    class Employee
+    {
+        public static int a;
+        private Employee(int m)  // Private Constructor.
+        {
+            a = m;  
+        }
+        public static void display()
+        {
+            Console.WriteLine(a);
+        }
+    }
+    class Demo
+    {
+        static void Main()  // PLL
+        {
+            Employee.a = 34;
+            Employee.display();
+        }
+    }
+}
+------------------------------------------------------------
+Constructor Overloading:-
+-----------------------------------
+>> Constructor name same having different number of arguments.
+using System;
+using System.Reflection;
+using System.Text;
+
+namespace Batch10AM21Aug
+{
+    class Employee
+    {
+        public Employee()
+        {
+            Console.WriteLine("Having No argument..");
+
+        }
+        public Employee(int a)
+        {
+            int sq = a * a;
+            Console.WriteLine("Square="+sq);
+            Console.WriteLine("Having one Argument");
+        }
+        public Employee(int l,int b)
+        {
+            int ar = l * b;
+            Console.WriteLine("Area="+ar);
+            Console.WriteLine("Having two argument.");
+        }
+    }
+    class Demo
+    {
+        static void Main()  // PLL
+        {
+            Employee emp1 = new Employee();
+            Employee emp2 = new Employee(4);
+            Employee emp3 = new Employee(4, 7);
+        }
+    }
+}
+--------------------------------------------------------------
+this Keyword:-
+----------------------
+>> It is a owner of class.
+>> this keyword is used to hold reference of current calling object.
+>> this keyword is used to access instance variable.
+------------------------------------------------------------------------
+using System;
+using System.Reflection;
+using System.Text;
+
+namespace Batch10AM21Aug
+{
+    class Employee
+    {
+        public int a, b, c; // Instance Variable.
+        public Employee(int a,int b,int c)
+        {
+            this.a = a;
+            this.b = b;
+            this.c = c;
+        }
+        private int operation()
+        {
+            return this.a * this.b * this.c;
+        }
+        public void display()
+        {
+           int res= operation();
+            Console.WriteLine("Result="+res);
+        }
+    }
+    class Demo
+    {
+        static void Main()  // PLL
+        {
+            Employee emp1 = new Employee(10, 20, 30);
+            emp1.display();
+            Employee emp2 = new Employee(2, 3, 4);
+            emp2.display();
+        }
+    }
+}
+------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
