@@ -1,0 +1,324 @@
+Reflection in C#:-
+---------------------
+>> It provide the meta information at run time of any class,methods or properties.
+>> It give the type infomation at run time.
+-----------------------------------------------------------
+using System.Reflection namespace defined all the reflection classes.
+we have following reflection classes they are as follows:-
+1. MemberInfo
+2. TypeInfo
+3. Type.
+4. Constructor Info
+5. Properties Info. and so on.
+---------------------------------------------------
+using System;
+using System.Reflection;
+using System.Text;
+using System.IO;
+using ExtensionMethodEx;
+
+namespace Batch10AM21Aug
+{
+    class Demo
+    {       
+        static void Main()  
+        {
+            int a = 4;
+            Type t = a.GetType();
+            Console.WriteLine(t);
+            Console.WriteLine(t.IsAbstract);
+            Console.WriteLine(t.FullName);
+            Console.WriteLine(t.IsInterface);
+            Console.WriteLine(t.Assembly);
+            Console.WriteLine(t.IsClass);
+        }
+    }
+}
+----------------------------------------------
+using System;
+using System.Reflection;
+using System.Text;
+using System.IO;
+using ExtensionMethodEx;
+
+namespace Batch10AM21Aug
+{
+    class Demo
+    {       
+        static void Main()  
+        {
+            string a = "Hello";
+            Type t = a.GetType();
+            Console.WriteLine(t);
+            Console.WriteLine(t.IsAbstract);
+            Console.WriteLine(t.FullName);
+            Console.WriteLine(t.IsInterface);
+            Console.WriteLine(t.Assembly);
+            Console.WriteLine(t.IsClass);
+            Console.WriteLine(t.IsEnum);
+            Console.WriteLine(t.BaseType); // System.Object
+        }
+    }
+}
+---------------------------------------------------
+Tuple:-
+------------
+>> A tuple is data structure which contains ordered collection of elements.
+>> we can access tuple values using items.
+>> In tuple we can add max 7 items.
+-----------------------------------------------------------
+using System;
+using System.Reflection;
+using System.Text;
+using System.IO;
+using ExtensionMethodEx;
+
+namespace Batch10AM21Aug
+{
+    class Demo
+    {       
+        static void Main()  
+        {
+            Tuple<int, string, int, string,int,string,int> t1 = new Tuple<int, string, int, string,int,string,int>(101, "Raj", 12, "Noida",7868768,"Mayur Vihar",110096);
+            Console.WriteLine(t1.Item1);
+            Console.WriteLine(t1.Item2);
+            Console.WriteLine(t1.Item3);
+            Console.WriteLine(t1.Item4);
+            Console.WriteLine(t1.Item5);
+            Console.WriteLine(t1.Item6);
+            Console.WriteLine(t1.Item7);
+        }
+    }
+}
+---------------------------------------------------
+Multithreading:-
+----------------------
+Thread ->
+----------------
+>> A single sequential flow of program is known as Thread.
+>> A thread is a light weight process.
+---------------------------------------------------------------
+Single Threading -> When one program executed at a time.
+MultiThreading -> When multiple program executed simultaneously is known as Multithreading.
+----------------------------------------------------------------------------
+Need of Multithreading:-
+-----------------------------
+p1  -> 10 Min.
+p2  -> 2 Min.  ->>> T.T ->  12Min
+p3  -> 5 Min.  ->>> T.T. -> 17Min.
+--------------------------------------------
+All thread Classes are defined into using System.Threading namespace.
+--------------------------------------------------------------------------
+Thread Life Cycle:-
+-------------------------
+1. Start.
+2. Sleep.
+3. Abort.
+4. Terminate.
+5. Suspend.
+6. Resume.
+-------------------------
+using System;
+using System.Reflection;
+using System.Text;
+using System.IO;
+using ExtensionMethodEx;
+
+namespace Batch10AM21Aug
+{
+    /// <summary>
+    /// Single Threading Enviornment
+    /// </summary>
+    class ThreadExample
+    {
+        public static void test1()
+        {
+            for(int i=1;i<=20;i++)  // 20 Min
+            {
+                Console.WriteLine("Test1="+i);
+            }
+        }
+        public static void test2()
+        {
+            for (int j = 1; j <= 10; j++) // 10 Min => T.T => 30 Min
+            {
+                Console.WriteLine("Test2="+j);
+            }
+        }
+    }
+    class Demo
+    {       
+        static void Main()  
+        {
+            ThreadExample.test1();
+            ThreadExample.test2();
+        }
+    }
+}
+-----------------------------------------------------------
+using System;
+using System.Reflection;
+using System.Text;
+using System.IO;
+using ExtensionMethodEx;
+using System.Threading;
+
+namespace Batch10AM21Aug
+{
+    /// <summary>
+    /// Multi -Threading Enviornment
+    /// </summary>
+    class ThreadExample
+    {
+        public static void test1()
+        {
+            for(int i=1;i<=20;i++)  // 20 Min
+            {
+                Console.WriteLine("Test1="+i);
+            }
+        }
+        public static void test2()
+        {
+            for (int j = 1; j <= 10; j++) // 10 Min => T.T => 30 Min
+            {
+                Console.WriteLine("Test2="+j);
+            }
+        }
+    }
+    class Demo
+    {       
+        static void Main()  
+        {
+            Thread t1 = new Thread(ThreadExample.test1);
+            t1.Start();
+            Thread t2 = new Thread(ThreadExample.test2);
+            t2.Start();
+        }
+    }
+}
+----------------------------------------------------------------
+using System;
+using System.Reflection;
+using System.Text;
+using System.IO;
+using ExtensionMethodEx;
+using System.Threading;
+
+namespace Batch10AM21Aug
+{
+    class Demo
+    {       
+        static void Main()  
+        {
+            for(int i=1;i<=15;i++)
+            {
+                Console.WriteLine(i);
+                Thread.Sleep(4000);// 4 sec.
+            }
+        }
+    }
+}
+-------------------------------------------------------
+Create a Generic Class and find the sum of two number,two double and concatenate two string also.
+----------------------------------------------------------------------
+using System;
+using System.Reflection;
+using System.Text;
+using System.IO;
+using ExtensionMethodEx;
+using System.Threading;
+
+namespace Batch10AM21Aug
+{
+    public class Addition<T> // Generic Class
+    {
+        T result;
+        public Addition(T a1, T a2)
+        {
+            dynamic a =a1;
+            dynamic b = a2;
+            result = a + b;
+            Console.WriteLine(result);
+        }
+    }
+        class Demo
+        {       
+        static void Main()  
+        {
+            Addition<int> t1 = new Addition<int>(34,45);
+            Addition<double> t2 = new Addition<double>(34.56, 45.23);
+            Addition<string> t3 = new Addition<string>("Ram", "Shyam");
+        }
+    }
+}
+---------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
