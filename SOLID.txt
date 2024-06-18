@@ -1,0 +1,43 @@
+SOLID:- [ Robert C. Martin ]
+-------------
+Difference between Solid Principles and Design Pattern:
+>> Solid principles are a set of principles, which must be followed to develop flexible,
+maintainable, and scalable software systems.
+>> It is software design principles are a set of guidelines that helps developers to make
+a good software system design.
+>> Solid Principles aren't concrete-rather abstract.
+>> Design Patterns are concrete and solve a particular kind of problem in software's.
+>> Design Patterns are concrete and solve a particular kind of problem in a specific and fixed manner.
+----------------------------------------------------------------------------------------------------------------
+>> Single Responsibility Principle(SRP) states that a class should have only one responsibility.
+>> Or a class should have only one reason to change.
+>> SRP makes the classes compact and neat where each one is responsible for a single problem , task or concern.
+[Violating the SRP due to the extra responsibilities.]
+>> When a class has only one responsibility, it becomes easier to change and test. if a class has multiple responsibilities, changing one responsibility may 
+impact others and more testing efforts will be required then.
+---------
+2. Open-Closed Principle(OCP) states that software entities(classes , modules) should be open for extension, but closed for modification.
+>> SRP is the prerequisite for OCP.
+>> The benefit is simple testing is required to test individual classes, but if you will keep on adding and modifying in one class. Then even for the smallest
+modification, the whole class needs to be tested.
+------------------------------------
+3. Liskov Substitution Principle
+>> The Liskov Substitution Principle(LSP) states that an object of a child class must be able to 
+replace an object of the parent class without breaking the application.
+>> All the base class methods must be applicable for the derived classes.
+------------------------------
+4. Interface Segregation Principle
+>> The ISP states that a class should not be forced to implement interfaces that it does not use.
+>> It is better to have multiple smaller interfaces than larger interfaces.
+--------------------------
+5. Dependency Inversion Principle
+>> The DIP states that a high-level class must not be depend upon a lower level class.
+--------------------------------------------------------------------------------------------
+DRY Principle:-
+>> DRY stands for Don't Repeat Yourself.
+>> Don't write the same functionality multiple time.
+>> Instead write code once and then use it at multiple places using inheritance.
+---------------------------------------------------------------------------------------
+
+
+
